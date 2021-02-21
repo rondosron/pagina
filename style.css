@@ -1,0 +1,374 @@
+body {
+	margin: 0;
+}
+
+/**************************************** NAV BAR ************************************************/
+
+#navbar {
+	width: 100%;
+	height: 50px;
+	background: #92d2ea;
+	display: grid;
+	grid-template-areas: "logo busqueda contenedorbotones toggle";
+	grid-template-columns: minmax(min-content, min-content) minmax(min-content, min-content) 1fr minmax(min-content, min-content);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 300;
+}
+
+#contenedorbotones{
+	display: grid;
+	grid-template-areas: "hombre mujer personalizadas lisas dudas contacto"
+}
+
+#logonav {
+	grid-area: logo;
+}
+
+#hombre {
+	grid-area: hombre;
+}
+
+#mujer {
+	grid-area: mujer;
+}
+
+#personalizadas {
+	grid-area: personalizadas;
+}
+
+#lisas {
+	grid-area: lisas;
+}
+
+#dudas {
+	grid-area: dudas;
+}
+
+#contacto {
+	grid-area: contacto;
+}
+
+/********* botones filtro **********/
+
+#busqueda {
+	grid-area: busqueda;
+	width: 115px;
+    background: burlywood;
+    position: relative;
+}
+
+#contenedorbotones {
+	display: none; /* ver que cambié x grid en minwidth 601px */
+    flex-direction: column;
+    width: fit-content;
+    background: gold;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+}
+
+.botonnav {
+	color: white;
+    height: 24px;
+    width: 150px; /* para que sobresalga del boton busqueda nada mas */
+    text-align: center;
+}
+
+#dudas {
+	position: relative;
+}
+
+#contenedordudas {
+	position: absolute;
+    left: 100%;
+    top: 0;
+    background: chocolate;
+    display: none;
+    flex-direction: column;
+}
+
+/************* togle **************/
+
+#contenedortoggle {
+	grid-area: toggle;
+	width: 50px;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#menutoggle {
+	transform: scale(1.4);
+}
+
+@media screen and (min-width: 601px) {
+	#contenedorbotones {
+		/*display: grid !important; /* Si no, con el click del toggle se pone none y despues al agrandarlo queda asi */
+	}
+}
+
+@media screen and (max-width: 530px) {
+	#contenedortoggle {
+		display: flex;
+	}
+	#contenedorbotones {
+		display: none;
+		grid-template-areas:
+        "hombre"
+        "mujer"
+        "personalizadas"
+        "lisas"
+        "dudas"
+        "contacto";
+        position: fixed;
+	    top: 50px;
+	    width: 100%;
+	    flex-direction: column;
+	    height: calc(100vh - 50px); /* -50 px del nav */
+	    z-index: 301;
+	}
+	.botonnav {
+		background: grey;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+
+/**************************************************** PRODUCTOS *************************************************/
+
+#productos {
+	padding-top: 40px;
+	width: 100%;
+    min-height: 100vh;
+    background: lightgrey;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+#tituloproductos{
+	margin-top: 50px; /* alto del nav */
+	width: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contendorproducto {
+	width: calc(100% / 4);
+    display: inline-flex;
+    justify-content: center;
+    height: 240px;
+    overflow: visible;
+}
+
+@media screen and (max-width: 1030px) {
+	.contendorproducto {
+		width: calc(100% / 3);
+	}
+}
+
+@media screen and (max-width: 783px) {
+	.contendorproducto {
+		width: calc(100% / 2);
+	}
+}
+
+@media screen and (max-width: 535px) {
+	.contendorproducto {
+		width: calc(100%);
+	}
+}
+
+/* DENTRO DEL FONDO DEL PRODUCTO */
+	.nombreyprecio {
+		position: absolute;
+	    bottom: 0;
+	    width: 100%;
+	    text-align: center;
+	    z-index: 1;
+	    opacity: 0;
+	    max-height: 40px;
+    	font-size: 1em;
+	}
+	#producto1:hover .nombreyprecio, #producto2:hover .nombreyprecio, #producto3:hover .nombreyprecio, #producto4:hover .nombreyprecio, #producto5:hover .nombreyprecio, #producto6:hover .nombreyprecio, #producto7:hover .nombreyprecio, #producto8:hover .nombreyprecio, #producto9:hover .nombreyprecio, #producto10:hover .nombreyprecio, #producto11:hover .nombreyprecio, #producto12:hover .nombreyprecio {
+		opacity: 1;
+		transition: opacity 0.5s 0.1s ease; /* VER */
+	}
+
+
+
+
+#contenedorproducto1, #contenedorproducto2, #contenedorproducto3, #contenedorproducto4, #contenedorproducto5, #contenedorproducto6, #contenedorproducto7, #contenedorproducto8, #contenedorproducto9, #contenedorproducto10, #contenedorproducto11, #contenedorproducto12  {
+	
+}
+
+#producto1, #producto2, #producto3, #producto4, #producto5, #producto6, #producto7, #producto8, #producto9, #producto10, #producto11, #producto12 {
+	display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    background: red;
+    width: 200px;
+    height: 200px;
+}
+
+#producto1:hover, #producto2:hover, #producto3:hover, #producto4:hover, #producto5:hover, #producto6:hover, #producto7:hover, #producto8:hover, #producto9:hover, #producto10:hover, #producto11:hover, #producto12:hover {
+	transform: scale(1.2);
+	z-index: 5; /* Para que se ponga por encima de los demas */
+	width: 210px;
+	height: 240px;
+	transition: width 0.1s, height 0.1s, z-index 0.1s, transform 0.1s;
+}
+
+#imagen1, #imagen2, #imagen3, #imagen4, #imagen5, #imagen6, #imagen7, #imagen8, #imagen9, #imagen10, #imagen11, #imagen12 {
+	z-index: 2;
+}
+
+#imagen1:hover, #imagen2:hover, #imagen3:hover, #imagen4:hover, #imagen5:hover, #imagen6:hover, #imagen7:hover, #imagen8:hover, #imagen9:hover, #imagen10:hover, #imagen11:hover, #imagen12:hover {
+	margin-top: 5px;
+	transition-duration: 0.1s;
+}
+
+#content1, #content2, #content3, #content4, #content5, #content6, #content7, #content8, #content9, #content10, #content11, #content12  {
+	position: absolute;
+}
+
+/***************************************** PRESUPUESTO **************************************************/
+
+#presupuestoyformulario {
+	display: grid;
+	grid-template-areas: "presupuesto formulario"
+}
+
+#presupuesto {
+	width: 100%;
+	height: 100%;
+	background: green;
+	z-index: 4;
+	grid-area: presupuesto;
+}
+
+#pedidoinput {
+	width: 70%;
+}
+
+/************************************** FORMULARIO **************************************/
+
+#formulario {
+	background: orange;
+	grid-area: formulario;
+	/*min-height: 100vh;*/
+}
+
+/*********************************** FOOTER ************************************/
+
+#footer {
+	display: grid;
+	grid-template-areas: 	"info"
+							"copyright";
+}
+
+#contenedorinfo {
+	grid-area: info;
+	display: flex;
+	justify-content: center;
+}
+
+#navegacionfooter {
+	background: red;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    margin-right: 40px;
+}
+
+#contenedornavegacion {
+	
+}
+
+#contenedornavegacion h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+#navegacionfooter div p {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#mediosdepagofooter {
+	background: blue;
+	display: inline-block;
+}
+
+#mediosdepagofooter h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-bottom: 6px;
+}
+
+#mediosdepagofooter img {
+	transform: scale(0.7);
+	margin: -11px;
+}
+
+#faqs {
+	background: white;
+	display: inline-block;
+	margin-left: 40px;
+}
+
+#faqs h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+#faqs div p {
+	display: inline-block;
+}
+
+#contactofooter {
+	background: white;
+	display: inline-block;
+    margin-left: 40px;
+}
+
+#contactofooter div {
+	display: block;
+	margin-bottom: 10px;
+    margin-left: 7px;
+}
+
+#contactofooter h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-bottom: 3px;
+}
+
+#contactofooter div i {
+	color: red;
+    transform: scale(1.8);
+}
+
+#contactofooter div p {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+#copyright {
+	grid-area: copyright;
+	background: brown;
+}
