@@ -126,6 +126,7 @@
 			alpresupuesto.style.boxShadow = "0px 3px 0"
 		})
 	*/
+
 	///////////////////////////////// OVERLAY /////////////////////////////////////
 
 	let imagenes = document.querySelectorAll(".producto")
@@ -245,7 +246,19 @@
 		
 		let contenedorimagen = imagenAOverlay.parentNode
 
-		contenedorimagen.innerHTML += "<p class='nombreyprecio'>" + imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio") + "</p>"
+		console.log(contenedorimagen)
+		console.log(imagenAOverlay.parentNode)
+
+		// contenedorimagen.innerHTML = `${contenedorimagen.innerHTML} `
+
+		const subtitle = document.createElement("p")
+		subtitle.classList.add("subtitle", "nombreyprecio")
+		subtitle.innerHTML = imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio")
+
+		contenedorimagen.appendChild(subtitle)
+
+		// contenedorimagen.innerHTML += "<p class='nombreyprecio'>" + imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio") + "</p>"
+		
 	}) // fin for each image
 
 	///////////////////////////////// BOTONES FINALES ///////////////////////////////
