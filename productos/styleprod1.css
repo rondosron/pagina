@@ -8,11 +8,11 @@
 
 body {
 	/*width: 100vw;
-    height: 100vh;*/
-    margin: 0;
-    /*display: flex;
-    align-items: center;
-    justify-content: center;*/
+	height: 100vh;*/
+	margin: 0;
+	/*display: flex;
+	align-items: center;
+	justify-content: center;*/
 }
 
 p, h2, h1, h3 {
@@ -20,15 +20,26 @@ p, h2, h1, h3 {
 	text-transform: uppercase;
 }
 
+h1 {
+	font-size: 2em;
+	line-height: 1.22em;
+	font-weight: bold;
+}
+
 h2 {
 	display: inline-block;
 	font-size: var(--altura-subtitulos);
-    position: relative;
-    top: 2px;
+	position: relative;
+	top: 2px;
+	font-weight: bold;
+	line-height: 1.22em;
 }
 
 h3 {
 	text-align: center;
+	font-size: 1.17em;
+    font-weight: bold;
+    line-height: 1.22em;
 }
 
 p {

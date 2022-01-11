@@ -12,7 +12,7 @@
 		precioData.id = "contenidoprecio"
 		precioData.innerText = imagen.getAttribute("data-precio")
 		precio.appendChild(precioData)
-
+	
 		/* CUOTAS */
 	/*	let iconoCuotas = document.createElement('i') // icono
 		iconoCuotas.classList.add("fas")
@@ -386,7 +386,7 @@
 	// VER EL <660 NO FUNCIONA
 	window.addEventListener("scroll", function(){
 		if (window.innerWidth <= 660){ // como un media query
-			if (contenedoroverlay.style.visibility == "visible"){ // cuando este activo...
+			if (contenedoroverlay.style.visibility == "visible"){ // cuando este activo... // VER SI SACAR ESTA CONDICION (creo que si)
 				if((window.scrollY + window.innerHeight) >= (topInicial + contenedoroverlay.offsetHeight/* + bottomInicial*/)){ // se le agrega el tamañoNav a esa distancia para que no pegue un salto desde el final del contenedor
 					contenedoroverlay.style.position = "fixed"
 					contenedoroverlay.style.top = "auto"

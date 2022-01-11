@@ -55,25 +55,25 @@ body {
 	#busqueda {
 		grid-area: busqueda;
 		width: 115px;
-	    background: burlywood;
-	    position: relative;
+		background: burlywood;
+		position: relative;
 	}
 
 	#contenedorbotones {
 		display: none; /* ver que cambié x grid en minwidth 601px */
-	    flex-direction: column;
-	    width: fit-content;
-	    background: gold;
-	    position: absolute;
-	    top: 100%;
-	    left: 0px;
+		flex-direction: column;
+		width: fit-content;
+		background: gold;
+		position: absolute;
+		top: 100%;
+		left: 0px;
 	}
 
 	.botonnav {
 		color: white;
-	    height: 24px;
-	    width: 150px; /* para que sobresalga del boton busqueda nada mas */
-	    text-align: center;
+		height: 24px;
+		width: 150px; /* para que sobresalga del boton busqueda nada mas */
+		text-align: center;
 	}
 
 	#dudas {
@@ -82,11 +82,11 @@ body {
 
 	#contenedordudas {
 		position: absolute;
-	    left: 100%;
-	    top: 0;
-	    background: chocolate;
-	    display: none;
-	    flex-direction: column;
+		left: 100%;
+		top: 0;
+		background: chocolate;
+		display: none;
+		flex-direction: column;
 	}
 
 	/************* togle **************/
@@ -94,10 +94,10 @@ body {
 	#contenedortoggle {
 		grid-area: toggle;
 		width: 50px;
-	    /*display: flex;*/
-	    justify-content: center;
-	    align-items: center;
-	    display: none;
+		/*display: flex;*/
+		justify-content: center;
+		align-items: center;
+		display: none;
 	}
 
 	#menutoggle {
@@ -117,18 +117,18 @@ body {
 		#contenedorbotones {
 			display: none;
 			grid-template-areas:
-	        "hombre"
-	        "mujer"
-	        "personalizadas"
-	        "lisas"
-	        "dudas"
-	        "contacto";
-	        position: fixed;
-		    top: 50px;
-		    width: 100%;
-		    flex-direction: column;
-		    height: calc(100vh - 50px); /* -50 px del nav */
-		    z-index: 301;
+			"hombre"
+			"mujer"
+			"personalizadas"
+			"lisas"
+			"dudas"
+			"contacto";
+			position: fixed;
+			top: 50px;
+			width: 100%;
+			flex-direction: column;
+			height: calc(100vh - 50px); /* -50 px del nav */
+			z-index: 301;
 		}
 		.botonnav {
 			background: grey;
@@ -138,20 +138,32 @@ body {
 		}
 	}
 
+/*************************************** CAROUSEL ********************************************/
+	.carousel {
+		height: 500px;
+		overflow: hidden;
+	}
+
+	.carousel-control-next, .carousel-control-prev {
+		color: red;
+	}
+
+
 /**************************************************** PRODUCTOS *************************************************/
 
 	#productos {
-		padding-top: 40px;
+		padding-top: 45px;
 		width: 100%;
-	    min-height: 100vh;
-	    background: lightgrey;
-	    overflow-x: hidden;
-	    overflow-y: hidden;
-	    z-index: 6;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	    flex-wrap: wrap;
+		min-height: 100vh;
+		background: lightgrey;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		z-index: 6;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		padding-bottom: 31px;
 	}
 
 
@@ -159,16 +171,16 @@ body {
 		margin-top: 50px; /* alto del nav */
 		width: 100%;
 		display: flex;
-	    justify-content: center;
-	    align-items: center;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.contendorproducto {
 		width: calc(100% / 4);
-	    display: inline-flex;
-	    justify-content: center;
-	    height: 240px;
-	    overflow: visible;
+		display: inline-flex;
+		justify-content: center;
+		height: 240px;
+		overflow: visible;
 	}
 
 	@media screen and (max-width: 1030px) {
@@ -192,13 +204,13 @@ body {
 	/* DENTRO DEL FONDO DEL PRODUCTO */
 		.nombreyprecio {
 			position: absolute;
-		    bottom: 0;
-		    width: 100%;
-		    text-align: center;
-		    z-index: 1;
-		    opacity: 0;
-		    max-height: 40px;
-	    	font-size: 1em;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			z-index: 1;
+			opacity: 0;
+			max-height: 40px;
+			font-size: 1em;
 		}
 
 		#producto1:hover .nombreyprecio, #producto2:hover .nombreyprecio, #producto3:hover .nombreyprecio, #producto4:hover .nombreyprecio, #producto5:hover .nombreyprecio, #producto6:hover .nombreyprecio, #producto7:hover .nombreyprecio, #producto8:hover .nombreyprecio, #producto9:hover .nombreyprecio, #producto10:hover .nombreyprecio, #producto11:hover .nombreyprecio, #producto12:hover .nombreyprecio {
@@ -212,12 +224,12 @@ body {
 
 	#producto1, #producto2, #producto3, #producto4, #producto5, #producto6, #producto7, #producto8, #producto9, #producto10, #producto11, #producto12 {
 		display: flex;
-	    justify-content: center;
-	    align-items: flex-start;
-	    position: relative;
-	    background: red;
-	    width: 200px;
-	    height: 200px;
+		justify-content: center;
+		align-items: flex-start;
+		position: relative;
+		background: red;
+		width: 200px;
+		height: 200px;
 	}
 
 	#producto1:hover, #producto2:hover, #producto3:hover, #producto4:hover, #producto5:hover, #producto6:hover, #producto7:hover, #producto8:hover, #producto9:hover, #producto10:hover, #producto11:hover, #producto12:hover {
@@ -269,11 +281,134 @@ body {
 		/*min-height: 100vh;*/
 	}
 
+/*************************************** PREGUNTAS FRECUENTES **********************************************/
+	#preguntasfrecuentes {
+		height: calc(100vh - 50px); /* LE RESTO EL TAMAÑO DEL NAV FIJO */
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: beige;
+		position: relative;
+	}
+
+	#preguntasfrecuentes #preguntasfrecuentestitle {
+		position: absolute;
+	}
+
+	.accordion {
+		width: 80%;
+	}
+
+	.accordion h2 {
+		top: 0;
+	}
+
+	.accordion-header {
+		width: 100%;
+	}
+
+/**************************************** QUIENES SOMOS *****************************************/
+	#quienessomos {
+		height: calc(100vh - 50px); /* LE RESTO EL TAMAÑO DEL NAV FIJO */
+		background: brown;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 1rem;
+	}
+
+	#quienessomos .cardcontainers {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	/******** CARD 1 ************/
+		#quienessomos #card1container {
+			
+		}
+
+		#quienessomos #card1container #card1 {
+			height: 400px;
+			width: 230px;
+			/* border: 1px solid black; */
+			background: white;
+			/* background-position: 5px 5px; */
+			position: relative;
+			box-shadow: 6px 6px 0 0px #00000063;
+		}
+
+		#quienessomos #card1container #card1:after {
+			content: " ";
+			/* background: white; */
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: -7px;
+			left: -7px;
+			border: 1px solid black;
+		}
+
+		#quienessomos #card1container #card1 #profilePicContainerCard1 {
+			height: 125px;
+			width: 125px;
+			background: red;
+			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
+			background-size: cover;
+			background-position: 0px -16px;
+			position: absolute;
+			top: 6px;
+			left: 6px;
+		}
+
+	/************** CARD 2 ************/
+		#quienessomos #card2container #card2 {
+			height: 400px;
+			width: 230px;
+			background: white;
+			border-radius: 1.2em;
+			border: 0.4em solid;
+			position: relative;
+		}
+
+		#quienessomos #card2container #card2 #borderdetail1card2 {
+			position: absolute;
+			height: 11px;
+			width: 30px;
+			background: #212529;
+			top: 0;
+			left: 50%;
+			transform: translate(-50%, 0px);
+			border-radius: 0 0 5px 5px;
+		}
+
+	/************* CARD 3 ************/
+		#quienessomos #card3container #card3 {
+			height: 325px;
+			width: 218px;
+			background: white;
+		}
+
+		#quienessomos #card3container #card3 #profilePicContainerCard3 {
+			width: 100%;
+			height: 200px;
+			background: black;
+		}
+
+		#quienessomos #card3container #card3 #dataContainerCard3 {
+			background: yellow;
+			width: 100%;
+			height: 125px;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(72.6px, 1fr));
+		}
+
 /*********************************** FOOTER ************************************/
 
 	#footer {
 		display: grid;
-		grid-template-areas: 	"info"
+		grid-template-areas:    "info"
 								"copyright";
 	}
 
@@ -285,10 +420,10 @@ body {
 
 	#navegacionfooter {
 		background: red;
-	    align-items: center;
-	    justify-content: center;
-	    display: inline-block;
-	    margin-right: 40px;
+		align-items: center;
+		justify-content: center;
+		display: inline-block;
+		margin-right: 40px;
 	}
 
 	#contenedornavegacion {
@@ -339,13 +474,13 @@ body {
 	#contactofooter {
 		background: white;
 		display: inline-block;
-	    margin-left: 40px;
+		margin-left: 40px;
 	}
 
 	#contactofooter div {
 		display: block;
 		margin-bottom: 10px;
-	    margin-left: 7px;
+		margin-left: 7px;
 	}
 
 	#contactofooter h1 {
@@ -356,12 +491,12 @@ body {
 
 	#contactofooter div i {
 		color: red;
-	    transform: scale(1.8);
+		transform: scale(1.8);
 	}
 
 	#contactofooter div p {
-	    display: inline-block;
-	    margin-left: 10px;
+		display: inline-block;
+		margin-left: 10px;
 	}
 
 
