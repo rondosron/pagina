@@ -219,6 +219,19 @@
 			<div id="card1container" class="cardcontainers">
 				<div id="card1">
 					<div id="profilePicContainerCard1"></div>
+					<span id="nameCard1">John</span>
+					<span id="surnameCard1">Doe</span>
+					<p id="positionCard1">CEO</p>
+					<!-- <p id="ageCard1">44</p> -->
+					<div class="divisorCard1" id="divisor1Card1"></div>
+					<div id="textCard1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, obcaecati ea modi? Impedit quasi asperiores, non id enim ipsam, suscipit minima magnam.</div>
+					<div class="divisorCard1" id="divisor2Card1"></div>
+					<div id="socialMedia1">
+						<span></span>
+						<span></span>
+						<span class="fab fa-facebook-f"></span>
+					</div>
+					<div></div>
 				</div>
 			</div>
 			<div id="card2container" class="cardcontainers">

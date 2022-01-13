@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
+
 body {
 	margin: 0;
 }
@@ -330,10 +332,10 @@ body {
 		}
 
 		#quienessomos #card1container #card1 {
-			height: 400px;
+			height: 350px;
 			width: 230px;
 			/* border: 1px solid black; */
-			background: white;
+			background: #e9e9e9;
 			/* background-position: 5px 5px; */
 			position: relative;
 			box-shadow: 6px 6px 0 0px #00000063;
@@ -348,18 +350,126 @@ body {
 			top: -7px;
 			left: -7px;
 			border: 1px solid black;
+			pointer-events: none; /* Para permitir hover detrás */
 		}
 
 		#quienessomos #card1container #card1 #profilePicContainerCard1 {
-			height: 125px;
-			width: 125px;
-			background: red;
+			height: 110px;
+			width: 110px;
 			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
 			background-size: cover;
 			background-position: 0px -16px;
 			position: absolute;
 			top: 6px;
 			left: 6px;
+		}
+
+		#quienessomos #card1container #card1 #nameCard1,
+		#quienessomos #card1container #card1 #surnameCard1 {
+			position: absolute;
+			left: 122.8px;
+			letter-spacing: 5px;
+			background: linear-gradient(180deg, #fb8e8e 50%, transparent 50%);
+			background-size: 200px 28px;
+			padding-left: 4px;
+			background-position: 0px 24px;
+			font-family: 'Josefin Slab', serif;
+			font-size: 2em;
+			overflow: hidden;
+			background-repeat: no-repeat;
+		}
+
+		#quienessomos #card1container #card1 #nameCard1 {
+			top: -3px;
+		}
+
+		#quienessomos #card1container #card1 #surnameCard1 {
+			top: 35px;
+		}
+
+		#quienessomos #card1container #card1 #positionCard1 {
+			position: absolute;
+			top: 75px;
+			left: 122px;
+			font-family: 'Josefin Slab';
+			font-size: 1.2em;
+			text-shadow: 1px 1px #fb8e8ea6;
+		}
+
+		#quienessomos #card1container #card1 #ageCard1 {
+			position: absolute;
+			top: 93px;
+			left: 122px;
+			font-size: 1.2em;
+			font-weight: lighter;
+		}
+
+		#quienessomos #card1container #card1 .divisorCard1 {
+			height: 1px;
+			width: 80%;
+			position: absolute;
+			left: 10%;
+			background: #bfbfbf;
+			box-shadow: 0px -1px 0 0px white;
+		}
+
+		#quienessomos #card1container #card1 #divisor1Card1 {
+			top: 126px;
+		}
+
+		#quienessomos #card1container #card1 #divisor2Card1 {
+			top: 241px;
+		}
+
+		#quienessomos #card1container #card1 #textCard1 {
+			width: 80%;
+			font-size: 0.9em;
+			line-height: 1.2em;
+			position: absolute;
+			left: 10%;
+			text-align: center;
+			top: 132px;
+		}
+
+		#quienessomos #card1container #card1 #socialMedia1 {
+			height: 35px;
+			width: 35px;
+			background: grey;
+			position: absolute;
+			bottom: 15px;
+			left: 20px;
+		}
+
+		#quienessomos #card1container #card1 #socialMedia1 span {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex !important;
+			justify-content: center;
+			align-items: center;
+			font-size: 30px;
+			transition: 0.2s;
+		}
+
+		#socialMedia1:hover span {
+			background: #3b5999;
+		}
+
+		#socialMedia1:hover span:nth-child(3) {
+			transform: translate(-15px, -15px);
+			opacity: 1;
+		}
+
+		#socialMedia1:hover span:nth-child(2) {
+			transform: translate(-10px, -10px);
+			opacity: 0.75;
+		}
+
+		#socialMedia1:hover span:nth-child(1) {
+			transform: translate(-5px, -5px);
+			opacity: 0.5;
 		}
 
 	/************** CARD 2 ************/
