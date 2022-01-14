@@ -228,16 +228,22 @@
 					<div class="divisorCard1" id="divisor2Card1"></div>
 					<div id="socialMedia1">
 						<span></span>
-						<span></span>
 						<span class="fab fa-facebook-f"></span>
+					</div>
+					<div id="socialMedia2" class="fab fa-linkedin-in">
+						<span style="--i:0"></span>
+						<span style="--i:1"></span>
+						<span style="--i:2"></span>
+						<span style="--i:3"></span>
+						<span style="--i:4"></span>
+						<span style="--i:5"></span>
 					</div>
 					<div></div>
 				</div>
 			</div>
 			<div id="card2container" class="cardcontainers">
 				<div id="card2">
-					<div id="borderdetail1card2"></div> <!-- Hacerlo con photoshop -->
-					<div id="borderdetail2card2"></div>
+					<div id="profilePicContainerCard2"></div>
 				</div>
 			</div>
 			<div id="card3container" class="cardcontainers">
