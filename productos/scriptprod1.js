@@ -246,8 +246,8 @@
 		
 		let contenedorimagen = imagenAOverlay.parentNode
 
-		console.log(contenedorimagen)
-		console.log(imagenAOverlay.parentNode)
+		// console.log(contenedorimagen)
+		// console.log(imagenAOverlay.parentNode)
 
 		// contenedorimagen.innerHTML = `${contenedorimagen.innerHTML} `
 
@@ -407,4 +407,3 @@
 			contenedoroverlay.style.transform = "translate(-50%, -50%)"
 		}
 	})
-

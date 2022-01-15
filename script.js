@@ -68,3 +68,19 @@ dudas.addEventListener('click', function(e){
 		contenedordudas.style.display = "none"
 	}
 })
+
+////////////////////////// CARDS ////////////////////////
+
+	//////////////////// CARD 2 ///////////////////////
+		let profilePicContainerCard2 = document.querySelector("#profilePicContainerCard2")
+		let profilePic = document.querySelector("#profilePic")
+
+		profilePic.addEventListener("mouseover", function(e) {
+			console.log(profilePic.style)
+			console.log(profilePicContainerCard2.style)
+			console.log(window.getComputedStyle(profilePic)["top"])
+			console.log(window.getComputedStyle(profilePicContainerCard2)["top"])
+			console.log(profilePic.style.top)
+			console.log(profilePicContainerCard2.style.top)
+		})
+

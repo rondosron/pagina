@@ -243,7 +243,10 @@
 			</div>
 			<div id="card2container" class="cardcontainers">
 				<div id="card2">
-					<div id="profilePicContainerCard2"></div>
+					<!-- ARRANCO A MODIFICARRRRRRRRRRRRRRRRRRRRRRR -->
+					<div id="profilePicContainerCard2">
+						<div id="profilePic"></div>
+					</div>
 				</div>
 			</div>
 			<div id="card3container" class="cardcontainers">

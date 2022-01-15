@@ -533,30 +533,35 @@ body {
 			border: 0.4em solid;
 			position: relative;
 			/*display: contents;*/
+			display: flex;
+			justify-content: center;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 {
 			position: absolute;
 			left: 50%;
-			transform: translate(-50%, 0px);
+			transform: translate(-50%);
 			height: 150px;
 			width: 150px;
-			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
+			/* background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d); */
 			background-size: cover;
 			border-radius: 50%;
-			border: 3px solid beige;
+			/*border: 3px solid beige;*/
 			animation: floating ease-in-out 1.5s infinite;
 			animation-direction: alternate-reverse;
-			top: 0px;
+			/*top: 0px;*/
+			/*bottom: 0px;*/
 			transition: 2s ease-in-out;
 		}
 
 		@keyframes floating {
 			0% {
 				top: 0px;
+				/*bottom: 133px;*/
 			}
 			100% {
 				top: -16px;
+				/*bottom: 149px;*/
 			}
 		}
 
@@ -567,14 +572,13 @@ body {
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2:hover {
 			animation-play-state: paused;
-			animation-name: none;
-			top: -95px;
-			transform: scale(0.7) translate(-50%, 0px);
+			/*animation-name: stayUp;*/
+			display: contents;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2:hover:after {
 			animation-play-state: paused;
-			animation-name: none;
+			/*animation-name: none;*/
 			visibility: hidden;
 		}
 
@@ -585,7 +589,7 @@ body {
 			width: 111%;
 			bottom: -40px;
 			left: 50%;
-			transform: translate(-50%, 0px);
+			transform: translate(-50%);
 			background: #00000078;
 			display: block;
 			border-radius: 50%;
@@ -606,6 +610,36 @@ body {
 				filter: blur(15px);
 			}
 		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePic {
+			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
+			height: 150px;
+			width: 150px;
+			background-size: cover;
+			border-radius: 50%;
+			position: absolute;
+			top: 0px;
+			/*left: 0px;*/
+			transition: 1s ease-in-out;
+			border: 3px solid beige;
+			transform: none;
+		}
+
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePic:hover {
+			transform: scale(0.7);
+			/* top: -95px; */
+			/*bottom: 228px;*/
+			/*bottom: 68px;*/
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #profilePic {
+			/*top: -75px;*/
+			transform: translateY(-75px);
+			/*left: 50%;
+			transform: translateX(-50%);*/
+		}
+		
 
 	/************* CARD 3 ************/
 		#quienessomos #card3container #card3 {
