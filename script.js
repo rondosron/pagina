@@ -73,14 +73,38 @@ dudas.addEventListener('click', function(e){
 
 	//////////////////// CARD 2 ///////////////////////
 		let profilePicContainerCard2 = document.querySelector("#profilePicContainerCard2")
-		let profilePic = document.querySelector("#profilePic")
+		let profilePicCard2 = document.querySelector("#profilePicCard2")
+		let shadowProfilePicCard2 = document.querySelector("#shadowProfilePicCard2")
 
-		profilePic.addEventListener("mouseover", function(e) {
-			console.log(profilePic.style)
-			console.log(profilePicContainerCard2.style)
-			console.log(window.getComputedStyle(profilePic)["top"])
-			console.log(window.getComputedStyle(profilePicContainerCard2)["top"])
-			console.log(profilePic.style.top)
-			console.log(profilePicContainerCard2.style.top)
+		profilePicCard2.addEventListener("mouseover", function(e) {
+			profilePicCard2.style.animation = "scaleCard 1s 1 normal forwards"
 		})
 
+		profilePicCard2.addEventListener("mouseout", function(e) {
+			profilePicCard2.style.top = "-75px"
+			profilePicCard2.style.transform = "scale(0.7)"
+			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
+			console.log("outScale")
+		})
+
+		let contentCard2 = document.querySelector("#contentCard2")
+
+		profilePicCard2.addEventListener("mouseover", function(e) {
+			contentCard2.style.animation = "displayCardContent 1s 0.5s 1 normal forwards"
+			console.log("over")
+		})
+
+		profilePicCard2.addEventListener("mouseout", function(e) {
+			contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
+			console.log("out")
+		})
+
+		profilePicContainerCard2.addEventListener("mouseover", function(e) {
+			shadowProfilePicCard2.style.transition = "1s ease"; // No delay on mouseover/hover
+		})
+
+		profilePicContainerCard2.addEventListener("mouseout", function(e) {
+			shadowProfilePicCard2.style.transition = "1s ease 1.2s"; // Add delay only on mouseout
+		}) 
+		
+		

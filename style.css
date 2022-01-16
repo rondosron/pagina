@@ -526,21 +526,22 @@ body {
 
 	/************** CARD 2 ************/
 		#quienessomos #card2container #card2 {
-			height: 295px;
-			width: 215px;
-			background: white;
-			border-radius: 1.2em;
-			border: 0.4em solid;
+			/*height: 295px;*/
+			/*width: 215px;*/
+			/*background: white;*/
+			/*border-radius: 1.2em;*/
+			/*border: 0.4em solid;*/
 			position: relative;
 			/*display: contents;*/
 			display: flex;
 			justify-content: center;
+			top: -63px;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 {
 			position: absolute;
-			left: 50%;
-			transform: translate(-50%);
+			/*left: 50%;
+			transform: translate(-50%);*/
 			height: 150px;
 			width: 150px;
 			/* background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d); */
@@ -551,7 +552,7 @@ body {
 			animation-direction: alternate-reverse;
 			/*top: 0px;*/
 			/*bottom: 0px;*/
-			transition: 2s ease-in-out;
+			transition: 1s ease-in-out;
 		}
 
 		@keyframes floating {
@@ -565,25 +566,45 @@ body {
 			}
 		}
 
-		/* PROBAR CAMBIANDO EL HEIGHT Y WIDTH EN VEZ DE SCALE */
-		/* PROBAR CAMBIANDO EL HEIGHT Y WIDTH EN VEZ DE SCALE */
-		/* PROBAR CAMBIANDO EL HEIGHT Y WIDTH EN VEZ DE SCALE */
-		/* PROBAR CAMBIANDO EL HEIGHT Y WIDTH EN VEZ DE SCALE */
-
 		#quienessomos #card2container #card2 #profilePicContainerCard2:hover {
 			animation-play-state: paused;
 			/*animation-name: stayUp;*/
-			display: contents;
+			/*display: contents;*/
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2:hover:after {
+		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #shadowProfilePicCard2 {
 			animation-play-state: paused;
 			/*animation-name: none;*/
-			visibility: hidden;
+			opacity: 0;
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2:after {
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+		/* CAMBIAR EL PSEUDOELEMENT POR UN DIV + TRANSITION CON Y SIN DELAY DESDE JS */
+
+		/*#quienessomos #card2container #card2 #profilePicContainerCard2:after {
 			content: "";
+			position: absolute;
+			height: 20px;
+			width: 111%;
+			bottom: -40px;
+			left: 50%;
+			transform: translate(-50%);
+			background: #00000078;
+			display: block;
+			border-radius: 50%;
+			filter: blur(9px);
+			animation: floatingShadow 1.5s infinite ease-in-out;
+			animation-direction: alternate-reverse;
+		}*/
+
+		/* Changed :after pseudo-el for div cause I can't change styling from JS (needed for animation) */
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #shadowProfilePicCard2 {
+			/*content: "";*/
 			position: absolute;
 			height: 20px;
 			width: 111%;
@@ -611,7 +632,7 @@ body {
 			}
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePic {
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 {
 			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
 			height: 150px;
 			width: 150px;
@@ -622,22 +643,92 @@ body {
 			/*left: 0px;*/
 			transition: 1s ease-in-out;
 			border: 3px solid beige;
-			transform: none;
+			/*transform: scale(1);*/
+			display: flex;
+			justify-content: center;
+		}
+
+		/* Create an after pseudo-el to expand when picture is hovered and prevent mouse from being out of the main div. It's bigger than the main div due to the scale x0.7 effect */
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:after {
+			content: "";
+			height: 0px;
+			width: 100%;
+			position: absolute;
+			top: 100%;
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #profilePicCard2:after {
+			height: 145%;
+			width: 165%;
 		}
 
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePic:hover {
-			transform: scale(0.7);
-			/* top: -95px; */
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover {
+			/*transform: scale(0.7);*/
+			/*top: -75px;*/
 			/*bottom: 228px;*/
 			/*bottom: 68px;*/
+			/*animation: scaleCard 1s 1 forwards;*/
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #profilePic {
+		@keyframes scaleCard {
+			0% {
+				transform: scale(1);
+				top: 0px;
+			}
+			100% {
+				transform: scale(0.7);
+				top: -75px;
+			}
+		}
+
+		@keyframes scaleCardReverse {
+			0% {
+				transform: scale(0.7);
+				top: -75px;
+			}
+			100% {
+				transform: scale(1);
+				top: 0px;
+			}
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #profilePicCard2 {
 			/*top: -75px;*/
-			transform: translateY(-75px);
+			/*transform: translateY(-75px);*/
 			/*left: 50%;
 			transform: translateX(-50%);*/
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 {
+			height: 0px; 
+			width: 215px;
+			background: red;
+			position: absolute;
+			transform: scale(calc(1/0.7)); /* Revert scale x0.7 from parent */
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover #contentCard2 {
+			/*animation: displayCardContent 1s 0.5s 1 forwards;*/
+			/*height: 410px;*/
+		}
+
+		@keyframes displayCardContent {
+			0% {
+				height: 0px;
+			}
+			100% {
+				height: 295px;
+			}
+		}
+
+		@keyframes displayCardContentReverse {
+			0% {
+				height: 295px;
+			}
+			100% {
+				height: 0px;
+			}
 		}
 		
 
