@@ -253,15 +253,15 @@
 				</div>
 			</div>
 			<div id="card3container" class="cardcontainers">
-				<div id="card3">
-					<div id="profilePicContainerCard3"></div>
-					<div id="dataContainerCard3">
-						<div class="buttonCard3"></div>
-						<div class="buttonCard3"></div>
-						<div class="buttonCard3"></div>
-						<div class="buttonCard3"></div>
-						<div class="buttonCard3"></div>
-						<div class="buttonCard3"></div>
+				<div id="card3" data-tilt >
+					<div id="socialMedia1Card3">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div id="socialMedia2Card3">
+						<span class="fab fa-facebook-f"></span>
 					</div>
 				</div>
 			</div>
@@ -344,5 +344,9 @@
 
 		<!-- SCRIPT BOOTSTRAP -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+		<!-- Tilt.js -->
+		<script src="vanilla-tilt.js"></script>
+
 	</body>
 </html>
