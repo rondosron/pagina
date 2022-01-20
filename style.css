@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+
 
 body {
 	margin: 0;
@@ -737,12 +739,115 @@ body {
 			height: 325px;
 			width: 218px;
 			background: linear-gradient(90deg, #0c0c0c, #342c2c);
+			box-shadow: 0px 15px 44px -13px rgb(0 111 255);
+			border-radius: 18px;
+			overflow: hidden;
+		}
+
+		#quienessomos #card3container #card3 #nameCard3 {
+			height: 40px;
+			width: 100%;
+			position: absolute;
+			top: 10px;
+		}
+
+		#quienessomos #card3container #card3 #nameCard3 svg {
+			width: 100%;
+			height: 100%;
+			overflow: visible; 
+		}
+
+		#quienessomos #card3container #card3 #nameCard3 svg g {
+			stroke: #00a0ff;
+			stroke-width: 0.25mm;
+			fill: transparent;
+			stroke-dasharray: 400;
+			/*stroke-dashoffset: 803;*/
+			animation: neonName 4s infinite;
+			filter: drop-shadow(0px 0px 9px #00a0ff);
+		}
+
+		@keyframes neonName {
+			0% {
+				stroke-dashoffset: 400;
+			}
+			49% {
+				fill: transparent;
+			}
+			50% {
+				stroke-dashoffset: 803;
+			}
+			75% {
+				fill: #00a0ff;
+			}
+		}
+
+		#quienessomos #card3container #card3 #profilePicContainerCard3 {
+			position: absolute;
+			height: 100px;
+			width: 100px;
+			/* background: white; */
+			top: 64px;
+			left: 50%;
+			transform: translate(-50%);
+			border: 1px solid greenyellow;
+			border: 1px solid #00a0ff;
+		}
+
+		#quienessomos #card3container #card3 #profilePicContainerCard3:hover {
+			box-shadow: 0 0 5px rgb(0 184 255 / 20%), inset 0 0 5px rgb(0 184 255 / 10%), 0 2px 0 #000;
+			animation: glow 800ms ease-out infinite alternate;
+		}
+
+		@keyframes glow {
+			0% {
+				border-color: #00a0ff;
+				box-shadow: 0 0 5px rgb(0 184 255 / 20%), inset 0 0 5px rgb(0 184 255 / 10%), 0 2px 0 #000;
+			}	
+			100% {
+				border-color: #66fff8;
+				box-shadow: 0 0 20px rgb(0 184 255 / 60%), inset 0 0 10px rgb(0 184 255 / 40%), 0 2px 0 #000;
+			}
+		}
+
+		#quienessomos #card3container #card3 #positionCard3 {
+			color: white;
+			position: absolute;
+			top: 173px;
+			left: 50%;
+			transform: translate(-50%);
+			background: linear-gradient(180deg, #005e97, #00a0ff);
+			width: 100px;
+			height: 23px;
+			border-radius: 44px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 0px 1px 0px 0px #00a0ffc4 inset;
+		}
+
+		#quienessomos #card3container #card3 #positionCard3 p {
+			font-family: helvetica;
+			font-size: 12px;
+			filter: drop-shadow(1px 1px 2px #00a0ff) drop-shadow(-1px -1px 2px #00a0ff);
+		}
+
+		#quienessomos #card3container #card3 #textCard3 {
+			height: 50px;
+			width: 100%;
+			position: absolute;
+			top: 202px;
+			font-size: 13.4px;
+			line-height: 16px;
+			padding: 0 5px;
+			text-align: center;
+			color: #00a0ff;
 		}
 
 		/*** Social media 1 ***/
 			#quienessomos #card3container #card3 #socialMedia1Card3 {
 				height: 50px;
-				width: 100px;
+				width: 75px;
 				position: absolute;
 				bottom: 15px;
 				left: 15px;
@@ -815,7 +920,7 @@ body {
 				background: rgb(255 255 255 / 10%);
 				position: absolute;
 				bottom: 15px;
-				right: 15px;
+				right: 52px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -841,6 +946,83 @@ body {
 			}
 
 
+		/*** Social media 3 ***/
+			#quienessomos #card3container #card3 #socialMedia3Card3 {
+				height: 50px;
+				width: 50px;
+				/* background: #ffffff7d; */
+				/* background: rgb(255 255 255 / 10%); */
+				position: absolute;
+				bottom: 15px;
+				right: 0px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				/* box-shadow: 0px 15px 29px -12px rgb(0 111 255); */
+				border-radius: 29%;
+				/* border-top: 1px solid rgba(255, 255, 255, 0.3); */
+				/* border-left: 1px solid rgba(255, 255, 255, 0.3); */
+				backdrop-filter: blur(5px);
+				transition: 1s ease;
+			}
+
+			#quienessomos #card3container #card3 #socialMedia3Card3 span {
+				transform: scale(1.5);
+				text-shadow: 0px 0px 10px rgb(0 111 255);
+				background: linear-gradient(to right, #006fff, #00acff 70%);
+				-webkit-background-clip: text;
+				-moz-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+			#quienessomos #card3container #card3 #socialMedia3Card3 span:hover {
+				filter: drop-shadow(0px 0px 3px rgb(0 111 255));
+			}
+
+		#quienessomos #card3container #card3 #lightLine1 {
+			width: 1px;
+			height: 100px;
+			position: absolute;
+			left: 0;
+			top: 60px;
+		}
+
+		#quienessomos #card3container #card3 #lightLine2 {
+			width: 1px;
+			height: 325px;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(0deg, red, transparent);
+			background-size: 1px 100px;
+			background-repeat: no-repeat;
+			background-position: 0px -100%;
+			animation: moveLightLine2 3s infinite;
+			filter: drop-shadow(0px 0px 7px white);
+		}
+
+		@keyframes moveLightLine2 {
+			0% {
+				background-position: 0px -100%;
+			}
+			100% {
+				background-position: 0px 200%;
+			}
+		}
+
+		#quienessomos #card3container #card3 #lightLine1 {
+			width: 1px;
+			height: 325px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: linear-gradient(180deg, #00a0ff, transparent);
+			background-size: 1px 100px;
+			background-repeat: no-repeat;
+			background-position: 0px -44%;
+			animation: moveLightLine2 3s infinite reverse;
+			filter: drop-shadow(0px 0px 7px white);
+		}
 
 
 
