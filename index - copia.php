@@ -253,7 +253,7 @@
 				</div>
 			</div>
 			<div id="card3container" class="cardcontainers">
-				<div id="card3" data-tilt >
+				<div id="card3" >
 					<!-- SOURCE: https://danmarshall.github.io/google-font-to-svg-path/ -->
 					<div id="nameCard3">
 						<svg viewBox="0 0 327.881 76.709" xmlns="http://www.w3.org/2000/svg">
@@ -269,17 +269,20 @@
 						<p>Designer</p>
 					</div>
 					<div id="textCard3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, quis, eaque? Vitae cum pariatur.</div>
-					<div id="socialMedia1Card3">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					<div id="socialMedia2Card3">
-						<span class="fab fa-facebook-f"></span>
-					</div>
-					<div id="socialMedia3Card3">
-						<span class="fab fa-twitter"></span>
+					<div id="socialMediaContainerCard3">	
+						<div id="socialMedia1Card3">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+							<i class="fab fa-linkedin-in"></i>
+						</div>
+						<div id="socialMedia2Card3">
+							<span class="fab fa-facebook-f"></span>
+						</div>
+						<div id="socialMedia3Card3">
+							<span class="fab fa-twitter"></span>
+						</div>
 					</div>
 					<div id="lightLine1"></div>
 					<div id="lightLine2"></div>

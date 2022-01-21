@@ -742,6 +742,7 @@ body {
 			box-shadow: 0px 15px 44px -13px rgb(0 111 255);
 			border-radius: 18px;
 			overflow: hidden;
+			position: relative;
 		}
 
 		#quienessomos #card3container #card3 #nameCard3 {
@@ -762,20 +763,20 @@ body {
 			stroke-width: 0.25mm;
 			fill: transparent;
 			stroke-dasharray: 400;
-			/*stroke-dashoffset: 803;*/
+			stroke-dashoffset: 800;
 			animation: neonName 4s infinite;
 			filter: drop-shadow(0px 0px 9px #00a0ff);
 		}
 
 		@keyframes neonName {
 			0% {
-				stroke-dashoffset: 400;
+				stroke-dashoffset: 490;
 			}
 			49% {
 				fill: transparent;
 			}
 			50% {
-				stroke-dashoffset: 803;
+				stroke-dashoffset: 800;
 			}
 			75% {
 				fill: #00a0ff;
@@ -844,15 +845,48 @@ body {
 			color: #00a0ff;
 		}
 
+		#quienessomos #card3container #card3 #socialMediaContainerCard3 {
+			position: absolute;
+			bottom: 0px;
+			height: 75px;
+			width: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+
 		/*** Social media 1 ***/
 			#quienessomos #card3container #card3 #socialMedia1Card3 {
 				height: 50px;
 				width: 75px;
-				position: absolute;
-				bottom: 15px;
-				left: 15px;
+				width: 50px;
+				position: relative;
 				background: #ffffff45;
+				background: #00000000;
 				overflow: hidden;
+				box-shadow: 0px 14px 0px -12px #00a0ff;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 28px;
+				transition: 0.2s;
+			}
+
+			#quienessomos #card3container #card3 #socialMedia1Card3:hover {
+				box-shadow: 0px 9px 4px -6px #00a0ff;
+			}
+
+			#quienessomos #card3container #card3 #socialMedia1Card3 i {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 28px;
+				transition: 0.2s;
+				color: #212529;
+			}
+
+			#quienessomos #card3container #card3 #socialMedia1Card3:hover i {
+				color: #00a0ff;
 			}
 
 			#quienessomos #card3container #card3 #socialMedia1Card3 span {
@@ -868,7 +902,7 @@ body {
 			}
 
 			#quienessomos #card3container #card3 #socialMedia1Card3:hover span:nth-child(1) {
-				right: -50%;
+				right: -100%;
 				transition: 1s;
 			}
 
@@ -894,7 +928,7 @@ body {
 			}
 
 			#quienessomos #card3container #card3 #socialMedia1Card3:hover span:nth-child(3) {
-				left: -50%;
+				left: -100%;
 				transition: 1s 0.7s;
 			}
 
@@ -918,9 +952,9 @@ body {
 				width: 50px;
 				background: #ffffff7d;
 				background: rgb(255 255 255 / 10%);
-				position: absolute;
-				bottom: 15px;
-				right: 52px;
+				background: rgb(224 244 255);
+				position: relative;
+				bottom: 0px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -929,11 +963,15 @@ body {
 				border-top: 1px solid rgba(255, 255, 255, 0.3);
 				border-left: 1px solid rgba(255, 255, 255, 0.3);
 				backdrop-filter: blur(5px);
+				box-shadow: 0px 5px 6px -4px #0095ff;
+				transition: 0.2s;
 			}
 
 			#quienessomos #card3container #card3 #socialMedia2Card3:hover {
 				/*transform: scale(1.2);*/
-				box-shadow: 0px 15px 29px -12px rgb(0 111 255), 0px -3px 29px -10px rgb(0 111 255);
+				/*box-shadow: 0px 15px 29px -12px rgb(0 111 255), 0px -3px 29px -10px rgb(0 111 255);*/
+				bottom: 3px;
+				box-shadow: 0px 5px 10px -2px #0095ff;
 			}
 
 			#quienessomos #card3container #card3 #socialMedia2Card3 span {
@@ -952,9 +990,7 @@ body {
 				width: 50px;
 				/* background: #ffffff7d; */
 				/* background: rgb(255 255 255 / 10%); */
-				position: absolute;
-				bottom: 15px;
-				right: 0px;
+				position: relative;
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -962,13 +998,13 @@ body {
 				border-radius: 29%;
 				/* border-top: 1px solid rgba(255, 255, 255, 0.3); */
 				/* border-left: 1px solid rgba(255, 255, 255, 0.3); */
-				backdrop-filter: blur(5px);
+				/*backdrop-filter: blur(5px);*/
 				transition: 1s ease;
 			}
 
 			#quienessomos #card3container #card3 #socialMedia3Card3 span {
 				transform: scale(1.5);
-				text-shadow: 0px 0px 10px rgb(0 111 255);
+				/*text-shadow: 0px 0px 10px rgb(0 111 255);*/
 				background: linear-gradient(to right, #006fff, #00acff 70%);
 				-webkit-background-clip: text;
 				-moz-background-clip: text;
@@ -976,7 +1012,7 @@ body {
 			}
 
 			#quienessomos #card3container #card3 #socialMedia3Card3 span:hover {
-				filter: drop-shadow(0px 0px 3px rgb(0 111 255));
+				filter: drop-shadow(0px 0px 6px rgb(0 111 255));
 			}
 
 		#quienessomos #card3container #card3 #lightLine1 {
