@@ -633,6 +633,8 @@ body {
 			/*transform: scale(1);*/
 			display: flex;
 			justify-content: center;
+			transform-style: preserve-3d;
+			perspective: 10px;
 		}
 
 		/* Create an after pseudo-el to expand when picture is hovered and prevent mouse from being out of the main div. It's bigger than the main div due to the scale x0.7 effect */
@@ -663,14 +665,14 @@ body {
 				top: 0px;
 			}
 			100% {
-				transform: scale(0.7);
+				transform: scale(0.5);
 				top: -75px;
 			}
 		}
 
 		@keyframes scaleCardReverse {
 			0% {
-				transform: scale(0.7);
+				transform: scale(0.5);
 				top: -75px;
 			}
 			100% {
@@ -691,7 +693,10 @@ body {
 			width: 215px;
 			background: red;
 			position: absolute;
-			transform: scale(calc(1/0.7)); /* Revert scale x0.7 from parent */
+			/*transform: scale(calc(1/0.7)) translateZ(-1px);*/ /* Revert scale x0.7 from parent */
+			transform: scale(calc(1/0.5)) translateZ(-1px);
+			top: 220px;
+			border-radius: 20px;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover #contentCard2 {

@@ -82,7 +82,7 @@ dudas.addEventListener('click', function(e){
 
 		profilePicCard2.addEventListener("mouseout", function(e) {
 			profilePicCard2.style.top = "-75px"
-			profilePicCard2.style.transform = "scale(0.7)"
+			profilePicCard2.style.transform = "scale(0.5)"
 			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
 			console.log("outScale")
 		})
