@@ -91,13 +91,13 @@ dudas.addEventListener('click', function(e){
 
 		profilePicCard2.addEventListener("mouseover", function(e) {
 			contentCard2.style.animation = "displayCardContent 1s 0.5s 1 normal forwards"
-			console.log("over")
+			console.log("over profilePicCard2")
 		})
 
-		profilePicCard2.addEventListener("mouseout", function(e) {
-			contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
-			console.log("out")
-		})
+		// profilePicCard2.addEventListener("mouseout", function(e) {
+		// 	contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
+		// 	console.log("out")
+		// })
 
 		profilePicContainerCard2.addEventListener("mouseover", function(e) {
 			shadowProfilePicCard2.style.transition = "1s ease"; // No delay on mouseover/hover
@@ -106,5 +106,14 @@ dudas.addEventListener('click', function(e){
 		profilePicContainerCard2.addEventListener("mouseout", function(e) {
 			shadowProfilePicCard2.style.transition = "1s ease 1.2s"; // Add delay only on mouseout
 		}) 
+
+		contentCard2.addEventListener("mouseover", function(e) {
+			contentCard2.style.animation = "displayCardContent 1s 0.5s 1 normal forwards"
+			console.log("over contentCard2")
+		})
 		
+		contentCard2.addEventListener("mouseout", function(e) {
+			contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
+			console.log("out contentCard2")
+		})
 		

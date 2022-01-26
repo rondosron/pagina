@@ -243,10 +243,15 @@
 			</div>
 			<div id="card2container" class="cardcontainers">
 				<div id="card2">
-					<!-- ARRANCO A MODIFICARRRRRRRRRRRRRRRRRRRRRRR -->
 					<div id="profilePicContainerCard2">
 						<div id="profilePicCard2">
-							<div id="contentCard2"></div>
+							<div id="contentCard2">
+								<div id="socialMedia1Card2">
+									<i class="fab fa-linkedin-in"></i>
+									<div id="socialMedia1Card2Background">
+									</div>
+								</div>
+							</div>
 						</div>
 						<div id="shadowProfilePicCard2"></div>
 					</div>

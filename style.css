@@ -604,6 +604,7 @@ body {
 			filter: blur(9px);
 			animation: floatingShadow 1.5s infinite ease-in-out;
 			animation-direction: alternate-reverse;
+			pointer-events: none;
 		}
 
 		@keyframes floatingShadow {
@@ -695,8 +696,9 @@ body {
 			position: absolute;
 			/*transform: scale(calc(1/0.7)) translateZ(-1px);*/ /* Revert scale x0.7 from parent */
 			transform: scale(calc(1/0.5)) translateZ(-1px);
-			top: 220px;
+			top: 72px;
 			border-radius: 20px;
+			transform-origin: top;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover #contentCard2 {
@@ -721,6 +723,51 @@ body {
 				height: 0px;
 			}
 		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 {
+			position: absolute;
+			height: 50px;
+			width: 50px;
+			left: 15px;
+			bottom: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i {
+			/*mix-blend-mode: difference;*/
+			color: #ffffff;
+			z-index: 1;
+			position: relative;
+		}
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i:hover {
+			mix-blend-mode: difference;
+		}
+		
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 #socialMedia1Card2Background {
+			position: absolute;
+			height: 0%;
+			width: 0%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: white;
+			color: white;
+			transition: 0.5s;
+			border-radius: 50%;
+			z-index: -1;
+		}
+
+		
+
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i:hover + #socialMedia1Card2Background {
+			height: 100%;
+			width: 100%;
+		}
+
+
 		
 
 	/************* CARD 3 ************/
