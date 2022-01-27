@@ -70,6 +70,31 @@ dudas.addEventListener('click', function(e){
 })
 
 ////////////////////////// CARDS ////////////////////////
+	
+	//////////////////// CARD 1 ///////////////////////
+		/////// Social media 3 ///////
+			// let icon1SocialMedia3Card1 = document.querySelector("#icon1SocialMedia3Card1")
+			let background1SocialMedia3Card1 = document.querySelector("#background1SocialMedia3Card1")
+
+			let originLeft = true
+
+			background1SocialMedia3Card1.addEventListener("mouseover", function(e) {
+				background1SocialMedia3Card1.style.backgroundPosition = "0px 0px"
+				originLeft = !originLeft
+			})
+
+			background1SocialMedia3Card1.addEventListener("mouseout", function(e) {
+				originLeft ? (
+					console.log(background1SocialMedia3Card1),
+					background1SocialMedia3Card1.style.backgroundPosition = "35px 0px"
+				) : (
+					console.log(background1SocialMedia3Card1),
+					background1SocialMedia3Card1.style.backgroundPosition = "-35px 0px"
+				)
+				
+				console.log("out of background1SocialMedia3Card1")
+			})
+
 
 	//////////////////// CARD 2 ///////////////////////
 		let profilePicContainerCard2 = document.querySelector("#profilePicContainerCard2")
@@ -117,3 +142,4 @@ dudas.addEventListener('click', function(e){
 			console.log("out contentCard2")
 		})
 		
+

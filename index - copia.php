@@ -238,7 +238,12 @@
 						<span style="--i:4"></span>
 						<span style="--i:5"></span>
 					</div>
-					<div></div>
+					<div id="socialMedia3">
+						<i class="fab fa-twitter" id="icon1SocialMedia3Card1"></i>
+						<div id="background1SocialMedia3Card1"></div>
+						<!-- <i class="fab fa-twitter" id="icon2SocialMedia3Card1"></i> -->
+						<!-- <div id="background2SocialMedia3Card1"></div> -->
+					</div>
 				</div>
 			</div>
 			<div id="card2container" class="cardcontainers">
@@ -246,6 +251,8 @@
 					<div id="profilePicContainerCard2">
 						<div id="profilePicCard2">
 							<div id="contentCard2">
+								<div id="borderTop1"></div>
+								<div id="borderTop2"></div>
 								<div id="socialMedia1Card2">
 									<i class="fab fa-linkedin-in"></i>
 									<div id="socialMedia1Card2Background">

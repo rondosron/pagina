@@ -526,6 +526,65 @@ body {
 
 			}
 
+		/***** Social Media 3 ******/
+			#quienessomos #card1container #card1 #socialMedia3 {
+				position: absolute;
+				height: 35px;
+				width: 35px;
+				bottom: 15px;
+				right: 100px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#quienessomos #card1container #card1 #socialMedia3 #icon1SocialMedia3Card1 {
+				color: #d30000;
+				mix-blend-mode: difference;
+				position: absolute;
+				z-index: 1;
+			}
+
+			#quienessomos #card1container #card1 #socialMedia3 #background1SocialMedia3Card1 {
+				position: absolute;
+				height: 35px;
+				width: 35px;
+				top: 0px;
+				left: 0px;
+				background: linear-gradient(90deg, #d30000 50%, #ffffff00 50%);
+				background-size: 70px 35px;
+				background-position: -35px 0px;
+				z-index: 2;
+				mix-blend-mode: difference;
+				transition: 0.5s;
+				/*pointer-events: none;*/ /* Because it's over the icon */
+				border: 1px solid #d30000;
+			}
+
+			/*#quienessomos #card1container #card1 #socialMedia3 #icon1SocialMedia3Card1:hover + #background1SocialMedia3Card1 {
+				background-position: 0px 0px;
+			}*/
+
+			#quienessomos #card1container #card1 #socialMedia3 #icon2SocialMedia3Card1 {
+				color: white;
+				/* mix-blend-mode: difference; */
+				position: absolute;
+				z-index: 0;
+			}
+
+			#quienessomos #card1container #card1 #socialMedia3 #background2SocialMedia3Card1 {
+				position: absolute;
+				height: 35px;
+				width: 35px;
+				top: 0px;
+				left: 0px;
+				background: linear-gradient(90deg, #000000 50%, #ffffff00 50%);
+				background-size: 70px 35px;
+				background-position: 14px 0px;
+				z-index: 1;
+				mix-blend-mode: difference;
+			}
+
 	/************** CARD 2 ************/
 		
 		/* SI NO SE PUEDE CON EL Z-INDEX PROBAR CON PRESERVE-3D + PERSPECTIVE EN EL PADRE Y TRANSLATEZ(-1px) EN EL HIJO */
@@ -736,14 +795,10 @@ body {
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i {
-			/*mix-blend-mode: difference;*/
+			mix-blend-mode: difference;
 			color: #ffffff;
 			z-index: 1;
 			position: relative;
-		}
-
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i:hover {
-			mix-blend-mode: difference;
 		}
 		
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 #socialMedia1Card2Background {
@@ -760,14 +815,10 @@ body {
 			z-index: -1;
 		}
 
-		
-
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i:hover + #socialMedia1Card2Background {
 			height: 100%;
 			width: 100%;
 		}
-
-
 		
 
 	/************* CARD 3 ************/
