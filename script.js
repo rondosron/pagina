@@ -76,7 +76,7 @@ dudas.addEventListener('click', function(e){
 			// let icon1SocialMedia3Card1 = document.querySelector("#icon1SocialMedia3Card1")
 			let background1SocialMedia3Card1 = document.querySelector("#background1SocialMedia3Card1")
 
-			let originLeft = true
+			let originLeft = false
 
 			background1SocialMedia3Card1.addEventListener("mouseover", function(e) {
 				background1SocialMedia3Card1.style.backgroundPosition = "0px 0px"
