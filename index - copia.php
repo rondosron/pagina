@@ -278,7 +278,18 @@
 										<path fill="url(#gradient1)" d="M38.1,-60.8C47.5,-60.5,52.1,-46.6,60.3,-34.2C68.5,-21.8,80.2,-10.9,80.4,0.1C80.7,11.2,69.5,22.4,59.6,31.8C49.6,41.1,41,48.5,31.2,53.8C21.5,59,10.8,62.1,5.2,53.1C-0.4,44.1,-0.7,23,-13.2,19.3C-25.8,15.7,-50.5,29.6,-65.3,29.3C-80,29,-84.9,14.5,-86.7,-1.1C-88.5,-16.6,-87.3,-33.2,-74.6,-36.9C-61.8,-40.7,-37.4,-31.7,-23.1,-29.2C-8.7,-26.7,-4.3,-30.8,5,-39.5C14.3,-48.1,28.6,-61.2,38.1,-60.8Z" transform="translate(137 50)" />
 									</svg>
 								</div>
-								
+								<div id="svgBackground3ContainerCard2">
+									<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
+									<svg id="svgBackground3Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+										<defs>
+											<linearGradient id="gradient1">
+												<stop offset="22%" stop-color="#FFC338" />
+												<stop offset="81%" stop-color="#FFEA68" />
+											</linearGradient>
+										</defs>
+										<path fill="url(#gradient1)" d="M22.6,-35.2C33.3,-33.1,48.5,-34.9,47.6,-29.7C46.7,-24.5,29.6,-12.3,21.6,-4.6C13.6,3,14.7,6.1,17.9,15.2C21.1,24.4,26.4,39.6,23.7,51.4C21.1,63.3,10.6,71.7,4.2,64.5C-2.2,57.3,-4.4,34.4,-17.8,28.8C-31.2,23.1,-55.7,34.7,-55.9,32.8C-56.2,30.9,-32.1,15.4,-27.9,2.5C-23.6,-10.5,-39.2,-21.1,-39.1,-23.3C-39.1,-25.6,-23.5,-19.6,-14.4,-22.7C-5.2,-25.7,-2.6,-37.8,1.7,-40.7C6,-43.6,12,-37.4,22.6,-35.2Z" transform="translate(100 100)" />
+									</svg>
+								</div>
 								<div id="borderTop1"></div>
 								<div id="borderTop2"></div>
 								<div id="socialMedia1Card2">
