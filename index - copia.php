@@ -254,6 +254,11 @@
 								<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
 								<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
 								<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
+								<div id="shape1Card2"></div>
+								<div id="shape2Card2"></div>
+								<div id="shape3Card2"></div>
+								<div id="shape4Card2"></div>
+								<div id="shape5Card2"></div>
 								<div id="svgBackground1ContainerCard2">
 									<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
 									<svg id="svgBackground1Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
