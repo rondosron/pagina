@@ -355,6 +355,16 @@ body {
 			pointer-events: none; /* Para permitir hover detrás */
 		}
 
+		#quienessomos #card1container #card1 #backgroundCard1 {
+			width: 100%;
+			height: 100%;
+		}
+
+		#quienessomos #card1container #card1 #backgroundCard1 svg {
+			height: 100%;
+			width: auto;
+		}
+
 		#quienessomos #card1container #card1 #profilePicContainerCard1 {
 			height: 110px;
 			width: 110px;
@@ -744,6 +754,9 @@ body {
 			top: 144px;
 			border-radius: 20px;
 			transform-origin: top;
+			background: #0f0c29;
+			background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+			background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover #contentCard2 {
@@ -806,6 +819,7 @@ body {
 				left: 20px;
 				height: 100px;
 				width: 100px;
+				z-index: 1;
 			}
 
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape2Card2 {
@@ -815,13 +829,37 @@ body {
 				top: 120px;
 				left: 80px;
 				border-radius: 50%;
-				background-image: repeating-linear-gradient(135deg, #474bff 0, #474bff 2px, transparent 0, transparent 50%);
+				background-image: repeating-linear-gradient(135deg, #cec2e5 0, #cec2e5 2px, transparent 0, transparent 50%);
 				background-size: 6px 6px;
-				/* background-color: #47d3ff;
+				/*background-color: #47d3ff;*/
+				z-index: 1;
 			}
 
-			
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 {
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+			}
 
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg {
+				height: fit-content;
+				width: 100%;
+				overflow: hidden;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g path {
+				fill: transparent;
+				stroke: white;
+				stroke-width: 3px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(1) {
+				transform: translate(610px, -10px);
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(2) {
+				transform: translate(-5px, 828px);
+			}
 
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground1ContainerCard2 {
 				overflow: hidden;
