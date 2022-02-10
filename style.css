@@ -734,8 +734,7 @@ body {
 			transform: scale(2);
 			display: flex;
 			justify-content: center;
-			transform-style: preserve-3d;
-			perspective: 1px;
+			z-index: 2;
 		}
 
 		/* Create an after pseudo-el to expand when picture is hovered and prevent mouse from being out of the main div. It's bigger than the main div due to the scale x0.7 effect */
@@ -795,6 +794,7 @@ body {
 			background: #0f0c29;
 			background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
 			background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+			z-index: 1;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #contentCard2 {
