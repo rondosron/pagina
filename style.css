@@ -782,7 +782,7 @@ body {
 			}
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 {
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 {
 			height: 0px; 
 			width: 215px;
 			background: #2f2828;
@@ -797,7 +797,7 @@ body {
 			background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover #contentCard2 {
+		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #contentCard2 {
 			/*animation: displayCardContent 1s 0.5s 1 forwards;*/
 			/*height: 410px;*/
 		}
@@ -820,7 +820,7 @@ body {
 			}
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #borderTop1 {
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #borderTop1 {
 			height: 44px;
 			width: 44px;
 			background: #00000000;
@@ -834,7 +834,7 @@ body {
 			z-index: -1;
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #borderTop2 {
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #borderTop2 {
 			height: 44px;
 			width: 44px;
 			background: #00000000;
@@ -849,7 +849,7 @@ body {
 		}
 
 		/**** BACKGROUND ****/
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape1Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape1Card2 {
 				clip-path: circle(37px);
 				background: radial-gradient(circle at 22px 25px, #673ab7, #000000);
 				position: absolute;
@@ -860,7 +860,7 @@ body {
 				z-index: 1;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape2Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape2Card2 {
 				position: absolute;
 				height: 100px;
 				width: 100px;
@@ -873,20 +873,20 @@ body {
 				z-index: 1;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape3Card2 {
 				overflow: hidden;
 				height: 100%;
 				width: 100%;
 				position: absolute;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape3Card2 svg {
 				height: fit-content;
 				width: 100%;
 				overflow: hidden;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape3Card2 svg g path {
 				fill: transparent;
 				stroke: white;
 				stroke-width: 3px;
@@ -904,15 +904,15 @@ body {
 				}
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(1) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(1) {
 				transform: translate(610px, -10px);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(2) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(2) {
 				transform: translate(-5px, 828px);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground1ContainerCard2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground1ContainerCard2 {
 				overflow: hidden;
 				height: 230px;
 				width: 230px;
@@ -920,13 +920,13 @@ body {
 				bottom: 0px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground1ContainerCard2 #svgBackground1Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground1ContainerCard2 #svgBackground1Card2 {
 				position: absolute;
 				bottom: -50px;
 				left: -29px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground1ContainerCard2 #svgBackground1Card2 path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground1ContainerCard2 #svgBackground1Card2 path {
 				animation: svgHover1 25s infinite forwards linear;
 			}
 			/* Different duration for each animation so they all have slightly different speeds without using animation-delay */
@@ -943,7 +943,7 @@ body {
 				}
 			} 
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground2ContainerCard2 #svgBackground2Card2 path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground2ContainerCard2 #svgBackground2Card2 path {
 				animation: svgHover2 24s infinite forwards linear;
 			}
 
@@ -959,7 +959,7 @@ body {
 				}
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground3ContainerCard2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground3ContainerCard2 {
 				overflow: hidden;
 				height: 171px;
 				width: 90px;
@@ -968,12 +968,12 @@ body {
 				top: 31px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground3ContainerCard2 #svgBackground3Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground3ContainerCard2 #svgBackground3Card2 {
 				position: absolute;
 				left: -80px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #svgBackground3ContainerCard2 #svgBackground3Card2 path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #svgBackground3ContainerCard2 #svgBackground3Card2 path {
 				animation: svgHover3 23s infinite forwards linear;
 			}
 
@@ -990,7 +990,7 @@ body {
 			}
 
 		/**** Name ****/
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 {
 				position: absolute;
 				color: #e5cfff;
 				z-index: 8;
@@ -1013,7 +1013,7 @@ body {
 				filter: drop-shadow(1px 1px 0px #e5cfffbd) drop-shadow(0px 0px 0px #e5cfffbd) drop-shadow(1px 1px 0px #000000) drop-shadow(0px 0px 15px #000000);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p {
 				font-family: Reglisse fill;
 				font-size: 46px;
 				background-image: linear-gradient(180deg, #6237ae, #aa076b);
@@ -1022,36 +1022,36 @@ body {
 				position: relative;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(1) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(1) {
 				top: 0px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(2) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(2) {
 				top: -4px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(3) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(3) {
 				top: -6px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(4) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(4) {
 				top: -1px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(6) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(6) {
 				top: 3px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(7) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(7) {
 				top: 6px;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(8) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #nameCard2 p:nth-child(8) {
 				top: 2px;
 			}
 
 		/**** Social Network 1 ****/
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia1Card2 {
 				position: absolute;
 				height: 50px;
 				width: 50px;
@@ -1067,20 +1067,20 @@ body {
 				backdrop-filter: blur(5px);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia1Card2 i {
 				mix-blend-mode: difference;
 				color: #ffffff;
 				z-index: 1;
 				position: relative;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia1Card2 i:hover + #socialMedia1Card2Background {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia1Card2 i:hover + #socialMedia1Card2Background {
 				height: 100%;
 				width: 100%;
 			}
 
 		/**** Social Network 2 ****/
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia2Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia2Card2 {
 				position: absolute;
 				height: 50px;
 				width: 50px;
@@ -1093,29 +1093,29 @@ body {
 				overflow: hidden;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia2Card2 svg {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia2Card2 svg {
 				position: absolute;
 				transform: scale(1.2);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia2Card2 svg path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia2Card2 svg path {
 				transition: 0.5s;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia2Card2:hover svg:nth-child(2) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia2Card2:hover svg:nth-child(2) path {
 				d: path("M400,338Q352,426,261,407.5Q170,389,101,319.5Q32,250,99.5,178Q167,106,259.5,90Q352,74,400,162Q448,250,400,338Z");
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia2Card2:hover svg:nth-child(3) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia2Card2:hover svg:nth-child(3) path {
 				d: path("M404,306.5Q363,363,306.5,399Q250,435,166.5,426Q83,417,73.5,333.5Q64,250,83.5,176.5Q103,103,176.5,98.5Q250,94,311,111Q372,128,408.5,189Q445,250,404,306.5Z");
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia2Card2:hover svg:nth-child(4) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia2Card2:hover svg:nth-child(4) path {
 				d: path("M395,339Q353,428,254,421.5Q155,415,101,332.5Q47,250,104.5,173.5Q162,97,263,74.5Q364,52,400.5,151Q437,250,395,339Z");
 			}
 
 		/**** Social Network 3 ****/
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 {
 				position: absolute;
 				height: 50px;
 				width: 50px;
@@ -1128,64 +1128,64 @@ body {
 				overflow: hidden;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 i {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 i {
 				color: #f3f3f3;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg {
 				position: absolute;
 				z-index: -1;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg path {
 				transition: 0.5s;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(2) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(2) path {
 				transform: scale(0.96) translate(-3px, -14px);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(3) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(3) path {
 				transform: translate(3px, -8px) scale(0.95);
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(4) {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(4) {
 				z-index: -2;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(4) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(4) path {
 				transform: scale(0.94) translate(0px, -8px);
 			}
 			
-			/*#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(2) path {
+			/*#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(2) path {
 				d: path("M410,327Q339,404,235.5,429Q132,454,83.5,352Q35,250,94,166Q153,82,252.5,78Q352,74,416.5,162Q481,250,410,327Z");
 				transform: scale(0.94) translate(0px, -8px);
 				z-index: -2;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(3) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(3) path {
 				d: path("M389.5,334Q347,418,248,421.5Q149,425,102.5,337.5Q56,250,94.5,148.5Q133,47,233.5,76Q334,105,383,177.5Q432,250,389.5,334Z");
 				transform: scale(0.98) translate(7px, -6px);
 			}*/
 
-			/*#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(4) {
+			/*#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(4) {
 				z-index: -1;*/ /* Reset z-index */
 			/*}*/
 
-			/*#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(4) path {
+			/*#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2:hover svg:nth-child(4) path {
 				d: path("M386.5,340Q354,430,248.5,432.5Q143,435,104.5,342.5Q66,250,115.5,176.5Q165,103,258.5,88Q352,73,385.5,161.5Q419,250,386.5,340Z");
 				transform: translate(3px, -8px) scale(0.95);
 			}*/
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(2) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(2) path {
 				animation: svgMoveButton 3s infinite forwards linear;
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(3) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(3) path {
 				animation: svgMoveButton 3s -1s infinite forwards linear; /* Negative delay so it starts at a different % but immediately */
 			}
 
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(4) path {
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia3Card2 svg:nth-child(4) path {
 				animation: svgMoveButton 3s -2s infinite forwards linear;
 			}
 

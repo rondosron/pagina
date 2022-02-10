@@ -256,115 +256,116 @@
 				<div id="card2">
 					<div id="profilePicContainerCard2">
 						<div id="profilePicCard2">
-							<div id="contentCard2">
-								<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
-								<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
-								<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
-								<svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
-									<text y="20" font-family="Arial, Helvetica, sans-serif">Sans serif</text>
-									<text x="100" y="20" font-family="monospace">Monospace</text>
+							
+						</div>
+						<div id="contentCard2">
+							<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
+							<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
+							<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
+							<svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+								<text y="20" font-family="Arial, Helvetica, sans-serif">Sans serif</text>
+								<text x="100" y="20" font-family="monospace">Monospace</text>
+							</svg>
+							<div id="shape1Card2"></div>
+							<div id="shape2Card2"></div>
+							<div id="shape3Card2">
+								<svg id="visual" viewBox="0 0 600 900" width="600" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="
+									    height: fit-content;
+									    width: 100%;
+									"><rect x="0" y="0" width="600" height="900" fill="transparent" style="
+									    /* overflow: hidden; */
+									"></rect><defs><linearGradient id="grad1_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#001220" stop-opacity="1"></stop><stop offset="70%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#001220" stop-opacity="1"></stop><stop offset="70%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(600, 0)" style="
+									    /* overflow: hidden; */
+									"><path d="M0 486.7C-50.6 450.7 -101.1 414.6 -164.6 397.3C-228 379.9 -304.2 381.2 -344.2 344.2C-384.2 307.1 -387.9 231.8 -405.6 168C-423.3 104.2 -455 52.1 -486.7 0L0 0Z" fill="#FBAE3C" style="
+									    fill: transparent;
+									    /* outline: 3px solid white; */
+									    stroke: white;
+									    stroke-width: 3px;
+									"></path></g><g transform="translate(0, 900)"><path d="M0 -486.7C44.5 -436.3 88.9 -385.8 153.5 -370.5C218 -355.2 302.6 -375 344.2 -344.2C385.8 -313.4 384.4 -231.9 401 -166.1C417.6 -100.3 452.2 -50.1 486.7 0L0 0Z" fill="#FBAE3C"></path></g>
 								</svg>
-								<div id="shape1Card2"></div>
-								<div id="shape2Card2"></div>
-								<div id="shape3Card2">
-									<svg id="visual" viewBox="0 0 600 900" width="600" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="
-										    height: fit-content;
-										    width: 100%;
-										"><rect x="0" y="0" width="600" height="900" fill="transparent" style="
-										    /* overflow: hidden; */
-										"></rect><defs><linearGradient id="grad1_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#001220" stop-opacity="1"></stop><stop offset="70%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#001220" stop-opacity="1"></stop><stop offset="70%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(600, 0)" style="
-										    /* overflow: hidden; */
-										"><path d="M0 486.7C-50.6 450.7 -101.1 414.6 -164.6 397.3C-228 379.9 -304.2 381.2 -344.2 344.2C-384.2 307.1 -387.9 231.8 -405.6 168C-423.3 104.2 -455 52.1 -486.7 0L0 0Z" fill="#FBAE3C" style="
-										    fill: transparent;
-										    /* outline: 3px solid white; */
-										    stroke: white;
-										    stroke-width: 3px;
-										"></path></g><g transform="translate(0, 900)"><path d="M0 -486.7C44.5 -436.3 88.9 -385.8 153.5 -370.5C218 -355.2 302.6 -375 344.2 -344.2C385.8 -313.4 384.4 -231.9 401 -166.1C417.6 -100.3 452.2 -50.1 486.7 0L0 0Z" fill="#FBAE3C"></path></g>
-									</svg>
-								</div>
-								<div id="shape4Card2">
+							</div>
+							<div id="shape4Card2">
 
-								</div>
-								<div id="shape5Card2"></div>
-								<div id="svgBackground1ContainerCard2">
-									<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
-									<svg id="svgBackground1Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-										<defs>
-											<linearGradient id="gradient1">
-												<stop offset="22%" stop-color="#AA076B" />
-												<stop offset="81%" stop-color="#61045F" />
-											</linearGradient>
-										</defs>
-										<path fill="url(#gradient1)" d="M40.5,-63.4C53.8,-54.5,66.6,-45.4,59.8,-34.8C53.1,-24.1,26.8,-12,25.7,4.5C24.5,20.9,48.4,41.8,52.7,56.6C56.9,71.3,41.5,80,25.1,84.2C8.8,88.3,-8.5,88,-21.7,80.9C-35,73.9,-44.3,60.1,-44.8,46.2C-45.3,32.3,-37.1,18.2,-37.4,6.3C-37.7,-5.7,-46.5,-15.5,-46,-22.8C-45.4,-30.1,-35.4,-34.8,-26.2,-45.5C-17,-56.2,-8.5,-72.9,2.6,-76.9C13.6,-80.9,27.3,-72.3,40.5,-63.4Z" transform="translate(100 100)" />
-									</svg>
-								</div>
-								<div id="svgBackground2ContainerCard2">
-									<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
-									<svg id="svgBackground2Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-										<!-- <defs>
-											<linearGradient id="gradient1">
-												<stop offset="22%" stop-color="#FFC338" />
-												<stop offset="81%" stop-color="#FFEA68" />
-											</linearGradient>
-										</defs> -->
-										<path fill="url(#gradient1)" d="M38.1,-60.8C47.5,-60.5,52.1,-46.6,60.3,-34.2C68.5,-21.8,80.2,-10.9,80.4,0.1C80.7,11.2,69.5,22.4,59.6,31.8C49.6,41.1,41,48.5,31.2,53.8C21.5,59,10.8,62.1,5.2,53.1C-0.4,44.1,-0.7,23,-13.2,19.3C-25.8,15.7,-50.5,29.6,-65.3,29.3C-80,29,-84.9,14.5,-86.7,-1.1C-88.5,-16.6,-87.3,-33.2,-74.6,-36.9C-61.8,-40.7,-37.4,-31.7,-23.1,-29.2C-8.7,-26.7,-4.3,-30.8,5,-39.5C14.3,-48.1,28.6,-61.2,38.1,-60.8Z" transform="translate(137 50)" />
-									</svg>
-								</div>
-								<div id="svgBackground3ContainerCard2">
-									<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
-									<svg id="svgBackground3Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-										<!-- <defs>
-											<linearGradient id="gradient1">
-												<stop offset="22%" stop-color="#FFC338" />
-												<stop offset="81%" stop-color="#FFEA68" />
-											</linearGradient>
-										</defs> -->
-										<path fill="url(#gradient1)" d="M22.6,-35.2C33.3,-33.1,48.5,-34.9,47.6,-29.7C46.7,-24.5,29.6,-12.3,21.6,-4.6C13.6,3,14.7,6.1,17.9,15.2C21.1,24.4,26.4,39.6,23.7,51.4C21.1,63.3,10.6,71.7,4.2,64.5C-2.2,57.3,-4.4,34.4,-17.8,28.8C-31.2,23.1,-55.7,34.7,-55.9,32.8C-56.2,30.9,-32.1,15.4,-27.9,2.5C-23.6,-10.5,-39.2,-21.1,-39.1,-23.3C-39.1,-25.6,-23.5,-19.6,-14.4,-22.7C-5.2,-25.7,-2.6,-37.8,1.7,-40.7C6,-43.6,12,-37.4,22.6,-35.2Z" transform="translate(100 100)" />
-									</svg>
-								</div>
-								<div id="borderTop1"></div>
-								<div id="borderTop2"></div>
-								<div id="nameCard2">
-									<p class="letterNameCard2">J</p>
-									<p class="letterNameCard2">a</p>
-									<p class="letterNameCard2">n</p>
-									<p class="letterNameCard2">e</p>
-									<p class="letterNameCard2">&nbsp;</p>
-									<p class="letterNameCard2">D</p>
-									<p class="letterNameCard2">o</p>
-									<p class="letterNameCard2">e</p>
-								</div>
-								<div id="positionCard2">Community Manager</div>
-								<div id="socialMedia1Card2">
-									<i class="fab fa-linkedin-in"></i>
-								</div>
-								<div id="socialMedia2Card2">
-									<i class="fab fa-linkedin-in"></i>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-										<path id="blob" d="M411.5,317Q327,384,230,418.5Q133,453,72.5,351.5Q12,250,86.5,173Q161,96,258.5,81.5Q356,67,426,158.5Q496,250,411.5,317Z" fill="none" stroke-width="7px" stroke="red"></path>
-									</svg>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-										<path id="blob" d="M425.5,315Q380,380,315,402Q250,424,190.5,396.5Q131,369,97.5,309.5Q64,250,99.5,192.5Q135,135,192.5,88.5Q250,42,314,82Q378,122,424.5,186Q471,250,425.5,315Z" fill="none" stroke-width="7px" stroke="blue"></path>
-									</svg>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-										<path id="blob" d="M400,338Q352,426,261,407.5Q170,389,101,319.5Q32,250,99.5,178Q167,106,259.5,90Q352,74,400,162Q448,250,400,338Z" fill="none" stroke-width="7px" stroke="green"></path>
-									</svg>
-								</div>
-								<div id="socialMedia3Card2">
-									<i class="fab fa-linkedin-in"></i>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-										<path id="blob" d="M389.5,334Q347,418,248,421.5Q149,425,102.5,337.5Q56,250,94.5,148.5Q133,47,233.5,76Q334,105,383,177.5Q432,250,389.5,334Z" fill="red"></path>
-									</svg>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-										<path id="blob" d="M386.5,340Q354,430,248.5,432.5Q143,435,104.5,342.5Q66,250,115.5,176.5Q165,103,258.5,88Q352,73,385.5,161.5Q419,250,386.5,340Z" fill="blue"></path>
-									</svg>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
-										<path id="blob" d="M410,327Q339,404,235.5,429Q132,454,83.5,352Q35,250,94,166Q153,82,252.5,78Q352,74,416.5,162Q481,250,410,327Z" fill="green"></path>
-									</svg>
-									<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvgBackground">
-										<path d="M382.5,315.5Q326,381,249.5,382Q173,383,104,316.5Q35,250,89.5,158Q144,66,242.5,79Q341,92,390,171Q439,250,382.5,315.5Z" fill="#212529"></path>
-									</svg>
-								</div>
+							</div>
+							<div id="shape5Card2"></div>
+							<div id="svgBackground1ContainerCard2">
+								<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
+								<svg id="svgBackground1Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+									<defs>
+										<linearGradient id="gradient1">
+											<stop offset="22%" stop-color="#AA076B" />
+											<stop offset="81%" stop-color="#61045F" />
+										</linearGradient>
+									</defs>
+									<path fill="url(#gradient1)" d="M40.5,-63.4C53.8,-54.5,66.6,-45.4,59.8,-34.8C53.1,-24.1,26.8,-12,25.7,4.5C24.5,20.9,48.4,41.8,52.7,56.6C56.9,71.3,41.5,80,25.1,84.2C8.8,88.3,-8.5,88,-21.7,80.9C-35,73.9,-44.3,60.1,-44.8,46.2C-45.3,32.3,-37.1,18.2,-37.4,6.3C-37.7,-5.7,-46.5,-15.5,-46,-22.8C-45.4,-30.1,-35.4,-34.8,-26.2,-45.5C-17,-56.2,-8.5,-72.9,2.6,-76.9C13.6,-80.9,27.3,-72.3,40.5,-63.4Z" transform="translate(100 100)" />
+								</svg>
+							</div>
+							<div id="svgBackground2ContainerCard2">
+								<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
+								<svg id="svgBackground2Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+									<!-- <defs>
+										<linearGradient id="gradient1">
+											<stop offset="22%" stop-color="#FFC338" />
+											<stop offset="81%" stop-color="#FFEA68" />
+										</linearGradient>
+									</defs> -->
+									<path fill="url(#gradient1)" d="M38.1,-60.8C47.5,-60.5,52.1,-46.6,60.3,-34.2C68.5,-21.8,80.2,-10.9,80.4,0.1C80.7,11.2,69.5,22.4,59.6,31.8C49.6,41.1,41,48.5,31.2,53.8C21.5,59,10.8,62.1,5.2,53.1C-0.4,44.1,-0.7,23,-13.2,19.3C-25.8,15.7,-50.5,29.6,-65.3,29.3C-80,29,-84.9,14.5,-86.7,-1.1C-88.5,-16.6,-87.3,-33.2,-74.6,-36.9C-61.8,-40.7,-37.4,-31.7,-23.1,-29.2C-8.7,-26.7,-4.3,-30.8,5,-39.5C14.3,-48.1,28.6,-61.2,38.1,-60.8Z" transform="translate(137 50)" />
+								</svg>
+							</div>
+							<div id="svgBackground3ContainerCard2">
+								<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
+								<svg id="svgBackground3Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+									<!-- <defs>
+										<linearGradient id="gradient1">
+											<stop offset="22%" stop-color="#FFC338" />
+											<stop offset="81%" stop-color="#FFEA68" />
+										</linearGradient>
+									</defs> -->
+									<path fill="url(#gradient1)" d="M22.6,-35.2C33.3,-33.1,48.5,-34.9,47.6,-29.7C46.7,-24.5,29.6,-12.3,21.6,-4.6C13.6,3,14.7,6.1,17.9,15.2C21.1,24.4,26.4,39.6,23.7,51.4C21.1,63.3,10.6,71.7,4.2,64.5C-2.2,57.3,-4.4,34.4,-17.8,28.8C-31.2,23.1,-55.7,34.7,-55.9,32.8C-56.2,30.9,-32.1,15.4,-27.9,2.5C-23.6,-10.5,-39.2,-21.1,-39.1,-23.3C-39.1,-25.6,-23.5,-19.6,-14.4,-22.7C-5.2,-25.7,-2.6,-37.8,1.7,-40.7C6,-43.6,12,-37.4,22.6,-35.2Z" transform="translate(100 100)" />
+								</svg>
+							</div>
+							<div id="borderTop1"></div>
+							<div id="borderTop2"></div>
+							<div id="nameCard2">
+								<p class="letterNameCard2">J</p>
+								<p class="letterNameCard2">a</p>
+								<p class="letterNameCard2">n</p>
+								<p class="letterNameCard2">e</p>
+								<p class="letterNameCard2">&nbsp;</p>
+								<p class="letterNameCard2">D</p>
+								<p class="letterNameCard2">o</p>
+								<p class="letterNameCard2">e</p>
+							</div>
+							<div id="positionCard2">Community Manager</div>
+							<div id="socialMedia1Card2">
+								<i class="fab fa-linkedin-in"></i>
+							</div>
+							<div id="socialMedia2Card2">
+								<i class="fab fa-linkedin-in"></i>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+									<path id="blob" d="M411.5,317Q327,384,230,418.5Q133,453,72.5,351.5Q12,250,86.5,173Q161,96,258.5,81.5Q356,67,426,158.5Q496,250,411.5,317Z" fill="none" stroke-width="7px" stroke="red"></path>
+								</svg>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+									<path id="blob" d="M425.5,315Q380,380,315,402Q250,424,190.5,396.5Q131,369,97.5,309.5Q64,250,99.5,192.5Q135,135,192.5,88.5Q250,42,314,82Q378,122,424.5,186Q471,250,425.5,315Z" fill="none" stroke-width="7px" stroke="blue"></path>
+								</svg>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+									<path id="blob" d="M400,338Q352,426,261,407.5Q170,389,101,319.5Q32,250,99.5,178Q167,106,259.5,90Q352,74,400,162Q448,250,400,338Z" fill="none" stroke-width="7px" stroke="green"></path>
+								</svg>
+							</div>
+							<div id="socialMedia3Card2">
+								<i class="fab fa-linkedin-in"></i>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+									<path id="blob" d="M389.5,334Q347,418,248,421.5Q149,425,102.5,337.5Q56,250,94.5,148.5Q133,47,233.5,76Q334,105,383,177.5Q432,250,389.5,334Z" fill="red"></path>
+								</svg>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+									<path id="blob" d="M386.5,340Q354,430,248.5,432.5Q143,435,104.5,342.5Q66,250,115.5,176.5Q165,103,258.5,88Q352,73,385.5,161.5Q419,250,386.5,340Z" fill="blue"></path>
+								</svg>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+									<path id="blob" d="M410,327Q339,404,235.5,429Q132,454,83.5,352Q35,250,94,166Q153,82,252.5,78Q352,74,416.5,162Q481,250,410,327Z" fill="green"></path>
+								</svg>
+								<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvgBackground">
+									<path d="M382.5,315.5Q326,381,249.5,382Q173,383,104,316.5Q35,250,89.5,158Q144,66,242.5,79Q341,92,390,171Q439,250,382.5,315.5Z" fill="#212529"></path>
+								</svg>
 							</div>
 						</div>
 						<div id="shadowProfilePicCard2"></div>
