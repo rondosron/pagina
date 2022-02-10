@@ -1,6 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
 
+@font-face {
+	font-family: Bubble Bobble;
+	src: local("Bubble Bobble Normal");
+}
+
+@font-face {
+	font-family: Bubble Shine;
+	src: local("Bubble Shine Normal");
+}
+
+@font-face {
+	font-family: Bubblegums;
+	src: local("bubblegums Normal");
+}
+
+@font-face {
+	font-family: Double Bubble Shadow;
+	src: local("Double•Bubble shadow");
+}
+
+@font-face {
+	font-family: Reglisse;
+	src: local("Reglisse");
+}
+
+@font-face {
+	font-family: Reglisse Back;
+	src: local("Reglisse Back");
+}
+
+@font-face {
+	font-family: Reglisse Fill;
+	src: local("Reglisse Fill");
+}
+
 
 body {
 	margin: 0;
@@ -625,6 +660,9 @@ body {
 			/*top: 0px;*/
 			/*bottom: 0px;*/
 			transition: 1s ease-in-out;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		@keyframes floating {
@@ -683,8 +721,8 @@ body {
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 {
 			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
-			height: 150px;
-			width: 150px;
+			height: 75px;
+			width: 75px;
 			background-size: cover;
 			border-radius: 50%;
 			position: absolute;
@@ -692,12 +730,12 @@ body {
 			/*left: 0px;*/
 			transition: 1s ease-in-out;
 			/*border: 3px solid beige;*/
-			outline: 8px solid #2f2828;
-			/*transform: scale(1);*/
+			outline: 2px solid #2f2828;
+			transform: scale(2);
 			display: flex;
 			justify-content: center;
 			transform-style: preserve-3d;
-			perspective: 10px;
+			perspective: 1px;
 		}
 
 		/* Create an after pseudo-el to expand when picture is hovered and prevent mouse from being out of the main div. It's bigger than the main div due to the scale x0.7 effect */
@@ -724,22 +762,22 @@ body {
 
 		@keyframes scaleCard {
 			0% {
-				transform: scale(1);
+				transform: scale(2);
 				/*top: 0px;*/
 			}
 			100% {
-				transform: scale(0.5);
+				transform: scale(1);
 				/*top: -75px;*/
 			}
 		}
 
 		@keyframes scaleCardReverse {
 			0% {
-				transform: scale(0.5);
+				transform: scale(1);
 				/*top: -75px;*/
 			}
 			100% {
-				transform: scale(1);
+				transform: scale(2);
 				/*top: 0px;*/
 			}
 		}
@@ -750,7 +788,7 @@ body {
 			background: #2f2828;
 			position: absolute;
 			/*transform: scale(calc(1/0.7)) translateZ(-1px);*/ /* Revert scale x0.7 from parent */
-			transform: scale(calc(1/0.5)) translateZ(-1px);
+			transform: translateZ(-0.0001px);
 			top: 144px;
 			border-radius: 20px;
 			transform-origin: top;
@@ -839,6 +877,7 @@ body {
 				overflow: hidden;
 				height: 100%;
 				width: 100%;
+				position: absolute;
 			}
 
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg {
@@ -851,6 +890,18 @@ body {
 				fill: transparent;
 				stroke: white;
 				stroke-width: 3px;
+				stroke-dasharray: 750;
+				stroke-dashoffset: 750;
+				animation: strokeLines 4s infinite linear;
+			}
+
+			@keyframes strokeLines {
+				0% {
+					stroke-dashoffset: 750;
+				}
+				100% {
+					stroke-dashoffset: 0;
+				}
 			}
 
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #shape3Card2 svg g:nth-of-type(1) {
@@ -936,6 +987,67 @@ body {
 				66% {
 					d: path("M30,-50.7C40.6,-45.8,52.1,-41.3,53,-32.9C53.9,-24.5,44.2,-12.3,47.5,1.9C50.8,16,67.1,32.1,66.9,41.8C66.7,51.4,50.1,54.7,36.2,49.4C22.3,44,11.2,30,-2.1,33.7C-15.5,37.5,-30.9,58.9,-44,63.7C-57,68.6,-67.6,56.9,-75.2,43.5C-82.7,30.1,-87.1,15.1,-80.1,4.1C-73,-6.9,-54.6,-13.9,-39.4,-14C-24.2,-14.2,-12.3,-7.5,-6.3,-15.1C-0.3,-22.7,-0.1,-44.6,4.8,-52.8C9.7,-61.1,19.4,-55.7,30,-50.7Z");
 				}
+			}
+
+		/**** Name ****/
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 {
+				position: absolute;
+				color: #e5cfff;
+				z-index: 8;
+				top: 20px;
+				display: flex;
+				justify-content: center;
+				letter-spacing: 0px;
+				/* box-shadow: inset 2px 2px 11px #21143c, inset -2px -3px 8px 0px #6237af; */
+				/* background: linear-gradient(0deg, #6237af, #21143c); */
+				width: 80%;
+				left: 50%;
+				transform: translate(-50%);
+				border-radius: 20px;
+				/* text-shadow: 2px 2px 0px #2c194f; */
+				font-family: Reglisse fill;
+				font-size: 46px;
+				background-image: linear-gradient(180deg, #6237ae, #aa076b);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				filter: drop-shadow(1px 1px 0px #e5cfffbd) drop-shadow(0px 0px 0px #e5cfffbd) drop-shadow(1px 1px 0px #000000) drop-shadow(0px 0px 15px #000000);
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p {
+				font-family: Reglisse fill;
+				font-size: 46px;
+				background-image: linear-gradient(180deg, #6237ae, #aa076b);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				position: relative;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(1) {
+				top: 0px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(2) {
+				top: -4px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(3) {
+				top: -6px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(4) {
+				top: -1px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(6) {
+				top: 3px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(7) {
+				top: 6px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 #contentCard2 #nameCard2 p:nth-child(8) {
+				top: 2px;
 			}
 
 		/**** Social Network 1 ****/

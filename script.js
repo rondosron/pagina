@@ -104,19 +104,9 @@
 
 		profilePicCard2.addEventListener("mouseout", function(e) {
 			// profilePicCard2.style.top = "-75px"
-			profilePicCard2.style.transform = "scale(0.5)"
+			// profilePicCard2.style.transform = "scale(0.5)"
 			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
 		})
-
-// 		laurelProfilePicCard2.addEventListener("mouseover", function(e) {
-// 			laurelProfilePicCard2.style.animation = "scaleCard 1s 1 normal forwards"
-// 		})
-// 
-// 		laurelProfilePicCard2.addEventListener("mouseout", function(e) {
-// 			// laurelProfilePicCard2.style.top = "-75px"
-// 			laurelProfilePicCard2.style.transform = "scale(0.5)"
-// 			laurelProfilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
-// 		})
 
 		let contentCard2 = document.querySelector("#contentCard2")
 
@@ -140,10 +130,13 @@
 
 		contentCard2.addEventListener("mouseover", function(e) {
 			contentCard2.style.animation = "displayCardContent 1s 0.5s 1 normal forwards"
+			console.log("displayCardContent")
 		})
 		
 		contentCard2.addEventListener("mouseout", function(e) {
 			contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
+			console.log("displayCardContentReverse")
 		})
+
 
 
