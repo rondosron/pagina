@@ -36,6 +36,17 @@
 	src: local("Reglisse Fill");
 }
 
+@font-face {
+	font-family: VAG Rounded BT;
+	src: local("VAG Rounded BT");
+}
+
+@font-face{
+    font-family:"vag-rounded-bt";
+    src:url("https://candyfonts.com/wp-data/2019/04/06/51802/VAGRoundedBT.ttf") format("woff"),
+    url("https://candyfonts.com/wp-data/2019/04/06/51802/VAGRoundedBT.ttf") format("opentype"),
+    url("https://candyfonts.com/wp-data/2019/04/06/51802/VAGRoundedBT.ttf") format("truetype");
+}
 
 body {
 	margin: 0;
@@ -334,6 +345,7 @@ body {
 
 	#preguntasfrecuentes #preguntasfrecuentestitle {
 		position: absolute;
+		top: 20px;
 	}
 
 	.accordion {
@@ -719,65 +731,79 @@ body {
 			}
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2 {
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicBackgroundCard2 #profilePicCard2 {
 			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
-			height: 75px;
-			width: 75px;
+			height: calc(75px / 2);
+			width: calc(75px / 2);
 			background-size: cover;
 			border-radius: 50%;
 			position: absolute;
-			top: 0px;
+			top: 20px;
 			/*left: 0px;*/
 			transition: 1s ease-in-out;
 			/*border: 3px solid beige;*/
-			outline: 2px solid #2f2828;
+			outline: 1px solid #2f2828;
 			transform: scale(2);
 			display: flex;
 			justify-content: center;
-			z-index: 2;
+			/*z-index: 2;*/
 		}
 
 		/* Create an after pseudo-el to expand when picture is hovered and prevent mouse from being out of the main div. It's bigger than the main div due to the scale x0.7 effect */
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:after {
-			content: "";
-			height: 0px;
-			width: 100%;
+			/*content: "";
+			height: 124%;
+			width: calc(100% + 4px);
 			position: absolute;
-			top: 100%;
+			top: -2px;*/
+			border-top-left-radius: 39px; /* No 50% because it's not a square and I need them to be round */
+			border-top-right-radius: 39px;  /* No 50% because it's not a square and I need them to be round */
+			/*background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+			z-index: -1;
+			background-attachment: fixed;
+			background-size: 215px 1px;
+			background-position: 38px 0px;*/
 		}
 
-		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #profilePicCard2:after {
-			height: 145%;
-			width: 165%;
-		}
-
-		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicCard2:hover {
-			/*transform: scale(0.7);*/
-			/*top: -75px;*/
-			/*bottom: 228px;*/
-			/*bottom: 68px;*/
-			/*animation: scaleCard 1s 1 forwards;*/
+		#quienessomos #card2container #card2 #profilePicContainerCard2 #profilePicBackgroundCard2 {
+			height: 124%;
+			width: calc(100% + 4px);
+			position: absolute;
+			top: -2px;
+			border-top-left-radius: 39px; /* No 50% because it's not a square and I need them to be round */
+			border-top-right-radius: 39px;  /* No 50% because it's not a square and I need them to be round */
+			background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+			/*z-index: -1;*/
+			background-attachment: fixed;
+			background-size: 215px 1px;
+			background-position: 38px 0px;
+			height: 58px;
+			width: 79px;
+			transform: scale(2);
+			z-index: 2;
+			display: flex;
+			justify-content: center;
 		}
 
 		@keyframes scaleCard {
 			0% {
 				transform: scale(2);
-				/*top: 0px;*/
+				top: 20px;
 			}
 			100% {
 				transform: scale(1);
-				/*top: -75px;*/
+				top: -36px;
 			}
 		}
 
 		@keyframes scaleCardReverse {
 			0% {
 				transform: scale(1);
-				/*top: -75px;*/
+				top: -36px;
 			}
 			100% {
 				transform: scale(2);
-				/*top: 0px;*/
+				top: 20px;
 			}
 		}
 
@@ -788,13 +814,17 @@ body {
 			position: absolute;
 			/*transform: scale(calc(1/0.7)) translateZ(-1px);*/ /* Revert scale x0.7 from parent */
 			transform: translateZ(-0.0001px);
-			top: 144px;
+			top: 16px;
 			border-radius: 20px;
 			transform-origin: top;
 			background: #0f0c29;
 			background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
 			background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 			z-index: 1;
+			background-attachment: fixed;
+			background-size: 215px 1px;
+			background-position: 38px 0px;
+			overflow: hidden;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2:hover #contentCard2 {
@@ -818,6 +848,48 @@ body {
 			100% {
 				height: 0px;
 			}
+		}
+
+		#border1Card2, #border2Card2 {
+			position: absolute;
+			height: 39px;
+			width: 22px;
+			background: #ffffff00;
+			overflow: hidden;
+		}
+
+		#border1Card2 {
+			top: 13px;
+			left: -21px;
+		}
+
+		#border2Card2 {
+			top: 13px;
+			left: 78px;
+		}
+
+		#border1Card2 p, #border2Card2 p {
+			font-size: 136px;
+			position: absolute;
+			font-weight: bold;
+			background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+			background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-attachment: fixed;
+			background-size: 215px 1px;
+			background-position: 38px 0px;
+			text-transform: uppercase;
+		}
+
+		#border1Card2 p {
+			top: -155px;
+			left: -74.1px;
+		}
+
+		#border2Card2 p {
+			top: -155px;
+			left: -36px;
 		}
 
 		#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #borderTop1 {
@@ -857,20 +929,19 @@ body {
 				left: 20px;
 				height: 100px;
 				width: 100px;
-				z-index: 1;
+				z-index: 0;
 			}
 
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape2Card2 {
 				position: absolute;
 				height: 100px;
 				width: 100px;
-				top: 120px;
-				left: 80px;
+				top: 102px;
+				left: 137px;
 				border-radius: 50%;
-				background-image: repeating-linear-gradient(135deg, #cec2e5 0, #cec2e5 2px, transparent 0, transparent 50%);
+				background-image: repeating-linear-gradient(135deg, #bb9bf7 0, #bb9bf7 2px, transparent 0, transparent 50%);
 				background-size: 6px 6px;
-				/*background-color: #47d3ff;*/
-				z-index: 1;
+				z-index: -1;
 			}
 
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #shape3Card2 {
@@ -1050,6 +1121,108 @@ body {
 				top: 2px;
 			}
 
+		/**** Position ****/
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #positionCard2 {
+				position: absolute;
+				top: 67px;
+				width: 100%;
+				height: 70px;
+				text-align: center;
+				z-index: 3;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #positionCard2 p {
+				font-family: vag rounded bt;
+				font-size: 48px;
+				transform: scale(0.35); /* High font size with small scale to prevent low quality of small font size */
+				background-image: linear-gradient(0deg, #935bff, #f3edff);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-transform: none;
+				white-space: nowrap;
+				filter: drop-shadow(2px 2px 6px black);
+			}
+
+		/**** Description ****/
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #descriptionCard2 {
+				position: absolute;
+				top: 116px;
+				text-align: center;
+				padding: 0px 10px;
+				z-index: 3;
+				width: 100%;
+				height: 100px;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #descriptionCard2 p {
+				text-transform: none;
+				font-size: 14px;
+				color: white;
+				filter: drop-shadow(2px 2px 2px black);
+				font-family: VAG Rounded BT;
+				background-image: repeating-linear-gradient(0deg, #c7aaff 80px, #f3edff 102px);
+				background-image: repeating-linear-gradient(0deg, #ffffff 80px, #b5c6ff 102px);
+				background-size: 20px 100px;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+
+		/**** Age ****/
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #ageCard2 {
+				position: absolute;
+				top: 111px;
+				width: 100%;
+				text-align: center;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #ageCard2 p {
+				font-family: vag rounded BT;
+				font-size: 18px;
+				background-image: linear-gradient(0deg, #ba97ff, #f3edff);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				width: 100%;
+				text-align: center;
+				filter: drop-shadow(2px 2px 6px black);
+			}
+
+		/**** Location ****/
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #locationCard2 {
+				position: absolute;
+				top: 144px;
+				width: 100%;
+				text-align: center;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #locationCard2 p {
+				font-family: vag rounded BT;
+				font-size: 18px;
+				background-image: linear-gradient(0deg, #ba97ff, #f3edff);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				filter: drop-shadow(2px 2px 6px black);
+			}
+
+		/**** Mail ****/
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #mailCard2 {
+				position: absolute;
+				top: 181px;
+				width: 100%;
+				text-align: center;
+			}
+
+			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #mailCard2 p {
+				font-family: vag rounded BT;
+				font-size: 18px;
+				background-image: linear-gradient(0deg, #ba97ff, #f3edff);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				filter: drop-shadow(2px 2px 6px black);
+			}
+
 		/**** Social Network 1 ****/
 			#quienessomos #card2container #card2 #profilePicContainerCard2 #contentCard2 #socialMedia1Card2 {
 				position: absolute;
@@ -1204,18 +1377,6 @@ body {
 				}
 			}
 
-		/*** Laurel ***/
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #laurelProfilePicCard2 {
-				height: 179px;
-				width: 179px;
-				position: absolute;
-				left: -14px;
-				top: -13px;
-			}
-
-			#quienessomos #card2container #card2 #profilePicContainerCard2 #laurelProfilePicCard2 g {
-				fill: darkred;
-			}
 			
 
 	/************* CARD 3 ************/
@@ -1324,6 +1485,8 @@ body {
 			font-family: helvetica;
 			font-size: 12px;
 			filter: drop-shadow(1px 1px 2px #00a0ff) drop-shadow(-1px -1px 2px #00a0ff);
+			text-transform: uppercase;
+			margin-bottom: 0px;
 		}
 
 		#quienessomos #card3container #card3 #textCard3 {
@@ -1578,11 +1741,14 @@ body {
 	#contenedornavegacion h1 {
 		text-transform: uppercase;
 		font-size: 20px;
+		margin-bottom: 0;
 	}
 
 	#navegacionfooter div p {
 		display: inline-block;
 		margin-left: 5px;
+		font-size: 20px;
+		margin-bottom: 0;
 	}
 
 	#mediosdepagofooter {
@@ -1594,6 +1760,7 @@ body {
 		text-transform: uppercase;
 		font-size: 20px;
 		margin-bottom: 6px;
+		margin-bottom: 0;
 	}
 
 	#mediosdepagofooter img {
@@ -1610,10 +1777,13 @@ body {
 	#faqs h1 {
 		text-transform: uppercase;
 		font-size: 20px;
+		margin-bottom: 0;
 	}
 
 	#faqs div p {
 		display: inline-block;
+		font-size: 20px;
+		margin-bottom: 0;
 	}
 
 	#contactofooter {
@@ -1632,6 +1802,7 @@ body {
 		text-transform: uppercase;
 		font-size: 20px;
 		margin-bottom: 3px;
+		margin-bottom: 0;
 	}
 
 	#contactofooter div i {
@@ -1642,8 +1813,9 @@ body {
 	#contactofooter div p {
 		display: inline-block;
 		margin-left: 10px;
+		font-size: 20px;
+		margin-bottom: 0;
 	}
-
 
 	#copyright {
 		grid-area: copyright;

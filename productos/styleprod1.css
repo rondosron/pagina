@@ -15,18 +15,18 @@ body {
 	justify-content: center;*/
 }
 
-p, h2, h1, h3 {
+#contenedorproductooverlay p, #contenedorproductooverlay h2, #contenedorproductooverlay h1, #contenedorproductooverlay h3 {
 	margin: 0;
 	text-transform: uppercase;
 }
 
-h1 {
+#contenedorproductooverlay h1 {
 	font-size: 2em;
 	line-height: 1.22em;
 	font-weight: bold;
 }
 
-h2 {
+#contenedorproductooverlay h2 {
 	display: inline-block;
 	font-size: var(--altura-subtitulos);
 	position: relative;
@@ -35,14 +35,14 @@ h2 {
 	line-height: 1.22em;
 }
 
-h3 {
+#contenedorproductooverlay h3 {
 	text-align: center;
 	font-size: 1.17em;
     font-weight: bold;
     line-height: 1.22em;
 }
 
-p {
+#contenedorproductooverlay p {
 	font-size: 20px;
 }
 

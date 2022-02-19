@@ -96,17 +96,35 @@
 		let profilePicContainerCard2 = document.querySelector("#profilePicContainerCard2")
 		let profilePicCard2 = document.querySelector("#profilePicCard2")
 		let shadowProfilePicCard2 = document.querySelector("#shadowProfilePicCard2")
-		let laurelProfilePicCard2 = document.querySelector("#laurelProfilePicCard2")
+		let profilePicBackgroundCard2 = document.querySelector("#profilePicBackgroundCard2")
 
-		profilePicCard2.addEventListener("mouseover", function(e) {
-			profilePicCard2.style.animation = "scaleCard 1s 1 normal forwards"
+		profilePicBackgroundCard2.addEventListener("mouseover", function(e) {
+			profilePicBackgroundCard2.style.animation = "scaleCard 1s 1 normal forwards"
+			// profilePicBackgroundCard2.classList.add("scaleCard")
+			// profilePicBackgroundCard2.classList.remove("scaleCard")
 		})
 
-		profilePicCard2.addEventListener("mouseout", function(e) {
-			// profilePicCard2.style.top = "-75px"
-			// profilePicCard2.style.transform = "scale(0.5)"
-			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
+		profilePicBackgroundCard2.addEventListener("mouseout", function(e) {
+			profilePicBackgroundCard2.style.transform = "scale(1)" // Value of 100% of ScaleCard cause otherwise during of ScaleCardReverse the delay it would go back to the original value (scale(2)) 
+			profilePicBackgroundCard2.style.top = "-15px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
+			profilePicBackgroundCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
+			// profilePicBackgroundCard2.classList.add("scaleCardReverse")
+			// profilePicBackgroundCard2.classList.remove("scaleCardReverse")
 		})
+
+// 		profilePicCard2.addEventListener("mouseover", function(e) {
+// 			profilePicCard2.style.animation = "scaleCard 1s 1 normal forwards"
+// 			// profilePicCard2.classList.add("scaleCard")
+// 			// profilePicCard2.classList.remove("scaleCard")
+// 		})
+// 
+// 		profilePicCard2.addEventListener("mouseout", function(e) {
+// 			profilePicCard2.style.transform = "scale(1)" // Value of 100% of ScaleCard cause otherwise during of ScaleCardReverse the delay it would go back to the original value (scale(2)) 
+// 			profilePicCard2.style.top = "-15px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
+// 			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
+// 			// profilePicCard2.classList.add("scaleCardReverse")
+// 			// profilePicCard2.classList.remove("scaleCardReverse")
+// 		})
 
 		let contentCard2 = document.querySelector("#contentCard2")
 

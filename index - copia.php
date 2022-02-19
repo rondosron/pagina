@@ -255,17 +255,19 @@
 			<div id="card2container" class="cardcontainers">
 				<div id="card2">
 					<div id="profilePicContainerCard2">
-						<div id="profilePicCard2">
-							
+						<div id="profilePicBackgroundCard2">
+							<div id="profilePicCard2"></div>
+							<div id="border1Card2">
+								<p>o</p>
+							</div>
+							<div id="border2Card2">
+								<p>o</p>
+							</div>
 						</div>
 						<div id="contentCard2">
 							<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
 							<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
 							<!-- VER SI AGREGAR UN MARCO AL CONTENT -->
-							<svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
-								<text y="20" font-family="Arial, Helvetica, sans-serif">Sans serif</text>
-								<text x="100" y="20" font-family="monospace">Monospace</text>
-							</svg>
 							<div id="shape1Card2"></div>
 							<div id="shape2Card2"></div>
 							<div id="shape3Card2">
@@ -284,10 +286,7 @@
 									"></path></g><g transform="translate(0, 900)"><path d="M0 -486.7C44.5 -436.3 88.9 -385.8 153.5 -370.5C218 -355.2 302.6 -375 344.2 -344.2C385.8 -313.4 384.4 -231.9 401 -166.1C417.6 -100.3 452.2 -50.1 486.7 0L0 0Z" fill="#FBAE3C"></path></g>
 								</svg>
 							</div>
-							<div id="shape4Card2">
-
-							</div>
-							<div id="shape5Card2"></div>
+							
 							<div id="svgBackground1ContainerCard2">
 								<!--  hecho con https://www.blobmaker.app/ valores: el primero en el anteultimo y el segundo en el último -->
 								<svg id="svgBackground1Card2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -324,8 +323,8 @@
 									<path fill="url(#gradient1)" d="M22.6,-35.2C33.3,-33.1,48.5,-34.9,47.6,-29.7C46.7,-24.5,29.6,-12.3,21.6,-4.6C13.6,3,14.7,6.1,17.9,15.2C21.1,24.4,26.4,39.6,23.7,51.4C21.1,63.3,10.6,71.7,4.2,64.5C-2.2,57.3,-4.4,34.4,-17.8,28.8C-31.2,23.1,-55.7,34.7,-55.9,32.8C-56.2,30.9,-32.1,15.4,-27.9,2.5C-23.6,-10.5,-39.2,-21.1,-39.1,-23.3C-39.1,-25.6,-23.5,-19.6,-14.4,-22.7C-5.2,-25.7,-2.6,-37.8,1.7,-40.7C6,-43.6,12,-37.4,22.6,-35.2Z" transform="translate(100 100)" />
 								</svg>
 							</div>
-							<div id="borderTop1"></div>
-							<div id="borderTop2"></div>
+							<!-- <div id="borderTop1"></div> -->
+							<!-- <div id="borderTop2"></div> -->
 							<div id="nameCard2">
 								<p class="letterNameCard2">J</p>
 								<p class="letterNameCard2">a</p>
@@ -336,7 +335,13 @@
 								<p class="letterNameCard2">o</p>
 								<p class="letterNameCard2">e</p>
 							</div>
-							<div id="positionCard2">Community Manager</div>
+							<div id="positionCard2"><p>Community Manager</p></div>
+							<!-- <div id="descriptionCard2">
+								<p>Lorem ipsum dolor sit amet consectetur, adipisicing, elit. Quis maiores id eum dignissimos consectetur mollitia aperiam asperiores.</p>
+							</div> -->
+							<div id="ageCard2"><p>28</p></div>
+							<div id="locationCard2"><p>London - England</p></div>
+							<div id="mailCard2"><p>JaneDoeCM@gmail.com</p></div>
 							<div id="socialMedia1Card2">
 								<i class="fab fa-linkedin-in"></i>
 							</div>
