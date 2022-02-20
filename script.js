@@ -106,36 +106,53 @@
 
 		profilePicBackgroundCard2.addEventListener("mouseout", function(e) {
 			profilePicBackgroundCard2.style.transform = "scale(1)" // Value of 100% of ScaleCard cause otherwise during of ScaleCardReverse the delay it would go back to the original value (scale(2)) 
-			profilePicBackgroundCard2.style.top = "-15px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
+			profilePicBackgroundCard2.style.top = "-36px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
 			profilePicBackgroundCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
 			// profilePicBackgroundCard2.classList.add("scaleCardReverse")
 			// profilePicBackgroundCard2.classList.remove("scaleCardReverse")
 		})
 
-// 		profilePicCard2.addEventListener("mouseover", function(e) {
-// 			profilePicCard2.style.animation = "scaleCard 1s 1 normal forwards"
-// 			// profilePicCard2.classList.add("scaleCard")
-// 			// profilePicCard2.classList.remove("scaleCard")
-// 		})
-// 
-// 		profilePicCard2.addEventListener("mouseout", function(e) {
-// 			profilePicCard2.style.transform = "scale(1)" // Value of 100% of ScaleCard cause otherwise during of ScaleCardReverse the delay it would go back to the original value (scale(2)) 
-// 			profilePicCard2.style.top = "-15px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
-// 			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
-// 			// profilePicCard2.classList.add("scaleCardReverse")
-// 			// profilePicCard2.classList.remove("scaleCardReverse")
-// 		})
+		// 		profilePicCard2.addEventListener("mouseover", function(e) {
+		// 			profilePicCard2.style.animation = "scaleCard 1s 1 normal forwards"
+		// 			// profilePicCard2.classList.add("scaleCard")
+		// 			// profilePicCard2.classList.remove("scaleCard")
+		// 		})
+		// 
+		// 		profilePicCard2.addEventListener("mouseout", function(e) {
+		// 			profilePicCard2.style.transform = "scale(1)" // Value of 100% of ScaleCard cause otherwise during of ScaleCardReverse the delay it would go back to the original value (scale(2)) 
+		// 			profilePicCard2.style.top = "-15px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
+		// 			profilePicCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
+		// 			// profilePicCard2.classList.add("scaleCardReverse")
+		// 			// profilePicCard2.classList.remove("scaleCardReverse")
+		// 		})
 
 		let contentCard2 = document.querySelector("#contentCard2")
+		let border1Card2 = document.querySelector("#border1Card2")
+		let border2Card2 = document.querySelector("#border2Card2")
 
 		profilePicCard2.addEventListener("mouseover", function(e) {
 			contentCard2.style.animation = "displayCardContent 1s 0.5s 1 normal forwards"
+
+			profilePicCard2.style.transition = "1s"
+			profilePicCard2.style.outline = "1px solid transparent"
+
+			border1Card2.style.transition = "0.5s 0.4s"
+			border2Card2.style.transition = "0.5s 0.4s"
+			border1Card2.style.height = "19px"
+			border2Card2.style.height = "19px"
 		})
 
-		// profilePicCard2.addEventListener("mouseout", function(e) {
-		// 	contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
-		// 	console.log("out")
-		// })
+		profilePicCard2.addEventListener("mouseout", function(e) {
+			contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
+
+			profilePicCard2.style.transition = "1s 1s"
+			profilePicCard2.style.outline = "1px solid #2f2828"
+
+			border1Card2.style.transition = "0.5s 1s"
+			border2Card2.style.transition = "0.5s 1s"
+			border1Card2.style.height = "0px"
+			border2Card2.style.height = "0px"
+		})
 
 		profilePicContainerCard2.addEventListener("mouseover", function(e) {
 			shadowProfilePicCard2.style.transition = "1s ease"; // No delay on mouseover/hover
