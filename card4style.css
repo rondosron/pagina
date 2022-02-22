@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+	display: flex;
+    justify-content: center; /* To center elements automatically and avoid the use of position + left, since it's the container now (and not card4 in the main html) */
+}
+
+/* DONT USE "TRANSFORM" - IT WILL CREATE A NEW CONTEXT AND THE CONTINOUS BACKGROUND EFFECT WILL BE UNREALIZABLE */
+/* DONT USE "TRANSFORM" - IT WILL CREATE A NEW CONTEXT AND THE CONTINOUS BACKGROUND EFFECT WILL BE UNREALIZABLE */
+/* DONT USE "TRANSFORM" - IT WILL CREATE A NEW CONTEXT AND THE CONTINOUS BACKGROUND EFFECT WILL BE UNREALIZABLE */
+
+#profilePicCard4 {
+	position: absolute;
+	height: 144px;
+	width: 144px;
+	border-radius: 50%;
+	top: 53px;
+	z-index: 4;
+	background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
+	background-size: cover;
+	background-position: 0px -6px;
+}
+
+/* PRIMARY GRADIENT */
+	#ribbonBackCard4, #ribbonFrontCard4, #circleRibbonBackCard4, #circleRibbonFrontCard4 {
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(315deg, #590000, #ff0000, #590000);
+	}
+
+/* SECONDARY GRADIENT */
+	#ribbonMiddleCard4, #circleRibbonMiddleCard4 {
+		background-image: linear-gradient(315deg, #F09819, #ffe929, #F09819);
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+	}
+
+
+#ribbonBackCard4 {
+	height: 100%;
+	width: calc(100% / 1.9);
+	z-index: 1;
+	margin: auto;
+	
+}
+
+#ribbonMiddleCard4 {
+	width: calc(100% / 2.1);
+	position: absolute;
+	height: 100%;
+	z-index: 2;	
+}
+
+#ribbonFrontCard4 {
+	width: calc(100% / 2.3);
+	position: absolute;
+	height: 100%;
+	z-index: 3;
+}
+
+#circleRibbonBackCard4 {
+	height: 166px;
+	width: 166px;
+	position: absolute;
+	top: 42px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+#circleRibbonMiddleCard4 {
+	height: 158px;
+	width: 158px;
+	position: absolute;
+	top: 46px;
+	border-radius: 50%;
+	z-index: 2;
+}
+
+#circleRibbonFrontCard4 {
+	height: 150px;
+	width: 150px;
+	position: absolute;
+	top: 50px;
+	border-radius: 50%;
+	z-index: 3;
+}

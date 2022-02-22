@@ -100,16 +100,18 @@
 
 		profilePicBackgroundCard2.addEventListener("mouseover", function(e) {
 			profilePicBackgroundCard2.style.animation = "scaleCard 1s 1 normal forwards"
-			// profilePicBackgroundCard2.classList.add("scaleCard")
-			// profilePicBackgroundCard2.classList.remove("scaleCard")
+
+			profilePicBackgroundCard2.style.transition = "0.3157894737s 0.4s linear"
+			profilePicBackgroundCard2.style.height = "52px"
 		})
 
 		profilePicBackgroundCard2.addEventListener("mouseout", function(e) {
 			profilePicBackgroundCard2.style.transform = "scale(1)" // Value of 100% of ScaleCard cause otherwise during of ScaleCardReverse the delay it would go back to the original value (scale(2)) 
 			profilePicBackgroundCard2.style.top = "-36px" // Value of 100% of ScaleCard cause otherwise during the delay of ScaleCardReverse it would go back to the original value (scale(2))
 			profilePicBackgroundCard2.style.animation = "scaleCardReverse 1s 1s 1 normal forwards"
-			// profilePicBackgroundCard2.classList.add("scaleCardReverse")
-			// profilePicBackgroundCard2.classList.remove("scaleCardReverse")
+
+			profilePicBackgroundCard2.style.transition = "0.3157894737s 1s linear"
+			profilePicBackgroundCard2.style.height = "40px"
 		})
 
 		// 		profilePicCard2.addEventListener("mouseover", function(e) {
@@ -136,8 +138,8 @@
 			profilePicCard2.style.transition = "1s"
 			profilePicCard2.style.outline = "1px solid transparent"
 
-			border1Card2.style.transition = "0.5s 0.4s"
-			border2Card2.style.transition = "0.5s 0.4s"
+			border1Card2.style.transition = "0.5s 0.4s linear"
+			border2Card2.style.transition = "0.5s 0.4s linear"
 			border1Card2.style.height = "19px"
 			border2Card2.style.height = "19px"
 		})
@@ -148,8 +150,8 @@
 			profilePicCard2.style.transition = "1s 1s"
 			profilePicCard2.style.outline = "1px solid #2f2828"
 
-			border1Card2.style.transition = "0.5s 1s"
-			border2Card2.style.transition = "0.5s 1s"
+			border1Card2.style.transition = "0.5s 1s linear"
+			border2Card2.style.transition = "0.5s 1s linear"
 			border1Card2.style.height = "0px"
 			border2Card2.style.height = "0px"
 		})
@@ -172,6 +174,5 @@
 			contentCard2.style.animation = "displayCardContentReverse 1s 1 normal forwards"
 			console.log("displayCardContentReverse")
 		})
-
 
 
