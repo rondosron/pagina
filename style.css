@@ -1755,156 +1755,89 @@ body {
 			border-radius: 18px;
 		}
 
-		#quienessomos #card4container #card4 #ribbonCard4 {
-			height: 100%;
-			width: calc(100% / 1.9);
-			background: red;
-			margin: auto;
-			background: linear-gradient(315deg, #590000, #ff0000, #590000);
-			background-attachment: scroll;
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-image: linear-gradient(315deg, #590000, #ff0000, #590000);
-		}
+		/**** Little Ribbon ****/
+			#littleRibbonContainerCard4 {
+				width: 100%;
+				height: 50px;
+				display: flex;
+				justify-content: center;
+				position: absolute;
+				bottom: 15px;
+				/* margin: auto; */
+				z-index: 1;
+			}
 
-		#quienessomos #card4container #card4 #ribbonCard4:before {
-			width: calc(100% / 2.1);
-			content: "";
-			position: absolute;
-			height: 100%;
-			left: 50%;
-			transform: translate(-50%);
-			background: #ffeb00;
-			background: linear-gradient(315deg, #F09819, #EDDE5D, #F09819);
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-		}
+			#littleRibbonCard4 {
+				width: 170px;
+				height: 25px;
+				background: white;
+				position: absolute;
+				/*overflow: visible;*/
+				background: linear-gradient(90deg, #7c0000 0%, red 40% 60%, #7c0000 100%);
+				box-shadow: inset 0 -2px 0 0 #fee238c9, inset 0 2px 0 0 #fee238c9;
+			}
 
-		#quienessomos #card4container #card4 #ribbonCard4:after {
-			width: calc(100% / 2.3);
-			content: "";
-			position: absolute;
-			height: 100%;
-			left: 50%;
-			transform: translate(-50%);
-			background: linear-gradient(315deg, #590000, #ff0000, #590000);
-			background-attachment: scroll;
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-image: linear-gradient(315deg, #590000, #ff0000, #590000);
-		}
+			/* 2 options: after pseudoelement with dashed borders or box-shadow effects */
+			#littleRibbonCard4:after {
+				content: "";
+				height: 80%;
+				width: 96%;
+				background: #ffffff00;
+				position: absolute;
+				top: 10%;
+				border-top: dashed #fee328c7 1px;
+				border-bottom: dashed #fee328c7 1px;
+				/* margin: auto; */
+				left: 2.01%;
+			}
 
-		#quienessomos #card4container #card4 #profilePicCard4 {
-			position: absolute;
-			height: 150px;
-			width: 150px;
-			border-radius: 50%;
-			top: 50px;
-			z-index: 2;
-			background: url(https://c.pxhere.com/photos/f7/4c/smile_profile_face_male_portrait_young_person_glasses-451655.jpg!d);
-			background-size: cover;
-			background-position: 0px -6px;
-		}
+			#leftBackRibbonCard4{
+				background: #640000;
+				height: 144%;
+				width: 10%;
+				position: absolute;
+				left: 0;
+				/* transform: skew(0deg, -30deg); */
+				bottom: 0px;
+				z-index: -1;
+				clip-path: polygon(0 30%, 100% 0, 100% 70%, 0% 100%);
+			}
 
-		#quienessomos #card4container #card4 #semicircleContainer1 {
-			height: 158px;
-			width: 31px;
-			position: absolute;
-			top: 46px;
-			left: 30px;
-			overflow: hidden;
-		}
+			#leftEndRibbonCard4 {
+				clip-path: polygon(100% -1px, 100% 50%, 100% 100%, 0% 100%, 30% 50%, 0% -1px); /* Used negative coords to prevent blur effect on box shadow. Made the polygon bigger than its own container. Initially 0% insted of -1px */
+				background: #9e0000;
+				height: 100%;
+				width: 30px;
+				position: absolute;
+				right: 154px;
+				z-index: -2;
+				bottom: 10px;
+				box-shadow: inset 0 -2px 0 0 #fee238c9, inset 0 2px 0 0 #fee238c9;
+			}
 
-		#quienessomos #card4container #card4 #semicircleContainer1 #semicircle1 {
-			height: 158px;
-			width: 158px;
-			position: absolute;
-			background: #ffeb00;
-			border-radius: 50%;
-			z-index: 1;
-			background: linear-gradient(315deg, #F09819, #EDDE5D, #F09819);
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-		}
+			#rightBackRibbonCard4{
+				background: #640000;
+				height: 144%;
+				width: 10%;
+				position: absolute;
+				right: 0;
+				/* transform: skew(0deg, -30deg); */
+				bottom: 0px;
+				z-index: -1;
+				clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 70%);
+			}
 
-		#quienessomos #card4container #card4 #semicircleContainer2 {
-			height: 158px;
-			width: 31px;
-			position: absolute;
-			top: 44px;
-			left: 26px;
-			overflow: hidden;
-		}
-
-		#quienessomos #card4container #card4 #semicircleContainer2 #semicircle2 {
-			height: 162px;
-			width: 162px;
-			position: absolute;
-			background: #ff0000;
-			border-radius: 50%;
-			z-index: 0;
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-image: linear-gradient(315deg, #590000, #ff0000, #590000);
-		}
-
-		#quienessomos #card4container #card4 #semicircleContainer3 {
-			height: 158px;
-			width: 31px;
-			position: absolute;
-			top: 46px;
-			right: 30px;
-			overflow: hidden;
-		}
-
-		#quienessomos #card4container #card4 #semicircleContainer3 #semicircle3 {
-			height: 158px;
-			width: 158px;
-			position: absolute;
-			background: #ffeb00;
-			border-radius: 50%;
-			z-index: 1;
-			right: 0;
-			background: linear-gradient(315deg, #F09819, #EDDE5D, #F09819);
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-		}
-
-		#quienessomos #card4container #card4 #semicircleContainer4 {
-			height: 158px;
-			width: 31px;
-			position: absolute;
-			top: 44px;
-			right: 26px;
-			overflow: hidden;
-		}
-
-		#quienessomos #card4container #card4 #semicircleContainer4 #semicircle4 {
-			height: 162px;
-			width: 162px;
-			position: absolute;
-			background: #ff0000;
-			border-radius: 50%;
-			z-index: 0;
-			right: 0;
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-image: linear-gradient(315deg, #590000, #ff0000, #590000);
-		}
+			#rightEndRibbonCard4 {
+				clip-path: polygon(100% -1px, 70% 50%, 100% 100%, 0% 100%, 0% 50%, 0% -1px); /* Used negative coords to prevent blur effect on box shadow. Made the polygon bigger than its own container. Initially 0% insted of -1px */
+				background: #9e0000;
+				height: 100%;
+				width: 30px;
+				position: absolute;
+				left: 154px;
+				z-index: -2;
+				bottom: 10px;
+				box-shadow: inset 0 -2px 0 0 #fee238c9, inset 0 2px 0 0 #fee238c9;
+			}
 
 
 

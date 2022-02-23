@@ -420,9 +420,13 @@
 			</div>
 			<div id="card4container" class="cardcontainers">
 				<div id="card4">
-					<div>
-						<div>
-							<div></div>
+					<div id="littleRibbonContainerCard4">
+						<div id="littleRibbonCard4">
+							<div id="leftBackRibbonCard4"></div>
+							<div id="leftEndRibbonCard4"></div>
+
+							<div id="rightBackRibbonCard4"></div>
+							<div id="rightEndRibbonCard4"></div>
 						</div>
 						<div>
 							<div></div>
