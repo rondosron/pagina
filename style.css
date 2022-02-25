@@ -48,6 +48,11 @@
 	url("https://candyfonts.com/wp-data/2019/04/06/51802/VAGRoundedBT.ttf") format("truetype");
 }
 
+@font-face{
+	font-family: Royal King;
+	src: local("Royal King Free");
+}
+
 body {
 	margin: 0 !important;
 }
@@ -139,7 +144,7 @@ body {
 		flex-direction: column;
 	}
 
-	/************* togle **************/
+	/************* toggle **************/
 
 	#contenedortoggle {
 		grid-area: toggle;
@@ -1755,6 +1760,30 @@ body {
 			border-radius: 18px;
 		}
 
+		/*** Name ***/
+			#quienessomos #card4container #card4 #nameContainerCard4 {
+				height: 28px;
+				width: 100%;
+				top: 25px;
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				z-index: 1;
+			}
+
+			#quienessomos #card4container #card4 #nameContainerCard4 #nameCard4 {
+				font-size: 28px;
+				background: -webkit-linear-gradient(90deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: bold;
+				filter: drop-shadow(1px 1px 0px #000000bd) drop-shadow(1px 1px 0px rgb(231 184 70)) drop-shadow(1px 1px 0px rgb(255 236 122)) drop-shadow(1px 1px 0px rgb(134 91 17)); /* Option 1 */
+				filter: drop-shadow(1px 1px 0px #000000bd); /* Option 2 */
+				font-family: royal king;
+				margin: 0;
+				letter-spacing: 2px;
+			}
+
 		/**** Little Ribbon ****/
 			#littleRibbonContainerCard4 {
 				width: 100%;
@@ -1762,7 +1791,7 @@ body {
 				display: flex;
 				justify-content: center;
 				position: absolute;
-				bottom: 15px;
+				top: 21px;
 				/* margin: auto; */
 				z-index: 1;
 			}
@@ -1770,7 +1799,6 @@ body {
 			#littleRibbonCard4 {
 				width: 170px;
 				height: 25px;
-				background: white;
 				position: absolute;
 				/*overflow: visible;*/
 				background: linear-gradient(90deg, #7c0000 0%, red 40% 60%, #7c0000 100%);
@@ -1789,6 +1817,19 @@ body {
 				border-bottom: dashed #fee328c7 1px;
 				/* margin: auto; */
 				left: 2.01%;
+			}
+
+			/* Shadow behind ribbon */
+			#littleRibbonCard4:before {
+				content: "";
+				height: 24px;
+				width: 59px;
+				background: #00000078;
+				position: absolute;
+				left: 33%;
+				top: -3%;
+				z-index: -1;
+				filter: blur(13px);
 			}
 
 			#leftBackRibbonCard4{

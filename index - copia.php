@@ -428,12 +428,13 @@
 							<div id="rightBackRibbonCard4"></div>
 							<div id="rightEndRibbonCard4"></div>
 						</div>
+						
 						<div>
 							<div></div>
 						</div>
-						<div>
-							<div></div>
-						</div>
+					</div>
+					<div id="nameContainerCard4">
+						<p id="nameCard4">George Doe</p>
 					</div>
 					<iframe src="card4.html">
 					</iframe>
