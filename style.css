@@ -1784,6 +1784,84 @@ body {
 				letter-spacing: 2px;
 			}
 
+		/*** Position ***/
+			#quienessomos #card4container #card4 #positionContainerCard4 {
+				height: 23px;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				z-index: 3;
+				position: absolute;
+				top: 200px;
+			}
+
+			#quienessomos #card4container #card4 #positionContainerCard4 #positionCard4 {
+				height: 100%;
+				width: 90px;
+				background: yellow;
+				border-radius: 12px;
+				background: url(https://media.istockphoto.com/vectors/gold-smooth-gradient-background-vector-id1182373971?b=1&k=20&m=1182373971&s=170667a&w=0&h=Ky_yUre6im6-4-SA7_6-K4IG6OiEGU61dR4iizTw9V0=);
+				background-size: cover;
+				box-shadow: inset 0px 1px 0px 0px #feeb79, inset 0px -1px 0px 0px #b18511;
+			}
+
+			#quienessomos #card4container #card4 #positionContainerCard4 #positionCard4 p {
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				font-size: 25px;
+				margin: 0px;
+				position: relative;
+				top: -7px;
+				color: #eac95e;
+				z-index: 0;
+			}
+
+			#quienessomos #card4container #card4 #positionContainerCard4 #positionCard4 p:before {
+				content: attr(text);
+				/* height: 100px; */
+				width: 100%;
+				/* background: white; */
+				position: absolute;
+				color: #000000;
+				left: -1px;
+				top: -1px;
+				z-index: -1;
+			}
+
+			#quienessomos #card4container #card4 #positionContainerCard4 #positionCard4 p:after {
+				content: attr(text);
+				/* height: 100px; */
+				width: 100%;
+				/* background: #27ff00; */
+				position: absolute;
+				color: #ffffff;
+				left: 1px;
+				top: 1px;
+				z-index: -1;
+			}
+
+		/*** Personal info ***/
+			#quienessomos #card4container #card4 #personalInfoCard4 {
+				width: 100%;
+				height: fit-content;
+				z-index: 1;
+				position: absolute;
+				top: 228px;
+				text-align: center; 
+			}
+
+			#quienessomos #card4container #card4 #personalInfoCard4 p {
+				margin: 0;
+				line-height: normal;
+				font-family: vag rounded bt;
+				background: -webkit-linear-gradient(309deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-size: 83px auto;
+				filter: drop-shadow(0px 0px 3px black);
+			}
+
 		/**** Little Ribbon ****/
 			#littleRibbonContainerCard4 {
 				width: 100%;
@@ -1798,7 +1876,7 @@ body {
 
 			#littleRibbonCard4 {
 				width: 170px;
-				height: 25px;
+				height: 32px;
 				position: absolute;
 				/*overflow: visible;*/
 				background: linear-gradient(90deg, #7c0000 0%, red 40% 60%, #7c0000 100%);
@@ -1880,9 +1958,51 @@ body {
 				box-shadow: inset 0 -2px 0 0 #fee238c9, inset 0 2px 0 0 #fee238c9;
 			}
 
+		/*** Social Networks ***/
+			#quienessomos #card4container #card4 #socialNetworkContainerCard4 {
+				height: 55px;
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				font-size: 25px;
+				z-index: 1;
+			}
 
+			#quienessomos #card4container #card4 #socialNetworkContainerCard4 div {
+				height: 50px;
+				width: 50px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
+			/*** Social Network 1 ***/
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1Card4 {
+					border: solid;
+					border-image-slice: 1;
+					border-width: 1px;
+					border-image-source: -webkit-linear-gradient(45deg, rgb(175 118 22) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255 236 166) 68%);
+				}
 
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1Card4 i {
+					background: -webkit-linear-gradient(138deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					text-shadow: 0 0 20px #ffdf0094;
+				}
+
+			/*** Social Network 2 ***/
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork2Card4 {
+
+				}
+
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork2Card4 span {
+					color: whitesmoke;
+					filter: drop-shadow(2px 2px 3px black);
+				}
 
 /*********************************** FOOTER ************************************/
 

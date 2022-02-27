@@ -428,13 +428,22 @@
 							<div id="rightBackRibbonCard4"></div>
 							<div id="rightEndRibbonCard4"></div>
 						</div>
-						
-						<div>
-							<div></div>
-						</div>
 					</div>
 					<div id="nameContainerCard4">
 						<p id="nameCard4">George Doe</p>
+					</div>
+					<div id="positionContainerCard4">
+						<div id="positionCard4">
+							<p text="CEO">CEO</p>
+						</div>
+					</div>
+					<div id="socialNetworkContainerCard4">
+						<div id="socialNetwork1Card4"><i class="fab fa-linkedin-in"></i></div>
+						<div id="socialNetwork2Card4"><span class="fab fa-facebook-f"></span></div>
+						<div id="socialNetwork3Card4"><span class="fab fa-twitter"></span></div>
+					</div>
+					<div id="personalInfoCard4">
+						<p>35<br>Argentina</p>
 					</div>
 					<iframe src="card4.html">
 					</iframe>
