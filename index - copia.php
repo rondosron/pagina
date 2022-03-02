@@ -161,10 +161,17 @@
 					<input type="text" name="nombreapellido" id="nombreapellido">
 					<label for="telefono">Teléfono</label>
 					<input type="number" name="telefono" id="telefono">
-					<label for="direccion">Dirección</label>
-					<input type="text" name="direccion" id="direccion">
-					<label for="email">E-mail</label>
-					<input type="text" name="email" id="email">
+					<div id="addressContainer">
+						<input type="text" name="address" id="addressInput">
+						<label for="address" id="addressLabel">Dirección</label>
+						<div id="addressBarFocus"></div>
+						<div id="addressBarValid"></div>
+					</div>					
+					<div id="emailContainer">
+						<input type="text" name="email" id="emailInput"></input>
+						<label for="email" id="emailLabel">E-mail</label>
+					</div>
+					
 					<input type="submit" name="submit">
 				</form>
 			</div>
@@ -438,7 +445,9 @@
 						</div>
 					</div>
 					<div id="socialNetworkContainerCard4">
-						<div id="socialNetwork1Card4"><i class="fab fa-linkedin-in"></i></div>
+						<div id="socialNetwork1ContainerCard4">
+							<div id="socialNetwork1Card4"><i class="fab fa-linkedin-in"></i></div>
+						</div>
 						<div id="socialNetwork2Card4"><span class="fab fa-facebook-f"></span></div>
 						<div id="socialNetwork3Card4"><span class="fab fa-twitter"></span></div>
 					</div>

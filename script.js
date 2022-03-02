@@ -69,6 +69,24 @@
 		}
 	})
 
+/////////////////////// FORM VALIDATION ///////////////////////
+	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
+
+	let addressInput = document.querySelector("#addressInput")
+	let addressBarValid = document.querySelector("#addressBarValid")
+
+	addressInput.addEventListener("input", function(e){
+		// console.log(addressInput.value)
+		console.log(patternAddress.test(addressInput.value))
+		if (patternAddress.test(addressInput.value)) {
+			addressBarValid.style.width = "100%"
+		} 
+	})
+
+
+
+
+
 ////////////////////////// CARDS ////////////////////////
 	
 	//////////////////// CARD 1 ///////////////////////

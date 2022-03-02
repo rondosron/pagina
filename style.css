@@ -309,13 +309,13 @@ body {
 		position: absolute;
 	}
 
+#presupuestoyformulario {
+	display: grid;
+	grid-template-areas: "presupuesto formulario";
+	grid-template-columns: 1fr 1fr;
+}
+
 /***************************************** PRESUPUESTO **************************************************/
-
-	#presupuestoyformulario {
-		display: grid;
-		grid-template-areas: "presupuesto formulario"
-	}
-
 	#presupuesto {
 		width: 100%;
 		height: 100%;
@@ -334,7 +334,97 @@ body {
 		background: orange;
 		grid-area: formulario;
 		/*min-height: 100vh;*/
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
+
+	/*** Address ***/
+		#addressContainer {
+			position: relative;
+			margin-top: 18px;
+			display: flex;
+			align-items: center;
+		}
+
+		#addressContainer #addressInput {
+			background: #120999c7;
+			border: none;
+			border-bottom: 1px solid #000000;
+			position: relative;
+		}
+
+		#addressInput:focus-visible {
+			outline: none;
+		}
+
+		#addressContainer #addressLabel {
+			position: absolute;
+			left: 6px;
+			/* top: 3px; */
+			line-height: normal;
+			color: white;
+		}
+
+		#addressContainer #addressBarFocus {
+			width: 0%;
+			height: 1px;
+			background: white;
+			position: absolute;
+			bottom: 0;
+			transition: 0.5s;
+			filter: drop-shadow(0px 0px 2px white) drop-shadow(0px 0px 1px white);
+		}
+
+		#addressInput:focus ~ #addressBarFocus {
+			width: 100%;
+		}
+
+		#addressContainer #addressBarValid {
+			width: 0%;
+			height: 1px;
+			background: red;
+			position: absolute;
+			bottom: 0;
+			transition: 0.5s;
+		}
+
+
+	/*** Email ***/
+		#emailContainer {
+			position: relative;
+			margin-top: 18px;
+		}
+
+		#emailContainer label {
+			position: absolute;
+			left: 6px;
+			top: 1px;
+			transition: 0.3s;
+			pointer-events: none;
+			border-radius: 10px;
+			line-height: normal;
+		}
+
+		#emailContainer input {
+			border: grey 1px solid;
+			background: transparent;
+			transition: 0.3s;
+			outline: none;
+		}
+
+		#emailContainer input:focus, #emailContainer input:focus-visible {
+			border: 1px blue solid;
+			background: #ffdea3;
+		}
+
+		#emailInput:focus + #emailLabel {
+			color: red;
+			top: -8px;
+			background: orange;
+			padding: 0 3px;
+			font-size: 0.8rem;
+		}
 
 /*************************************** PREGUNTAS FRECUENTES **********************************************/
 	#preguntasfrecuentes {
@@ -1849,17 +1939,21 @@ body {
 				position: absolute;
 				top: 228px;
 				text-align: center; 
+				display: flex;
+				justify-content: center;
 			}
 
 			#quienessomos #card4container #card4 #personalInfoCard4 p {
 				margin: 0;
 				line-height: normal;
 				font-family: vag rounded bt;
-				background: -webkit-linear-gradient(309deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);
+				/*background: -webkit-linear-gradient(309deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);*/
+				background: linear-gradient(141deg, #d9d9d9 20%, white, #adadad 80%);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-size: 83px auto;
 				filter: drop-shadow(0px 0px 3px black);
+				width: fit-content;
 			}
 
 		/**** Little Ribbon ****/
@@ -1960,31 +2054,43 @@ body {
 
 		/*** Social Networks ***/
 			#quienessomos #card4container #card4 #socialNetworkContainerCard4 {
-				height: 55px;
+				height: 50px;
 				width: 100%;
 				position: absolute;
-				bottom: 0;
+				bottom: 5px;
 				display: flex;
 				justify-content: space-evenly;
 				align-items: center;
 				font-size: 25px;
 				z-index: 1;
-			}
-
-			#quienessomos #card4container #card4 #socialNetworkContainerCard4 div {
-				height: 50px;
-				width: 50px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
+				perspective: 200px;
 			}
 
 			/*** Social Network 1 ***/
-				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1Card4 {
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1ContainerCard4 {
+					height: 50px;
+					width: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1ContainerCard4 #socialNetwork1Card4 {
+					height: 100%;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					border: solid;
 					border-image-slice: 1;
 					border-width: 1px;
 					border-image-source: -webkit-linear-gradient(45deg, rgb(175 118 22) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255 236 166) 68%);
+					transform-style: preserve-3d;
+					transition: 1s;
+				}
+
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1ContainerCard4:hover #socialNetwork1Card4 {
+					transform: rotateY(360deg);
 				}
 
 				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork1Card4 i {
@@ -1996,12 +2102,40 @@ body {
 
 			/*** Social Network 2 ***/
 				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork2Card4 {
-
+					height: 50px;
+					width: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 				}
 
 				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork2Card4 span {
 					color: whitesmoke;
 					filter: drop-shadow(2px 2px 3px black);
+				}
+
+			/*** Social Network 3 ***/
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork3Card4 {
+					height: 50px;
+					width: 50px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					/*border: solid;
+					border-image-slice: 1;
+					border-width: 1px;
+					border-image-source: -webkit-linear-gradient(45deg, rgb(175 118 22) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255 236 166) 68%);*/
+				}
+
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork3Card4 span {
+					background-image: -webkit-linear-gradient(138deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}		
+
+				#quienessomos #card4container #card4 #socialNetworkContainerCard4 #socialNetwork3Card4:hover span {
+					background-image: -webkit-linear-gradient(498deg, rgb(134, 91, 17) 7%, rgb(231,184,70) 26%, rgb(255, 236,122) 34%, rgb(231, 184, 70) 49%, rgb(206, 151, 40) 53%, rgb(255,225,115) 68%);
+					text-shadow: 0 0 20px #ffdf0094;
 				}
 
 /*********************************** FOOTER ************************************/
