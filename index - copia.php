@@ -157,8 +157,10 @@
 			</div>
 
 			<div id="formulario">
-					<label for="nombreapellido">Nombre y apellido</label>
-					<input type="text" name="nombreapellido" id="nombreapellido">
+					<div id="nameSurnameContainer">
+						<input type="text" name="nameSurname" id="nameSurnameInput">
+						<label for="nameSurname" id="nameSurnameLabel">Name</label>
+					</div>
 					<div id="phoneContainer">
 						<input type="number" name="phone" id="phoneInput">
 						<label for="phoneInput" id="phoneLabel">
