@@ -83,6 +83,33 @@
 		} 
 	})
 
+	let phoneInput = document.querySelector("#phoneInput")
+	let phoneLabel = document.querySelector("#phoneLabel")
+	let phoneLabelPar = document.querySelector("#phoneLabel p")
+	let phoneLabelIcon = document.querySelector("#phoneLabel i")
+
+	phoneInput.addEventListener("input", function(e){
+		if (phoneInput.value != "") {
+			phoneInput.style.width = "100%"
+
+			phoneLabel.style.width = "20%"
+			phoneLabel.style.borderRadius = "5px 0px 0px 5px"
+
+			phoneLabelPar.style.opacity = "0"
+
+			phoneLabelIcon.style.opacity = "1"
+		} else {
+			phoneInput.style.width = "0%"
+
+			phoneLabel.style.width = "100%"
+			phoneLabel.style.borderRadius = "5px"
+
+			phoneLabelPar.style.opacity = "1"
+
+			phoneLabelIcon.style.opacity = "0"
+		}
+	})
+
 
 
 

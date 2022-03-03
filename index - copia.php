@@ -8,12 +8,12 @@
 		<!-- BOOTSTRAP -->
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-		<!-- CSS PERSONAL -->
-		<link rel="stylesheet" type="text/css" href="style.css">
-
 		<!-- LINK FONT AWESOME -->
 		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-
+		
+		<!-- CSS PERSONAL -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
 		<!-- CSS OVERLAY -->
 		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css">		
 
@@ -159,17 +159,22 @@
 			<div id="formulario">
 					<label for="nombreapellido">Nombre y apellido</label>
 					<input type="text" name="nombreapellido" id="nombreapellido">
-					<label for="telefono">Teléfono</label>
-					<input type="number" name="telefono" id="telefono">
+					<div id="phoneContainer">
+						<input type="number" name="phone" id="phoneInput">
+						<label for="phoneInput" id="phoneLabel">
+							<p>Phone</p>
+							<i class="fas fa-phone-alt"></i>
+						</label>
+					</div>
 					<div id="addressContainer">
 						<input type="text" name="address" id="addressInput">
-						<label for="address" id="addressLabel">Dirección</label>
+						<label for="addressInput" id="addressLabel">Dirección</label>
 						<div id="addressBarFocus"></div>
 						<div id="addressBarValid"></div>
 					</div>					
 					<div id="emailContainer">
 						<input type="text" name="email" id="emailInput"></input>
-						<label for="email" id="emailLabel">E-mail</label>
+						<label for="emailInput" id="emailLabel">E-mail</label>
 					</div>
 					
 					<input type="submit" name="submit">
@@ -541,6 +546,8 @@
 
 		<!-- Tilt.js -->
 		<script src="vanilla-tilt.js"></script>
+
+
 
 	</body>
 </html>
