@@ -91,6 +91,7 @@
 	phoneInput.addEventListener("input", function(e){
 		if (phoneInput.value != "") {
 			phoneInput.style.width = "100%"
+			phoneInput.style.paddingLeft = "6px"
 
 			phoneLabel.style.width = "20%"
 			phoneLabel.style.borderRadius = "5px 0px 0px 5px"

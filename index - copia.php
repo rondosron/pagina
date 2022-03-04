@@ -159,7 +159,7 @@
 			<div id="formulario">
 					<div id="nameSurnameContainer">
 						<input type="text" name="nameSurname" id="nameSurnameInput">
-						<label for="nameSurname" id="nameSurnameLabel">Name</label>
+						<label for="nameSurnameInput" id="nameSurnameLabel">Name</label>
 					</div>
 					<div id="phoneContainer">
 						<input type="number" name="phone" id="phoneInput">
