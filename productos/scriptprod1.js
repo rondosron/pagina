@@ -220,7 +220,7 @@
 			/** FIN TALLES **/
 
 			/** COLORES **/
-			let diccionarioColores = {rojo:"#f30e0e", azul:"#0a1be8", amarillo:"#fbff0f", verde:"#06d616", naranja:"#f58817", violeta:"#6410ea", blanco:"white", negro:"black"};
+			let diccionarioColores = {rojo:"#cd0000", azul:"#0a1be8", amarillo:"#ffeb00", verde:"#16cd00", naranja:"#f58817", violeta:"#6410ea", blanco:"white", negro:"black"};
 			// en vez de traducirlos, poner el codigo hexadecimal de un color mas agradable, porque esos son feos.
 
 			let contenedorCirculos = document.querySelector('#contenedorCirculos')

@@ -83,62 +83,62 @@
 			<div id="contenedorseparador2">
 			</div>
 			<div id="contenedorproducto1" class="contendorproducto">
-				<div id="producto1">
+				<div id="producto1" class="productBackground">
 					<img class="producto" id="imagen1" src="fotos/1.png" data-filtro="remera hombre lisa" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco">
 				</div>
 			</div>
 			<div id="contenedorproducto2" class="contendorproducto">
-				<div id="producto2">
+				<div id="producto2" class="productBackground">
 					<img class="producto" id="imagen2" src="fotos/2.png" data-filtro="remera mujer personalizada" data-nombre="Remera Beatles" data-precio="$800" data-cantidad-cuotas="3" data-precio-cuota="300" data-talles="S/M/L" data-colores="rojo/verde/amarillo">
 				</div>
 			</div>
 			<div id="contenedorproducto3" class="contendorproducto">
-				<div id="producto3">
+				<div id="producto3" class="productBackground">
 					<img class="producto" id="imagen3" src="fotos/3.png" data-filtro="gorra hombre personalizada" data-nombre="Remera Coldplay" data-precio="$600" data-cantidad-cuotas="3" data-precio-cuota="250" data-talles="XS/S/L/XL" data-colores="verde/negro/naranja">
 				</div>
 			</div>
 			<div id="contenedorproducto4" class="contendorproducto">
-				<div id="producto4">
+				<div id="producto4" class="productBackground">
 					<img class="producto" id="imagen4" src="fotos/4.png" data-filtro="gorra mujer personalizada">
 				</div>
 			</div>
 			<div id="contenedorproducto5" class="contendorproducto">
-				<div id="producto5">
+				<div id="producto5" class="productBackground">
 					<img class="producto" id="imagen5" src="fotos/5.png" data-filtro="vinilo cocina">
 				</div>
 			</div>
 			<div id="contenedorproducto6" class="contendorproducto">
-				<div id="producto6">
+				<div id="producto6" class="productBackground">
 					<img class="producto" id="imagen6" src="fotos/6.png" data-filtro="remera hombre lisa">
 				</div>
 			</div>
 			<div id="contenedorproducto7" class="contendorproducto">
-				<div id="producto7">
+				<div id="producto7" class="productBackground">
 					<img class="producto" id="imagen7" src="fotos/7.png" data-filtro="remera mujer personalizada">
 				</div>
 			</div>
 			<div id="contenedorproducto8" class="contendorproducto">
-				<div id="producto8">
+				<div id="producto8" class="productBackground">
 					<img class="producto" id="imagen8" src="fotos/8.png" data-filtro="gorra hombre personalizada">
 				</div>
 			</div>
 			<div id="contenedorproducto9" class="contendorproducto">
-				<div id="producto9">
+				<div id="producto9" class="productBackground">
 					<img class="producto" id="imagen9" src="fotos/9.png" data-filtro="gorra mujer personalizada">
 				</div>
 			</div>
 			<div id="contenedorproducto10" class="contendorproducto">
-				<div id="producto10">
+				<div id="producto10" class="productBackground">
 					<img class="producto" id="imagen10" src="fotos/10.png" data-filtro="vinilo cocina">
 				</div>
 			</div>
 			<div id="contenedorproducto11" class="contendorproducto">
-				<div id="producto11">
+				<div id="producto11" class="productBackground">
 					<img class="producto" id="imagen11" src="fotos/11.png" data-filtro="remera mujer personalizada">
 				</div>
 			</div>
 			<div id="contenedorproducto12" class="contendorproducto">
-				<div id="producto12">
+				<div id="producto12" class="productBackground">
 					<img class="producto" id="imagen12" src="fotos/12.png" data-filtro="gorra hombre personalizada">
 				</div>
 			</div>

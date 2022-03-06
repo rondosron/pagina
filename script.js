@@ -69,6 +69,16 @@
 		}
 	})
 
+/////////////////////// PRODUCTS /////////////////////////////
+	let productBackgrounds = document.querySelectorAll(".productBackground")
+
+	// productBackgrounds.forEach(function(background) {
+	// 	background.addEventListener("mouseover", function(e) {
+	// 		background.style.transition = "width 0.1s, height 0.1s, z-index 0.1s 1s, transform 0.1s, box-shadow 0.1s" /* Adds delay to z-index transition */
+	// 	})
+	// })
+
+
 /////////////////////// FORM VALIDATION ///////////////////////
 	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
 
