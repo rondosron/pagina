@@ -15,7 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
 		<!-- CSS OVERLAY -->
-		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css">		
+		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css" id="currentCSS">		
 
 	</head>
 	<body>
@@ -38,6 +38,14 @@
 					</div>
 					<div id="contacto" class="botonnav">CONTACTO</div>
 				</div>
+			</div>
+			<div>
+				<label for="v1">v1</label>
+				<input type="radio" name="version" class="versionInput" id="v1" value="1"></input>
+				<label for="v2">v2</label>
+				<input type="radio" name="version" class="versionInput" id="v2" value="2"></input>
+				<label for="v3">v3</label>
+				<input type="radio" name="version" class="versionInput" id="v3" value="3"></input>
 			</div>
 			<div id="contenedortoggle">
 				<i id="menutoggle" class="fas fa-bars"></i>
@@ -73,10 +81,11 @@
 		</div>
 
 		<!-- PRODUCTOS -->
-		<div id="tituloproductos">
-			<p>PRODUCTOS</p>
-		</div>
+		
 		<div id="productos">
+			<div id="tituloproductos">
+				<h2>PRODUCTOS</h2>
+			</div>
 			<div id="contenedorseparador1">
 			</div>
 			
@@ -84,17 +93,32 @@
 			</div>
 			<div id="contenedorproducto1" class="contendorproducto">
 				<div id="producto1" class="productBackground">
-					<img class="producto" id="imagen1" src="fotos/1.png" data-filtro="remera hombre lisa" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco">
+					<img class="producto" id="imagen1" src="fotos/1.png" data-filtro="remera hombre lisa" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
 				</div>
 			</div>
 			<div id="contenedorproducto2" class="contendorproducto">
 				<div id="producto2" class="productBackground">
-					<img class="producto" id="imagen2" src="fotos/2.png" data-filtro="remera mujer personalizada" data-nombre="Remera Beatles" data-precio="$800" data-cantidad-cuotas="3" data-precio-cuota="300" data-talles="S/M/L" data-colores="rojo/verde/amarillo">
+					<img class="producto" id="imagen2" src="fotos/2.png" data-filtro="remera mujer personalizada" data-nombre="Remera Beatles" data-precio="$800" data-cantidad-cuotas="3" data-precio-cuota="300" data-talles="S/M/L" data-colores="rojo/verde/amarillo" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum." >
 				</div>
 			</div>
 			<div id="contenedorproducto3" class="contendorproducto">
 				<div id="producto3" class="productBackground">
-					<img class="producto" id="imagen3" src="fotos/3.png" data-filtro="gorra hombre personalizada" data-nombre="Remera Coldplay" data-precio="$600" data-cantidad-cuotas="3" data-precio-cuota="250" data-talles="XS/S/L/XL" data-colores="verde/negro/naranja">
+					<img class="producto" id="imagen3" src="fotos/3.png" data-filtro="gorra hombre personalizada" data-nombre="Remera Coldplay" data-precio="$600" data-cantidad-cuotas="3" data-precio-cuota="250" data-talles="XS/S/L/XL" data-colores="verde/negro/naranja" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
 				</div>
 			</div>
 			<div id="contenedorproducto4" class="contendorproducto">
@@ -147,11 +171,11 @@
 		<!-- PRESUPUESTO + FORMULARIO -->
 		<div id="presupuestoyformulario">
 			<div id="presupuesto">
-				<h1>SIMULACION PRESUPUESTO</h1>
-				<h2>Presupuesto actual:</h2>
+				<h2>SIMULACIÓN PRESUPUESTO</h2>
+				<h3>Presupuesto actual:</h3>
 				<div id="contenedoritemspresupuesto"></div>
 				<div id="total"></div>
-				<h1>ENVIAR PEDIDO (ponerlo tambien como enviar duda/consulta)</h1>
+				<h5>ENVIAR PEDIDO (ponerlo tambien como enviar duda/consulta)</h5>
 				<form action="envioform.php" method="POST" name="consulta">
 					<textarea id="pedidoinput" name="pedidoinput" rows="6"></textarea>
 			</div>
@@ -230,6 +254,7 @@
 
 		<!-- QUIENES SOMOS -->
 		<div id="quienessomos">
+			<h2>QUIÉNES SOMOS</h2>
 			<div id="card1container" class="cardcontainers">
 				<div id="card1">
 					<div id="backgroundCard1">
@@ -510,7 +535,7 @@
 			<div id="contenedorinfo">
 				<div id="navegacionfooter">
 					<div id="contenedornavegacion">
-						<h1>Navegación</h1>
+						<h5>Navegación</h5>
 						<div><i class="fas fa-angle-right"></i><p>HOMBRE</p></div>
 						<div><i class="fas fa-angle-right"></i><p>MUJER</p></div>
 						<div><i class="fas fa-angle-right"></i><p>PERSONALIZADAS</p></div>
@@ -519,15 +544,15 @@
 					</div>
 				</div>
 				<div id="mediosdepagofooter">
-					<h1>Medios de pago</h1>
+					<h5>Medios de pago</h5>
 					<img src="mastercard.png"><img src="visa.png"><img src="mercadopago.png">
 				</div>
 				<div id="faqs">
-					<h1>FAQ's</h1>
+					<h5>FAQ's</h5>
 					<div><i class="fas fa-angle-right"></i><p>PREGUNTAS FRECUENTES</p></div>
 				</div>
 				<div id="contactofooter">
-					<h1>Contacto</h1>
+					<h5>Contacto</h5>
 					<div><i class="fab fa-whatsapp"></i></i><p>WHATSAPP</p></div>
 					<div><i class="fab fa-facebook-square"></i><p>FACEBOOK</p></div>
 					<div><i class="fab fa-instagram"></i><p>INSTAGRAM</p></div>

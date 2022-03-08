@@ -69,6 +69,18 @@
 		}
 	})
 
+///////////////////// VERSION BUTTONS /////////////////
+	let currentCSS = document.querySelector("#currentCSS")
+	let versionInput = document.querySelectorAll(".versionInput")
+
+	versionInput.forEach(function(eachButton){
+		eachButton.addEventListener("change", function(e){
+			if (eachButton.checked) {
+				currentCSS.href = `productos/styleprod${eachButton.value}.css`
+			}
+		})
+	})
+
 /////////////////////// PRODUCTS /////////////////////////////
 	let productBackgrounds = document.querySelectorAll(".productBackground")
 

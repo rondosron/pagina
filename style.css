@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Serif:wght@100;200;400;500&family=Noto+Serif+Display:wght@200;300;400;600;700;900&display=swap');
+
+/*
+font-family: 'Bree Serif', serif;
+font-family: 'DM Serif Display', serif;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'Noto Serif Display', serif;
+*/
+
 @font-face {
 	font-family: Bubble Bobble;
 	src: local("Bubble Bobble Normal");
@@ -63,6 +72,16 @@ body {
   --color3: #1E5F74;
   --color4: #FCDAB7;
   --color5: #efefef;
+}
+
+/* Titles */
+h2 {
+	font-family: 'Noto Serif Display', serif;
+	font-size: 3rem;
+	margin: 0;
+	text-transform: uppercase;
+	margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /**************************************** NAV BAR ************************************************/
@@ -215,7 +234,7 @@ body {
 /**************************************************** PRODUCTOS *************************************************/
 
 	#productos {
-		padding-top: 45px;
+		/*padding-top: 45px;*/
 		width: 100%;
 		min-height: 100vh;
 		background: var(--color1);
@@ -230,12 +249,21 @@ body {
 	}
 
 
-	#tituloproductos{
-		margin-top: 50px; /* alto del nav */
+	#tituloproductos {
+		/*margin-top: 50px;*/ /* alto del nav */
 		width: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background: #1d2d50;
+	}
+
+	#tituloproductos h2 {
+		font-family: 'Noto Serif Display', serif;
+		/* font-family: 'Bree Serif', serif; */
+		font-size: 3rem;
+		color: var(--color5);
+		/*margin: 0;*/
 	}
 
 	.contendorproducto {
@@ -338,8 +366,8 @@ body {
 	#presupuesto {
 		width: 100%;
 		height: 100%;
-		padding: 50px 0;
-		background: #391950;
+		padding: 0 0 50px 0;
+		background: var(--color5);
 		z-index: 4;
 		grid-area: presupuesto;
 		color: #d3bcfd;
@@ -348,20 +376,53 @@ body {
 		align-items: center;
 	}
 
+	#presupuesto h2 {
+		font-family: 'Noto Serif Display', serif;
+		font-weight: bold;
+		text-transform: none;
+		color: var(--color1);
+	}
+
+	#presupuesto h3 {
+		font-family: 'Noto Serif Display', serif;
+		font-weight: 600;
+		color: #324f8f;
+	}
+
+	#presupuesto h5 {
+		font-family: 'Noto Serif Display', serif;
+		font-weight: 600;
+	}
+
+	#presupuesto #contenedoritemspresupuesto {
+		color: #324f8f;
+	}
+
+	#presupuesto #contenedoritemspresupuesto div div {
+		/* Items font */
+		font-family: system-ui;
+	}
+
+	#presupuesto #total {
+		color: #324f8f;
+		font-family: system-ui;
+		font-weight: bold;
+	}
+
 	#presupuesto form {
 		width: 75%;
 	}
 
 	#pedidoinput {
 		width: 100%;
-		background: #2a123a;
+		background: #1d2d50;
 		outline: none;
 		border-radius: 5px;
 		color: white;
 		transition: 0.1s;
-		box-shadow: 4px 4px 0 0 #a173f3;
+		box-shadow: 4px 4px 0 0 #879ed3;
 		resize: none;
-		border: 2px solid #e0ceff;
+		border: 2px solid #b7d1ff;
 	}
 
 	#pedidoinput:focus {
@@ -376,7 +437,7 @@ body {
 /************************************** FORMULARIO **************************************/
 
 	#formulario {
-		background: #391950;
+		background: var(--color5);
 		grid-area: formulario;
 		/*min-height: 100vh;*/
 		display: flex;
@@ -401,10 +462,14 @@ body {
 			box-shadow: 2px 2px 6px 0px rgb(38 5 62), 2px 2px 6px 0px rgb(38 5 62), -2px -2px 6px 0px rgb(181 78 255 / 36%), -2px -2px 6px 0px rgb(181 78 255 / 55%), inset 2px 2px 5px -4px rgb(181 78 255 / 40%), inset -2px -2px 5px 0px rgb(38 5 62 / 40%); /* Inset shadows are optional */
 			color: #eae9ea;
 			padding-left: 7px;
+			background: linear-gradient(178deg, #ffffff, #d7d7d7);
+			box-shadow: 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, inset -2px -2px 6px #cbcbcb, inset 2px 2px 6px #ffffff;
 		}
 
 		#nameSurnameContainer #nameSurnameInput:focus {
 			box-shadow: inset 2px 2px 6px 0px rgb(38 5 62), inset 2px 2px 6px 0px rgb(38 5 62), inset -2px -2px 6px 0px rgb(181 78 255 / 45%), inset -2px -2px 5px -1px rgb(181 78 255 / 33%), inset -2px -2px 5px 0px rgb(38 5 62 / 40%);
+			background: var(--color5);
+			box-shadow: inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff;
 		}
 
 		#nameSurnameContainer #nameSurnameLabel {
@@ -575,13 +640,14 @@ body {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background: beige;
+		background: var(--color1);
 		position: relative;
 	}
 
 	#preguntasfrecuentes #preguntasfrecuentestitle {
 		position: absolute;
-		top: 20px;
+		top: 0px;
+		color: var(--color5);
 	}
 
 	.accordion {
@@ -599,10 +665,16 @@ body {
 /**************************************** QUIENES SOMOS *****************************************/
 	#quienessomos {
 		height: calc(100vh - 50px); /* LE RESTO EL TAMAÑO DEL NAV FIJO */
-		background: brown;
+		background: var(--color5);
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 		gap: 1rem;
+	}
+
+	#quienessomos h2 {
+		position: absolute;
+		justify-self: center;
+		color: var(--color1);
 	}
 
 	#quienessomos .cardcontainers {
@@ -1118,6 +1190,7 @@ body {
 		}
 
 		#border1Card2 p, #border2Card2 p {
+			font-family: "Calibri", sans-serif;
 			font-size: 136px;
 			position: absolute;
 			font-weight: bold;
@@ -2291,6 +2364,7 @@ body {
 		grid-area: info;
 		display: flex;
 		justify-content: center;
+		background: var(--color1);
 	}
 
 	#navegacionfooter {
@@ -2386,5 +2460,6 @@ body {
 
 	#copyright {
 		grid-area: copyright;
-		background: brown;
+		background: #101e3c;
+		color: var(--color5);
 	}

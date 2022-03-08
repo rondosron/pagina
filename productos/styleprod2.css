@@ -63,44 +63,43 @@ body {
 	/*********************************** ESTRUCTURA PPAL **************************************/
 
 		#contenedorproductooverlay {
-			background: var(--colorA); /* Option 2 */
-			background: linear-gradient(0deg, #cdcdcd, #ebebeb); /* Option 1 */
-		    height: 80%;
-		    width: 40%;
-		    display: grid;
-		    grid-template-areas: "foto datos";
-		    grid-template-columns: min-content auto;
-		    max-height: 400px;
-		    min-height: 330px;
-		    min-width: 636px;
-		    position: fixed; /* fixed para >660, el resto absolute*/
-		    top: 50%;
-		    left: 50%;
-		    transform: translate(-50%, -50%);
-		    z-index: 201;
-		    visibility: hidden;
-		    border-radius: 0 25px 0 25px;
-		    /*top: 60px;
-		    left: 50px;
-		    right: 50px;
-		    transform: none;*/
-		    box-shadow: 0 0 120px 0 #000000eb;
+			background: red;
+			height: 80%;
+			width: 40%;
+			display: grid;
+			grid-template-areas: "foto datos";
+			grid-template-columns: min-content auto;
+			max-height: 400px;
+			min-height: 330px;
+			min-width: 636px;
+			position: fixed; /* fixed para >660, el resto absolute*/
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 201;
+			visibility: hidden;
+			border-radius: 0 25px 0 25px;
+			/*top: 60px;
+			left: 50px;
+			right: 50px;
+			transform: none;*/
+			box-shadow: 0 0 120px 0 #000000eb;
 		}
 
 
 		#contenedorimagen {
 			grid-area: foto;
 			position: relative;
-		    height: 100%;
-		    width: fit-content;
-		    padding: 10px;
-		    box-sizing: border-box;
+			height: 100%;
+			width: fit-content;
+			padding: 10px;
+			box-sizing: border-box;
 		}
 
 		#imagenoverlay {
 			height: 100%;
-		    width: auto;
-		    border-radius: 0 25px 0 25px;
+			width: auto;
+			border-radius: 0 25px 0 25px;
 		}
 
 		#datos {
@@ -111,7 +110,7 @@ body {
 									"talles"
 									"colores"
 									"extra";
-		    padding: 10px 10px 10px 0;
+			padding: 10px 10px 10px 0;
 		}
 
 	/*************************************** NOMBRE ******************************************/

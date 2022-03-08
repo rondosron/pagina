@@ -319,7 +319,7 @@
 
 	document.body.addEventListener('mouseup', function(){ // terminar el click donde sea
 		alpresupuesto.style.top = "0px"
-		alpresupuesto.style.boxShadow = "0px 3px 0"
+		alpresupuesto.style.boxShadow = "0px 3px 0px #081e50"
 	})
 
 	background.addEventListener('click', function() {
