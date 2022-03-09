@@ -460,7 +460,8 @@ h2 {
 			background: #391950;
 			/* background: linear-gradient(360deg, #00000050, transparent); */
 			box-shadow: 2px 2px 6px 0px rgb(38 5 62), 2px 2px 6px 0px rgb(38 5 62), -2px -2px 6px 0px rgb(181 78 255 / 36%), -2px -2px 6px 0px rgb(181 78 255 / 55%), inset 2px 2px 5px -4px rgb(181 78 255 / 40%), inset -2px -2px 5px 0px rgb(38 5 62 / 40%); /* Inset shadows are optional */
-			color: #eae9ea;
+			color: var(--color1);
+			font-family: monospace;
 			padding-left: 7px;
 			background: linear-gradient(178deg, #ffffff, #d7d7d7);
 			box-shadow: 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, inset -2px -2px 6px #cbcbcb, inset 2px 2px 6px #ffffff;
@@ -474,8 +475,9 @@ h2 {
 
 		#nameSurnameContainer #nameSurnameLabel {
 			position: absolute;
-			color: wheat;
-			left: 7px;
+			color: var(--color1);
+			left: 15px;
+			top: 0px;
 			transition: 0.5s;
 		}
 
@@ -498,7 +500,9 @@ h2 {
 			transition: 1s;
 			border-radius: 0px 5px 5px 0px;
 			outline: none;
-			background: #2a123a;
+			background: #375aa5;
+			color: var(--color5);
+			font-family: sans-serif;
 		}
 
 		/* Set !important on every focus property so it "overrides" JS values. Otherwise focus event won't work from html/css after JS execution */
@@ -511,12 +515,13 @@ h2 {
 		}
 
 		#phoneContainer #phoneLabel {
-			background: #a173f3;
+			background: var(--color1);
 			border-radius: 5px 5px 5px 5px;
 			width: 100%;
 			transition: 1s;
 			display: flex;
 			justify-content: center;
+			color: var(--color5);
 		}
 
 		#phoneInput:focus ~ #phoneLabel {
@@ -554,9 +559,9 @@ h2 {
 		}
 
 		#addressContainer #addressInput {
-			background: #00000045;
+			background: #002f9540;
 			border: none;
-			border-bottom: 1px solid #9400ff;
+			border-bottom: 1px solid var(--color1);
 			position: relative;
 		}
 
@@ -569,30 +574,32 @@ h2 {
 			left: 6px;
 			/* top: 3px; */
 			line-height: normal;
-			color: white;
+			color: var(--color1);
 		}
 
 		#addressContainer #addressBarFocus {
 			width: 0%;
 			height: 1px;
-			background: white;
+			background: #234aa1;
 			position: absolute;
 			bottom: 0;
 			transition: 0.5s;
-			filter: drop-shadow(0px 0px 2px white) drop-shadow(0px 0px 1px white);
+			filter: drop-shadow(0px 0px 2px #234aa1) drop-shadow(0px 0px 1px #234aa1);
 		}
 
 		#addressInput:focus ~ #addressBarFocus {
 			width: 100%;
 		}
 
+		/* Optional */
 		#addressContainer #addressBarValid {
 			width: 0%;
 			height: 1px;
-			background: red;
+			background: #00b9ff;
 			position: absolute;
 			bottom: 0;
 			transition: 0.5s;
+			filter: drop-shadow(0px 0px 2px #00b9ff) drop-shadow(0px 0px 1px #00b9ff);
 		}
 
 	/*** Email ***/
@@ -609,25 +616,25 @@ h2 {
 			pointer-events: none;
 			border-radius: 10px;
 			line-height: normal;
-			color: #a173f3;
+			color: var(--color1);
 		}
 
 		#emailContainer input {
-			border: #a173f3 1px solid;
+			border: var(--color1) 1px solid;
 			background: transparent;
 			transition: 0.3s;
 			outline: none;
 		}
 
 		#emailContainer input:focus, #emailContainer input:focus-visible {
-			border: 1px #9400ff solid;
+			border: 1px #375aa5 solid;
 			background: transparent;
 		}
 
 		#emailInput:focus + #emailLabel {
-			color: #9400ff;
+			color: #375aa5;
 			top: -8px;
-			background: #391950;
+			background: var(--color5);
 			padding: 0 3px;
 			font-size: 0.8rem;
 		}
