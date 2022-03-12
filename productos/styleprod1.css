@@ -32,6 +32,7 @@ body {
 }
 
 #contenedorproductooverlay h2 {
+	font-family: 'vag rounded bt';
 	display: inline-block;
 	font-size: var(--altura-subtitulos);
 	position: relative;

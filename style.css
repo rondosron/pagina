@@ -222,12 +222,65 @@ h2 {
 
 /*************************************** CAROUSEL ********************************************/
 	.carousel {
-		height: 500px;
+		height: 57vh;
 		overflow: hidden;
+		margin-top: 50px; /* Navbar height */
 	}
 
 	.carousel-control-next, .carousel-control-prev {
 		color: red;
+	}
+
+	.carousel-inner {
+		height: 100%;
+	}
+
+	.carousel-item {
+		height: 100%;
+	}
+
+	.carousel-inner .carousel-item:nth-child(1) .carousel-item-background {
+		background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/Blue-Wallpaper-For-Background-30.jpg);
+		background-size: cover;
+		height: 100%;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carousel-inner .carousel-item:nth-child(2) .carousel-item-background {
+		background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/Blue-Wallpaper-For-Background-26.jpg);
+		background-size: cover;
+		height: 100%;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carousel-inner .carousel-item:nth-child(3) .carousel-item-background {
+		background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/Blue-Wallpaper-For-Background-10.jpg);
+		background-size: cover;
+		height: 100%;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.textCarouselContainer {
+		height: 80%;
+		width: 80%;
+	}
+
+	.textCarouselContainer p:nth-child(1) {
+		color: white;
+		text-transform: uppercase;
+		font-size: 7vw;
+		line-height: 6vw;
+	}
+
+	.descriptionCarousel {
+		color: red;
+		font-size: calc(13px + 1.7vw); /* 13px acts as a min-font-size, plus a variable value */
 	}
 
 

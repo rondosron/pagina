@@ -61,13 +61,28 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="fotos/1.png" class="d-block w-100" alt="...">
+					<div class="d-block w-100 carousel-item-background" alt="...">
+						<div class="textCarouselContainer">
+							<p class="titleCarousel" id="titleCarouselItem1">Lorem Ipsum</p>
+							<p class="descriptionCarousel" id="descriptionCarouselItem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci veniam, minima ab. Quod suscipit quaerat, provident enim eos at, hic tempora ut aliquam voluptatum quam nam incidunt veritatis optio.</p>
+						</div>
+					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="fotos/2.png" class="d-block w-100" alt="...">
+					<div class="d-block w-100 carousel-item-background" alt="...">
+						<div class="textCarouselContainer">
+							<p class="titleCarousel" id="titleCarouselItem1">Lorem Ipsum</p>
+							<p class="descriptionCarousel" id="descriptionCarouselItem2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit obcaecati vero magnam ut reiciendis pariatur nobis ab nisi sequi, ad, optio hic impedit totam, vel illum laboriosam id sit.</p>
+						</div>
+					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="fotos/3.png" class="d-block w-100" alt="...">
+					<div class="d-block w-100 carousel-item-background" alt="...">
+						<div class="textCarouselContainer">
+							<p class="titleCarousel" id="titleCarouselItem1">Lorem Ipsum</p>
+							<p class="descriptionCarousel" id="descriptionCarouselItem3">Lorem ipsum dolor sit amet consectetur adipisicing, elit. Sed expedita libero nemo sint quia ducimus iste illo praesentium atque vero. Exercitationem distinctio ex ratione molestias quod repellendus ad nihil animi!</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
