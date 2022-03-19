@@ -3,6 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Serif:wght@100;200;400;500&family=Noto+Serif+Display:wght@200;300;400;600;700;900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap');
+
 /*
 font-family: 'Bree Serif', serif;
 font-family: 'DM Serif Display', serif;
@@ -694,18 +698,31 @@ h2 {
 
 /*************************************** PREGUNTAS FRECUENTES **********************************************/
 	#preguntasfrecuentes {
-		height: calc(100vh - 50px); /* LE RESTO EL TAMAÑO DEL NAV FIJO */
+		min-height: calc(100vh - 50px); /* LE RESTO EL TAMAÑO DEL NAV FIJO */
 		width: 100%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		background: var(--color1);
 		position: relative;
+		padding-bottom: 30px;
+	}
+
+	#preguntasfrecuentestitleContainer {
+		width: 100%;
+		text-align: center;
+	}
+	
+	#accordionFAQsContainer {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 1;
 	}
 
 	#preguntasfrecuentes #preguntasfrecuentestitle {
-		position: absolute;
 		top: 0px;
 		color: var(--color5);
 	}
@@ -758,6 +775,18 @@ h2 {
 		/*border-top-right-radius: 15px;*/
 		border-radius: 15px;
 		transition: 1s;
+		color: var(--color5);
+		font-family: 'Port Lligat Slab';
+		font-size: 18px;
+		line-height: normal;
+	}
+
+	.accordion-button:after {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23eee'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Set new color on fill=''. Ex: fill='red' or fill='%23eee' (%23 needed) */
+	}
+
+	.accordion-button:not(.collapsed)::after {
+		background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23eee'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); /* Set new color on fill=''. Ex: fill='red' or fill='%23eee' (%23 needed) */
 	}
 
 	.accordion-button:not(.collapsed) {
@@ -787,6 +816,10 @@ h2 {
 	.accordion-collapse {
 		border-radius: 15px;
 		transition: 1s;
+	}
+
+	.accordion-body {
+		font-family: calibri;
 	}
 
 /**************************************** QUIENES SOMOS *****************************************/
@@ -2492,10 +2525,11 @@ h2 {
 		display: flex;
 		justify-content: center;
 		background: var(--color1);
+		color: var(--color5);
 	}
 
 	#navegacionfooter {
-		background: red;
+		/*background: red;*/
 		align-items: center;
 		justify-content: center;
 		display: inline-block;
@@ -2520,7 +2554,7 @@ h2 {
 	}
 
 	#mediosdepagofooter {
-		background: blue;
+		/*background: blue;*/
 		display: inline-block;
 	}
 
@@ -2537,7 +2571,7 @@ h2 {
 	}
 
 	#faqs {
-		background: white;
+		/*background: white;*/
 		display: inline-block;
 		margin-left: 40px;
 	}
@@ -2555,7 +2589,7 @@ h2 {
 	}
 
 	#contactofooter {
-		background: white;
+		/*background: white;*/
 		display: inline-block;
 		margin-left: 40px;
 	}
@@ -2574,7 +2608,7 @@ h2 {
 	}
 
 	#contactofooter div i {
-		color: red;
+		color: #efefef;
 		transform: scale(1.8);
 	}
 
