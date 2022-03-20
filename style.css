@@ -7,6 +7,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600&display=swap');
+
 /*
 font-family: 'Bree Serif', serif;
 font-family: 'DM Serif Display', serif;
@@ -71,6 +73,7 @@ body {
 }
 
 :root {
+	--color0: #101e3c;
 	--color1: #1D2D50;
 	--color2: #133B5C;
 	--color3: #1E5F74;
@@ -93,14 +96,15 @@ h2 {
 	#navbar {
 		width: 100%;
 		height: 50px;
-		background: #92d2ea;
+		background: var(--color0);
 		display: grid;
 		grid-template-areas: "logo busqueda contenedorbotones toggle";
-		grid-template-columns: minmax(min-content, min-content) minmax(min-content, min-content) 1fr minmax(min-content, min-content);
+		grid-template-columns: minmax(min-content, 0.7fr) minmax(min-content, 1fr) 1fr minmax(min-content, 1fr);
 		position: fixed;
 		top: 0;
 		left: 0;
 		z-index: 300;
+		color: var(--color5);
 	}
 
 	#contenedorbotones{
@@ -110,6 +114,8 @@ h2 {
 
 	#logonav {
 		grid-area: logo;
+		display: flex;
+		flex-direction: row;
 	}
 
 	#hombre {
@@ -244,21 +250,24 @@ h2 {
 	}
 
 	.carousel-inner .carousel-item:nth-child(1) .carousel-item-background {
-		background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/Blue-Wallpaper-For-Background-30.jpg);
+		background-image: url(https://cdn.wallpapersafari.com/61/31/jOwk9m.jpg);
 		background-size: cover;
 		height: 100%;
 		display: flex !important;
 		justify-content: center;
 		align-items: center;
+		background-position: center;
 	}
 
 	.carousel-inner .carousel-item:nth-child(2) .carousel-item-background {
-		background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/Blue-Wallpaper-For-Background-26.jpg);
-		background-size: cover;
+		background-image: url(https://www.parsecs.com.ar/wp-content/uploads/2019/07/Instantaneo-parsecs-600x657.jpg);
+		background-size: contain;
 		height: 100%;
 		display: flex !important;
 		justify-content: center;
 		align-items: center;
+		background-position: center;
+		background-repeat-x: repeat;
 	}
 
 	.carousel-inner .carousel-item:nth-child(3) .carousel-item-background {
@@ -435,9 +444,10 @@ h2 {
 
 	#presupuesto h2 {
 		font-family: 'Noto Serif Display', serif;
-		font-weight: bold;
+		/*font-weight: bold;*/
 		text-transform: none;
 		color: var(--color1);
+		text-align: center;
 	}
 
 	#presupuesto h3 {
@@ -2520,12 +2530,33 @@ h2 {
 								"copyright";
 	}
 
-	#contenedorinfo {
+	#footer #contenedorinfo {
 		grid-area: info;
-		display: flex;
-		justify-content: center;
+		display: grid;
+		grid-template-areas: "a b c d";
+		gap: 30px;
 		background: var(--color1);
 		color: var(--color5);
+		font-family: 'Spartan', sans-serif;
+		line-height: normal;
+		padding: 10px 0;
+		justify-content: center;
+	}
+
+	/* Titles */
+	#contenedorinfo h5 {
+		text-transform: uppercase;
+		width: fit-content;
+	}
+
+	/* Subtitles */
+	#contenedorinfo p {
+		display: inline-block;
+		margin-left: 5px;
+		font-size: 20px;
+		margin-bottom: 0px;
+		position: relative;
+		top: 1.646px;
 	}
 
 	#navegacionfooter {
@@ -2533,7 +2564,8 @@ h2 {
 		align-items: center;
 		justify-content: center;
 		display: inline-block;
-		margin-right: 40px;
+		/*margin-right: 40px;*/
+		grid-area: a;
 	}
 
 	#contenedornavegacion {
@@ -2546,16 +2578,17 @@ h2 {
 		margin-bottom: 0;
 	}
 
-	#navegacionfooter div p {
+	/*#navegacionfooter div p {
 		display: inline-block;
 		margin-left: 5px;
 		font-size: 20px;
 		margin-bottom: 0;
-	}
+	}*/
 
 	#mediosdepagofooter {
 		/*background: blue;*/
 		display: inline-block;
+		grid-area: b;
 	}
 
 	#mediosdepagofooter h1 {
@@ -2573,7 +2606,8 @@ h2 {
 	#faqs {
 		/*background: white;*/
 		display: inline-block;
-		margin-left: 40px;
+		/*margin-left: 40px;*/
+		grid-area: c;
 	}
 
 	#faqs h1 {
@@ -2582,16 +2616,17 @@ h2 {
 		margin-bottom: 0;
 	}
 
-	#faqs div p {
+	/*#faqs div p {
 		display: inline-block;
 		font-size: 20px;
 		margin-bottom: 0;
-	}
+	}*/
 
 	#contactofooter {
 		/*background: white;*/
 		display: inline-block;
-		margin-left: 40px;
+		/*margin-left: 40px;*/
+		grid-area: d;
 	}
 
 	#contactofooter div {
@@ -2613,10 +2648,7 @@ h2 {
 	}
 
 	#contactofooter div p {
-		display: inline-block;
 		margin-left: 10px;
-		font-size: 20px;
-		margin-bottom: 0;
 	}
 
 	#copyright {

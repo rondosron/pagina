@@ -21,7 +21,8 @@
 	<body>
 		<nav id="navbar">
 			<div id="logonav">
-				LOGO
+				<i class="fad fa-trees"></i>
+				<p>Los Alamos</p>
 			</div>
 			<div id="busqueda" class="botonnav">BÚSQUEDA
 				<div id="contenedorbotones">
@@ -556,11 +557,11 @@
 				<div id="navegacionfooter">
 					<div id="contenedornavegacion">
 						<h5>Navegación</h5>
-						<div><i class="fas fa-angle-right"></i><p>HOMBRE</p></div>
-						<div><i class="fas fa-angle-right"></i><p>MUJER</p></div>
-						<div><i class="fas fa-angle-right"></i><p>PERSONALIZADAS</p></div>
-						<div><i class="fas fa-angle-right"></i><p>LISAS</p></div>
-						<div><i class="fas fa-angle-right"></i><p>CONTACTO</p></div>
+						<div><i class="fas fa-angle-right"></i><p>Hombre</p></div>
+						<div><i class="fas fa-angle-right"></i><p>Mujer</p></div>
+						<div><i class="fas fa-angle-right"></i><p>Personalizadas</p></div>
+						<div><i class="fas fa-angle-right"></i><p>Lisas</p></div>
+						<div><i class="fas fa-angle-right"></i><p>Contacto</p></div>
 					</div>
 				</div>
 				<div id="mediosdepagofooter">
@@ -569,13 +570,13 @@
 				</div>
 				<div id="faqs">
 					<h5>FAQ's</h5>
-					<div><i class="fas fa-angle-right"></i><p>PREGUNTAS FRECUENTES</p></div>
+					<div><i class="fas fa-angle-right"></i><p>Preguntas Frecuentes</p></div>
 				</div>
 				<div id="contactofooter">
 					<h5>Contacto</h5>
-					<div><i class="fab fa-whatsapp"></i></i><p>WHATSAPP</p></div>
-					<div><i class="fab fa-facebook-square"></i><p>FACEBOOK</p></div>
-					<div><i class="fab fa-instagram"></i><p>INSTAGRAM</p></div>
+					<div><i class="fab fa-whatsapp"></i></i><p>WhatsApp</p></div>
+					<div><i class="fab fa-facebook-square"></i><p>Facebook</p></div>
+					<div><i class="fab fa-instagram"></i><p>Instagram</p></div>
 				</div>
 			</div>
 			<div id="copyright">

@@ -1,4 +1,4 @@
-* {
+#contenedorproductooverlay {
 	font-family: 'vag rounded bt';
 }
 
@@ -341,6 +341,13 @@ body {
 
 /***************************** MEDIA QUERYS *********************************/
 /* AL FINAL PARA QUE NADA LO SOBREESCRIBA */
+
+	@media screen and (max-width: 920px) {
+		#contenedorinfo {
+			grid-template-areas: 	"a b"
+									"c d" !important;
+		}
+	}
 
 	@media screen and (max-width: 815px) {
 		#productos {
