@@ -21,10 +21,10 @@
 	<body>
 		<nav id="navbar">
 			<div id="logonav">
-				<i class="fad fa-trees"></i>
-				<p>Los Alamos</p>
+				<i class="fad fa-shipping-fast"></i>
+				<p>Nor - Yol</p>
 			</div>
-			<div id="busqueda" class="botonnav">BÚSQUEDA
+
 				<div id="contenedorbotones">
 					<div id="hombre" class="botonnav filtro" data-filtro="hombre">HOMBRE</div>
 					<div id="mujer" class="botonnav filtro" data-filtro="mujer">MUJER</div>
@@ -33,14 +33,14 @@
 					<div id="lisas" class="botonnav filtro" data-filtro="lisa">LISAS</div>
 					<div id="dudas" class="botonnav">DUDAS
 						<div id="contenedordudas">
-							<div class="botonnav filtro" data-filtro="vinilo">VINILO</div>
-							<div class="botonnav filtro" data-filtro="taza">TAZA</div>
+							<div class="botonnav filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
+							<div class="botonnav filtro subItemBotonNav" data-filtro="taza">TAZA</div>
 						</div>
 					</div>
 					<div id="contacto" class="botonnav">CONTACTO</div>
 				</div>
-			</div>
-			<div>
+
+			<div id="versionContainer">
 				<label for="v1">v1</label>
 				<input type="radio" name="version" class="versionInput" id="v1" value="1"></input>
 				<label for="v2">v2</label>

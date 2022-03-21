@@ -38,22 +38,24 @@
 
 //////////////////////////// BOTONES FILTRO NAV //////////////////////////////////////
 
-	let busqueda = document.querySelector('#busqueda')
+	// let busqueda = document.querySelector('#busqueda')
 	//let contenedorbotones = document.querySelector('#contenedorbotones')
 	let contenedordudas = document.querySelector('#contenedordudas')
 
 	busquedaactivado = false
 
-	busqueda.addEventListener('click', function(e){
-		busquedaactivado = !busquedaactivado
-		dudasactivado = false
-		if (busquedaactivado) {
-			contenedorbotones.style.display = "flex"
-		} else {
-			contenedorbotones.style.display = "none"
-			contenedordudas.style.display = "none"
-		}
-	})
+	// busqueda.addEventListener('click', function(e){
+	// 	busquedaactivado = !busquedaactivado
+	// 	dudasactivado = false
+	// 	if (busquedaactivado) {
+	// 		contenedorbotones.style.display = "flex"
+	// 	} else {
+	// 		contenedorbotones.style.display = "none"
+	// 		contenedordudas.style.display = "none"
+	// 	}
+	// })
+
+	var mediaqueryList = window.matchMedia("")
 
 	let dudas = document.querySelector('#dudas')
 
@@ -63,9 +65,15 @@
 		e.stopPropagation() // para que no se clickee el padre tambien
 		dudasactivado = !dudasactivado
 		if (dudasactivado) {
-			contenedordudas.style.display = "flex"
+			// contenedordudas.style.display = "flex"
+			dudas.classList.add("dudasInToggleClicked")
+
+			contenedordudas.classList.add("contenedorDudasInToggleClicked")
 		} else {
-			contenedordudas.style.display = "none"
+			// contenedordudas.style.display = "none"
+			dudas.classList.remove("dudasInToggleClicked")
+
+			contenedordudas.classList.remove("contenedorDudasInToggleClicked")
 		}
 	})
 
