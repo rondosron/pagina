@@ -55,25 +55,41 @@
 	// 	}
 	// })
 
-	var mediaqueryList = window.matchMedia("")
+	var mediaqueryList = window.matchMedia("(max-width: 700px)")
+	console.log(mediaqueryList)
 
 	let dudas = document.querySelector('#dudas')
+	let subItemBotonNav = document.querySelectorAll(".subItemBotonNav")
 
 	dudasactivado = false
 
 	dudas.addEventListener('click', function(e){
 		e.stopPropagation() // para que no se clickee el padre tambien
 		dudasactivado = !dudasactivado
-		if (dudasactivado) {
-			// contenedordudas.style.display = "flex"
-			dudas.classList.add("dudasInToggleClicked")
+		if (window.matchMedia("(max-width: 700px)").matches) {
+			if (dudasactivado) {
+				dudas.classList.add("dudasInToggleClicked")
 
-			contenedordudas.classList.add("contenedorDudasInToggleClicked")
+				contenedordudas.classList.add("contenedorDudasInToggleClicked")
+			} else {
+				dudas.classList.remove("dudasInToggleClicked")
+
+				contenedordudas.classList.remove("contenedorDudasInToggleClicked")
+			}
 		} else {
-			// contenedordudas.style.display = "none"
-			dudas.classList.remove("dudasInToggleClicked")
-
-			contenedordudas.classList.remove("contenedorDudasInToggleClicked")
+			if (dudasactivado) {
+				// contenedordudas.classList.add("verticalList")
+				// subItemBotonNav.forEach(function(boton) {
+				// 	boton.classList.add("verticalListDivider")
+				// })
+				contenedordudas.style.display = "grid";
+			} else {
+				// contenedordudas.classList.remove("verticalList")
+				// subItemBotonNav.forEach(function(boton) {
+				// 	boton.classList.remove("verticalListDivider")
+				// })
+				contenedordudas.style.display = "none";
+			}
 		}
 	})
 

@@ -33,8 +33,8 @@
 					<div id="lisas" class="botonnav filtro" data-filtro="lisa">LISAS</div>
 					<div id="dudas" class="botonnav">DUDAS
 						<div id="contenedordudas">
-							<div class="botonnav filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
-							<div class="botonnav filtro subItemBotonNav" data-filtro="taza">TAZA</div>
+							<div class="filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
+							<div class="filtro subItemBotonNav" data-filtro="taza">TAZA</div>
 						</div>
 					</div>
 					<div id="contacto" class="botonnav">CONTACTO</div>

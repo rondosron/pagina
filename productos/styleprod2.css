@@ -1,7 +1,3 @@
-* {
-	font-family: 'vag rounded bt';
-}
-
 :root {
 	--altura-subtitulos: 23px;
 	--colorA: #e3e3e3;
@@ -63,7 +59,7 @@ body {
 	/*********************************** ESTRUCTURA PPAL **************************************/
 
 		#contenedorproductooverlay {
-			background: red;
+			background: var(--color5);
 			height: 80%;
 			width: 40%;
 			display: grid;
@@ -78,28 +74,31 @@ body {
 			transform: translate(-50%, -50%);
 			z-index: 201;
 			visibility: hidden;
-			border-radius: 0 25px 0 25px;
-			/*top: 60px;
-			left: 50px;
-			right: 50px;
-			transform: none;*/
 			box-shadow: 0 0 120px 0 #000000eb;
 		}
 
+		#contenedorproductooverlay:after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			background: radial-gradient(transparent, black);
+			opacity: 0.2;
+		}
 
 		#contenedorimagen {
 			grid-area: foto;
 			position: relative;
 			height: 100%;
 			width: fit-content;
-			padding: 10px;
 			box-sizing: border-box;
 		}
 
 		#imagenoverlay {
 			height: 100%;
 			width: auto;
-			border-radius: 0 25px 0 25px;
 		}
 
 		#datos {
@@ -110,7 +109,7 @@ body {
 									"talles"
 									"colores"
 									"extra";
-			padding: 10px 10px 10px 0;
+			padding: 10px;
 		}
 
 	/*************************************** NOMBRE ******************************************/
