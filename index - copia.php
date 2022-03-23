@@ -524,6 +524,9 @@
 				<img id="imagenoverlay" src="fotos/1.png" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" >
 			</div>
 			<div id="datos">
+				<!-- Modal Type 1 -->
+				<!-- Modal Type 1 -->
+				<!-- Modal Type 1 -->
 				<div id="nombre">
 					<!--<h2>Nombre:</h2>-->
 				</div>
@@ -548,6 +551,17 @@
 							<h3>Agregar al presupuesto</h3>
 						</div>
 					</div>
+				</div>
+				<!-- Modal Type 2 (added) -->
+				<!-- Modal Type 2 (added) -->
+				<!-- Modal Type 2 (added) -->
+
+				<!-- HACER QUE SE CARGUEN DESDE LA DATA DEL PRODUCTO CON JS -->
+				<div id="productDescription">
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam labore ducimus blanditiis quisquam, nisi, magnam quae explicabo, perspiciatis, rerum aut iste sequi non? Ratione quasi, porro sed alias laudantium accusamus!</p>
+				</div>
+				<div id="productCode">
+					#AA-2153
 				</div>
 			</div>
 		</div>

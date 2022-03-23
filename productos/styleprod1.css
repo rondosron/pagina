@@ -1,3 +1,8 @@
+/* List of elements that won't display on this type of modal */
+#productDescription	{
+	display: none;
+}
+
 #contenedorproductooverlay {
 	font-family: 'vag rounded bt';
 }
@@ -111,13 +116,14 @@ body {
 									"precio"
 									"talles"
 									"colores"
-									"extra";
+									"input";
 		    padding: 10px 10px 10px 0;
 		}
 
 	/*************************************** NOMBRE ******************************************/
 
 		#nombre {
+			grid-area: nombre;
 			text-align: center;
 			color: var(--color1);
 		}
@@ -131,6 +137,9 @@ body {
 		}
 
 	/************************************* PRECIO ************************************/
+		#precio {
+			grid-area: precio;
+		}
 
 		.fa-dollar-sign {
 			height: var(--altura-subtitulos);
@@ -185,6 +194,9 @@ body {
 		}
 
 	/***************************************** TALLES ***************************************/
+		#talles {
+			grid-area: talles;
+		}
 
 		.fa-ruler {
 			height: var(--altura-subtitulos);
@@ -234,6 +246,9 @@ body {
 		}
 
 	/************************************** COLORES ****************************************/
+		#colores {
+			grid-area: colores;
+		}
 
 		.fa-palette {
 			height: var(--altura-subtitulos);
@@ -260,6 +275,7 @@ body {
 	/********************************* BOTONES FINALES *****************************/
 
 		#botones {
+			grid-area: input;
 			display: flex;
 		    align-items: flex-end;
 		    justify-content: center;
@@ -341,6 +357,13 @@ body {
 
 /***************************** MEDIA QUERYS *********************************/
 /* AL FINAL PARA QUE NADA LO SOBREESCRIBA */
+
+	/* Menu visibile on hover ONLY on devices that support this event. Otherwise, it's displayed with the click event (JS) */
+	@media (hover: hover) {
+		#dudas:hover #contenedordudas {
+			display: grid;
+		}
+	}
 
 	@media screen and (max-width: 920px) {
 		#contenedorinfo {

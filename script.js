@@ -78,16 +78,8 @@
 			}
 		} else {
 			if (dudasactivado) {
-				// contenedordudas.classList.add("verticalList")
-				// subItemBotonNav.forEach(function(boton) {
-				// 	boton.classList.add("verticalListDivider")
-				// })
 				contenedordudas.style.display = "grid";
 			} else {
-				// contenedordudas.classList.remove("verticalList")
-				// subItemBotonNav.forEach(function(boton) {
-				// 	boton.classList.remove("verticalListDivider")
-				// })
 				contenedordudas.style.display = "none";
 			}
 		}
