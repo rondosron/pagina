@@ -119,6 +119,20 @@ body {
 			padding: 10px;
 		}
 
+	/************************ EXIT ******************/
+		#quitModalIconContainer {
+			position: absolute;
+			right: 8px;
+			top: 4px;
+			z-index: 2;
+		}
+
+		#quitModalIcon {
+			cursor: pointer;
+			opacity: 0.6;
+
+		}
+
 	/*************************************** NOMBRE ******************************************/
 
 		#nombre {

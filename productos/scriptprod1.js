@@ -145,6 +145,7 @@
 
 			let imagenoverlay = document.querySelector('#imagenoverlay')
 			imagenoverlay.src = imagen.src
+			// imagenoverlay.src = "./" + imagen.style.backgroundImage.slice(5,-1) /* Remove url( and ) from de background-image attribute value and add ./ to get to the correct folder from styleprod1.js */
 
 			/** NOMBRE **/
 			let nombre = document.querySelector('#nombre')
@@ -322,7 +323,10 @@
 		alpresupuesto.style.boxShadow = "0px 3px 0px #081e50"
 	})
 
-	background.addEventListener('click', function() {
+	/******** CLOSE MODAL or CLICK BACKGROUND ************/
+
+	/* Main function */
+	function closeModal () {
 		background.style.visibility = "hidden" // creo que solo detecta background (de las variables declaradas dentro de la otra funcion) porque es la que esta en el evento, las otras las tengo que volver a llamar
 		let contenedor = document.querySelector('#contenedorproductooverlay')
 		contenedor.style.visibility = "hidden"
@@ -344,6 +348,17 @@
 		circuloColor.forEach(function(circulo) {
 			circulo.remove()
 		})
+	}
+
+	background.addEventListener('click', function() {
+		closeModal()
+	})
+
+	let quitModalIcon = document.querySelector("#quitModalIcon")
+
+	quitModalIcon.addEventListener('click', function() {
+		console.log("clickeado")
+		closeModal()
 	})
 
 	let contenedoroverlay = document.querySelector('#contenedorproductooverlay')

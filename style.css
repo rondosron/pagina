@@ -520,7 +520,7 @@ h2 {
 			line-height: normal;		
 		}
 
-		#producto1:hover .nombreyprecio, #producto2:hover .nombreyprecio, #producto3:hover .nombreyprecio, #producto4:hover .nombreyprecio, #producto5:hover .nombreyprecio, #producto6:hover .nombreyprecio, #producto7:hover .nombreyprecio, #producto8:hover .nombreyprecio, #producto9:hover .nombreyprecio, #producto10:hover .nombreyprecio, #producto11:hover .nombreyprecio, #producto12:hover .nombreyprecio {
+		.productBackground:hover .nombreyprecio {
 			opacity: 1;
 			transition: opacity 0.5s 0.1s ease; /* VER */
 		}
@@ -529,7 +529,7 @@ h2 {
 		
 	}
 
-	#producto1, #producto2, #producto3, #producto4, #producto5, #producto6, #producto7, #producto8, #producto9, #producto10, #producto11, #producto12 {
+	.productBackground {
 		display: flex;
 		justify-content: center;
 		align-items: flex-start;
@@ -541,7 +541,7 @@ h2 {
 		transition: width 0.2s, height 0.2s, z-index 0.1s, transform 0.2s, box-shadow 0.2s, padding-top 0.2s;
 	}
 
-	#producto1:hover, #producto2:hover, #producto3:hover, #producto4:hover, #producto5:hover, #producto6:hover, #producto7:hover, #producto8:hover, #producto9:hover, #producto10:hover, #producto11:hover, #producto12:hover {
+	.productBackground:hover {
 		transform: scale(1.2);
 		z-index: 5; /* Para que se ponga por encima de los demas */
 		width: 210px;
@@ -550,18 +550,27 @@ h2 {
 		box-shadow: 0 0 60px #000000ad;
 	}
 
-	#imagen1, #imagen2, #imagen3, #imagen4, #imagen5, #imagen6, #imagen7, #imagen8, #imagen9, #imagen10, #imagen11, #imagen12 {
+	.imageContainer {
+		height: 200px;
+		width: 200px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+	}
+
+	.producto {
 		z-index: 2;
+		/*max-height: 200px;*/
+		width: fit-content;
+		height: fit-content;
+		/*max-width: none;*/
 	}
 
-	/*#imagen1:hover, #imagen2:hover, #imagen3:hover, #imagen4:hover, #imagen5:hover, #imagen6:hover, #imagen7:hover, #imagen8:hover, #imagen9:hover, #imagen10:hover, #imagen11:hover, #imagen12:hover {
-		margin-top: 5px;
-		transition-duration: 0.1s;
-	}*/
+	/* CHEQUEAR DOS CASOS:
+		Si la foto es mas ancha que alta (sella rosca): max-height: 200px;
+		si la foto es mas alta que ancha (sella gas): max-width: 200px;
 
-	#content1, #content2, #content3, #content4, #content5, #content6, #content7, #content8, #content9, #content10, #content11, #content12  {
-		position: absolute;
-	}
+	*/
 
 #presupuestoyformulario {
 	display: grid;

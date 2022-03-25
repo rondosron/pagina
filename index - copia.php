@@ -19,6 +19,17 @@
 
 	</head>
 	<body>
+
+		<?php
+			$conexion = new mysqli('localhost', 'root', '', 'noryol');
+
+			if ($conexion->connect_error) {
+				die('Error de Conexión (' . $conexion->connect_errno . ') '. $conexion->connect_error);
+			}
+
+			echo 'Éxito... ' . $conexion->host_info . "\n";
+		?>
+
 		<nav id="navbar">
 			<div id="logonav">
 				<i class="fad fa-shipping-fast"></i>
@@ -97,7 +108,7 @@
 		</div>
 
 		<!-- PRODUCTOS -->
-		
+	
 		<div id="productos">
 			<div id="tituloproductos">
 				<h2>PRODUCTOS</h2>
@@ -107,6 +118,41 @@
 			
 			<div id="contenedorseparador2">
 			</div>
+			<?php
+				if ($resultado = $conexion->query("SELECT * FROM productos LIMIT 10")) {
+					printf("La selección devolvió %d filas. <br>", $resultado->num_rows);
+
+					//$obj = $resultado->fetch_object();
+					// var_dump($obj);
+					//$result = json_decode(json_encode($obj), true);
+					// while ($item = $resultado->fetch_object()) {
+					// 	var_dump($item);
+					// 	//var_dump($obj("codigo"));
+					// 	// var_dump($obj);
+					// 	// var_dump($obj)
+					// }
+					while ($item = $resultado->fetch_object()) {
+						if ($item->codigo <> "") {
+							echo 	"<div class='contendorproducto'>
+										<div class='productBackground'>
+											<div class='imageContainer'>
+												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='' data-nombre='Remera Rolling Stones' data-precio='$500' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-description='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'>
+											</div>
+										</div>
+									</div>";
+							// echo "Codigo: " . $item->codigo . ", producto: " . $item->nombre . "<br>";
+						} else {
+							echo "Sin código" . ", producto: " . $item->nombre . "<br>";
+						}
+						
+					}
+
+					/* liberar el conjunto de resultados */
+					$resultado->close();
+				}
+
+			?>
+
 			<div id="contenedorproducto1" class="contendorproducto">
 				<div id="producto1" class="productBackground">
 					<img class="producto" id="imagen1" src="fotos/1.png" data-filtro="remera hombre lisa" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -527,6 +573,9 @@
 				<!-- Modal Type 1 -->
 				<!-- Modal Type 1 -->
 				<!-- Modal Type 1 -->
+				<div id="quitModalIconContainer">
+					<i class="fas fa-times" id="quitModalIcon"></i>
+				</div>
 				<div id="nombre">
 					<!--<h2>Nombre:</h2>-->
 				</div>
@@ -610,6 +659,9 @@
 		<script src="vanilla-tilt.js"></script>
 
 
+		<?php
+			$conexion->close();
+		?>
 
 	</body>
 </html>
