@@ -106,6 +106,19 @@
 	// 	})
 	// })
 
+	/********** DETECT VERTICAL OR HORIZONTAL ORIENTATION ***********/
+		let productos = document.querySelectorAll('.producto')
+		
+		productos.forEach(function(imagen){
+			if (imagen.naturalHeight > imagen.naturalWidth) {
+				imagen.classList.add("verticalPicture")
+			} else {
+				imagen.classList.remove("verticalPicture") /* Remove it in case it was set before */
+			}
+		})
+
+		
+
 
 /////////////////////// FORM VALIDATION ///////////////////////
 	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 

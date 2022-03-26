@@ -75,7 +75,7 @@ body {
 		    width: 40%;
 		    display: grid;
 		    grid-template-areas: "foto datos";
-		    grid-template-columns: min-content auto;
+		    grid-template-columns: 58% 42%;
 		    max-height: 400px;
 		    min-height: 330px;
 		    min-width: 636px;
@@ -93,22 +93,40 @@ body {
 		    box-shadow: 0 0 120px 0 #000000eb;
 		}
 
-
 		#contenedorimagen {
 			grid-area: foto;
 			position: relative;
-		    height: 100%;
-		    width: fit-content;
-		    padding: 10px;
-		    box-sizing: border-box;
-		    overflow: hidden;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#contenedorOverflow {
+			overflow: hidden;
+			position: relative;
+			height: 95%;
+			width: 95%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 25px 0 25px 0;
 		}
 
 		#imagenoverlay {
+			max-width: none;
+			width: auto;
+			border-radius: 25px 0 25px 0;
+			/*max-width: 400px;*/
+
+			max-height: 400px;
 			height: 100%;
-		    width: auto;
-		    border-radius: 25px 0 25px 0;
-		    max-width: 400px;
+		}
+
+		.verticalImageOverlay {
+			max-width: 400px;
+			max-height: none;
 		}
 
 		#datos {

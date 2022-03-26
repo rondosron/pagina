@@ -567,7 +567,9 @@
 		<!-- OVERLAY -->
 		<div id="contenedorproductooverlay"> <!-- GRID PADRE -->
 			<div id="contenedorimagen">
-				<img id="imagenoverlay" src="fotos/1.png" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" >
+				<div id="contenedorOverflow">
+					<img id="imagenoverlay" src="fotos/1.png" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" >
+				</div>
 			</div>
 			<div id="datos">
 				<!-- Modal Type 1 -->
