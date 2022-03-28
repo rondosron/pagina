@@ -1,139 +1,10 @@
-	/*
-		let imagen = document.querySelector('#imagenoverlay')
-
-		let nombre = document.querySelector('#nombre')
-		let nombreData = document.createElement('h1')
-		nombreData.id = "contenidonombre"
-		nombreData.innerText = imagen.getAttribute("data-nombre")
-		nombre.appendChild(nombreData)
-
-		let precio = document.querySelector('#precio')
-		let precioData = document.createElement('p')
-		precioData.id = "contenidoprecio"
-		precioData.innerText = imagen.getAttribute("data-precio")
-		precio.appendChild(precioData)
-	
-		/* CUOTAS */
-	/*	let iconoCuotas = document.createElement('i') // icono
-		iconoCuotas.classList.add("fas")
-		iconoCuotas.classList.add("fa-credit-card")
-		precio.appendChild(iconoCuotas)
-		
-		let textoCuotas1 = document.createElement('p') // texto (x cuotas de $
-		textoCuotas1.id = "textoCuotas1"
-		textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de " // 3 cuotas
-		precio.appendChild(textoCuotas1)
-
-		let contenedorPrecioCuota = document.createElement('span')
-		contenedorPrecioCuota.id = "contenedorPrecioCuota"
-		contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
-		precio.appendChild(contenedorPrecioCuota)
-
-		let textoCuotas2 = document.createElement('p') // parentesis final
-		textoCuotas2.id = "textoCuotas2"
-		textoCuotas2.innerText = ")"
-		precio.appendChild(textoCuotas2)
-
-		let contenedorCuotas = document.createElement('div')
-		contenedorCuotas.id = "contenedorcuotas"
-		precio.appendChild(contenedorCuotas)
-		contenedorCuotas.appendChild(iconoCuotas)
-		contenedorCuotas.appendChild(textoCuotas1)
-		contenedorCuotas.appendChild(contenedorPrecioCuota)
-		contenedorCuotas.appendChild(textoCuotas2)
-
-
-		/*
-		let contenedorPrecioCuota = document.createElement('span')
-		precioCuota = imagen.getAttribute("data-precio-cuota")
-		contenedorPrecioCuota.id = "contenedorPrecioCuota"
-		contenedorPrecioCuota.innerText = precioCuota
-		textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de $" // 3 cuotas
-		textoCuotas1.appendChild(contenedorPrecioCuota)
-		textoCuotas.innerText = textoCuotas + ")"
-		precio.appendChild(iconoCuotas)
-		precio.appendChild(textoCuotas)
-	*/
-	/*<i class="fas fa-credit-card"></i>
-		let talles = document.querySelector('#talles')
-	*/	
-	/*	let contenedorTalles = document.querySelector('#contenedorTalles')
-		stringTalles = imagen.getAttribute("data-talles")
-		arregloTalles = stringTalles.split("/")
-		console.log(arregloTalles)
-		for (let i = 0; i < arregloTalles.length; i++) {
-			console.log(i)
-			let botonTalle = document.createElement('div')
-			if (i == 0) { // el primer boton tiene border radius a la izquierda
-				botonTalle.classList.add("botontalle")
-				botonTalle.classList.add("primerbotontalle")
-				botonTalle.innerText = arregloTalles[i]
-			} else if (i == arregloTalles.length - 1) { // el ultimo boton tiene border radius a la derecha
-				botonTalle.classList.add("botontalle")
-				botonTalle.classList.add("ultimobotontalle")
-				botonTalle.innerText = arregloTalles[i]
-			} else { // todos los botones del medio
-				botonTalle.classList.add("botontalle")
-				botonTalle.innerText = arregloTalles[i]
-			}
-			contenedorTalles.appendChild(botonTalle)
-		}
-	/*
-		let tallesData = document.createElement('')
-
-
-
-		
-		tallesData.id = "contenidotalles"
-		
-		talles.appendChild(tallesData)
-	*/
-
-	/*
-		let colores = document.querySelector('#colores')
-		let coloresData = document.createElement('p')
-		coloresData.id = "contenidocolores"
-		coloresData.innerText = imagen.getAttribute("data-colores")
-		colores.appendChild(coloresData)
-	*/
-	/*	let diccionarioColores = {rojo:"#f30e0e", azul:"#0a1be8", amarillo:"#fbff0f", verde:"#06d616", naranja:"#f58817", violeta:"#6410ea", blanco:"white", negro:"black"};
-		// en vez de traducirlos, poner el codigo hexadecimal de un color mas agradable, porque esos son feos.
-
-		let contenedorCirculos = document.querySelector('#contenedorCirculos')
-
-		stringColores = imagen.getAttribute("data-colores")
-		arregloColores = stringColores.split("/")
-		for (let i = 0; i < arregloColores.length; i++) {
-			let color = arregloColores[i]
-			let englishColor = diccionarioColores[color];
-			let circuloColor = document.createElement('div')
-			circuloColor.style.background = englishColor
-			circuloColor.classList.add("circulo")
-			contenedorCirculos.appendChild(circuloColor)
-		}
-
-		///////////////////////////////// BOTONES FINALES ///////////////////////////////
-
-		let alpresupuesto = document.querySelector('#alpresupuesto')
-
-		alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
-			alpresupuesto.style.top = "3px"
-			alpresupuesto.style.boxShadow = "none"
-		})
-
-		document.body.addEventListener('mouseup', function(){ // terminar el click donde sea
-			alpresupuesto.style.top = "0px"
-			alpresupuesto.style.boxShadow = "0px 3px 0"
-		})
-	*/
-
-	///////////////////////////////// OVERLAY /////////////////////////////////////
+///////////////////////////////// OVERLAY /////////////////////////////////////
 
 	let imagenes = document.querySelectorAll(".producto")
 
 	imagenes.forEach(function(imagenAOverlay) {
 		imagenAOverlay.addEventListener('click', function(){
-			console.log(imagenes)
+
 			/////////////////////////////////// BACKGROUND /////////////////////////////////
 			let background = document.querySelector('#background')
 			background.style.visibility = "visible"
@@ -271,7 +142,7 @@
 		
 	}) // fin for each image
 
-	///////////////////////////////// BOTONES FINALES ///////////////////////////////
+///////////////////////////////// BOTONES FINALES ///////////////////////////////
 
 	let alpresupuesto = document.querySelector('#alpresupuesto')
 
@@ -332,7 +203,7 @@
 		alpresupuesto.style.boxShadow = "0px 3px 0px #081e50"
 	})
 
-	/******** CLOSE MODAL or CLICK BACKGROUND ************/
+/******** CLOSE MODAL or CLICK BACKGROUND ************/
 
 	/* Main function */
 	function closeModal () {
@@ -370,64 +241,107 @@
 		closeModal()
 	})
 
-	let contenedoroverlay = document.querySelector('#contenedorproductooverlay')
-	/*	
-		window.scrollY + window.innerHeight) // lo scrolleado verticalmente + la altura de la pantalla (scroll acumulado)
-		contenedoroverlay.offsetTop // distancia desde arriba del elemento hasta arriba de todo el documento. Tambien podria llamar la propiedad top, porque esta posicionado con absolute
-		contenedoroverlay.offsetHeight) // altura del elemento
-	*/
+//////////////////////// ZOOM ON MOUSE OVER ///////////////////////////
+	let contenedorOverflow = document.querySelector("#contenedorOverflow")
+	let imagenoverlay = document.querySelector("#imagenoverlay")
 
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
-	// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+	contenedorOverflow.addEventListener("mousemove", function(event){
+		// transform-origin (x, y) >>> 
+		// el maximo x = 777px >>> desde 833
+		// El maximo Y = 380px >>> desde 272?
+		// El minimo x = -143px >>> desde 393?
+		//  el minimo Y = 0px >>> desde 568?
 
-	// comparo siempre con la posicion (top) inicial del contenedor, que es la que marca el limite sumado a la altura del elemento
-	let topInicial = contenedoroverlay.offsetTop // 
-	// tambien la linea limite debe incluir el espacio del bottom a agregar, si no da un salto desde el fin del elemento + bottom
-	let bottomInicial = 20 // bottom auto, igual al top inicial
+		// (483, 568) a (1, 380)
 
-	// POSICION INICIAL (segun ancho), porque si no la primera vez que se abre desde un producto que no es el primero, queda muy arriba, fuera de la pantalla.
-	if (window.innerWidth <= 660) {
-		contenedoroverlay.style.position = "absolute"
-		contenedoroverlay.style.top = "60px"
-		contenedoroverlay.style.bottom = "auto"
-		contenedoroverlay.style.height = "auto"
-	} else { // >660 se usa el contenedor a lo ancho, ubicado en el centro
+		// console.log("event.ClientX: " + event.clientX)
+		// console.log("event.ClientY: " + event.clientY)
+
+		// clientX = event.clientX - event.target.offsetLeft
+		// clientY = event.clientY - event.target.offsetTop
+
+		// console.log("ClientX: " + clientX)
+		// console.log("ClientY: " + clientY)
+		// console.log("----------------------")
+
+		let mWidth = imagenoverlay.offsetWidth
+		let mHeight = imagenoverlay.offsetHeight
+		let mouseX = event.offsetX
+		let mouseY = event.offsetY
+
+		let imgPosX = (mouseX / mWidth * 100)
+		let imgPosY = (mouseY / mHeight * 100)
+
+		// clientX = clientX / mWidth * 20
+		// clientY = clientY / mHeight * 20
+
+		// imagenoverlay.style.transform = "translate(-"+clientX+"%, -"+clientY+"%) scale(2)"
+		imagenoverlay.style.transformOrigin = `${imgPosX}% ${imgPosY}%`
+		imagenoverlay.style.transform = "scale(2)"
+	})
+
+	contenedorOverflow.addEventListener("mouseleave", function(event){
+		imagenoverlay.style.transform = "scale(1)"
+	})
+
+let contenedoroverlay = document.querySelector('#contenedorproductooverlay')
+/*	
+	window.scrollY + window.innerHeight) // lo scrolleado verticalmente + la altura de la pantalla (scroll acumulado)
+	contenedoroverlay.offsetTop // distancia desde arriba del elemento hasta arriba de todo el documento. Tambien podria llamar la propiedad top, porque esta posicionado con absolute
+	contenedoroverlay.offsetHeight) // altura del elemento
+*/
+
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+// FALTA RESPONSIVE DEL CONTENEDOR vvvv
+
+// comparo siempre con la posicion (top) inicial del contenedor, que es la que marca el limite sumado a la altura del elemento
+let topInicial = contenedoroverlay.offsetTop // 
+// tambien la linea limite debe incluir el espacio del bottom a agregar, si no da un salto desde el fin del elemento + bottom
+let bottomInicial = 20 // bottom auto, igual al top inicial
+
+// POSICION INICIAL (segun ancho), porque si no la primera vez que se abre desde un producto que no es el primero, queda muy arriba, fuera de la pantalla.
+if (window.innerWidth <= 660) {
+	contenedoroverlay.style.position = "absolute"
+	contenedoroverlay.style.top = "60px"
+	contenedoroverlay.style.bottom = "auto"
+	contenedoroverlay.style.height = "auto"
+} else { // >660 se usa el contenedor a lo ancho, ubicado en el centro
+	contenedoroverlay.style.top = "50%"
+	contenedoroverlay.style.left = "50%"
+	contenedoroverlay.style.bottom = "auto"
+	contenedoroverlay.style.right = "auto"
+	contenedoroverlay.style.transform = "translate(-50%, -50%)"
+}
+// VER EL <660 NO FUNCIONA
+// VER EL <660 NO FUNCIONA
+// VER EL <660 NO FUNCIONA
+// VER EL <660 NO FUNCIONA
+window.addEventListener("scroll", function(){
+	if (window.innerWidth <= 660){ // como un media query
+		if (contenedoroverlay.style.visibility == "visible"){ // cuando este activo... // VER SI SACAR ESTA CONDICION (creo que si)
+			if((window.scrollY + window.innerHeight) >= (topInicial + contenedoroverlay.offsetHeight/* + bottomInicial*/)){ // se le agrega el tamañoNav a esa distancia para que no pegue un salto desde el final del contenedor
+				contenedoroverlay.style.position = "fixed"
+				contenedoroverlay.style.top = "auto"
+				contenedoroverlay.style.bottom = "20px"
+				contenedoroverlay.style.height = "auto"
+			} else {
+				contenedoroverlay.style.position = "absolute"
+				contenedoroverlay.style.top = "60px"
+				contenedoroverlay.style.bottom = "auto"
+				contenedoroverlay.style.height = "auto"
+			}
+		}
+	} else {
 		contenedoroverlay.style.top = "50%"
 		contenedoroverlay.style.left = "50%"
 		contenedoroverlay.style.bottom = "auto"
 		contenedoroverlay.style.right = "auto"
 		contenedoroverlay.style.transform = "translate(-50%, -50%)"
 	}
-	// VER EL <660 NO FUNCIONA
-	// VER EL <660 NO FUNCIONA
-	// VER EL <660 NO FUNCIONA
-	// VER EL <660 NO FUNCIONA
-	window.addEventListener("scroll", function(){
-		if (window.innerWidth <= 660){ // como un media query
-			if (contenedoroverlay.style.visibility == "visible"){ // cuando este activo... // VER SI SACAR ESTA CONDICION (creo que si)
-				if((window.scrollY + window.innerHeight) >= (topInicial + contenedoroverlay.offsetHeight/* + bottomInicial*/)){ // se le agrega el tamañoNav a esa distancia para que no pegue un salto desde el final del contenedor
-					contenedoroverlay.style.position = "fixed"
-					contenedoroverlay.style.top = "auto"
-					contenedoroverlay.style.bottom = "20px"
-					contenedoroverlay.style.height = "auto"
-				} else {
-					contenedoroverlay.style.position = "absolute"
-					contenedoroverlay.style.top = "60px"
-					contenedoroverlay.style.bottom = "auto"
-					contenedoroverlay.style.height = "auto"
-				}
-			}
-		} else {
-			contenedoroverlay.style.top = "50%"
-			contenedoroverlay.style.left = "50%"
-			contenedoroverlay.style.bottom = "auto"
-			contenedoroverlay.style.right = "auto"
-			contenedoroverlay.style.transform = "translate(-50%, -50%)"
-		}
-	})
+})

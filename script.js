@@ -97,28 +97,33 @@
 		})
 	})
 
-/////////////////////// PRODUCTS /////////////////////////////
-	let productBackgrounds = document.querySelectorAll(".productBackground")
+////////////////////// BUSCADOR ////////////////////////////
+	let buscador = document.querySelector("#buscador")
+	let buscarBoton = document.querySelector("#buscarBoton")
+	let productos = document.querySelectorAll(".producto")
 
-	// productBackgrounds.forEach(function(background) {
-	// 	background.addEventListener("mouseover", function(e) {
-	// 		background.style.transition = "width 0.1s, height 0.1s, z-index 0.1s 1s, transform 0.1s, box-shadow 0.1s" /* Adds delay to z-index transition */
-	// 	})
-	// })
-
-	/********** DETECT VERTICAL OR HORIZONTAL ORIENTATION ***********/
-		let productos = document.querySelectorAll('.producto')
-		
-		productos.forEach(function(imagen){
-			if (imagen.naturalHeight > imagen.naturalWidth) {
-				imagen.classList.add("verticalPicture")
+	function buscar () {
+		productos.forEach(function(producto){
+			if (producto.getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
+				producto.parentNode.parentNode.parentNode.style.display = "inline-flex"
 			} else {
-				imagen.classList.remove("verticalPicture") /* Remove it in case it was set before */
+				producto.parentNode.parentNode.parentNode.style.display = "none"
 			}
 		})
+	}
 
-		
+	buscarBoton.addEventListener("click", function(e){
+		buscar()
+	})
 
+	buscador.addEventListener("keypress", function(e){
+		if (e.charCode == "13") {
+			buscar()
+		}		
+	})
+
+/////////////////////// PRODUCTS /////////////////////////////
+	let productBackgrounds = document.querySelectorAll(".productBackground")
 
 /////////////////////// FORM VALIDATION ///////////////////////
 	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
@@ -161,10 +166,6 @@
 			phoneLabelIcon.style.opacity = "0"
 		}
 	})
-
-
-
-
 
 ////////////////////////// CARDS ////////////////////////
 	
@@ -273,3 +274,18 @@
 		})
 
 
+/********************** ON LOAD **********************/
+	/* At the end so it doesn't get overwritten */
+	window.onload = function () {
+
+		/********** DETECT VERTICAL OR HORIZONTAL ORIENTATION ***********/
+		let productos = document.querySelectorAll('.producto')
+		
+		productos.forEach(function(imagen){
+			if (imagen.naturalHeight > imagen.naturalWidth) {
+				imagen.classList.add("verticalPicture")
+			} else {
+				imagen.classList.remove("verticalPicture") /* Remove it in case it was set before */
+			}
+		})
+	}

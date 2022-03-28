@@ -129,6 +129,29 @@ body {
 			max-height: none;
 		}
 
+		/* ALTERNATIVA: por ejemplo, con imagenes mas anchas que largas, que la imagen entre completa (todo su ancho) y poner background en el contenedor del mismo color de fondo */
+			/*
+			#imagenoverlay {
+				max-width: -webkit-fill-available;
+				width: auto;
+				border-radius: 25px 0 25px 0;
+				max-height: 400px;
+				height: auto;
+			}
+
+			#contenedorOverflow {
+				overflow: hidden;
+				position: relative;
+				height: 95%;
+				width: 95%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 25px 0 25px 0;
+				background: white;
+			}
+			*/
+
 		#datos {
 			grid-area: datos;
 			display: grid;

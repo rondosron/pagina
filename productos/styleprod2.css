@@ -99,15 +99,26 @@ body {
 			position: relative;
 			height: 100%;
 			width: fit-content;
-			padding: 10px;
+			/*padding: 10px;*/
 			box-sizing: border-box;
+			/*overflow: hidden;*/
+		}
+
+		#contenedorOverflow {
 			overflow: hidden;
+			position: relative;
+			height: 95%;
+			width: 95%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 25px 0 25px 0;
 		}
 
 		#imagenoverlay {
 			height: 100%;
 			width: auto;
-			border-radius: 25px 0 25px 0;
+			/*border-radius: 25px 0 25px 0;*/
 			max-width: 400px;
 		}
 

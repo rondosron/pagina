@@ -112,6 +112,8 @@
 		<div id="productos">
 			<div id="tituloproductos">
 				<h2>PRODUCTOS</h2>
+				<input type="text" name="buscador" id="buscador">
+				<button id="buscarBoton">Buscar</button>
 			</div>
 			<div id="contenedorseparador1">
 			</div>
@@ -120,7 +122,7 @@
 			</div>
 			<?php
 				if ($resultado = $conexion->query("SELECT * FROM productos LIMIT 10")) {
-					printf("La selección devolvió %d filas. <br>", $resultado->num_rows);
+					// printf("La selección devolvió %d filas. <br>", $resultado->num_rows);
 
 					//$obj = $resultado->fetch_object();
 					// var_dump($obj);
@@ -132,19 +134,14 @@
 					// 	// var_dump($obj)
 					// }
 					while ($item = $resultado->fetch_object()) {
-						if ($item->codigo <> "") {
-							echo 	"<div class='contendorproducto'>
-										<div class='productBackground'>
-											<div class='imageContainer'>
-												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='' data-nombre='Remera Rolling Stones' data-precio='$500' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-description='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'>
-											</div>
+						// condicion if ($item->codigo <> "") { codigo } else { codigo }
+						echo 	"<div class='contendorproducto'>
+									<div class='productBackground'>
+										<div class='imageContainer'>
+											<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='$item->nombre' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
 										</div>
-									</div>";
-							// echo "Codigo: " . $item->codigo . ", producto: " . $item->nombre . "<br>";
-						} else {
-							echo "Sin código" . ", producto: " . $item->nombre . "<br>";
-						}
-						
+									</div>
+								</div>";
 					}
 
 					/* liberar el conjunto de resultados */
@@ -153,7 +150,7 @@
 
 			?>
 
-			<div id="contenedorproducto1" class="contendorproducto">
+			<!-- <div id="contenedorproducto1" class="contendorproducto">
 				<div id="producto1" class="productBackground">
 					<img class="producto" id="imagen1" src="fotos/1.png" data-filtro="remera hombre lisa" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -227,7 +224,7 @@
 				<div id="producto12" class="productBackground">
 					<img class="producto" id="imagen12" src="fotos/12.png" data-filtro="gorra hombre personalizada">
 				</div>
-			</div>
+			</div> -->
 		</div>
 		
 		<!-- PRESUPUESTO + FORMULARIO -->
