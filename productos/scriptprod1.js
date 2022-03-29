@@ -18,9 +18,6 @@
 			imagenoverlay.src = imagen.src
 			// imagenoverlay.src = "./" + imagen.style.backgroundImage.slice(5,-1) /* Remove url( and ) from de background-image attribute value and add ./ to get to the correct folder from styleprod1.js */
 
-			console.log(imagenoverlay.naturalHeight)
-			console.log(imagenoverlay.naturalWidth)
-
 			if (imagenoverlay.naturalHeight > imagenoverlay.naturalWidth) {
 				imagenoverlay.classList.add("verticalImageOverlay")
 			} else {

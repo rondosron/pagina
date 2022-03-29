@@ -453,6 +453,7 @@ h2 {
 		align-items: center;
 		flex-wrap: wrap;
 		padding-bottom: 31px;
+		flex-direction: column;
 	}
 
 
@@ -509,7 +510,7 @@ h2 {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			/*text-align: center;*/
+			text-align: center;
 			z-index: 1;
 			opacity: 0;
 			font-size: 0.9em;
@@ -525,8 +526,8 @@ h2 {
 			transition: opacity 0.5s 0.1s ease; /* VER */
 		}
 
-	#contenedorproducto1, #contenedorproducto2, #contenedorproducto3, #contenedorproducto4, #contenedorproducto5, #contenedorproducto6, #contenedorproducto7, #contenedorproducto8, #contenedorproducto9, #contenedorproducto10, #contenedorproducto11, #contenedorproducto12  {
-		
+	#productsContainer {
+
 	}
 
 	.productBackground {
@@ -571,6 +572,10 @@ h2 {
 	.verticalPicture {
 		max-width: 200px;
 		max-height: none;
+	}
+
+	#paginationIndex {
+
 	}
 
 	/* CHEQUEAR DOS CASOS:

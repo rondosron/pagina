@@ -125,6 +125,50 @@
 /////////////////////// PRODUCTS /////////////////////////////
 	let productBackgrounds = document.querySelectorAll(".productBackground")
 
+/////////////////// PRODUCTS PAGINATION ///////////////////////
+	let buttonPrev = document.querySelector("#buttonPrev")
+	let buttonNext = document.querySelector("#buttonNext")
+
+	let productsPerPage = 3
+	let firstItemOfPage = 0
+	let lastItemOfPage = firstItemOfPage + productsPerPage
+
+	let currentLastItem = 3
+
+	let contenedorProductoLista = document.querySelectorAll(".contenedorProducto")
+
+	function updatePagination() {
+		console.log("Entered function")
+		contenedorProductoLista.forEach(function(producto, index){
+			console.log("Index: " + index)
+			if (index < currentLastItem - productsPerPage) {
+				console.log("Skip")
+				producto.style.display = "none"
+			} else if (index < currentLastItem) {
+				console.log("Visible")
+				producto.style.display = "inline-flex"
+			} else {
+				console.log("None")
+				producto.style.display = "none"
+			}
+		})
+	}
+
+	updatePagination()
+
+	buttonPrev.addEventListener("click", function(){
+		currentLastItem -= productsPerPage
+		console.log(currentLastItem)
+		updatePagination()
+	})
+
+	buttonNext.addEventListener("click", function(){
+		currentLastItem += productsPerPage
+		console.log(currentLastItem)
+		updatePagination()
+	})
+
+
 /////////////////////// FORM VALIDATION ///////////////////////
 	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
 

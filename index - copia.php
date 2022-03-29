@@ -120,35 +120,44 @@
 			
 			<div id="contenedorseparador2">
 			</div>
-			<?php
-				if ($resultado = $conexion->query("SELECT * FROM productos LIMIT 10")) {
-					// printf("La selección devolvió %d filas. <br>", $resultado->num_rows);
+			
+			<div id="productsContainer">
+				<?php
+					if ($resultado = $conexion->query("SELECT * FROM productos LIMIT 10")) {
+						// printf("La selección devolvió %d filas. <br>", $resultado->num_rows);
 
-					//$obj = $resultado->fetch_object();
-					// var_dump($obj);
-					//$result = json_decode(json_encode($obj), true);
-					// while ($item = $resultado->fetch_object()) {
-					// 	var_dump($item);
-					// 	//var_dump($obj("codigo"));
-					// 	// var_dump($obj);
-					// 	// var_dump($obj)
-					// }
-					while ($item = $resultado->fetch_object()) {
-						// condicion if ($item->codigo <> "") { codigo } else { codigo }
-						echo 	"<div class='contendorproducto'>
-									<div class='productBackground'>
-										<div class='imageContainer'>
-											<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='$item->nombre' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+						//$obj = $resultado->fetch_object();
+						// var_dump($obj);
+						//$result = json_decode(json_encode($obj), true);
+						// while ($item = $resultado->fetch_object()) {
+						// 	var_dump($item);
+						// 	//var_dump($obj("codigo"));
+						// 	// var_dump($obj);
+						// 	// var_dump($obj)
+						// }
+						while ($item = $resultado->fetch_object()) {
+							// condicion if ($item->codigo <> "") { codigo } else { codigo }
+							echo 	"<div class='contenedorProducto'>
+										<div class='productBackground'>
+											<div class='imageContainer'>
+												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='$item->nombre' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+											</div>
 										</div>
-									</div>
-								</div>";
+									</div>";
+						}
+
+						/* liberar el conjunto de resultados */
+						$resultado->close();
 					}
 
-					/* liberar el conjunto de resultados */
-					$resultado->close();
-				}
-
-			?>
+				?>
+			</div>
+			
+			<div id="paginationIndex">
+				<button id="buttonPrev">-</button>
+				<button id="buttonNext">+</button>
+			</div>
+			
 
 			<!-- <div id="contenedorproducto1" class="contendorproducto">
 				<div id="producto1" class="productBackground">
