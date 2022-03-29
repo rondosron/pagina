@@ -115,11 +115,6 @@
 				<input type="text" name="buscador" id="buscador">
 				<button id="buscarBoton">Buscar</button>
 			</div>
-			<div id="contenedorseparador1">
-			</div>
-			
-			<div id="contenedorseparador2">
-			</div>
 			
 			<div id="productsContainer">
 				<?php
@@ -137,7 +132,7 @@
 						// }
 						while ($item = $resultado->fetch_object()) {
 							// condicion if ($item->codigo <> "") { codigo } else { codigo }
-							echo 	"<div class='contenedorProducto'>
+							echo 	"<div class='contenedorProducto filtroVisible'>
 										<div class='productBackground'>
 											<div class='imageContainer'>
 												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='$item->nombre' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>

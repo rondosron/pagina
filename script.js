@@ -106,10 +106,15 @@
 		productos.forEach(function(producto){
 			if (producto.getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
 				producto.parentNode.parentNode.parentNode.style.display = "inline-flex"
+				// agregar clase que indique filtro visible (para la paginacion)
+				producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
 			} else {
 				producto.parentNode.parentNode.parentNode.style.display = "none"
+				// agregar clase que indique filtro none (para la paginacion)
+				producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
 			}
 		})
+		updatePagination()
 	}
 
 	buscarBoton.addEventListener("click", function(e){
@@ -133,22 +138,20 @@
 	let firstItemOfPage = 0
 	let lastItemOfPage = firstItemOfPage + productsPerPage
 
-	let currentLastItem = 3
+	let currentLastItem = productsPerPage
 
-	let contenedorProductoLista = document.querySelectorAll(".contenedorProducto")
+	
 
 	function updatePagination() {
-		console.log("Entered function")
+		// Seleccionar elementos despues del filtro (si lo hay)
+		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+
 		contenedorProductoLista.forEach(function(producto, index){
-			console.log("Index: " + index)
 			if (index < currentLastItem - productsPerPage) {
-				console.log("Skip")
 				producto.style.display = "none"
 			} else if (index < currentLastItem) {
-				console.log("Visible")
 				producto.style.display = "inline-flex"
 			} else {
-				console.log("None")
 				producto.style.display = "none"
 			}
 		})

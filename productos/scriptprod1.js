@@ -24,6 +24,14 @@
 				imagenoverlay.classList.remove("verticalImageOverlay") /* Remove it in case it was set before */
 			}
 
+			/** CODIGO **/
+				let productCode = document.querySelector('#productCode')
+				productCode.innerText = imagen.getAttribute("data-codigo")
+
+			/** DESCRIPCION **/
+				let productDescription = document.querySelector("#productDescription")
+				productDescription.innerText = imagen.getAttribute("data-descripcion")
+
 			/** NOMBRE **/
 			let nombre = document.querySelector('#nombre')
 			let nombreData = document.createElement('h1')
