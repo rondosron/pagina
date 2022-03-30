@@ -9,6 +9,8 @@
 			let background = document.querySelector('#background')
 			background.style.visibility = "visible"
 			
+			console.log(imagenAOverlay.id)
+
 			/////////////////////////////////// CONTENIDO /////////////////////////////////
 			/** IMAGEN **/
 			let id = imagenAOverlay.id
@@ -28,122 +30,86 @@
 				let productCode = document.querySelector('#productCode')
 				productCode.innerText = imagen.getAttribute("data-codigo")
 
+			/** NOMBRE **/
+				console.log(imagen.getAttribute("data-nombre"))
+				let contenidonombre = document.querySelector('#contenidonombre')
+				console.log(contenidonombre)
+				contenidonombre.innerText = imagen.getAttribute("data-nombre")
+
 			/** DESCRIPCION **/
 				let productDescription = document.querySelector("#productDescription")
 				productDescription.innerText = imagen.getAttribute("data-descripcion")
 
-			/** NOMBRE **/
-			let nombre = document.querySelector('#nombre')
-			let nombreData = document.createElement('h1')
-			nombreData.id = "contenidonombre"
-			nombreData.innerText = imagen.getAttribute("data-nombre")
-			imagenoverlay.setAttribute("data-nombre", imagen.getAttribute("data-nombre"))
-			nombre.appendChild(nombreData)
-
 			/** PRECIO **/
-			let precio = document.querySelector('#precio')
-			let precioData = document.createElement('p')
-			precioData.id = "contenidoprecio"
-			precioData.innerText = imagen.getAttribute("data-precio")
-			imagenoverlay.setAttribute("data-precio", imagen.getAttribute("data-precio"))
-			precio.appendChild(precioData)
+				let contenidoprecio = document.querySelector('#contenidoprecio')
+				contenidoprecio.innerText = imagen.getAttribute("data-precio")
 
-			/* CUOTAS */
-			let iconoCuotas = document.createElement('i') // icono
-			iconoCuotas.classList.add("fas")
-			iconoCuotas.classList.add("fa-credit-card")
-			precio.appendChild(iconoCuotas)
-			
-			let textoCuotas1 = document.createElement('p') // texto (x cuotas de $
-			textoCuotas1.id = "textoCuotas1"
-			textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de " // 3 cuotas
-			imagenoverlay.setAttribute("data-cantidad-cuotas", imagen.getAttribute("data-cantidad-cuotas"))
-			precio.appendChild(textoCuotas1)
+			/** CUOTAS **/
+				// NOTA: falta poner y traer info de la BBDD. Por ahora lo hice con valores dados desde HTML
+				let textoCuotas1 = document.querySelector('#textoCuotas1')
+				textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de "
 
-			let contenedorPrecioCuota = document.createElement('span')
-			contenedorPrecioCuota.id = "contenedorPrecioCuota"
-			contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
-			imagenoverlay.setAttribute("data-precio-cuota", imagen.getAttribute("data-precio-cuota"))
-			precio.appendChild(contenedorPrecioCuota)
-
-			let textoCuotas2 = document.createElement('p') // parentesis final
-			textoCuotas2.id = "textoCuotas2"
-			textoCuotas2.innerText = ")"
-			precio.appendChild(textoCuotas2)			
-
-			let contenedorCuotas = document.createElement('div')
-			contenedorCuotas.id = "contenedorcuotas"
-			precio.appendChild(contenedorCuotas)
-			contenedorCuotas.appendChild(iconoCuotas)
-			contenedorCuotas.appendChild(textoCuotas1)
-			contenedorCuotas.appendChild(contenedorPrecioCuota)
-			contenedorCuotas.appendChild(textoCuotas2)
-			/** FIN CUOTAS **/
-			/** FIN PRECIO **/
+				let contenedorPrecioCuota = document.querySelector('#contenedorPrecioCuota')
+				contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
 
 			/** TALLES **/
-			let contenedorTalles = document.querySelector('#contenedorTalles')
+				let contenedorTalles = document.querySelector('#contenedorTalles')
 
-			stringTalles = imagen.getAttribute("data-talles")
-			arregloTalles = stringTalles.split("/")
-			for (let i = 0; i < arregloTalles.length; i++) {
-				let botonTalle = document.createElement('div')
-				if (i == 0) { // el primer boton tiene border radius a la izquierda
-					botonTalle.classList.add("botontalle")
-					botonTalle.classList.add("primerbotontalle")
-					botonTalle.innerText = arregloTalles[i]
-				} else if (i == arregloTalles.length - 1) { // el ultimo boton tiene border radius a la derecha
-					botonTalle.classList.add("botontalle")
-					botonTalle.classList.add("ultimobotontalle")
-					botonTalle.innerText = arregloTalles[i]
-				} else { // todos los botones del medio
-					botonTalle.classList.add("botontalle")
-					botonTalle.innerText = arregloTalles[i]
+				let stringTalles = imagen.getAttribute("data-talles")
+				let arregloTalles = stringTalles.split("/")
+				for (let i = 0; i < arregloTalles.length; i++) {
+					let botonTalle = document.createElement('div')
+					if (i == 0) { // el primer boton tiene border radius a la izquierda
+						botonTalle.classList.add("botontalle")
+						botonTalle.classList.add("primerbotontalle")
+						botonTalle.innerText = arregloTalles[i]
+					} else if (i == arregloTalles.length - 1) { // el ultimo boton tiene border radius a la derecha
+						botonTalle.classList.add("botontalle")
+						botonTalle.classList.add("ultimobotontalle")
+						botonTalle.innerText = arregloTalles[i]
+					} else { // todos los botones del medio
+						botonTalle.classList.add("botontalle")
+						botonTalle.innerText = arregloTalles[i]
+					}
+					contenedorTalles.appendChild(botonTalle)
 				}
-				contenedorTalles.appendChild(botonTalle)
-			}
-			imagenoverlay.setAttribute("data-talles", imagen.getAttribute("data-talles"))
-			/** FIN TALLES **/
 
 			/** COLORES **/
-			let diccionarioColores = {rojo:"#cd0000", azul:"#0a1be8", amarillo:"#ffeb00", verde:"#16cd00", naranja:"#f58817", violeta:"#6410ea", blanco:"white", negro:"black"};
-			// en vez de traducirlos, poner el codigo hexadecimal de un color mas agradable, porque esos son feos.
+				let diccionarioColores = {rojo:"#cd0000", azul:"#0a1be8", amarillo:"#ffeb00", verde:"#16cd00", naranja:"#f58817", violeta:"#6410ea", blanco:"white", negro:"black"};
+				// en vez de traducirlos, poner el codigo hexadecimal de un color mas agradable, porque esos son feos.
+				let contenedorCirculos = document.querySelector('#contenedorCirculos')
 
-			let contenedorCirculos = document.querySelector('#contenedorCirculos')
-
-			stringColores = imagen.getAttribute("data-colores")
-			arregloColores = stringColores.split("/")
-			for (let i = 0; i < arregloColores.length; i++) {
-				let color = arregloColores[i]
-				let englishColor = diccionarioColores[color];
-				let circuloColor = document.createElement('div')
-				circuloColor.style.background = englishColor
-				circuloColor.classList.add("circulo")
-				contenedorCirculos.appendChild(circuloColor)
-			}
-			imagenoverlay.getAttribute("data-colores", imagen.getAttribute("data-colores"))
-			/** FIN COLORES **/
+				let stringColores = imagen.getAttribute("data-colores")
+				let arregloColores = stringColores.split("/")
+				for (let i = 0; i < arregloColores.length; i++) {
+					let color = arregloColores[i]
+					let englishColor = diccionarioColores[color];
+					let circuloColor = document.createElement('div')
+					circuloColor.style.background = englishColor
+					circuloColor.classList.add("circulo")
+					contenedorCirculos.appendChild(circuloColor)
+				}
 
 			/////////////////////////////////// CONTENEDOR /////////////////////////////////////
 			let contenedor = document.querySelector('#contenedorproductooverlay')
 			contenedor.style.visibility = "visible"
-			console.log("clickeado")
+			// console.log("clickeado")
 		}) // fin onclick
 		
-		let contenedorimagen = imagenAOverlay.parentNode
-
-		// console.log(contenedorimagen)
-		// console.log(imagenAOverlay.parentNode)
-
-		// contenedorimagen.innerHTML = `${contenedorimagen.innerHTML} `
-
-		const subtitle = document.createElement("p")
-		subtitle.classList.add("subtitle", "nombreyprecio")
-		subtitle.innerHTML = imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio")
-
-		contenedorimagen.appendChild(subtitle)
-
-		// contenedorimagen.innerHTML += "<p class='nombreyprecio'>" + imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio") + "</p>"
+		// 		let contenedorimagen = imagenAOverlay.parentNode
+		// 
+		// 		// console.log(contenedorimagen)
+		// 		// console.log(imagenAOverlay.parentNode)
+		// 
+		// 		// contenedorimagen.innerHTML = `${contenedorimagen.innerHTML} `
+		// 
+		// 		const subtitle = document.createElement("p")
+		// 		subtitle.classList.add("subtitle", "nombreyprecio")
+		// 		subtitle.innerHTML = imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio")
+		// 
+		// 		contenedorimagen.appendChild(subtitle)
+		// 
+		// 		// contenedorimagen.innerHTML += "<p class='nombreyprecio'>" + imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio") + "</p>"
 		
 	}) // fin for each image
 
@@ -217,14 +183,6 @@
 		contenedor.style.visibility = "hidden"
 
 		/***** ELIMINO LOS ELEMENTOS QUE SE CREAN CON EL JS DE ARRIBA PARA QUE NO SE SUMEN CON CADA CLICK ****/
-		let imagenoverlay = document.querySelector('#imagenoverlay')
-		imagenoverlay.src = ""
-		let nombreData = document.querySelector('#contenidonombre')
-		nombreData.remove()
-		let precioData = document.querySelector('#contenidoprecio')
-		precioData.remove()
-		let contenedorCuotas = document.querySelector('#contenedorcuotas')
-		contenedorCuotas.remove()
 		let botonTalle = document.querySelectorAll('.botontalle')
 		botonTalle.forEach(function(boton) {
 			boton.remove()

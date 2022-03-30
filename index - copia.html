@@ -1,5 +1,3 @@
-<!-- header('Content-type: text/plain; charset=utf-8'); -->
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -138,7 +136,7 @@
 										<div class='productBackground'>
 											<div class='imageContainer'>
 												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='$item->nombre' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
-												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
+												<p class='subtitle nombreyprecio'>$item->nombre - $$item->precio</p>
 											</div>
 										</div>
 									</div>";
