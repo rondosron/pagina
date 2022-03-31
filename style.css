@@ -536,6 +536,7 @@ h2 {
 		grid-template-rows: 1fr 1fr;
 		align-items: center;
 		justify-items: center;
+		padding: 0px 20px;
 	}
 
 	.productBackground {
@@ -582,17 +583,40 @@ h2 {
 		max-height: none;
 	}
 
-	#paginationIndex {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
 	/* CHEQUEAR DOS CASOS:
 		Si la foto es mas ancha que alta (sella rosca): max-height: 200px;
 		si la foto es mas alta que ancha (sella gas): max-width: 200px;
 
 	*/
+
+	/* Pagination / Index / Buttons */
+		#paginationIndex {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#buttonPrev {
+
+		}
+
+
+		#buttonNext {
+
+		}
+
+		.blockedButton {
+			cursor: default;
+			background: black;
+			pointer-events: none;
+		}
+
+		#pagesList {
+			display: flex;
+			flex-direction: row;
+			width: fit-content;
+			background: red;
+		}
 
 #presupuestoyformulario {
 	display: grid;

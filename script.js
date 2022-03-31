@@ -114,7 +114,27 @@
 				producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
 			}
 		})
+		/* Clean content of pagesList */
+		pagesList.innerText = ""
+
+		console.log("currentLastItemSpaceAvailable: " + currentLastItemSpaceAvailable)
+		console.log("productsPerPage: " + productsPerPage)
+		
+		/* Restart to page 1 and reset buttons stlyling */
+		currentPage = 1
+		currentLastItemSpaceAvailable = productsPerPage
+		buttonPrev.classList.add("blockedButton")
+
+		/* If it's also the last page */
+		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
+			buttonNext.classList.add("blockedButton")
+		} else {
+			buttonNext.classList.remove("blockedButton")
+		}
+
 		updatePagination()
+		printPagesList()
 	}
 
 	buscarBoton.addEventListener("click", function(e){
@@ -138,7 +158,7 @@
 	let firstItemOfPage = 0
 	let lastItemOfPage = firstItemOfPage + productsPerPage
 
-	let currentLastItem = productsPerPage
+	let currentLastItemSpaceAvailable = productsPerPage
 
 	
 
@@ -147,29 +167,97 @@
 		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
 
 		contenedorProductoLista.forEach(function(producto, index){
-			if (index < currentLastItem - productsPerPage) {
+			if (index < currentLastItemSpaceAvailable - productsPerPage) {
 				producto.style.display = "none"
-			} else if (index < currentLastItem) {
+			} else if (index < currentLastItemSpaceAvailable) {
 				producto.style.display = "inline-flex"
 			} else {
 				producto.style.display = "none"
 			}
 		})
+
+		totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
 	}
 
-	updatePagination()
-
 	buttonPrev.addEventListener("click", function(){
-		currentLastItem -= productsPerPage
-		console.log(currentLastItem)
+		/* Check if it's first page */
+		if (currentLastItemSpaceAvailable == productsPerPage) {
+			return
+		}
+
+		currentPage -= 1
+		currentLastItemSpaceAvailable -= productsPerPage
+		console.log(currentLastItemSpaceAvailable)
 		updatePagination()
+
+		/* Check if it's first page -> AFTER UPDATE */
+		if (currentLastItemSpaceAvailable == productsPerPage) {
+			buttonPrev.classList.add("blockedButton")
+			buttonNext.classList.remove("blockedButton")
+		} else {
+			buttonPrev.classList.remove("blockedButton")
+		}
 	})
 
 	buttonNext.addEventListener("click", function(){
-		currentLastItem += productsPerPage
-		console.log(currentLastItem)
+		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+
+		/* Check if it's last page */
+		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
+			return
+		}
+
+		currentPage += 1
+		currentLastItemSpaceAvailable += productsPerPage
+		console.log(currentLastItemSpaceAvailable)
 		updatePagination()
+
+		/* Check if it's first page -> AFTER UPDATE */
+		if (currentLastItemSpaceAvailable == productsPerPage) {
+			buttonPrev.classList.add("blockedButton")
+		} else {
+			buttonPrev.classList.remove("blockedButton")
+		}
+
+		/* Check if it's last page -> AFTER UPDATE */
+		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
+			buttonNext.classList.add("blockedButton")
+		} else {
+			buttonNext.classList.remove("blockedButton")
+		}
 	})
+
+	let totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
+	let currentPage = 1
+	let pagesList = document.querySelector("#pagesList")
+
+	function printPagesList() {
+		console.log(totalPages)
+		for (let i = 1; i <= totalPages; i++) {
+			let page = document.createElement("p")
+			page.innerText = i
+			page.addEventListener("click", function(){
+				currentPage = i 
+				currentLastItemSpaceAvailable = i * productsPerPage
+				updatePagination()
+				if (currentPage == 1 && currentPage == totalPages) { /* First and last page */
+					buttonPrev.classList.add("blockedButton")
+					buttonNext.classList.add("blockedButton")
+				} else if (currentPage == 1) { /* First page */
+					buttonPrev.classList.add("blockedButton")
+					buttonNext.classList.remove("blockedButton")
+				} else if (currentPage == totalPages) { /* Last page */
+					buttonPrev.classList.remove("blockedButton")
+					buttonNext.classList.add("blockedButton")
+				}
+			})
+			pagesList.appendChild(page)
+		}
+	}
+
+	/* Executed at beginning */
+	updatePagination()
+	printPagesList()
 
 
 /////////////////////// FORM VALIDATION ///////////////////////

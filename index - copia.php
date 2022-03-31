@@ -137,7 +137,7 @@
 							echo 	"<div class='contenedorProducto filtroVisible'>
 										<div class='productBackground'>
 											<div class='imageContainer'>
-												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='$item->nombre' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
 											</div>
 										</div>
@@ -152,7 +152,8 @@
 			</div>
 			
 			<div id="paginationIndex">
-				<button id="buttonPrev">-</button>
+				<button id="buttonPrev" class="blockedButton">-</button>
+				<div id="pagesList"></div>
 				<button id="buttonNext">+</button>
 			</div>
 			
