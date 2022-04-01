@@ -114,6 +114,10 @@
 		<div id="productos">
 			<div id="tituloproductos">
 				<h2>PRODUCTOS</h2>
+				
+			</div>
+
+			<div id="buscadorContainer">
 				<input type="text" name="buscador" id="buscador">
 				<button id="buscarBoton">Buscar</button>
 			</div>
@@ -149,6 +153,7 @@
 					}
 
 				?>
+				<div id="emptyMessage">La búsqueda no arrojó ningún resultado :(</div>
 			</div>
 			
 			<div id="paginationIndex">

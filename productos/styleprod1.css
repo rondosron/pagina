@@ -422,21 +422,20 @@ body {
 	}
 
 	@media screen and (max-width: 920px) {
+		#productsContainer {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 		#contenedorinfo {
 			grid-template-areas: 	"a b"
 									"c d" !important;
 		}
 	}
 
-	@media screen and (max-width: 815px) {
-		#productos {
-			grid-template-areas: 	"titulo titulo"
-									"prod1 	prod2"
-									"prod3 	prod4"
-									"prod5 	prod6"
-									"prod7 	prod8"
-									"prod9 	prod10"
-									"prod11 prod12";
+	@media screen and (max-width: 720px) {
+		#productsContainer {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			row-gap: 0px;
 		}
 	}
 
@@ -469,24 +468,18 @@ body {
 	}
 
 	@media screen and (max-width: 530px) {
-		#productos {
-			grid-template-areas: 	"titulo"
-									"prod1"
-									"prod2"
-									"prod3"
-									"prod4"
-									"prod5"
-									"prod6"
-									"prod7"
-									"prod8"
-									"prod9"
-									"prod10"
-									"prod11"
-									"prod12";
-		}
+		
 	}
 
 	@media screen and (max-width: 500px) { /** TELEFONOS **/
+		#productsContainer {
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr 1fr 1fr;
+			row-gap: 15px;
+		}
+		.contenedorProducto {
+			height: 200px; /* Necesité ponerle un height en pixeles para que al aplicar el scale de un elemento (en hover) no se desplacen los demás elementos. Es 200px porque es el tamaño actual del elemento, si lo cambio, cambiar esto. */
+		}
 		#contenedorproductooverlay {
 			top: 2%; /* Poco para que entre a lo alto */
 		    left: 18%; /* bastante a los costados para que se achique a lo alto tambien */

@@ -20,11 +20,15 @@
 		productos.forEach(function(producto) {
 			let data = producto.getAttribute("data-filtro").toLowerCase()
 			if (!data.includes(filtrofinal)) {
-				producto.parentElement.parentElement.style.display = "none"
+				// Remove items out of filter
+				producto.parentElement.parentElement.parentElement.style.display = "none"
+				producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
 			} else {
-				producto.parentElement.parentElement.style.display = "flex"
+				producto.parentElement.parentElement.parentElement.style.display = "inline-flex"
+				producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
 			}
 		})
+
 	}
 
 	let botonesfiltro = document.querySelectorAll('.filtro')
@@ -33,6 +37,8 @@
 		boton.addEventListener('click', function(){
 			let filtro = boton.getAttribute("data-filtro").toLowerCase()
 			filtrar(filtro)
+			updatePagination()
+			printPagesList()
 		})
 	})
 
@@ -147,13 +153,14 @@
 		}		
 	})
 
-/////////////////////// PRODUCTS /////////////////////////////
-	let productBackgrounds = document.querySelectorAll(".productBackground")
-
 /////////////////// PRODUCTS PAGINATION ///////////////////////
 	let buttonPrev = document.querySelector("#buttonPrev")
 	let buttonNext = document.querySelector("#buttonNext")
 
+	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
+	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
+	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
+	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
 	let productsPerPage = 3
 	let firstItemOfPage = 0
 	let lastItemOfPage = firstItemOfPage + productsPerPage
@@ -166,6 +173,7 @@
 		// Seleccionar elementos despues del filtro (si lo hay)
 		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
 
+		// Order filtered elements (in pages)
 		contenedorProductoLista.forEach(function(producto, index){
 			if (index < currentLastItemSpaceAvailable - productsPerPage) {
 				producto.style.display = "none"
@@ -177,6 +185,7 @@
 		})
 
 		totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
+		console.log("Total pages: " + totalPages)
 	}
 
 	buttonPrev.addEventListener("click", function(){
@@ -230,9 +239,21 @@
 	let totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
 	let currentPage = 1
 	let pagesList = document.querySelector("#pagesList")
+	let emptyMessage = document.querySelector("#emptyMessage")
 
 	function printPagesList() {
 		console.log(totalPages)
+		if (totalPages == 0) {
+			pagesList.innerText = ""
+			buttonPrev.classList.add("blockedButton")
+			buttonNext.classList.add("blockedButton")
+			// mostrar mensaje
+			emptyMessage.style.display = "block"
+			return
+		} else {
+			// ocultar mensaje
+			emptyMessage.style.display = "none"
+		}
 		for (let i = 1; i <= totalPages; i++) {
 			let page = document.createElement("p")
 			page.innerText = i
