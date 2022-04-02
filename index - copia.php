@@ -38,20 +38,20 @@
 				<p>Nor - Yol</p>
 			</div>
 
-				<div id="contenedorbotones">
-					<div id="hombre" class="botonnav filtro" data-filtro="hombre">HOMBRE</div>
-					<div id="mujer" class="botonnav filtro" data-filtro="mujer">MUJER</div>
-					<div id="personalizadas" class="botonnav filtro" data-filtro="personalizada">PERSONALIZADAS
-					</div>
-					<div id="lisas" class="botonnav filtro" data-filtro="lisa">LISAS</div>
-					<div id="dudas" class="botonnav">DUDAS
-						<div id="contenedordudas">
-							<div class="filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
-							<div class="filtro subItemBotonNav" data-filtro="taza">TAZA</div>
-						</div>
-					</div>
-					<div id="contacto" class="botonnav">CONTACTO</div>
+			<div id="contenedorbotones">
+				<div id="hombre" class="botonnav filtro" data-filtro="hombre">HOMBRE</div>
+				<div id="mujer" class="botonnav filtro" data-filtro="mujer">MUJER</div>
+				<div id="personalizadas" class="botonnav filtro" data-filtro="personalizada">PERSONALIZADAS
 				</div>
+				<div id="lisas" class="botonnav filtro" data-filtro="lisa">LISAS</div>
+				<div id="dudas" class="botonnav">DUDAS
+					<div id="contenedordudas">
+						<div class="filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
+						<div class="filtro subItemBotonNav" data-filtro="taza">TAZA</div>
+					</div>
+				</div>
+				<div id="contacto" class="botonnav">CONTACTO</div>
+			</div>
 
 			<div id="versionContainer">
 				<label for="v1">v1</label>
@@ -120,6 +120,13 @@
 			<div id="buscadorContainer">
 				<input type="text" name="buscador" id="buscador">
 				<button id="buscarBoton">Buscar</button>
+				<label for="orderBy"></label>
+				<select name="orderBy" id="orderBy">
+					<option value="precioAsc">Precio - Ascendente</option>
+					<option value="precioDesc">Precio - Descendente</option>
+					<option value="nombreAsc">Nombre - Ascendente</option>
+					<option value="nombreDesc">Nombre - Descendente</option>
+				</select>
 			</div>
 			
 			<div id="productsContainer">
@@ -141,7 +148,7 @@
 							echo 	"<div class='contenedorProducto filtroVisible'>
 										<div class='productBackground'>
 											<div class='imageContainer'>
-												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
 											</div>
 										</div>

@@ -153,6 +153,65 @@
 		}		
 	})
 
+///////////////////// ORDERNAR ///////////////////////////////
+	let orderBy = document.querySelector("#orderBy")
+
+	orderBy.addEventListener("change", function() {
+		switch (orderBy.value) {
+			case "nombreAsc":
+				orderedArray = orderByFunction("data-nombre", "asc")
+				break;
+			case "nombreDesc":
+				console.log("entróooooo al addEventListener")
+				orderedArray = orderByFunction("data-nombre", "desc")
+				break;
+			case "precioAsc":
+				orderedArray = orderByFunction("data-precio", "asc")
+				break;
+			case "precioDesc":
+				orderedArray = orderByFunction("data-precio", "desc")
+				break;
+		}
+		
+		orderedArray.forEach(function(item){
+			console.log(item.childNodes[1].childNodes[1].childNodes[1])
+		})
+	})
+
+	function orderByFunction(criteria, ascOrDesc) {
+		console.log("entró a la funcion")
+		// Seleccionar elementos despues del filtro (si lo hay)
+		let contenedorProductoLista = document.querySelectorAll(".filtroVisible") // NodeList
+		let productosArray = Array.prototype.slice.call(contenedorProductoLista, 0) // Array
+
+		if (criteria == "data-precio") {
+			productosArray.sort(function(a,b) {
+				var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria))
+				var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria))
+				if (ascOrDesc == "asc") {
+					return aCat - bCat // Ascending order
+				} else if (ascOrDesc == "desc") {
+					return bCat - aCat // Descending order
+				}			
+			});
+		} else if (criteria == "data-nombre") {
+			console.log("entro al if")
+			productosArray.sort(function(a,b) {
+				var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
+				var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
+				if (ascOrDesc == "asc") {
+					return aCat - bCat // Ascending order
+				} else if (ascOrDesc == "desc") {
+					return bCat - aCat // Descending order
+				}
+			});
+		}
+
+		return productosArray
+	}
+
+
+
 /////////////////// PRODUCTS PAGINATION ///////////////////////
 	let buttonPrev = document.querySelector("#buttonPrev")
 	let buttonNext = document.querySelector("#buttonNext")

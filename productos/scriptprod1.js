@@ -6,25 +6,25 @@
 		imagenAOverlay.addEventListener('click', function(){
 
 			/////////////////////////////////// BACKGROUND /////////////////////////////////
-			let background = document.querySelector('#background')
-			background.style.visibility = "visible"
-			
-			console.log(imagenAOverlay.id)
+				let background = document.querySelector('#background')
+				background.style.visibility = "visible"
+				
+				console.log(imagenAOverlay.id)
 
 			/////////////////////////////////// CONTENIDO /////////////////////////////////
 			/** IMAGEN **/
-			let id = imagenAOverlay.id
-			let imagen = document.querySelector(`#${id}`) // id/imagen del producto clickeado
+				let id = imagenAOverlay.id
+				let imagen = document.querySelector(`#${id}`) // id/imagen del producto clickeado
 
-			let imagenoverlay = document.querySelector('#imagenoverlay')
-			imagenoverlay.src = imagen.src
-			// imagenoverlay.src = "./" + imagen.style.backgroundImage.slice(5,-1) /* Remove url( and ) from de background-image attribute value and add ./ to get to the correct folder from styleprod1.js */
+				let imagenoverlay = document.querySelector('#imagenoverlay')
+				imagenoverlay.src = imagen.src
+				// imagenoverlay.src = "./" + imagen.style.backgroundImage.slice(5,-1) /* Remove url( and ) from de background-image attribute value and add ./ to get to the correct folder from styleprod1.js */
 
-			if (imagenoverlay.naturalHeight > imagenoverlay.naturalWidth) {
-				imagenoverlay.classList.add("verticalImageOverlay")
-			} else {
-				imagenoverlay.classList.remove("verticalImageOverlay") /* Remove it in case it was set before */
-			}
+				if (imagenoverlay.naturalHeight > imagenoverlay.naturalWidth) {
+					imagenoverlay.classList.add("verticalImageOverlay")
+				} else {
+					imagenoverlay.classList.remove("verticalImageOverlay") /* Remove it in case it was set before */
+				}
 
 			/** CODIGO **/
 				let productCode = document.querySelector('#productCode')
@@ -42,7 +42,7 @@
 
 			/** PRECIO **/
 				let contenidoprecio = document.querySelector('#contenidoprecio')
-				contenidoprecio.innerText = imagen.getAttribute("data-precio")
+				contenidoprecio.innerText = "$" + imagen.getAttribute("data-precio")
 
 			/** CUOTAS **/
 				// NOTA: falta poner y traer info de la BBDD. Por ahora lo hice con valores dados desde HTML
