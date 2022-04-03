@@ -157,55 +157,101 @@
 	let orderBy = document.querySelector("#orderBy")
 
 	orderBy.addEventListener("change", function() {
-		switch (orderBy.value) {
-			case "nombreAsc":
-				orderedArray = orderByFunction("data-nombre", "asc")
-				break;
-			case "nombreDesc":
-				console.log("entróooooo al addEventListener")
-				orderedArray = orderByFunction("data-nombre", "desc")
-				break;
-			case "precioAsc":
-				orderedArray = orderByFunction("data-precio", "asc")
-				break;
-			case "precioDesc":
-				orderedArray = orderByFunction("data-precio", "desc")
-				break;
-		}
 		
-		orderedArray.forEach(function(item){
-			console.log(item.childNodes[1].childNodes[1].childNodes[1])
-		})
+		updatePagination()
+
+		
+		// contenedorProductoLista.forEach(function(item){
+		// 	console.log(item.childNodes[1].childNodes[1].childNodes[1])
+		// })
 	})
 
-	function orderByFunction(criteria, ascOrDesc) {
-		console.log("entró a la funcion")
+	function orderByFunction() {
 		// Seleccionar elementos despues del filtro (si lo hay)
 		let contenedorProductoLista = document.querySelectorAll(".filtroVisible") // NodeList
 		let productosArray = Array.prototype.slice.call(contenedorProductoLista, 0) // Array
+		// let orderBy = document.querySelector("#orderBy")
 
-		if (criteria == "data-precio") {
-			productosArray.sort(function(a,b) {
-				var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria))
-				var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria))
-				if (ascOrDesc == "asc") {
-					return aCat - bCat // Ascending order
-				} else if (ascOrDesc == "desc") {
-					return bCat - aCat // Descending order
-				}			
-			});
-		} else if (criteria == "data-nombre") {
-			console.log("entro al if")
-			productosArray.sort(function(a,b) {
-				var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
-				var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
-				if (ascOrDesc == "asc") {
-					return aCat - bCat // Ascending order
-				} else if (ascOrDesc == "desc") {
-					return bCat - aCat // Descending order
-				}
-			});
+		// value 1 = precio ascendente
+		// value 2 = precio descendente
+		// value 3 = nombre ascendente
+		// value 4 = nombre descendente
+
+		switch (orderBy.value) {
+			case "1":
+				console.log("entró en case 1")
+				productosArray.sort(function(a,b) {
+					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					return aCat - bCat
+				})
+				break;
+			case "2":
+				console.log("entró en case 2")
+				productosArray.sort(function(a,b) {
+					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					return bCat - aCat
+				})
+				break;
+			case "3":
+				console.log("entró en case 3")
+				productosArray.sort(function(a,b) {
+					var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					return aCat.localeCompare(bCat) // Ascending order
+				})
+				break;
+			case "4":
+				console.log("entró en case 4")
+				productosArray.sort(function(a,b) {
+					var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					return aCat.localeCompare(bCat) // Ascending order (can't sort strings by descending order with the sort function, I have to use reverse)
+				}).reverse();
+				break;
 		}
+
+		// switch (orderBy.value) {
+		// 	case "nombreAsc":
+		// 		contenedorProductoLista = orderByFunction("data-nombre", "asc")
+		// 		break;
+		// 	case "nombreDesc":
+		// 		contenedorProductoLista = orderByFunction("data-nombre", "desc")
+		// 		break;
+		// 	case "precioAsc":
+		// 		let contenedorProductoLista = orderByFunction("data-precio", "asc")
+		// 		break;
+		// 	case "precioDesc":
+		// 		contenedorProductoLista = orderByFunction("data-precio", "desc")
+		// 		break;
+		// }
+
+		// if (criteria == "data-precio") {
+		// 	productosArray.sort(function(a,b) {
+		// 		var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria))
+		// 		var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria))
+		// 		if (ascOrDesc == "asc") {
+		// 			return aCat - bCat // Ascending order
+		// 		} else if (ascOrDesc == "desc") {
+		// 			return bCat - aCat // Descending order
+		// 		}			
+		// 	});
+		// } else if (criteria == "data-nombre") {
+		// 	if (ascOrDesc == "asc") {
+		// 		productosArray.sort(function(a,b) {
+		// 			var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
+		// 			var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
+		// 			return aCat - bCat // Ascending order
+		// 		});
+		// 	} else if (ascOrDesc == "desc") {
+		// 		productosArray.sort(function(a,b) {
+		// 			var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
+		// 			var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute(criteria)
+		// 			return bCat - aCat // Ascending order (can't sort strings by descending order with the sort function, I have to use reverse)
+		// 		}).reverse(); // Reverse -> Descending order
+		// 	}
+		// }
 
 		return productosArray
 	}
@@ -226,14 +272,42 @@
 
 	let currentLastItemSpaceAvailable = productsPerPage
 
-	
+	let productsContainer = document.querySelector("#productsContainer")
 
 	function updatePagination() {
 		// Seleccionar elementos despues del filtro (si lo hay)
-		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+		// let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+
+		// switch (orderBy.value) {
+		// 	case "nombreAsc":
+		// 		contenedorProductoLista = orderByFunction("data-nombre", "asc")
+		// 		break;
+		// 	case "nombreDesc":
+		// 		contenedorProductoLista = orderByFunction("data-nombre", "desc")
+		// 		break;
+		// 	case "precioAsc":
+		// 		let contenedorProductoLista = orderByFunction("data-precio", "asc")
+		// 		break;
+		// 	case "precioDesc":
+		// 		contenedorProductoLista = orderByFunction("data-precio", "desc")
+		// 		break;
+		// }
+
+		let contenedorProductoListaOrdenada = orderByFunction()
+
+		productsContainer.innerHTML = ""
+
+		// Uso la función orderByFunction ya que tambien trabaja solo con los elementos filtrados .filtroVisible, los ordena y a eso despues lo actualizo en la paginación
+		// let contenedorProductoLista = orderByFunction()
+
+		contenedorProductoListaOrdenada.forEach(function(producto){
+			productsContainer.appendChild(producto)
+		})
 
 		// Order filtered elements (in pages)
-		contenedorProductoLista.forEach(function(producto, index){
+		contenedorProductoListaOrdenada.forEach(function(producto, index){
+			console.log(index)
+			console.log(producto.childNodes[1].childNodes[1].childNodes[1])
 			if (index < currentLastItemSpaceAvailable - productsPerPage) {
 				producto.style.display = "none"
 			} else if (index < currentLastItemSpaceAvailable) {

@@ -122,10 +122,10 @@
 				<button id="buscarBoton">Buscar</button>
 				<label for="orderBy"></label>
 				<select name="orderBy" id="orderBy">
-					<option value="precioAsc">Precio - Ascendente</option>
-					<option value="precioDesc">Precio - Descendente</option>
-					<option value="nombreAsc">Nombre - Ascendente</option>
-					<option value="nombreDesc">Nombre - Descendente</option>
+					<option value="1">Precio - Ascendente</option>
+					<option value="2">Precio - Descendente</option>
+					<option value="3">Nombre - Ascendente</option>
+					<option value="4">Nombre - Descendente</option>
 				</select>
 			</div>
 			
