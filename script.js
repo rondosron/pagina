@@ -1,3 +1,6 @@
+// IMPORTANT: save a copy of the list of ALL products so you don't lose them when you dont add them to the container (after applying some filters). Rearranging this list is ok.
+let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
+
 /////////////////////////////// MENU BAR/TOGGLE /////////////////////////////////////
 
 	let menutoggle = document.querySelector('#menutoggle');
@@ -15,17 +18,20 @@
 /////////////////////////////// FILTROS DE BUSQUEDA /////////////////////////////////
 
 	function filtrar(filtro) {
-		let productos = document.querySelectorAll('.producto')
 		let filtrofinal = filtro.toLowerCase()
-		productos.forEach(function(producto) {
-			let data = producto.getAttribute("data-filtro").toLowerCase()
+		originalListOfProducts.forEach(function(producto) {
+			let data = producto.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-filtro").toLowerCase()
 			if (!data.includes(filtrofinal)) {
 				// Remove items out of filter
-				producto.parentElement.parentElement.parentElement.style.display = "none"
-				producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
+				// producto.parentElement.parentElement.parentElement.style.display = "none"
+				// producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
+				producto.style.display = "none"
+				producto.classList.remove("filtroVisible")
 			} else {
-				producto.parentElement.parentElement.parentElement.style.display = "inline-flex"
-				producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
+				// producto.parentElement.parentElement.parentElement.style.display = "inline-flex"
+				// producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
+				producto.style.display = "inline-flex"
+				producto.classList.add("filtroVisible")
 			}
 		})
 
@@ -37,12 +43,19 @@
 		boton.addEventListener('click', function(){
 			let filtro = boton.getAttribute("data-filtro").toLowerCase()
 			filtrar(filtro)
+			
+			/* Restart to page 1 and reset buttons stlyling */
+			currentPage = 1
+			currentLastItemSpaceAvailable = productsPerPage
+
 			updatePagination()
 			printPagesList()
+
+			checkButtonPrevNextStyles()
 		})
 	})
 
-//////////////////////////// BOTONES FILTRO NAV //////////////////////////////////////
+//////////////////////////// SUB ITEMS NAV //////////////////////////////////////
 
 	// let busqueda = document.querySelector('#busqueda')
 	//let contenedorbotones = document.querySelector('#contenedorbotones')
@@ -106,18 +119,24 @@
 ////////////////////// BUSCADOR ////////////////////////////
 	let buscador = document.querySelector("#buscador")
 	let buscarBoton = document.querySelector("#buscarBoton")
-	let productos = document.querySelectorAll(".producto")
+	// let productos = document.querySelectorAll(".producto")
 
 	function buscar () {
-		productos.forEach(function(producto){
-			if (producto.getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
-				producto.parentNode.parentNode.parentNode.style.display = "inline-flex"
+		originalListOfProducts.forEach(function(producto){
+			if (producto.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
+				// producto.parentNode.parentNode.parentNode.style.display = "inline-flex"
 				// agregar clase que indique filtro visible (para la paginacion)
-				producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
+				// producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
+
+				producto.style.display = "inline-flex"
+				producto.classList.add("filtroVisible")
 			} else {
-				producto.parentNode.parentNode.parentNode.style.display = "none"
+				// producto.parentNode.parentNode.parentNode.style.display = "none"
 				// agregar clase que indique filtro none (para la paginacion)
-				producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
+				// producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
+
+				producto.style.display = "none"
+				producto.classList.remove("filtroVisible")
 			}
 		})
 		/* Clean content of pagesList */
@@ -129,18 +148,23 @@
 		/* Restart to page 1 and reset buttons stlyling */
 		currentPage = 1
 		currentLastItemSpaceAvailable = productsPerPage
-		buttonPrev.classList.add("blockedButton")
+		// buttonPrev.classList.add("blockedButton")
 
 		/* If it's also the last page */
-		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
-		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
-			buttonNext.classList.add("blockedButton")
-		} else {
-			buttonNext.classList.remove("blockedButton")
-		}
+		// let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+		// Create a copy of NodeList as array
+		// originalListOfProductsArray = Array.prototype.slice.call(originalListOfProducts, 0) // Array
+		contenedorProductoLista = originalListOfProductsArray.filter(item => item.classList.contains("filtroVisible"))
+
+		// if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
+		// 	buttonNext.classList.add("blockedButton")
+		// } else {
+		// 	buttonNext.classList.remove("blockedButton")
+		// }
 
 		updatePagination()
 		printPagesList()
+		checkButtonPrevNextStyles()
 	}
 
 	buscarBoton.addEventListener("click", function(e){
@@ -158,8 +182,12 @@
 
 	orderBy.addEventListener("change", function() {
 		
-		updatePagination()
+		// Restart to page 1
+		currentPage = 1
+		currentLastItemSpaceAvailable = productsPerPage
 
+		updatePagination()
+		checkButtonPrevNextStyles()
 		
 		// contenedorProductoLista.forEach(function(item){
 		// 	console.log(item.childNodes[1].childNodes[1].childNodes[1])
@@ -168,9 +196,14 @@
 
 	function orderByFunction() {
 		// Seleccionar elementos despues del filtro (si lo hay)
-		let contenedorProductoLista = document.querySelectorAll(".filtroVisible") // NodeList
-		let productosArray = Array.prototype.slice.call(contenedorProductoLista, 0) // Array
-		// let orderBy = document.querySelector("#orderBy")
+		// let contenedorProductoLista = document.querySelectorAll(".filtroVisible") // NodeList
+		// let productosArray = Array.prototype.slice.call(contenedorProductoLista, 0) // Array
+
+		// Create a copy of NodeList as array to apply filter
+		// originalListOfProductsArray = Array.prototype.slice.call(originalListOfProducts, 0) // Array
+		contenedorProductoLista = originalListOfProductsArray.filter(item => item.classList.contains("filtroVisible"))
+
+		
 
 		// value 1 = precio ascendente
 		// value 2 = precio descendente
@@ -180,7 +213,7 @@
 		switch (orderBy.value) {
 			case "1":
 				console.log("entró en case 1")
-				productosArray.sort(function(a,b) {
+				contenedorProductoLista.sort(function(a,b) {
 					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
 					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
 					return aCat - bCat
@@ -188,7 +221,7 @@
 				break;
 			case "2":
 				console.log("entró en case 2")
-				productosArray.sort(function(a,b) {
+				contenedorProductoLista.sort(function(a,b) {
 					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
 					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
 					return bCat - aCat
@@ -196,7 +229,7 @@
 				break;
 			case "3":
 				console.log("entró en case 3")
-				productosArray.sort(function(a,b) {
+				contenedorProductoLista.sort(function(a,b) {
 					var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
 					var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
 					return aCat.localeCompare(bCat) // Ascending order
@@ -204,7 +237,7 @@
 				break;
 			case "4":
 				console.log("entró en case 4")
-				productosArray.sort(function(a,b) {
+				contenedorProductoLista.sort(function(a,b) {
 					var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
 					var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
 					return aCat.localeCompare(bCat) // Ascending order (can't sort strings by descending order with the sort function, I have to use reverse)
@@ -253,7 +286,9 @@
 		// 	}
 		// }
 
-		return productosArray
+		// currentPage = 1
+		
+		return contenedorProductoLista
 	}
 
 
@@ -266,7 +301,7 @@
 	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
 	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
 	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
-	let productsPerPage = 3
+	let productsPerPage = 2
 	let firstItemOfPage = 0
 	let lastItemOfPage = firstItemOfPage + productsPerPage
 
@@ -295,7 +330,7 @@
 
 		let contenedorProductoListaOrdenada = orderByFunction()
 
-		productsContainer.innerHTML = ""
+		// productsContainer.innerHTML = ""
 
 		// Uso la función orderByFunction ya que tambien trabaja solo con los elementos filtrados .filtroVisible, los ordena y a eso despues lo actualizo en la paginación
 		// let contenedorProductoLista = orderByFunction()
@@ -317,46 +352,21 @@
 			}
 		})
 
-		totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
+		// Create a copy of NodeList as array to apply filter
+		// let originalListOfProductsArray = Array.prototype.slice.call(originalListOfProducts, 0) // Array
+		contenedorProductoLista = originalListOfProductsArray.filter(item => item.classList.contains("filtroVisible"))
+
+		// let totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
+		totalPages = Math.ceil(contenedorProductoLista.length / productsPerPage)
 		console.log("Total pages: " + totalPages)
+		
 	}
 
-	buttonPrev.addEventListener("click", function(){
-		/* Check if it's first page */
-		if (currentLastItemSpaceAvailable == productsPerPage) {
-			return
-		}
-
-		currentPage -= 1
-		currentLastItemSpaceAvailable -= productsPerPage
-		console.log(currentLastItemSpaceAvailable)
-		updatePagination()
-
+	function checkButtonPrevNextStyles() {
 		/* Check if it's first page -> AFTER UPDATE */
 		if (currentLastItemSpaceAvailable == productsPerPage) {
 			buttonPrev.classList.add("blockedButton")
-			buttonNext.classList.remove("blockedButton")
-		} else {
-			buttonPrev.classList.remove("blockedButton")
-		}
-	})
-
-	buttonNext.addEventListener("click", function(){
-		let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
-
-		/* Check if it's last page */
-		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
-			return
-		}
-
-		currentPage += 1
-		currentLastItemSpaceAvailable += productsPerPage
-		console.log(currentLastItemSpaceAvailable)
-		updatePagination()
-
-		/* Check if it's first page -> AFTER UPDATE */
-		if (currentLastItemSpaceAvailable == productsPerPage) {
-			buttonPrev.classList.add("blockedButton")
+			// buttonNext.classList.remove("blockedButton")
 		} else {
 			buttonPrev.classList.remove("blockedButton")
 		}
@@ -367,17 +377,59 @@
 		} else {
 			buttonNext.classList.remove("blockedButton")
 		}
+	}
+
+	buttonPrev.addEventListener("click", function(){
+		/* Check if it's first page -> PREVENT CLICK EFFECTS */
+		if (currentLastItemSpaceAvailable == productsPerPage) {
+			return
+		}
+
+		currentPage -= 1
+		currentLastItemSpaceAvailable -= productsPerPage
+		console.log(currentLastItemSpaceAvailable)
+		updatePagination()
+
+		checkButtonPrevNextStyles()
 	})
 
-	let totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
+	buttonNext.addEventListener("click", function(){
+		// let contenedorProductoLista = document.querySelectorAll(".filtroVisible")
+
+		// Create a copy of NodeList as array to apply filter
+		// let originalListOfProductsArray = Array.prototype.slice.call(originalListOfProducts, 0) // Array
+		contenedorProductoLista = originalListOfProductsArray.filter(item => item.classList.contains("filtroVisible"))
+
+		/* Check if it's last page -> PREVENT CLICK EFFECTS */
+		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
+			return
+		}
+
+		currentPage += 1
+		currentLastItemSpaceAvailable += productsPerPage
+		console.log(currentLastItemSpaceAvailable)
+		updatePagination()
+
+		checkButtonPrevNextStyles()
+	})
+
+	// Create a copy of NodeList as array to apply filter
+	let originalListOfProductsArray = Array.prototype.slice.call(originalListOfProducts, 0) // Array
+	let contenedorProductoLista = originalListOfProductsArray.filter(item => item.classList.contains("filtroVisible"))
+
+	// let totalPages = Math.ceil(document.querySelectorAll(".filtroVisible").length / productsPerPage)
+	let totalPages = Math.ceil(contenedorProductoLista.length / productsPerPage)
+
+
 	let currentPage = 1
 	let pagesList = document.querySelector("#pagesList")
 	let emptyMessage = document.querySelector("#emptyMessage")
 
 	function printPagesList() {
-		console.log(totalPages)
+		console.log("totalpages: " + totalPages)
+		pagesList.innerHTML = ""
 		if (totalPages == 0) {
-			pagesList.innerText = ""
+			// pagesList.innerText = ""
 			buttonPrev.classList.add("blockedButton")
 			buttonNext.classList.add("blockedButton")
 			// mostrar mensaje
@@ -387,6 +439,18 @@
 			// ocultar mensaje
 			emptyMessage.style.display = "none"
 		}
+
+		if (currentPage == 1 && currentPage == totalPages) { /* First and last page */
+			buttonPrev.classList.add("blockedButton")
+			buttonNext.classList.add("blockedButton")
+		} else if (currentPage == 1) { /* First page */
+			buttonPrev.classList.add("blockedButton")
+			buttonNext.classList.remove("blockedButton")
+		} else if (currentPage == totalPages) { /* Last page */
+			buttonPrev.classList.remove("blockedButton")
+			buttonNext.classList.add("blockedButton")
+		}
+
 		for (let i = 1; i <= totalPages; i++) {
 			let page = document.createElement("p")
 			page.innerText = i
@@ -394,16 +458,7 @@
 				currentPage = i 
 				currentLastItemSpaceAvailable = i * productsPerPage
 				updatePagination()
-				if (currentPage == 1 && currentPage == totalPages) { /* First and last page */
-					buttonPrev.classList.add("blockedButton")
-					buttonNext.classList.add("blockedButton")
-				} else if (currentPage == 1) { /* First page */
-					buttonPrev.classList.add("blockedButton")
-					buttonNext.classList.remove("blockedButton")
-				} else if (currentPage == totalPages) { /* Last page */
-					buttonPrev.classList.remove("blockedButton")
-					buttonNext.classList.add("blockedButton")
-				}
+				checkButtonPrevNextStyles()
 			})
 			pagesList.appendChild(page)
 		}

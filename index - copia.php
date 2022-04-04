@@ -39,7 +39,7 @@
 			</div>
 
 			<div id="contenedorbotones">
-				<div id="hombre" class="botonnav filtro" data-filtro="hombre">HOMBRE</div>
+				<div id="hombre" class="botonnav filtro" data-filtro="pila">PILAS</div>
 				<div id="mujer" class="botonnav filtro" data-filtro="mujer">MUJER</div>
 				<div id="personalizadas" class="botonnav filtro" data-filtro="personalizada">PERSONALIZADAS
 				</div>

@@ -363,6 +363,22 @@ h2 {
 				background: var(--color1);
 				transform: none;
 			}
+			.subItemBotonNav {
+				height: 100%;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.subItemBotonNav:after {
+				content: "";
+				position: absolute;
+				background: var(--color1);
+				width: 100%;
+				top: 100%;
+				left: 0;
+				height: 1px;
+			}
 			#presupuestoyformulario {
 				grid-template-areas:
 					"presupuesto"

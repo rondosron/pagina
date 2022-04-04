@@ -101,18 +101,18 @@ body {
 			width: fit-content;
 			/*padding: 10px;*/
 			box-sizing: border-box;
-			/*overflow: hidden;*/
+			overflow: hidden;
 		}
 
 		#contenedorOverflow {
 			overflow: hidden;
 			position: relative;
-			height: 95%;
-			width: 95%;
+			height: 100%;
+			width: 100%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			border-radius: 25px 0 25px 0;
+			/*border-radius: 25px 0 25px 0;*/
 		}
 
 		#imagenoverlay {
