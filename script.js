@@ -139,8 +139,8 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				producto.classList.remove("filtroVisible")
 			}
 		})
-		/* Clean content of pagesList */
-		pagesList.innerText = ""
+		/* Clean content of pagesListContainer */
+		pagesListContainer.innerText = ""
 
 		console.log("currentLastItemSpaceAvailable: " + currentLastItemSpaceAvailable)
 		console.log("productsPerPage: " + productsPerPage)
@@ -377,6 +377,20 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		} else {
 			buttonNext.classList.remove("blockedButton")
 		}
+
+		updateActivePage()
+	}
+
+	function updateActivePage() {
+		let pagesList = document.querySelectorAll("#pagesListContainer p")
+
+		pagesList.forEach(function(page){
+			if (page.innerText == currentPage) {
+				page.classList.add("activePage")
+			} else {
+				page.classList.remove("activePage")
+			}
+		})
 	}
 
 	buttonPrev.addEventListener("click", function(){
@@ -422,14 +436,14 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 
 	let currentPage = 1
-	let pagesList = document.querySelector("#pagesList")
+	let pagesListContainer = document.querySelector("#pagesListContainer")
 	let emptyMessage = document.querySelector("#emptyMessage")
 
 	function printPagesList() {
 		console.log("totalpages: " + totalPages)
-		pagesList.innerHTML = ""
+		pagesListContainer.innerHTML = ""
 		if (totalPages == 0) {
-			// pagesList.innerText = ""
+			// pagesListContainer.innerText = ""
 			buttonPrev.classList.add("blockedButton")
 			buttonNext.classList.add("blockedButton")
 			// mostrar mensaje
@@ -460,13 +474,16 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				updatePagination()
 				checkButtonPrevNextStyles()
 			})
-			pagesList.appendChild(page)
+			pagesListContainer.appendChild(page)
 		}
+
+
 	}
 
 	/* Executed at beginning */
 	updatePagination()
 	printPagesList()
+	updateActivePage()
 
 
 /////////////////////// FORM VALIDATION ///////////////////////

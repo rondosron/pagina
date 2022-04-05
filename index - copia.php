@@ -165,7 +165,7 @@
 			
 			<div id="paginationIndex">
 				<button id="buttonPrev" class="blockedButton">-</button>
-				<div id="pagesList"></div>
+				<div id="pagesListContainer"></div>
 				<button id="buttonNext">+</button>
 			</div>
 			
