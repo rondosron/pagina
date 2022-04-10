@@ -90,10 +90,21 @@
 					contenedorCirculos.appendChild(circuloColor)
 				}
 
+			/** CHANGE OVERLAY DATA **/
+				imagenoverlay.setAttribute("data-codigo", imagen.getAttribute('data-codigo'))
+				imagenoverlay.setAttribute("data-nombre", imagen.getAttribute('data-nombre'))
+				imagenoverlay.setAttribute("data-descripcion", imagen.getAttribute('data-descripcion'))
+				imagenoverlay.setAttribute("data-precio", imagen.getAttribute('data-precio'))
+				imagenoverlay.setAttribute("data-cantidad-cuotas", imagen.getAttribute('data-cantidad-cuotas'))
+				imagenoverlay.setAttribute("data-precio-cuota", imagen.getAttribute('data-precio-cuota'))
+				imagenoverlay.setAttribute("data-talles", imagen.getAttribute('data-talles'))
+				imagenoverlay.setAttribute("data-colores", imagen.getAttribute('data-colores'))
+
 			/////////////////////////////////// CONTENEDOR /////////////////////////////////////
 			let contenedor = document.querySelector('#contenedorproductooverlay')
 			contenedor.style.visibility = "visible"
 			// console.log("clickeado")
+			console.log(contenedoritemspresupuesto.innerText)
 		}) // fin onclick
 		
 		// 		let contenedorimagen = imagenAOverlay.parentNode
