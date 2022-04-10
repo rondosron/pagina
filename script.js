@@ -485,7 +485,6 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	printPagesList()
 	updateActivePage()
 
-
 /////////////////////// FORM VALIDATION ///////////////////////
 	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
 
@@ -526,6 +525,16 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 			phoneLabelIcon.style.opacity = "0"
 		}
+	})
+
+/////////////////////// SEND VIA WHATSAPP ////////////////////
+	let sendViaWhatsapp = document.querySelector("#sendViaWhatsapp")
+
+	sendViaWhatsapp.addEventListener("click", function(){
+		// https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale
+		
+		let texto = encodeURIComponent(contenedoritemspresupuesto.innerText)
+		window.location.href = `https://wa.me/2995477807?text=${texto}`
 	})
 
 ////////////////////////// CARDS ////////////////////////
