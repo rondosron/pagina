@@ -487,7 +487,7 @@ h2 {
 		#tituloproductos h2 {
 			font-family: 'Noto Serif Display', serif;
 			/* font-family: 'Bree Serif', serif; */
-			font-size: 3rem;
+			/*font-size: 3rem;*/
 			color: var(--color5);
 			/*margin: 0;*/
 		}
@@ -1043,12 +1043,17 @@ h2 {
 		height: calc(100vh - 50px); /* LE RESTO EL TAMAÑO DEL NAV FIJO */
 		background: var(--color5);
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		/*grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));*/
+		grid-template-areas: 	"title title title title"
+								"card1 card2 card3 card4";
+		grid-template-rows: min-content 1fr;
+		grid-template-columns: repeat(4, 1fr); /* 4 cards */
 		gap: 1rem;
 	}
 
 	#quienessomos h2 {
-		position: absolute;
+		grid-area: title;
+		position: relative;
 		justify-self: center;
 		color: var(--color1);
 	}
@@ -1061,7 +1066,7 @@ h2 {
 
 	/******** CARD 1 ************/
 		#quienessomos #card1container {
-			
+			grid-area: card1;
 		}
 
 		#quienessomos #card1container #card1 {
@@ -1345,6 +1350,9 @@ h2 {
 			}
 
 	/************** CARD 2 ************/
+		#quienessomos #card2container {
+			grid-area: card2;
+		}
 
 		#quienessomos #card2container #card2 {
 			/*height: 295px;*/
@@ -2078,6 +2086,9 @@ h2 {
 			
 
 	/************* CARD 3 ************/
+		#quienessomos #card3container {
+			grid-area: card3;
+		}
 		#quienessomos #card3container #card3 {
 			height: 325px;
 			width: 218px;
@@ -2408,6 +2419,9 @@ h2 {
 
 		
 	/************ CARD 4 *************/
+		#quienessomos #card4container {
+			grid-area: card4;
+		}
 		#quienessomos #card4container #card4 {
 			height: 325px;
 			width: 218px;

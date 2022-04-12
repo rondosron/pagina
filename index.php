@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
 		<!-- CSS OVERLAY -->
-		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css" id="currentCSS">		
+		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css" id="currentCSS">
 
 	</head>
 	<body>
@@ -29,7 +29,7 @@
 				die('Error de Conexión (' . $conexion->connect_errno . ') '. $conexion->connect_error);
 			}
 
-			echo 'Éxito... ' . $conexion->host_info . "\n";
+			// echo 'Éxito... ' . $conexion->host_info . "\n";
 		?>
 
 		<nav id="navbar">

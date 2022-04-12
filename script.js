@@ -537,6 +537,8 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		window.location.href = `https://wa.me/2995477807?text=${texto}`
 	})
 
+	// Añadir antes el total y el comentario (textarea)
+
 ////////////////////////// CARDS ////////////////////////
 	
 	//////////////////// CARD 1 ///////////////////////

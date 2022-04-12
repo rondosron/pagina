@@ -421,6 +421,17 @@ body {
 		}
 	}
 
+	@media screen and (max-width: 1000px) {
+		#quienessomos {
+			height: fit-content;
+			grid-template-areas: 	"title title"
+									"card1 card2"
+									"card3 card4";
+			grid-template-rows: min-content 1fr 1fr;
+			grid-template-columns: repeat(2, 1fr); /* 2 cards */
+		}
+	}
+
 	@media screen and (max-width: 920px) {
 		#productsContainer {
 			grid-template-columns: 1fr 1fr 1fr;
@@ -440,6 +451,24 @@ body {
 	}
 
 	@media screen and (max-width: 660px) {
+		h2 {
+			font-size: 2rem;
+		}
+		#presupuestoyformulario {
+			grid-template-areas: 	"presupuesto"
+									"formulario";
+			grid-template-columns: 1fr;
+		}
+		#quienessomos {
+			grid-template-areas:
+								"title"
+								"card1"
+								"card2"
+								"card3"
+								"card4";
+			grid-template-columns: 1fr;
+			grid-template-rows: 0.2fr repeat(4, 1fr); /* title + 4 cards */
+		}
 		#contenedorproductooverlay {
 			grid-template-areas: 	"foto"
 									"datos";
