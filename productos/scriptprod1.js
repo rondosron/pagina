@@ -6,10 +6,8 @@
 		imagenAOverlay.addEventListener('click', function(){
 
 			/////////////////////////////////// BACKGROUND /////////////////////////////////
-				let background = document.querySelector('#background')
-				background.style.visibility = "visible"
-				
-				console.log(imagenAOverlay.id)
+				let modalContainer = document.querySelector('#modalContainer')
+				modalContainer.style.visibility = "visible"
 
 			/////////////////////////////////// CONTENIDO /////////////////////////////////
 			/** IMAGEN **/
@@ -104,7 +102,29 @@
 			let contenedor = document.querySelector('#contenedorproductooverlay')
 			contenedor.style.visibility = "visible"
 			// console.log("clickeado")
-			console.log(contenedoritemspresupuesto.innerText)
+
+			// Initial position before any scrolling
+			// contenedor.style.position = "absolute"
+// 			contenedor.style.top = window.scrollY + 60 + "px"
+// 			initialTop = window.scrollY + 60
+// 			initialBottom = document.body.clientHeight - (window.scrollY + 60 + contenedor.offsetHeight)
+// 
+// 			console.log(contenedor.offsetHeight)
+// 			console.log(window.innerHeight)
+// 			console.log(contenedor.style.top)
+// 			console.log(parseInt(contenedor.style.top.replace("px", "")))
+// 			console.log(contenedor.offsetHeight - window.innerHeight + parseInt(contenedor.style.top.replace("px", ""))) // Pixels overflowing
+// 			pixelsOverflowing = contenedor.offsetHeight - window.innerHeight + contenedor.getBoundingClientRect().top
+// 			initialScrollY = window.scrollY
+// 			console.log(pixelsOverflowing)
+// 			bottomScrollLimit = initialScrollY + pixelsOverflowing + 10 // Add 10 pixels so it doesn't end right at the bottom
+// 
+// 			
+// 
+// 			// window.addEventListener("scroll", limitScroll)
+// 			window.addEventListener("scroll", function(e){
+// 				console.log(e)
+// 			})
 		}) // fin onclick
 		
 		// 		let contenedorimagen = imagenAOverlay.parentNode
@@ -123,6 +143,46 @@
 		// 		// contenedorimagen.innerHTML += "<p class='nombreyprecio'>" + imagenAOverlay.getAttribute("data-nombre") + " - " + imagenAOverlay.getAttribute("data-precio") + "</p>"
 		
 	}) // fin for each image
+
+let initialTop = 0
+let initialBottom = 0
+
+let pixelsOverflowing = 0
+let initialScrollY = 0
+let bottomScrollLimit = 0
+
+function limitScroll () {
+	// if (window.scrollY <= initialScrollY) {
+	// 	window.scrollTo({left: 0, top: initialScrollY, behavior: "auto"})
+	// 	// document.getElementByTagName('body')[0].stopScroll();
+	// }
+	// // console.log(window.scrollY)
+	// // console.log(bottomScrollLimit)
+	// if (window.scrollY >= bottomScrollLimit) {
+	// 	window.scrollTo({left: 0, top: bottomScrollLimit, behavior: "auto"})
+	// }
+// 	console.log("window.scrollY = " + window.scrollY)
+// 	console.log("initialScrollY = " + initialScrollY)
+// 	console.log(window.scrollY <= initialScrollY)
+// 	console.log("bottomScrollLimit = " + bottomScrollLimit)
+// 	console.log(window.scrollY >= bottomScrollLimit)
+// 	console.log("initialTop = " + initialTop)
+// 	console.log("**************************")
+// 
+// 	if (window.scrollY <= initialScrollY) {
+// 		contenedoroverlay.style.position = "fixed"
+// 		contenedoroverlay.style.top = "60px"
+// 		contenedoroverlay.style.bottom = "unset"
+// 	} else if (window.scrollY >= bottomScrollLimit) {
+// 		contenedoroverlay.style.position = "fixed"
+// 		contenedoroverlay.style.bottom = "20px"
+// 		contenedoroverlay.style.top = "unset"
+// 	} else { // posicion original
+// 		contenedoroverlay.style.position = "absolute"
+// 		contenedoroverlay.style.top = initialTop + "px"
+// 		contenedoroverlay.style.bottom = "unset"
+// 	}
+}
 
 ///////////////////////////////// BOTONES FINALES ///////////////////////////////
 
@@ -189,7 +249,7 @@
 
 	/* Main function */
 	function closeModal () {
-		background.style.visibility = "hidden" // creo que solo detecta background (de las variables declaradas dentro de la otra funcion) porque es la que esta en el evento, las otras las tengo que volver a llamar
+		modalContainer.style.visibility = "hidden" // creo que solo detecta background (de las variables declaradas dentro de la otra funcion) porque es la que esta en el evento, las otras las tengo que volver a llamar
 		let contenedor = document.querySelector('#contenedorproductooverlay')
 		contenedor.style.visibility = "hidden"
 
@@ -202,9 +262,14 @@
 		circuloColor.forEach(function(circulo) {
 			circulo.remove()
 		})
+
+		// window.removeEventListener("scroll", limitScroll)
 	}
 
-	background.addEventListener('click', function() {
+	modalContainer.addEventListener('click', function(e) {
+		if(e.target !== this) {
+			return;
+		} // Prevent click on children. e.stopPropagation didn't work
 		closeModal()
 	})
 
@@ -280,42 +345,73 @@ let topInicial = contenedoroverlay.offsetTop //
 let bottomInicial = 20 // bottom auto, igual al top inicial
 
 // POSICION INICIAL (segun ancho), porque si no la primera vez que se abre desde un producto que no es el primero, queda muy arriba, fuera de la pantalla.
-if (window.innerWidth <= 660) {
-	contenedoroverlay.style.position = "absolute"
-	contenedoroverlay.style.top = "60px"
-	contenedoroverlay.style.bottom = "auto"
-	contenedoroverlay.style.height = "auto"
-} else { // >660 se usa el contenedor a lo ancho, ubicado en el centro
-	contenedoroverlay.style.top = "50%"
-	contenedoroverlay.style.left = "50%"
-	contenedoroverlay.style.bottom = "auto"
-	contenedoroverlay.style.right = "auto"
-	contenedoroverlay.style.transform = "translate(-50%, -50%)"
-}
-// VER EL <660 NO FUNCIONA
-// VER EL <660 NO FUNCIONA
-// VER EL <660 NO FUNCIONA
-// VER EL <660 NO FUNCIONA
-window.addEventListener("scroll", function(){
-	if (window.innerWidth <= 660){ // como un media query
-		if (contenedoroverlay.style.visibility == "visible"){ // cuando este activo... // VER SI SACAR ESTA CONDICION (creo que si)
-			if((window.scrollY + window.innerHeight) >= (topInicial + contenedoroverlay.offsetHeight/* + bottomInicial*/)){ // se le agrega el tamañoNav a esa distancia para que no pegue un salto desde el final del contenedor
-				contenedoroverlay.style.position = "fixed"
-				contenedoroverlay.style.top = "auto"
-				contenedoroverlay.style.bottom = "20px"
-				contenedoroverlay.style.height = "auto"
-			} else {
-				contenedoroverlay.style.position = "absolute"
-				contenedoroverlay.style.top = "60px"
-				contenedoroverlay.style.bottom = "auto"
-				contenedoroverlay.style.height = "auto"
-			}
-		}
-	} else {
-		contenedoroverlay.style.top = "50%"
-		contenedoroverlay.style.left = "50%"
-		contenedoroverlay.style.bottom = "auto"
-		contenedoroverlay.style.right = "auto"
-		contenedoroverlay.style.transform = "translate(-50%, -50%)"
-	}
-})
+// if (window.innerWidth <= 660) {
+// 	contenedoroverlay.style.position = "fixed"
+// 	contenedoroverlay.style.top = "60px"
+// 	contenedoroverlay.style.bottom = "auto"
+// 	contenedoroverlay.style.height = "auto"
+// } else { // >660 se usa el contenedor a lo ancho, ubicado en el centro
+// 	contenedoroverlay.style.top = "50%"
+// 	contenedoroverlay.style.left = "50%"
+// 	contenedoroverlay.style.bottom = "auto"
+// 	contenedoroverlay.style.right = "auto"
+// 	contenedoroverlay.style.transform = "translate(-50%, -50%)"
+// }
+// 
+// contenedoroverlay.style.overflowY = "auto"
+// // VER EL <660 NO FUNCIONA
+// // VER EL <660 NO FUNCIONA
+// // VER EL <660 NO FUNCIONA
+// // VER EL <660 NO FUNCIONA
+// window.addEventListener("scroll", function(){
+// 	if (window.innerWidth <= 660){ // como un media query
+// 		if (contenedoroverlay.style.visibility == "visible"){ // cuando este activo... // VER SI SACAR ESTA CONDICION (creo que si)
+// 			if((window.scrollY + window.innerHeight) >= (topInicial + contenedoroverlay.offsetHeight/* + bottomInicial*/)){ // se le agrega el tamañoNav a esa distancia para que no pegue un salto desde el final del contenedor
+// 				contenedoroverlay.style.position = "fixed"
+// 				contenedoroverlay.style.top = "auto"
+// 				contenedoroverlay.style.bottom = "20px"
+// 				contenedoroverlay.style.height = "auto"
+// 			} else {
+// 				contenedoroverlay.style.position = "fixed"
+// 				contenedoroverlay.style.top = "60px"
+// 				contenedoroverlay.style.bottom = "auto"
+// 				contenedoroverlay.style.height = "auto"
+// 			}
+// 		}
+// 	} else {
+// 		contenedoroverlay.style.top = "50%"
+// 		contenedoroverlay.style.left = "50%"
+// 		contenedoroverlay.style.bottom = "auto"
+// 		contenedoroverlay.style.right = "auto"
+// 		contenedoroverlay.style.transform = "translate(-50%, -50%)"
+// 	}
+// })
+
+
+// window.addEventListener("scroll", function(){
+// 	if (window.innerWidth <= 660){ // como un media query
+// 		// if((window.scrollY + window.innerHeight) >= (topInicial + contenedoroverlay.offsetHeight/* + bottomInicial*/)) { // se le agrega el tamañoNav a esa distancia para que no pegue un salto desde el final del contenedor
+// 		// 		// contenedoroverlay.style.top = window.scrollY + 60 + "px";
+// 		// }
+// 		
+// 		console.log(window.scrollY)
+// 		console.log(initialTop)
+// 		console.log(initialBottom)
+// 		console.log(window.scrollY + contenedoroverlay.getBoundingClientRect().top + contenedoroverlay.offsetHeight + 10)
+// 		console.log(window.scrollY + window.innerHeight)
+// 		console.log("*********************")
+// 		if (window.scrollY <= initialTop) {
+// 			contenedoroverlay.style.position = "fixed";
+// 			contenedoroverlay.style.top = "60px";
+// 			contenedoroverlay.style.bottom = "unset";
+// 		} else if ((window.scrollY + contenedoroverlay.getBoundingClientRect().top + contenedoroverlay.offsetHeight + 10) <= (window.scrollY + window.innerHeight)) {
+// 			contenedoroverlay.style.position = "fixed";
+// 			contenedoroverlay.style.top = "unset";
+// 			contenedoroverlay.style.bottom = "10px";
+// 		} else {
+// 			// posicion original
+// 			
+// 		}
+// 	}
+// })
+

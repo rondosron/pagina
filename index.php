@@ -583,68 +583,71 @@
 		<div id="background"></div>
 
 		<!-- OVERLAY -->
-		<div id="contenedorproductooverlay"> <!-- GRID PADRE -->
-			<div id="contenedorimagen">
-				<div id="contenedorOverflow">
-					<img id="imagenoverlay" src="fotos/1.png" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" >
+		<div id="modalContainer">
+			<div id="contenedorproductooverlay"> <!-- GRID PADRE -->
+				<div id="contenedorimagen">
+					<div id="contenedorOverflow">
+						<img id="imagenoverlay" src="fotos/1.png" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" >
+					</div>
 				</div>
-			</div>
-			<div id="datos">
-				<!-- Modal Type 1 -->
-				<!-- Modal Type 1 -->
-				<!-- Modal Type 1 -->
+				<div id="datos">
+					<!-- Modal Type 1 -->
+					<!-- Modal Type 1 -->
+					<!-- Modal Type 1 -->
+					<div id="nombre">
+						<h1 id="contenidonombre"></h1>
+					</div>
+					<div id="precio">
+						<div id="tituloprecio"><i class="fas fa-dollar-sign"></i><h2>Precio</h2></div>
+						<p id="contenidoprecio"></p>
+						<div id="contenedorcuotas">
+							<i class="fas fa-credit-card"></i>
+							<p id="textoCuotas1"></p>
+							<span id="contenedorPrecioCuota"></span>
+							<p id="textoCuotas2">)</p>
+						</div>
+					</div>
+					<div id="talles">
+						<i class="fas fa-ruler"></i>
+						<h2>Talles</h2>
+						<div id="contenedorTalles">
+							<!-- Items created for each product -->
+						</div>
+					</div>
+					<div id="colores">
+						<i class="fas fa-palette"></i>
+						<h2>Colores</h2>
+						<div id="contenedorCirculos"></div>
+					</div>
+					<div id="botones">
+						<div id="contenedorCarrito">
+							<i class="fas fa-shopping-cart"></i>
+							<input id="cantidad" type="number" name="cantidad" value="0">
+						</div>
+						<div id="contenedorBoton">
+							<div id="alpresupuesto">
+								<h3>Agregar al presupuesto</h3>
+							</div>
+						</div>
+					</div>
+					<!-- Modal Type 2 (added) -->
+					<!-- Modal Type 2 (added) -->
+					<!-- Modal Type 2 (added) -->
+
+					<!-- HACER QUE SE CARGUEN DESDE LA DATA DEL PRODUCTO CON JS -->
+					<div id="productDescription">
+						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam labore ducimus blanditiis quisquam, nisi, magnam quae explicabo, perspiciatis, rerum aut iste sequi non? Ratione quasi, porro sed alias laudantium accusamus!</p>
+					</div>
+					<div id="productCode">
+						#AA-2153
+					</div>
+				</div>
 				<div id="quitModalIconContainer">
 					<i class="fas fa-times" id="quitModalIcon"></i>
 				</div>
-				<div id="nombre">
-					<h1 id="contenidonombre"></h1>
-				</div>
-				<div id="precio">
-					<div id="tituloprecio"><i class="fas fa-dollar-sign"></i><h2>Precio</h2></div>
-					<p id="contenidoprecio"></p>
-					<div id="contenedorcuotas">
-						<i class="fas fa-credit-card"></i>
-						<p id="textoCuotas1"></p>
-						<span id="contenedorPrecioCuota"></span>
-						<p id="textoCuotas2">)</p>
-					</div>
-				</div>
-				<div id="talles">
-					<i class="fas fa-ruler"></i>
-					<h2>Talles</h2>
-					<div id="contenedorTalles">
-						<!-- Items created for each product -->
-					</div>
-				</div>
-				<div id="colores">
-					<i class="fas fa-palette"></i>
-					<h2>Colores</h2>
-					<div id="contenedorCirculos"></div>
-				</div>
-				<div id="botones">
-					<div id="contenedorCarrito">
-						<i class="fas fa-shopping-cart"></i>
-						<input id="cantidad" type="number" name="cantidad" value="0">
-					</div>
-					<div id="contenedorBoton">
-						<div id="alpresupuesto">
-							<h3>Agregar al presupuesto</h3>
-						</div>
-					</div>
-				</div>
-				<!-- Modal Type 2 (added) -->
-				<!-- Modal Type 2 (added) -->
-				<!-- Modal Type 2 (added) -->
-
-				<!-- HACER QUE SE CARGUEN DESDE LA DATA DEL PRODUCTO CON JS -->
-				<div id="productDescription">
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam labore ducimus blanditiis quisquam, nisi, magnam quae explicabo, perspiciatis, rerum aut iste sequi non? Ratione quasi, porro sed alias laudantium accusamus!</p>
-				</div>
-				<div id="productCode">
-					#AA-2153
-				</div>
 			</div>
 		</div>
+		
 
 		<footer id="footer">
 			<div id="contenedorinfo">

@@ -68,6 +68,7 @@ font-family: 'Noto Serif Display', serif;
 
 body {
 	margin: 0 !important;
+	padding: 50px 0 0 0; /* Navbar size */
 }
 
 :root {
@@ -100,7 +101,7 @@ h2 {
 		grid-template-columns: minmax(min-content, max-content) minmax(min-content, 2.5fr) minmax(min-content, max-content);
 		position: fixed;
 		top: 0;
-		left: 0;
+		/*left: 0;*/
 		z-index: 300;
 		color: var(--color5);
 	}
@@ -391,7 +392,7 @@ h2 {
 	.carousel {
 		height: 57vh;
 		overflow: hidden;
-		margin-top: 50px; /* Navbar height */
+		/*margin-top: 50px; Navbar height */
 	}
 
 	.carousel-control-next, .carousel-control-prev {
@@ -510,6 +511,10 @@ h2 {
 			align-items: center;
 			justify-items: center;
 			padding: 0px 20px;
+		}
+
+		.contenedorProducto {
+			height: 200px; /* Height in pixels prevents grid cells from expanding when hovered (scale). 200px is the current size, change if necessary */
 		}
 
 		/*** CADA PRODUCTO ***/

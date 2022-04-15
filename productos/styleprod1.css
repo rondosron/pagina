@@ -67,22 +67,39 @@ body {
 /********************************** OVERLAY / MODAL ****************************************/
 
 	/*********************************** ESTRUCTURA PPAL **************************************/
+		#modalContainer {
+			background: red;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			width: 100vw;
+			z-index: 430;
+			overflow-y: auto;
+			visibility: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
 		#contenedorproductooverlay {
+			position: relative;
 			background: var(--colorA); /* Option 2 */
 			background: linear-gradient(0deg, #cdcdcd, #ebebeb); /* Option 1 */
-		    height: 80%;
-		    width: 40%;
+		    /*height: 80%;*/
+		    height: fit-content;
+		    /*width: 40%;*/
+		    width: fit-content;
 		    display: grid;
 		    grid-template-areas: "foto datos";
 		    grid-template-columns: 58% 42%;
 		    max-height: 400px;
 		    min-height: 330px;
 		    min-width: 636px;
-		    position: fixed; /* fixed para >660, el resto absolute*/
-		    top: 50%;
-		    left: 50%;
-		    transform: translate(-50%, -50%);
+		    /*position: absolute;  fixed para >660, el resto absolute*/
+		    /*top: 50%;
+		    left: 50%;*/
+		    /*transform: translate(-50%, -50%);*/
 		    z-index: 201;
 		    visibility: hidden;
 		    border-radius: 25px 0 25px 0;
@@ -161,6 +178,7 @@ body {
 									"colores"
 									"input";
 		    padding: 10px 10px 10px 0;
+		    position: relative;
 		}
 
 	/***************************** EXIT *********************/
@@ -450,7 +468,7 @@ body {
 		}
 	}
 
-	@media screen and (max-width: 660px) {
+	@media screen and (max-width: 700px) {
 		h2 {
 			font-size: 2rem;
 		}
@@ -477,6 +495,8 @@ body {
 			width: auto;
 			max-height: none;
 			height: auto; /* VER SI QUEDA MAL EL ALTO */
+			position: absolute;
+			top: 10px;
 		}
 		#datos {
 			padding: 0px 10px 10px 10px;
@@ -494,10 +514,9 @@ body {
 			margin-bottom: 5px;
 	    	padding-bottom: 7px;
 		}
-	}
-
-	@media screen and (max-width: 530px) {
-		
+		#expandButton {
+			visibility: visible; 
+		}
 	}
 
 	@media screen and (max-width: 500px) { /** TELEFONOS **/
@@ -506,13 +525,18 @@ body {
 			grid-template-rows: 1fr 1fr 1fr;
 			row-gap: 15px;
 		}
-		.contenedorProducto {
-			height: 200px; /* Necesité ponerle un height en pixeles para que al aplicar el scale de un elemento (en hover) no se desplacen los demás elementos. Es 200px porque es el tamaño actual del elemento, si lo cambio, cambiar esto. */
-		}
 		#contenedorproductooverlay {
-			top: 2%; /* Poco para que entre a lo alto */
-		    left: 18%; /* bastante a los costados para que se achique a lo alto tambien */
-		    right: 18%;
-		    transform: none;
+			width: 90%;
+		    /*left: 18%;  bastante a los costados para que se achique a lo alto tambien */
+		    /*margin: 0 10px;*/
+		    /*transform: none;*/
+/*	overflow-y: auto;
+	position: fixed;
+	height: auto;
+	max-height: calc(100vh - 72px);
+	top: 60px;*/
+		}
+		#contenedorproductooverlay::-webkit-scrollbar {
+			display: none;
 		}
 	}
