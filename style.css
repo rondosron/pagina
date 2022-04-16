@@ -494,11 +494,32 @@ h2 {
 		}
 
 	/**** BUSCADOR *****/
-		#buscadorContainer {
+		#searchBarAndOrderByContainer {
 			display: flex;
 			flex-direction: row;
 			align-content: center;
 			justify-content: center;
+			gap: 7px;
+			margin: 7px 0;
+		}
+
+		#searchBarContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#orderByContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#orderByContainer label {
+			color: var(--color5);
+			margin-right: 5px;
 		}
 
 	/**** PRODUCTOS *****/
@@ -2755,7 +2776,7 @@ h2 {
 								"copyright";
 	}
 
-	#footer #contenedorinfo {
+	#contenedorinfo {
 		grid-area: info;
 		display: grid;
 		grid-template-areas: "a b c d";
@@ -2774,6 +2795,15 @@ h2 {
 		width: fit-content;
 	}
 
+	.itemFooterContainer {
+		display: flex;
+	}
+
+	.itemFooterContainer i {
+		position: relative;
+		top: 2.16px;
+	}
+
 	/* Subtitles */
 	#contenedorinfo p {
 		display: inline-block;
@@ -2782,6 +2812,7 @@ h2 {
 		margin-bottom: 0px;
 		position: relative;
 		top: 1.646px;
+		width: min-content;
 	}
 
 	#navegacionfooter {
@@ -2824,8 +2855,9 @@ h2 {
 	}
 
 	#mediosdepagofooter img {
-		transform: scale(0.7);
-		margin: -11px;
+		height: 2.7rem;
+		width: auto;
+		margin: 2px;
 	}
 
 	#faqs {

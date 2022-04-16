@@ -456,7 +456,7 @@ body {
 		}
 		#contenedorinfo {
 			grid-template-areas: 	"a b"
-									"c d" !important;
+									"c d";
 		}
 	}
 
@@ -487,6 +487,9 @@ body {
 			grid-template-columns: 1fr;
 			grid-template-rows: 0.2fr repeat(4, 1fr); /* title + 4 cards */
 		}
+		#modalContainer {
+			align-items: unset; /* Remove align-items = center for smaller screens because it won't let you add margin bottom */
+		}
 		#contenedorproductooverlay {
 			grid-template-areas: 	"foto"
 									"datos";
@@ -494,9 +497,10 @@ body {
 			grid-template-columns: none;
 			width: auto;
 			max-height: none;
-			height: auto; /* VER SI QUEDA MAL EL ALTO */
-			position: absolute;
-			top: 10px;
+			/*height: auto;  VER SI QUEDA MAL EL ALTO */
+			/*position: absolute;*/
+			/*top: 10px;*/
+			margin: 10px;
 		}
 		#datos {
 			padding: 0px 10px 10px 10px;
@@ -519,6 +523,12 @@ body {
 		}
 	}
 
+	@media screen and (max-width: 575px) {
+		#searchBarAndOrderByContainer {
+			flex-direction: column;
+		}
+	}
+
 	@media screen and (max-width: 500px) { /** TELEFONOS **/
 		#productsContainer {
 			grid-template-columns: 1fr;
@@ -526,7 +536,7 @@ body {
 			row-gap: 15px;
 		}
 		#contenedorproductooverlay {
-			width: 90%;
+			/*width: 90%;*/
 		    /*left: 18%;  bastante a los costados para que se achique a lo alto tambien */
 		    /*margin: 0 10px;*/
 		    /*transform: none;*/
@@ -539,4 +549,34 @@ body {
 		#contenedorproductooverlay::-webkit-scrollbar {
 			display: none;
 		}
+		#contenedorinfo {
+			gap: 15px;
+		}
+		#contenedorinfo h5 {
+			font-size: 1rem;
+		}
+		#contenedorinfo p {
+			font-size: 15px;
+		}
 	}
+
+	@media screen and (max-width: 400px) {
+		#contenedorinfo {
+			gap: 6px;
+			padding: 10px 5px;
+		}
+		#mediosdepagofooter img {
+			height: 1.9rem;
+		}
+	}
+
+	@media screen and (max-width: 300px) {
+		#contenedorinfo {
+			grid-template-areas:
+								"a"
+								"b"
+								"c"
+								"d";
+		}
+	}
+

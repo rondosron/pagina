@@ -117,16 +117,22 @@
 				
 			</div>
 
-			<div id="buscadorContainer">
-				<input type="text" name="buscador" id="buscador">
-				<button id="buscarBoton">Buscar</button>
-				<label for="orderBy"></label>
-				<select name="orderBy" id="orderBy">
-					<option value="1">Precio - Ascendente</option>
-					<option value="2">Precio - Descendente</option>
-					<option value="3">Nombre - Ascendente</option>
-					<option value="4">Nombre - Descendente</option>
-				</select>
+			<div id="searchBarAndOrderByContainer">
+				<div id="searchBarContainer">
+					<input type="text" name="buscador" id="buscador">
+					<button id="buscarBoton">Buscar</button>
+				</div>
+				
+				<div id="orderByContainer">
+					<label for="orderBy">Ordenar por:</label>
+					<select name="orderBy" id="orderBy">
+						<option value="1">Precio - Ascendente</option>
+						<option value="2">Precio - Descendente</option>
+						<option value="3">Nombre - Ascendente</option>
+						<option value="4">Nombre - Descendente</option>
+					</select>
+				</div>
+				
 			</div>
 			
 			<div id="productsContainer">
@@ -654,11 +660,11 @@
 				<div id="navegacionfooter">
 					<div id="contenedornavegacion">
 						<h5>Navegación</h5>
-						<div><i class="fas fa-angle-right"></i><p>Hombre</p></div>
-						<div><i class="fas fa-angle-right"></i><p>Mujer</p></div>
-						<div><i class="fas fa-angle-right"></i><p>Personalizadas</p></div>
-						<div><i class="fas fa-angle-right"></i><p>Lisas</p></div>
-						<div><i class="fas fa-angle-right"></i><p>Contacto</p></div>
+						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Hombre</p></div>
+						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Mujer</p></div>
+						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Personalizadas</p></div>
+						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Lisas</p></div>
+						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Contacto</p></div>
 					</div>
 				</div>
 				<div id="mediosdepagofooter">
@@ -667,7 +673,7 @@
 				</div>
 				<div id="faqs">
 					<h5>FAQ's</h5>
-					<div><i class="fas fa-angle-right"></i><p>Preguntas Frecuentes</p></div>
+					<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Preguntas Frecuentes</p></div>
 				</div>
 				<div id="contactofooter">
 					<h5>Contacto</h5>
