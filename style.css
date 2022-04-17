@@ -510,6 +510,21 @@ h2 {
 			align-items: center;
 		}
 
+		#barAndIconContainer {
+			position: relative;
+			display: flex;
+			align-items: center;
+		}
+
+		#barAndIconContainer input {
+
+		}
+
+		#barAndIconContainer i {
+			position: absolute;
+			right: 5px;
+		}
+
 		#orderByContainer {
 			display: flex;
 			flex-direction: row;

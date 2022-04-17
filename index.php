@@ -119,7 +119,10 @@
 
 			<div id="searchBarAndOrderByContainer">
 				<div id="searchBarContainer">
-					<input type="text" name="buscador" id="buscador">
+					<div id="barAndIconContainer">
+						<input type="text" name="buscador" id="buscador">
+						<i class="fas fa-times"></i>
+					</div>
 					<button id="buscarBoton">Buscar</button>
 				</div>
 				

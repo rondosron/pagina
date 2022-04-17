@@ -72,14 +72,18 @@ body {
 			position: fixed;
 			top: 0;
 			left: 0;
-			height: 100vh;
-			width: 100vw;
+			height: 100%;
+			width: 100%;
 			z-index: 430;
 			overflow-y: auto;
 			visibility: hidden;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+
+		#modalContainer::-webkit-scrollbar {
+			display: none;
 		}
 
 		#contenedorproductooverlay {
@@ -546,12 +550,13 @@ body {
 	max-height: calc(100vh - 72px);
 	top: 60px;*/
 		}
-		#contenedorproductooverlay::-webkit-scrollbar {
-			display: none;
-		}
 		#contenedorinfo {
 			gap: 15px;
 		}
+		
+	}
+
+	@media screen and (max-width: 438px) {
 		#contenedorinfo h5 {
 			font-size: 1rem;
 		}

@@ -119,6 +119,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 ////////////////////// BUSCADOR ////////////////////////////
 	let buscador = document.querySelector("#buscador")
 	let buscarBoton = document.querySelector("#buscarBoton")
+	let xButton = document.querySelector("#barAndIconContainer i")
 	// let productos = document.querySelectorAll(".producto")
 
 	function buscar () {
@@ -175,6 +176,15 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		if (e.charCode == "13") {
 			buscar()
 		}		
+	})
+
+	xButton.addEventListener("click", function(e){
+		if (buscador.value != "") {
+			buscador.value = ""
+			buscar()
+		} else {
+			return
+		}
 	})
 
 ///////////////////// ORDERNAR ///////////////////////////////
