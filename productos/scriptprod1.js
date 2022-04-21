@@ -104,69 +104,129 @@
 		}) // fin onclick		
 	}) // fin for each image
 
+
+
 let initialTop = 0
 let initialBottom = 0
 
 ///////////////////////////////// BOTONES FINALES ///////////////////////////////
 
 	let alpresupuesto = document.querySelector('#alpresupuesto')
+	const contenedoritemspresupuesto = document.querySelector('#contenedoritemspresupuesto')
 
 	let totalDiv = document.querySelector('#total')
 	let totalValor = 0
-	alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
-		/* PRESUPUESTO */
+	
+	/* FOR SCREENS WITH HOVER */
 		let cantidadInput = document.querySelector("#cantidad")
-		let cantidadPedida = cantidadInput.value
 		let imagenoverlay = document.querySelector("#imagenoverlay")
-		let nombre = imagenoverlay.getAttribute("data-nombre")
-		let precio = imagenoverlay.getAttribute("data-precio").replace("$", "") // saco el signo $ para poder sumar
-		let pedido = ""
 		
-		if (cantidadPedida != 0){
-			if (cantidadPedida >= 2) {
-				pedido = nombre + " - " + cantidadPedida + " unidades - $" + (precio * cantidadPedida) 
-			} else {
-				pedido = nombre + " - " + cantidadPedida + " unidad - $" + (precio * cantidadPedida) 
-			}
-			totalValor += (precio * cantidadPedida)
-			const contenedoritemspresupuesto = document.querySelector('#contenedoritemspresupuesto')
+		alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
+			/* NOTE: cant define a function for both kinds of devices because they're different and both need to be active at the same time in some cases */
+			/* PRESUPUESTO */
+			let cantidadPedida = cantidadInput.value
+			let nombre = imagenoverlay.getAttribute("data-nombre")
+			let precio = imagenoverlay.getAttribute("data-precio").replace("$", "") // saco el signo $ para poder sumar
+			let pedido = ""
 			
-			const contenedoritem = document.createElement('div')
+			if (cantidadPedida != 0){
+				if (cantidadPedida >= 2) {
+					pedido = nombre + " - " + cantidadPedida + " unidades - $" + (precio * cantidadPedida) 
+				} else {
+					pedido = nombre + " - " + cantidadPedida + " unidad - $" + (precio * cantidadPedida) 
+				}
+				totalValor += (precio * cantidadPedida)
+				
+				const contenedoritem = document.createElement('div')
 
-			const contenedorlinea = document.createElement('div')
-			contenedorlinea.innerHTML = pedido
-			
-			const deleteitem = document.createElement('i')
-			deleteitem.classList.add('fas') // clase de FontAwesome
-			deleteitem.classList.add('fa-times') // clase de FontAwesome
-			contenedorlinea.appendChild(deleteitem)
-			contenedoritem.appendChild(contenedorlinea)
+				const contenedorlinea = document.createElement('div')
+				contenedorlinea.innerHTML = pedido
+				
+				const deleteitem = document.createElement('i')
+				deleteitem.classList.add('fas') // clase de FontAwesome
+				deleteitem.classList.add('fa-times') // clase de FontAwesome
+				contenedorlinea.appendChild(deleteitem)
+				contenedoritem.appendChild(contenedorlinea)
 
-			contenedoritemspresupuesto.appendChild(contenedoritem)
+				contenedoritemspresupuesto.appendChild(contenedoritem)
 
-			deleteitem.addEventListener('click', function(){ 
-				contenedoritemspresupuesto.removeChild(contenedoritem)
-				let pedidoinput = document.querySelector("#pedidoinput") // se actualiza el text area y el total tambien al clickearlos
-				pedidoinput.value = contenedoritemspresupuesto.innerText
+				deleteitem.addEventListener('click', function(){ 
+					contenedoritemspresupuesto.removeChild(contenedoritem)
+					let pedidoinput = document.querySelector("#pedidoinput") // se actualiza el text area y el total tambien al clickearlos
+					pedidoinput.value = contenedoritemspresupuesto.innerText
+					/* TOTAL */
+					totalValor -= (precio * cantidadPedida)
+					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+				})
 				/* TOTAL */
-				totalValor -= (precio * cantidadPedida)
 				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
-			})
-			/* TOTAL */
-			totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
-		}
-		alpresupuesto.style.top = "3px"
-		alpresupuesto.style.boxShadow = "none"
-		
-		/* PEDIDO */
-		let pedidoinput = document.querySelector("#pedidoinput")
-		pedidoinput.value = contenedoritemspresupuesto.innerText
-	})
+			}
+			alpresupuesto.style.top = "3px"
+			alpresupuesto.style.boxShadow = "none"
+			
+			/* PEDIDO */
+			let pedidoinput = document.querySelector("#pedidoinput")
+			pedidoinput.value = contenedoritemspresupuesto.innerText
+		})
 
-	document.body.addEventListener('mouseup', function(){ // terminar el click donde sea
-		alpresupuesto.style.top = "0px"
-		alpresupuesto.style.boxShadow = "0px 3px 0px #081e50"
-	})
+		document.body.addEventListener('mouseup', function(){ // terminar el click donde sea
+			alpresupuesto.style.top = "0px"
+			alpresupuesto.style.boxShadow = "0px 3px 0px #081e50"
+		})
+
+	/* FOR MOBILES */
+		let alpresupuestoMobile = document.querySelectorAll('.alpresupuestoMobile')
+
+		alpresupuestoMobile.forEach(function(button){
+			button.addEventListener('mousedown', function(){
+				console.log(button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value + " unidades a ")
+				console.log(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio"))
+
+				/* PRESUPUESTO */
+			let cantidadPedida = button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value
+			let nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre")
+			let precio = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")
+			let pedido = ""
+			
+			if (cantidadPedida != 0){
+				if (cantidadPedida >= 2) {
+					pedido = nombre + " - " + cantidadPedida + " unidades - $" + (precio * cantidadPedida) 
+				} else {
+					pedido = nombre + " - " + cantidadPedida + " unidad - $" + (precio * cantidadPedida) 
+				}
+				totalValor += (precio * cantidadPedida)
+			
+				const contenedoritem = document.createElement('div')
+
+				const contenedorlinea = document.createElement('div')
+				contenedorlinea.innerHTML = pedido
+				
+				const deleteitem = document.createElement('i')
+				deleteitem.classList.add('fas') // clase de FontAwesome
+				deleteitem.classList.add('fa-times') // clase de FontAwesome
+				contenedorlinea.appendChild(deleteitem)
+				contenedoritem.appendChild(contenedorlinea)
+
+				contenedoritemspresupuesto.appendChild(contenedoritem)
+
+				deleteitem.addEventListener('click', function(){ 
+					contenedoritemspresupuesto.removeChild(contenedoritem)
+					let pedidoinput = document.querySelector("#pedidoinput") // se actualiza el text area y el total tambien al clickearlos
+					pedidoinput.value = contenedoritemspresupuesto.innerText
+					/* TOTAL */
+					totalValor -= (precio * cantidadPedida)
+					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+				})
+				/* TOTAL */
+				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+			}
+
+			/* PEDIDO */
+			let pedidoinput = document.querySelector("#pedidoinput")
+			pedidoinput.value = contenedoritemspresupuesto.innerText
+			})
+		})
+		
 
 /******** CLOSE MODAL or CLICK BACKGROUND ************/
 
@@ -205,7 +265,7 @@ let initialBottom = 0
 
 //////////////////////// ZOOM ON MOUSE OVER ///////////////////////////
 	let contenedorOverflow = document.querySelector("#contenedorOverflow")
-	let imagenoverlay = document.querySelector("#imagenoverlay")
+	// let imagenoverlay = document.querySelector("#imagenoverlay")
 
 	contenedorOverflow.addEventListener("mousemove", function(event){
 		// transform-origin (x, y) >>> 

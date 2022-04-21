@@ -159,6 +159,19 @@
 											<div class='imageContainer'>
 												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
+												<p class='nombreMobile'>" . utf8_encode($item->nombre) . "</p>
+												<p class='precioMobile'> $$item->precio</p>
+												<div class='botones'>
+													<div class='contenedorCarrito'>
+														<i class='fas fa-shopping-cart'></i>
+														<input class='cantidadMobile' type='number' name='cantidad' value='0'>
+													</div>
+													<div class='contenedorBoton'>
+														<div class='alpresupuestoMobile'>
+															<h3>Agregar</h3>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>";

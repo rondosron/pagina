@@ -351,8 +351,8 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 		// Order filtered elements (in pages)
 		contenedorProductoListaOrdenada.forEach(function(producto, index){
-			console.log(index)
-			console.log(producto.childNodes[1].childNodes[1].childNodes[1])
+			// console.log(index)
+			// console.log(producto.childNodes[1].childNodes[1].childNodes[1])
 			if (index < currentLastItemSpaceAvailable - productsPerPage) {
 				producto.style.display = "none"
 			} else if (index < currentLastItemSpaceAvailable) {
