@@ -20,7 +20,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	function filtrar(filtro) {
 		let filtrofinal = filtro.toLowerCase()
 		originalListOfProducts.forEach(function(producto) {
-			let data = producto.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-filtro").toLowerCase()
+			let data = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-filtro").toLowerCase()
 			if (!data.includes(filtrofinal)) {
 				// Remove items out of filter
 				// producto.parentElement.parentElement.parentElement.style.display = "none"
@@ -124,7 +124,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 	function buscar () {
 		originalListOfProducts.forEach(function(producto){
-			if (producto.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
+			if (producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
 				// producto.parentNode.parentNode.parentNode.style.display = "inline-flex"
 				// agregar clase que indique filtro visible (para la paginacion)
 				// producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
@@ -224,32 +224,32 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			case "1":
 				console.log("entró en case 1")
 				contenedorProductoLista.sort(function(a,b) {
-					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
-					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
 					return aCat - bCat
 				})
 				break;
 			case "2":
 				console.log("entró en case 2")
 				contenedorProductoLista.sort(function(a,b) {
-					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
-					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					var aCat = parseFloat(a.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
+					var bCat = parseFloat(b.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-precio"))
 					return bCat - aCat
 				})
 				break;
 			case "3":
 				console.log("entró en case 3")
 				contenedorProductoLista.sort(function(a,b) {
-					var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
-					var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					var aCat = a.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					var bCat = b.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
 					return aCat.localeCompare(bCat) // Ascending order
 				})
 				break;
 			case "4":
 				console.log("entró en case 4")
 				contenedorProductoLista.sort(function(a,b) {
-					var aCat = a.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
-					var bCat = b.childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					var aCat = a.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
+					var bCat = b.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre")
 					return aCat.localeCompare(bCat) // Ascending order (can't sort strings by descending order with the sort function, I have to use reverse)
 				}).reverse();
 				break;

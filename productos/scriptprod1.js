@@ -20,8 +20,13 @@
 
 				if (imagenoverlay.naturalHeight > imagenoverlay.naturalWidth) {
 					imagenoverlay.classList.add("verticalImageOverlay")
-				} else {
+					imagenoverlay.classList.remove("horizontalImageOverlay")
+				} else if (imagenoverlay.naturalHeight < imagenoverlay.naturalWidth) {
 					imagenoverlay.classList.remove("verticalImageOverlay") /* Remove it in case it was set before */
+					imagenoverlay.classList.add("horizontalImageOverlay")
+				} else { /* Square */
+					imagenoverlay.classList.remove("verticalImageOverlay")
+					imagenoverlay.classList.remove("horizontalImageOverlay")
 				}
 
 			/** CODIGO **/
@@ -126,14 +131,14 @@ let initialBottom = 0
 			/* PRESUPUESTO */
 			let cantidadPedida = cantidadInput.value
 			let nombre = imagenoverlay.getAttribute("data-nombre")
-			let precio = imagenoverlay.getAttribute("data-precio").replace("$", "") // saco el signo $ para poder sumar
+			let precio = parseFloat(imagenoverlay.getAttribute("data-precio")).toFixed(2)
 			let pedido = ""
 			
 			if (cantidadPedida != 0){
 				if (cantidadPedida >= 2) {
-					pedido = nombre + " - " + cantidadPedida + " unidades - $" + (precio * cantidadPedida) 
+					pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
 				} else {
-					pedido = nombre + " - " + cantidadPedida + " unidad - $" + (precio * cantidadPedida) 
+					pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
 				}
 				totalValor += (precio * cantidadPedida)
 				
@@ -156,10 +161,10 @@ let initialBottom = 0
 					pedidoinput.value = contenedoritemspresupuesto.innerText
 					/* TOTAL */
 					totalValor -= (precio * cantidadPedida)
-					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
 				})
 				/* TOTAL */
-				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
 			}
 			alpresupuesto.style.top = "3px"
 			alpresupuesto.style.boxShadow = "none"
@@ -185,16 +190,19 @@ let initialBottom = 0
 				/* PRESUPUESTO */
 			let cantidadPedida = button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value
 			let nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre")
-			let precio = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")
+			let precio = parseFloat(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")).toFixed(2)
+			console.log(typeof precio)
+			console.log(precio)
 			let pedido = ""
 			
 			if (cantidadPedida != 0){
 				if (cantidadPedida >= 2) {
-					pedido = nombre + " - " + cantidadPedida + " unidades - $" + (precio * cantidadPedida) 
+					pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
 				} else {
-					pedido = nombre + " - " + cantidadPedida + " unidad - $" + (precio * cantidadPedida) 
+					pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
 				}
 				totalValor += (precio * cantidadPedida)
+				console.log(typeof totalValor)
 			
 				const contenedoritem = document.createElement('div')
 
@@ -215,10 +223,12 @@ let initialBottom = 0
 					pedidoinput.value = contenedoritemspresupuesto.innerText
 					/* TOTAL */
 					totalValor -= (precio * cantidadPedida)
-					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+					console.log(typeof totalValor)
+					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
 				})
 				/* TOTAL */
-				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + totalValor
+				console.log(typeof totalValor)
+				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
 			}
 
 			/* PEDIDO */

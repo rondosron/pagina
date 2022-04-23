@@ -157,7 +157,9 @@
 							echo 	"<div class='contenedorProducto filtroVisible'>
 										<div class='productBackground'>
 											<div class='imageContainer'>
-												<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+												<div class='imgContainer'>
+													<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+												</div>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
 												<p class='nombreMobile'>" . utf8_encode($item->nombre) . "</p>
 												<p class='precioMobile'> $$item->precio</p>
@@ -190,83 +192,6 @@
 				<div id="pagesListContainer"></div>
 				<button id="buttonNext">+</button>
 			</div>
-			
-
-			<!-- <div id="contenedorproducto1" class="contendorproducto">
-				<div id="producto1" class="productBackground">
-					<img class="producto" id="imagen1" src="fotos/1.png" data-filtro="remera hombre lisa" data-nombre="Remera Rolling Stones" data-precio="$500" data-cantidad-cuotas="2" data-precio-cuota="300" data-talles="XS/S/M/L/XL" data-colores="rojo/azul/blanco" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-				</div>
-			</div>
-			<div id="contenedorproducto2" class="contendorproducto">
-				<div id="producto2" class="productBackground">
-					<img class="producto" id="imagen2" src="fotos/2.png" data-filtro="remera mujer personalizada" data-nombre="Remera Beatles" data-precio="$800" data-cantidad-cuotas="3" data-precio-cuota="300" data-talles="S/M/L" data-colores="rojo/verde/amarillo" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum." >
-				</div>
-			</div>
-			<div id="contenedorproducto3" class="contendorproducto">
-				<div id="producto3" class="productBackground">
-					<img class="producto" id="imagen3" src="fotos/3.png" data-filtro="gorra hombre personalizada" data-nombre="Remera Coldplay" data-precio="$600" data-cantidad-cuotas="3" data-precio-cuota="250" data-talles="XS/S/L/XL" data-colores="verde/negro/naranja" data-description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-				</div>
-			</div>
-			<div id="contenedorproducto4" class="contendorproducto">
-				<div id="producto4" class="productBackground">
-					<img class="producto" id="imagen4" src="fotos/4.png" data-filtro="gorra mujer personalizada">
-				</div>
-			</div>
-			<div id="contenedorproducto5" class="contendorproducto">
-				<div id="producto5" class="productBackground">
-					<img class="producto" id="imagen5" src="fotos/5.png" data-filtro="vinilo cocina">
-				</div>
-			</div>
-			<div id="contenedorproducto6" class="contendorproducto">
-				<div id="producto6" class="productBackground">
-					<img class="producto" id="imagen6" src="fotos/6.png" data-filtro="remera hombre lisa">
-				</div>
-			</div>
-			<div id="contenedorproducto7" class="contendorproducto">
-				<div id="producto7" class="productBackground">
-					<img class="producto" id="imagen7" src="fotos/7.png" data-filtro="remera mujer personalizada">
-				</div>
-			</div>
-			<div id="contenedorproducto8" class="contendorproducto">
-				<div id="producto8" class="productBackground">
-					<img class="producto" id="imagen8" src="fotos/8.png" data-filtro="gorra hombre personalizada">
-				</div>
-			</div>
-			<div id="contenedorproducto9" class="contendorproducto">
-				<div id="producto9" class="productBackground">
-					<img class="producto" id="imagen9" src="fotos/9.png" data-filtro="gorra mujer personalizada">
-				</div>
-			</div>
-			<div id="contenedorproducto10" class="contendorproducto">
-				<div id="producto10" class="productBackground">
-					<img class="producto" id="imagen10" src="fotos/10.png" data-filtro="vinilo cocina">
-				</div>
-			</div>
-			<div id="contenedorproducto11" class="contendorproducto">
-				<div id="producto11" class="productBackground">
-					<img class="producto" id="imagen11" src="fotos/11.png" data-filtro="remera mujer personalizada">
-				</div>
-			</div>
-			<div id="contenedorproducto12" class="contendorproducto">
-				<div id="producto12" class="productBackground">
-					<img class="producto" id="imagen12" src="fotos/12.png" data-filtro="gorra hombre personalizada">
-				</div>
-			</div> -->
 		</div>
 		
 		<!-- PRESUPUESTO + FORMULARIO -->
