@@ -34,9 +34,9 @@
 				productCode.innerText = imagen.getAttribute("data-codigo")
 
 			/** NOMBRE **/
-				console.log(imagen.getAttribute("data-nombre"))
+				// console.log(imagen.getAttribute("data-nombre"))
 				let contenidonombre = document.querySelector('#contenidonombre')
-				console.log(contenidonombre)
+				// console.log(contenidonombre)
 				contenidonombre.innerText = imagen.getAttribute("data-nombre")
 
 			/** DESCRIPCION **/
@@ -102,6 +102,7 @@
 				imagenoverlay.setAttribute("data-precio-cuota", imagen.getAttribute('data-precio-cuota'))
 				imagenoverlay.setAttribute("data-talles", imagen.getAttribute('data-talles'))
 				imagenoverlay.setAttribute("data-colores", imagen.getAttribute('data-colores'))
+				imagenoverlay.setAttribute("data-marca", imagen.getAttribute('data-marca'))
 
 			/////////////////////////////////// CONTENEDOR /////////////////////////////////////
 			let contenedor = document.querySelector('#contenedorproductooverlay')
@@ -116,25 +117,55 @@ let initialBottom = 0
 
 ///////////////////////////////// BOTONES FINALES ///////////////////////////////
 
-	let alpresupuesto = document.querySelector('#alpresupuesto')
 	const contenedoritemspresupuesto = document.querySelector('#contenedoritemspresupuesto')
-
+	// let pedidoinput = document.querySelector("#pedidoinput")
 	let totalDiv = document.querySelector('#total')
+
+	/* NOTE: declare/initialize variable outside functions or code so it's accessible from any of them ("global") */
 	let totalValor = 0
+	let nombre = ""
+	let pedido = ""
+	let precio = 0
+	let cantidadPedida = 0
+
+	function checkIfItemInListAndUpdate () {
+		/* Check if element is already in list and update it */
+		Array.from(contenedoritemspresupuesto.children).forEach(function(item){
+			console.log(item.innerText.includes(nombre))
+			if (item.innerText.includes(nombre)) {
+				// Substract previous subtotal (item) from total
+				let subtotalToDelete = item.innerText.substring(item.innerText.indexOf("$") + 1)
+				totalValor -= subtotalToDelete
+				contenedoritemspresupuesto.removeChild(item)
+			} else {
+				console.log("No hay un item con el nombre " + nombre + " ya agregado")
+			}
+		})
+	}
 	
 	/* FOR SCREENS WITH HOVER */
 		let cantidadInput = document.querySelector("#cantidad")
 		let imagenoverlay = document.querySelector("#imagenoverlay")
-		
+		let alpresupuesto = document.querySelector('#alpresupuesto')
+
 		alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
 			/* NOTE: cant define a function for both kinds of devices because they're different and both need to be active at the same time in some cases */
+
 			/* PRESUPUESTO */
-			let cantidadPedida = cantidadInput.value
-			let nombre = imagenoverlay.getAttribute("data-nombre")
-			let precio = parseFloat(imagenoverlay.getAttribute("data-precio")).toFixed(2)
-			let pedido = ""
-			
+			cantidadPedida = cantidadInput.value
 			if (cantidadPedida != 0){
+				
+				nombre = imagenoverlay.getAttribute("data-nombre")
+				console.log(imagenoverlay)
+				console.log("Marca: " + imagenoverlay.getAttribute("data-marca"))
+				if (imagenoverlay.getAttribute("data-marca") != null) { /* If product has a brand, use it to distinguish those with the same name */
+					nombre = nombre + " (" + imagenoverlay.getAttribute("data-marca") + ")"
+				}
+
+				checkIfItemInListAndUpdate()
+
+				precio = parseFloat(imagenoverlay.getAttribute("data-precio")).toFixed(2)
+				
 				if (cantidadPedida >= 2) {
 					pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
 				} else {
@@ -157,21 +188,21 @@ let initialBottom = 0
 
 				deleteitem.addEventListener('click', function(){ 
 					contenedoritemspresupuesto.removeChild(contenedoritem)
-					let pedidoinput = document.querySelector("#pedidoinput") // se actualiza el text area y el total tambien al clickearlos
-					pedidoinput.value = contenedoritemspresupuesto.innerText
-					/* TOTAL */
-					totalValor -= (precio * cantidadPedida)
+
+					let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
+					totalValor -= subtotalToDelete
+
 					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
 				})
 				/* TOTAL */
 				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+
+				/* PEDIDO */
+				// pedidoinput.value = contenedoritemspresupuesto.innerText
 			}
+
 			alpresupuesto.style.top = "3px"
 			alpresupuesto.style.boxShadow = "none"
-			
-			/* PEDIDO */
-			let pedidoinput = document.querySelector("#pedidoinput")
-			pedidoinput.value = contenedoritemspresupuesto.innerText
 		})
 
 		document.body.addEventListener('mouseup', function(){ // terminar el click donde sea
@@ -184,56 +215,59 @@ let initialBottom = 0
 
 		alpresupuestoMobile.forEach(function(button){
 			button.addEventListener('mousedown', function(){
-				console.log(button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value + " unidades a ")
-				console.log(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio"))
+				// console.log(button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value + " unidades a ")
+				// console.log(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio"))
 
 				/* PRESUPUESTO */
-			let cantidadPedida = button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value
-			let nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre")
-			let precio = parseFloat(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")).toFixed(2)
-			console.log(typeof precio)
-			console.log(precio)
-			let pedido = ""
-			
-			if (cantidadPedida != 0){
-				if (cantidadPedida >= 2) {
-					pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
-				} else {
-					pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
-				}
-				totalValor += (precio * cantidadPedida)
-				console.log(typeof totalValor)
-			
-				const contenedoritem = document.createElement('div')
+				cantidadPedida = button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value
 
-				const contenedorlinea = document.createElement('div')
-				contenedorlinea.innerHTML = pedido
+				if (cantidadPedida != 0){
+
+					nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre")
+					if (button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-marca") != null) { /* If product has a brand, use it to distinguish those with the same name */
+						nombre = nombre + " (" + button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-marca") + ")"
+					}
+
+					precio = parseFloat(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")).toFixed(2)
+
+					checkIfItemInListAndUpdate()
+
+					if (cantidadPedida >= 2) {
+						pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
+					} else {
+						pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
+					}
+					totalValor += (precio * cantidadPedida)
+					// console.log(typeof totalValor)
 				
-				const deleteitem = document.createElement('i')
-				deleteitem.classList.add('fas') // clase de FontAwesome
-				deleteitem.classList.add('fa-times') // clase de FontAwesome
-				contenedorlinea.appendChild(deleteitem)
-				contenedoritem.appendChild(contenedorlinea)
+					const contenedoritem = document.createElement('div')
 
-				contenedoritemspresupuesto.appendChild(contenedoritem)
+					const contenedorlinea = document.createElement('div')
+					contenedorlinea.innerHTML = pedido
+					
+					const deleteitem = document.createElement('i')
+					deleteitem.classList.add('fas') // clase de FontAwesome
+					deleteitem.classList.add('fa-times') // clase de FontAwesome
+					contenedorlinea.appendChild(deleteitem)
+					contenedoritem.appendChild(contenedorlinea)
 
-				deleteitem.addEventListener('click', function(){ 
-					contenedoritemspresupuesto.removeChild(contenedoritem)
-					let pedidoinput = document.querySelector("#pedidoinput") // se actualiza el text area y el total tambien al clickearlos
-					pedidoinput.value = contenedoritemspresupuesto.innerText
+					contenedoritemspresupuesto.appendChild(contenedoritem)
+
+					deleteitem.addEventListener('click', function(){ 
+						contenedoritemspresupuesto.removeChild(contenedoritem)
+						
+						let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
+						totalValor -= subtotalToDelete
+
+						totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+					})
 					/* TOTAL */
-					totalValor -= (precio * cantidadPedida)
 					console.log(typeof totalValor)
 					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
-				})
-				/* TOTAL */
-				console.log(typeof totalValor)
-				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
-			}
+				}
 
-			/* PEDIDO */
-			let pedidoinput = document.querySelector("#pedidoinput")
-			pedidoinput.value = contenedoritemspresupuesto.innerText
+				/* PEDIDO */
+				// pedidoinput.value = contenedoritemspresupuesto.innerText
 			})
 		})
 		
