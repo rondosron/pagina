@@ -39,18 +39,17 @@
 			</div>
 
 			<div id="contenedorbotones">
-				<div id="hombre" class="botonnav filtro" data-filtro="pila">PILAS</div>
-				<div id="mujer" class="botonnav filtro" data-filtro="mujer">MUJER</div>
-				<div id="personalizadas" class="botonnav filtro" data-filtro="personalizada">PERSONALIZADAS
-				</div>
-				<div id="lisas" class="botonnav filtro" data-filtro="lisa">LISAS</div>
+				<div id="hombre" class="botonnav filtro" data-filtro="PARSECS">PARSECS</div>
+				<div id="mujer" class="botonnav filtro" data-filtro="DURACELL">DURACELL</div>
+				<div id="personalizadas" class="botonnav filtro" data-filtro="BROGAS">BROGAS</div>
+				<div id="lisas" class="botonnav filtro" data-filtro="PROBATTERY">PROBATTERY</div>
 				<div id="dudas" class="botonnav">DUDAS
 					<div id="contenedordudas">
 						<div class="filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
 						<div class="filtro subItemBotonNav" data-filtro="taza">TAZA</div>
 					</div>
 				</div>
-				<div id="contacto" class="botonnav">CONTACTO</div>
+				<div id="contacto" class="botonnav">LACATUS</div>
 			</div>
 
 			<div id="versionContainer">
@@ -201,9 +200,9 @@
 				<h3>Presupuesto actual:</h3>
 				<div id="contenedoritemspresupuesto"></div>
 				<div id="total"></div>
-				<h5>ENVIAR PEDIDO (ponerlo tambien como enviar duda/consulta)</h5>
+				<h5>Añadir comentario</h5>
 				<form action="envioform.php" method="POST" name="consulta">
-					<textarea id="pedidoinput" name="pedidoinput" rows="6"></textarea>
+					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje."></textarea>
 			</div>
 
 			<div id="formulario">

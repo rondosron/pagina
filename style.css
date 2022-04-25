@@ -381,6 +381,10 @@ h2 {
 				left: 0;
 				height: 1px;
 			}
+			/* En caso de que haya subitems para distintos botones, creo que este selector no funcionaria. Agregar uno para cada item que tenga subitems. EJ: .contenedorDudas .subItemBotonNav:last-of-type:after */
+			.subItemBotonNav:last-of-type:after {
+				content: none;
+			}
 			#presupuestoyformulario {
 				grid-template-areas:
 					"presupuesto"
@@ -723,6 +727,8 @@ h2 {
 	#presupuesto h5 {
 		font-family: 'Noto Serif Display', serif;
 		font-weight: 600;
+		color: var(--color2);
+		margin-bottom: 0;
 	}
 
 	#presupuesto #contenedoritemspresupuesto {
@@ -758,6 +764,19 @@ h2 {
 
 	#pedidoinput:focus {
 		
+	}
+
+	#pedidoinput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: #b7d1ff;
+		opacity: 1; /* Firefox */
+	}
+
+	#pedidoinput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: #b7d1ff;
+	}
+
+	#pedidoinput::-ms-input-placeholder { /* Microsoft Edge */
+		color: #b7d1ff;
 	}
 
 	/*#pedidoinput:focus-visible {

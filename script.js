@@ -20,7 +20,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	function filtrar(filtro) {
 		let filtrofinal = filtro.toLowerCase()
 		originalListOfProducts.forEach(function(producto) {
-			let data = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-filtro").toLowerCase()
+			let data = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-marca").toLowerCase()
 			if (!data.includes(filtrofinal)) {
 				// Remove items out of filter
 				// producto.parentElement.parentElement.parentElement.style.display = "none"
@@ -52,6 +52,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			printPagesList()
 
 			checkButtonPrevNextStyles()
+			updateActivePage()
 		})
 	})
 
@@ -166,6 +167,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		updatePagination()
 		printPagesList()
 		checkButtonPrevNextStyles()
+		updateActivePage()
 	}
 
 	buscarBoton.addEventListener("click", function(e){
@@ -198,6 +200,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 		updatePagination()
 		checkButtonPrevNextStyles()
+		updateActivePage()
 		
 		// contenedorProductoLista.forEach(function(item){
 		// 	console.log(item.childNodes[1].childNodes[1].childNodes[1])
@@ -373,22 +376,59 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	}
 
 	function checkButtonPrevNextStyles() {
-		/* Check if it's first page -> AFTER UPDATE */
-		if (currentLastItemSpaceAvailable == productsPerPage) {
+		if (totalPages == 0) {
+			console.log("Entro en total pages 0")
+			// pagesListContainer.innerText = ""
 			buttonPrev.classList.add("blockedButton")
-			// buttonNext.classList.remove("blockedButton")
-		} else {
-			buttonPrev.classList.remove("blockedButton")
-		}
-
-		/* Check if it's last page -> AFTER UPDATE */
-		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
 			buttonNext.classList.add("blockedButton")
-		} else {
+			// mostrar mensaje
+			emptyMessage.style.display = "block"
+			return
+		} else if (currentPage == 1 && currentPage == totalPages) { /* First and last page */
+			// ocultar mensaje
+			emptyMessage.style.display = "none"
+
+			console.log("Entro en pagina 1 y unica")
+			buttonPrev.classList.add("blockedButton")
+			buttonNext.classList.add("blockedButton")
+		} else if (currentPage == 1) { /* First page */
+			// ocultar mensaje
+			emptyMessage.style.display = "none"
+
+			console.log("Entro en pagina 1")
+			buttonPrev.classList.add("blockedButton")
+			buttonNext.classList.remove("blockedButton")
+		} else if (currentPage == totalPages) { /* Last page */
+			// ocultar mensaje
+			emptyMessage.style.display = "none"
+
+			console.log("Entro en pagina final")
+			buttonPrev.classList.remove("blockedButton")
+			buttonNext.classList.add("blockedButton")
+		} else { /* Middle pages */
+			// ocultar mensaje
+			emptyMessage.style.display = "none"
+
+			console.log("entro en pagina intermedia")
+
+			buttonPrev.classList.remove("blockedButton")
 			buttonNext.classList.remove("blockedButton")
 		}
 
-		updateActivePage()
+				/* Check if it's first page -> AFTER UPDATE */
+		// 		if (currentLastItemSpaceAvailable == productsPerPage) {
+		// 			buttonPrev.classList.add("blockedButton")
+		// 			// buttonNext.classList.remove("blockedButton")
+		// 		} else {
+		// 			buttonPrev.classList.remove("blockedButton")
+		// 		}
+		// 
+		// 		/* Check if it's last page -> AFTER UPDATE */
+		// 		if (contenedorProductoLista.length <= currentLastItemSpaceAvailable && contenedorProductoLista.length > currentLastItemSpaceAvailable - productsPerPage) {
+		// 			buttonNext.classList.add("blockedButton")
+		// 		} else {
+		// 			buttonNext.classList.remove("blockedButton")
+		// 		}
 	}
 
 	function updateActivePage() {
@@ -415,6 +455,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		updatePagination()
 
 		checkButtonPrevNextStyles()
+		updateActivePage()
 	})
 
 	buttonNext.addEventListener("click", function(){
@@ -435,6 +476,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		updatePagination()
 
 		checkButtonPrevNextStyles()
+		updateActivePage()
 	})
 
 	// Create a copy of NodeList as array to apply filter
@@ -452,28 +494,6 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	function printPagesList() {
 		console.log("totalpages: " + totalPages)
 		pagesListContainer.innerHTML = ""
-		if (totalPages == 0) {
-			// pagesListContainer.innerText = ""
-			buttonPrev.classList.add("blockedButton")
-			buttonNext.classList.add("blockedButton")
-			// mostrar mensaje
-			emptyMessage.style.display = "block"
-			return
-		} else {
-			// ocultar mensaje
-			emptyMessage.style.display = "none"
-		}
-
-		if (currentPage == 1 && currentPage == totalPages) { /* First and last page */
-			buttonPrev.classList.add("blockedButton")
-			buttonNext.classList.add("blockedButton")
-		} else if (currentPage == 1) { /* First page */
-			buttonPrev.classList.add("blockedButton")
-			buttonNext.classList.remove("blockedButton")
-		} else if (currentPage == totalPages) { /* Last page */
-			buttonPrev.classList.remove("blockedButton")
-			buttonNext.classList.add("blockedButton")
-		}
 
 		for (let i = 1; i <= totalPages; i++) {
 			let page = document.createElement("p")
@@ -483,6 +503,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				currentLastItemSpaceAvailable = i * productsPerPage
 				updatePagination()
 				checkButtonPrevNextStyles()
+				updateActivePage()
 			})
 			pagesListContainer.appendChild(page)
 		}
