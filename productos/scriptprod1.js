@@ -31,7 +31,12 @@
 
 			/** CODIGO **/
 				let productCode = document.querySelector('#productCode')
-				productCode.innerText = imagen.getAttribute("data-codigo")
+				if (imagen.getAttribute("data-codigo") == "" || imagen.getAttribute("data-codigo") == null) {
+					productCode.innerText = "Sin código"
+				} else {
+					productCode.innerText = "Cód: " + imagen.getAttribute("data-codigo")
+				}
+				
 
 			/** NOMBRE **/
 				// console.log(imagen.getAttribute("data-nombre"))
@@ -40,20 +45,24 @@
 				contenidonombre.innerText = imagen.getAttribute("data-nombre")
 
 			/** DESCRIPCION **/
-				let productDescription = document.querySelector("#productDescription")
+				let productDescription = document.querySelector("#productDescription p")
 				productDescription.innerText = imagen.getAttribute("data-descripcion")
 
 			/** PRECIO **/
 				let contenidoprecio = document.querySelector('#contenidoprecio')
 				contenidoprecio.innerText = "$" + imagen.getAttribute("data-precio")
 
+			/** MARCA **/
+				let productBrand = document.querySelector('#productBrand p')
+				productBrand.innerText = imagen.getAttribute("data-marca")
+
 			/** CUOTAS **/
 				// NOTA: falta poner y traer info de la BBDD. Por ahora lo hice con valores dados desde HTML
-				let textoCuotas1 = document.querySelector('#textoCuotas1')
-				textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de "
-
-				let contenedorPrecioCuota = document.querySelector('#contenedorPrecioCuota')
-				contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
+// 				let textoCuotas1 = document.querySelector('#textoCuotas1')
+// 				textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de "
+// 
+// 				let contenedorPrecioCuota = document.querySelector('#contenedorPrecioCuota')
+// 				contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
 
 			/** TALLES **/
 				let contenedorTalles = document.querySelector('#contenedorTalles')

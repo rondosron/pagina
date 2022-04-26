@@ -32,6 +32,7 @@ body {
 	filter: drop-shadow(0px 1px 0px white);
 }
 
+/* No usado. En caso de usar definir font family */
 #contenedorproductooverlay h2 {
 	display: inline-block;
 	font-size: var(--altura-subtitulos);
@@ -62,21 +63,42 @@ body {
 /********************************** OVERLAY / MODAL ****************************************/
 
 	/*********************************** ESTRUCTURA PPAL **************************************/
+		#modalContainer {
+			background: red;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: 430;
+			overflow-y: auto;
+			visibility: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		#modalContainer::-webkit-scrollbar {
+			display: none;
+		}
 
 		#contenedorproductooverlay {
+			position: relative;
 			background: var(--color5);
-			height: 80%;
-			width: 40%;
+			/*height: 80%;*/
+			height: fit-content;
+			/*width: 40%;*/
+			width: fit-content;
 			display: grid;
 			grid-template-areas: "foto datos";
-			grid-template-columns: min-content auto;
+			/*grid-template-columns: min-content auto;*/
 			max-height: 400px;
 			min-height: 330px;
 			min-width: 636px;
-			position: fixed; /* fixed para >660, el resto absolute*/
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			/*position: fixed;  fixed para >660, el resto absolute*/
+			/*top: 50%;*/
+			/*left: 50%;*/
+			/*transform: translate(-50%, -50%);*/
 			z-index: 201;
 			visibility: hidden;
 			box-shadow: 0 0 120px 0 #000000eb;
@@ -98,17 +120,22 @@ body {
 			grid-area: foto;
 			position: relative;
 			height: 100%;
-			width: fit-content;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: 400px;
+			max-height: 400px;
 			/*padding: 10px;*/
-			box-sizing: border-box;
+			/*box-sizing: border-box;*/
 			overflow: hidden;
 		}
 
 		#contenedorOverflow {
 			overflow: hidden;
 			position: relative;
-			height: 100%;
-			width: 100%;
+			height: 95%;
+			width: 95%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -119,27 +146,70 @@ body {
 			height: 100%;
 			width: auto;
 			/*border-radius: 25px 0 25px 0;*/
-			max-width: 400px;
+			/*max-width: 400px;*/
 		}
+
+		#contenedorOverflow .verticalImageOverlay {
+			width: 100%;
+			height: auto;
+			/*max-width: 400px;*/
+			/*max-height: none;*/
+		}
+
+		#contenedorOverflow .horizontalImageOverlay {
+			height: 100%;
+			width: auto;
+		}
+
+		/* ALTERNATIVA: por ejemplo, con imagenes mas anchas que largas, que la imagen entre completa (todo su ancho) y poner background en el contenedor del mismo color de fondo */
+			/*
+			#imagenoverlay {
+				max-width: -webkit-fill-available;
+				width: auto;
+				border-radius: 25px 0 25px 0;
+				max-height: 400px;
+				height: auto;
+			}
+
+			#contenedorOverflow {
+				overflow: hidden;
+				position: relative;
+				height: 95%;
+				width: 95%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 25px 0 25px 0;
+				background: white;
+			}
+			*/
 
 		#datos {
 			grid-area: datos;
 			display: grid;
 			grid-template-areas:
 				"name"
+				"code"
 				"description"
 				"price"
-				"code"
 				"input";
 			padding: 10px;
+			position: relative;
 		}
 
 	/************************ EXIT ******************/
 		#quitModalIconContainer {
 			position: absolute;
-			right: 8px;
-			top: 4px;
+			right: 12px;
+			top: 12px;
 			z-index: 2;
+			height: 20px;
+			width: 20px;
+			background: var(--color5);
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		#quitModalIcon {
@@ -156,26 +226,44 @@ body {
 			color: var(--color1);
 		}
 
+	/**************************** MARCA ****************************/
+		#productBrand p {
+			color: #5dacff;
+			font-weight: bold;
+		}
+
 	/**************************** DESCRIPTION **********************/
 		#productDescription {
 			grid-area: description;
 		}
 
 		#productDescription p {
-			font-size: 12px;
+			font-size: 16px;
 			text-transform: none;
+			border-left: 3px solid #1a5ea4;
+			padding-left: 5px;
+			color: rgb(1 69 155);
 		}
 
 	/************************ CODE ************************/
 		#productCode {
 			grid-area: code;
+			width: fit-content;
+			background: var(--color2);
+			padding: 0 5px 0 5px;
+			border-radius: 30px;
+			color: white;
+			position: relative;
+			left: 50%;
+			transform: translate(-50%, 0px);
+			font-size: 13px;
 		}
 
 	/************************************** TITULOS ********************************************/
 
 		#precio, #talles, #colores {
-			border-bottom: 1px solid white;
-		    box-shadow: inset 0px -1px 0 #9b9b9b;
+			/*border-bottom: 1px solid white;*/
+		    /*box-shadow: inset 0px -1px 0 #9b9b9b;*/
 		    /*margin-right: 10px;*/
 		}
 
@@ -211,14 +299,22 @@ body {
 			display: inline-block;
 		}
 
-		#contenidoprecio {
+		#precio #contenidoprecio {
 			font-weight: 600;
-			text-shadow: 0px 1px #eee; /* To prevent blur from font-weight */
+			/*text-shadow: 0px 1px #eee;  To prevent blur from font-weight */
+			font-size: 48px;
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			background: -webkit-linear-gradient(277deg, #fff700, #ffbf00);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			filter: drop-shadow(1px 1px 0px #997200);
 		}
 
-		#contenidoprecio, #textoCuotas1, #contenedorPrecioCuota, #textoCuotas2, #contenedorcuotas {
+		/*#contenidoprecio, #textoCuotas1, #contenedorPrecioCuota, #textoCuotas2, #contenedorcuotas {
 			display: inline-block;
-		}
+		}*/
 
 		#contenedorcuotas {
 			margin-left: 7px;
@@ -247,8 +343,11 @@ body {
 		#botones {
 			grid-area: input;
 			display: flex;
-		    align-items: flex-end;
-		    justify-content: center;
+			align-items: flex-end;
+			justify-content: center;
+			border-top: 1.9px solid white;
+			box-shadow: inset 0px 1px 0 #9b9b9b;
+			padding-top: 8px;
 		}
 
 
@@ -324,73 +423,3 @@ body {
 			visibility: hidden;
 			opacity: 0.4;
 		}
-
-/***************************** MEDIA QUERYS *********************************/
-/* AL FINAL PARA QUE NADA LO SOBREESCRIBA */
-
-	@media screen and (max-width: 815px) {
-		#productos {
-			grid-template-areas: 	"titulo titulo"
-									"prod1 	prod2"
-									"prod3 	prod4"
-									"prod5 	prod6"
-									"prod7 	prod8"
-									"prod9 	prod10"
-									"prod11 prod12";
-		}
-	}
-
-	@media screen and (max-width: 660px) {
-		#contenedorproductooverlay {
-			grid-template-areas: 	"foto"
-									"datos";
-			min-width: 263px;
-			grid-template-columns: none;
-			width: auto;
-			max-height: none;
-			height: auto; /* VER SI QUEDA MAL EL ALTO */
-		}
-		#datos {
-			padding: 0px 10px 10px 10px;
-		}
-		
-		#contenedorimagen {
-			height: auto;
-	    	width: 100%;
-		}
-		#imagenoverlay {
-		    height: auto;
-	    	width: 100%;
-		}
-		#precio, #talles, #colores {
-			margin-bottom: 5px;
-	    	padding-bottom: 7px;
-		}
-	}
-
-	@media screen and (max-width: 530px) {
-		#productos {
-			grid-template-areas: 	"titulo"
-									"prod1"
-									"prod2"
-									"prod3"
-									"prod4"
-									"prod5"
-									"prod6"
-									"prod7"
-									"prod8"
-									"prod9"
-									"prod10"
-									"prod11"
-									"prod12";
-		}
-	}
-
-	@media screen and (max-width: 500px) { /** TELEFONOS **/
-		#contenedorproductooverlay {
-			top: 2%; /* Poco para que entre a lo alto */
-		    left: 18%; /* bastante a los costados para que se achique a lo alto tambien */
-		    right: 18%;
-		    transform: none;
-		}
-	}

@@ -19,6 +19,9 @@
 		<!-- CSS OVERLAY -->
 		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css" id="currentCSS">
 
+		<!-- CSS MEDIA QUERIES -->
+		<link rel="stylesheet" type="text/css" href="productos/mediaQueries.css">
+
 	</head>
 	<body>
 
@@ -39,17 +42,19 @@
 			</div>
 
 			<div id="contenedorbotones">
-				<div id="hombre" class="botonnav filtro" data-filtro="PARSECS">PARSECS</div>
-				<div id="mujer" class="botonnav filtro" data-filtro="DURACELL">DURACELL</div>
-				<div id="personalizadas" class="botonnav filtro" data-filtro="BROGAS">BROGAS</div>
-				<div id="lisas" class="botonnav filtro" data-filtro="PROBATTERY">PROBATTERY</div>
-				<div id="dudas" class="botonnav">DUDAS
-					<div id="contenedordudas">
-						<div class="filtro subItemBotonNav" data-filtro="vinilo">VINILO</div>
-						<div class="filtro subItemBotonNav" data-filtro="taza">TAZA</div>
+				<div id="scrollContainerMenu">
+					<div id="hombre" class="botonnav filtro" data-filtro="PARSECS">PARSECS</div>
+					<div id="mujer" class="botonnav filtro" data-filtro="DURACELL">DURACELL</div>
+					<div id="personalizadas" class="botonnav filtro" data-filtro="BROGAS">BROGAS</div>
+					<div id="lisas" class="botonnav filtro" data-filtro="PROBATTERY">PROBATTERY</div>
+					<div id="dudas" class="botonnav">SUPERITEM
+						<div id="contenedordudas">
+							<div class="filtro subItemBotonNav" data-filtro="vinilo">SUB ITEM 1</div>
+							<div class="filtro subItemBotonNav" data-filtro="taza">SUB ITEM 2</div>
+						</div>
 					</div>
+					<div id="contacto" class="botonnav">LACATUS</div>
 				</div>
-				<div id="contacto" class="botonnav">LACATUS</div>
 			</div>
 
 			<div id="versionContainer">
@@ -546,12 +551,12 @@
 					<div id="precio">
 						<div id="tituloprecio"><i class="fas fa-dollar-sign"></i><h2>Precio</h2></div>
 						<p id="contenidoprecio"></p>
-						<div id="contenedorcuotas">
+						<!-- <div id="contenedorcuotas">
 							<i class="fas fa-credit-card"></i>
 							<p id="textoCuotas1"></p>
 							<span id="contenedorPrecioCuota"></span>
 							<p id="textoCuotas2">)</p>
-						</div>
+						</div> -->
 					</div>
 					<div id="talles">
 						<i class="fas fa-ruler"></i>
@@ -582,10 +587,13 @@
 
 					<!-- HACER QUE SE CARGUEN DESDE LA DATA DEL PRODUCTO CON JS -->
 					<div id="productDescription">
-						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam labore ducimus blanditiis quisquam, nisi, magnam quae explicabo, perspiciatis, rerum aut iste sequi non? Ratione quasi, porro sed alias laudantium accusamus!</p>
+						<p></p>
 					</div>
 					<div id="productCode">
 						#AA-2153
+					</div>
+					<div id="productBrand">
+						<p></p>
 					</div>
 				</div>
 				<div id="quitModalIconContainer">

@@ -8,11 +8,14 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	let contenedorbotones = document.querySelector('#contenedorbotones')
 
 	menutoggle.addEventListener('click', function() {
-		if (contenedorbotones.style.display == "grid"){
-			contenedorbotones.style.display = "none";
-		} else {
-			contenedorbotones.style.display = "grid";
-		}
+		/* Appear and disappear */
+		// if (contenedorbotones.style.display == "flex"){
+		// 	contenedorbotones.style.display = "none";
+		// } else {
+		// 	contenedorbotones.style.display = "flex";
+		// }
+		/* Slide */
+		contenedorbotones.classList.toggle("slide")
 	})
 
 /////////////////////////////// FILTROS DE BUSQUEDA /////////////////////////////////
@@ -25,6 +28,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				// Remove items out of filter
 				// producto.parentElement.parentElement.parentElement.style.display = "none"
 				// producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
+				/* If menu disappears */
 				producto.style.display = "none"
 				producto.classList.remove("filtroVisible")
 			} else {
@@ -53,6 +57,11 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 			checkButtonPrevNextStyles()
 			updateActivePage()
+
+			/* If Menu disappears */
+			// contenedorbotones.style.display = "none"
+			/* If Menu slides */
+			contenedorbotones.classList.remove("slide")
 		})
 	})
 

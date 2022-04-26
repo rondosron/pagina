@@ -253,13 +253,13 @@ h2 {
 
 		/* InToggle (<700px) */
 			.dudasInToggleClicked {
-				width: 50% !important;
+				/*width: 50% !important;*/
 			}
 
 			.contenedorDudasInToggleClicked {
 				display: flex !important;
-				height: 100% !important;
-				width: 100% !important;
+				/*height: 100% !important;
+				width: 100% !important;*/
 			}
 
 	#versionContainer {
@@ -286,6 +286,9 @@ h2 {
 		@media screen and (min-width: 701px) {
 			#contenedorbotones {
 				display: grid !important; /* Si no, con el click del toggle se pone none y despues al agrandarlo queda asi */
+			}
+			#scrollContainerMenu {
+				display: contents; /* Ignore it on wide screens */
 			}
 			#contenedordudas {
 				background: var(--color5);
@@ -318,35 +321,53 @@ h2 {
 				display: flex;
 			}
 			#contenedorbotones {
+				display: flex;
+				align-items: start;
+				justify-content: start;
 				max-height: none; /* Initially 50px */
-				display: none;
-				grid-template-areas:
-				"hombre"
-				"mujer"
-				"personalizadas"
-				"lisas"
-				"dudas"
-				"contacto";
+				/*display: none;*/
+				/*grid-template-areas:
+									"hombre"
+									"mujer"
+									"personalizadas"
+									"lisas"
+									"dudas"
+									"contacto";*/
 				position: fixed;
 				top: 50px;
-				left: 0px;
+				right: 100%;
 				width: 100%;
 				flex-direction: column;
 				height: calc(100vh - 50px); /* -50 px del nav */
 				z-index: 301;
 				background: var(--color5);
+				transition: 1s;
+				font-size: 18px;
+			}
+			/* NOTE: need to use the previous selector/container (#navbar) so it has preference and "overrides" the property */
+			#navbar .slide {
+				right: 0;
+			}
+			#scrollContainerMenu {
+				height: 100%;
+				width: 100%;
+				overflow-y: scroll;
 			}
 			.botonnav {
 				/*background: grey;*/
 				display: flex;
-				justify-content: center;
-				align-items: center;
+				/*justify-content: center;*/
+				align-items: flex-start;
 				width: 100%;
-				height: 100%;
+				height: fit-content;
 				color: var(--color1);
+				padding: 10px;
+				text-align: left;
+				flex-direction: column;
 			}
+			/* NOTA: ELIMINO EL BACKGROUND DE TODOS LOS AFTER PARA QUE NO SE VEA PORQUE NO LOS VOY A USAR POR EL MOMENTO */
 			.botonnav:after {
-				background: var(--color1);
+				/*background: var(--color1);*/
 				width: 100%;
 				top: 100%;
 				left: 0;
@@ -355,33 +376,38 @@ h2 {
 				transform: none;
 			}
 			#contenedordudas {
-				left: 100%;
-				top: 0;
+				/*left: 100%;*/
+				top: 0%;
+				position: relative;
 			}
 			#contenedordudas:after {
 				content: "";
 				width: 100%;
 				height: 1px;
-				background: var(--color1);
+				/*background: var(--color1);*/
 				transform: none;
 			}
 			.subItemBotonNav {
 				height: 100%;
 				position: relative;
 				display: flex;
-				justify-content: center;
+				justify-content: left;
 				align-items: center;
+				padding: 10px;
 			}
 			.subItemBotonNav:after {
 				content: "";
 				position: absolute;
-				background: var(--color1);
+				/*background: var(--color1);*/
 				width: 100%;
 				top: 100%;
 				left: 0;
 				height: 1px;
 			}
 			/* En caso de que haya subitems para distintos botones, creo que este selector no funcionaria. Agregar uno para cada item que tenga subitems. EJ: .contenedorDudas .subItemBotonNav:last-of-type:after */
+			.subItemBotonNav:last-of-type {
+				padding: 10px 0 0 10px; /* "Delete" padding bottom so you don't have double padding at the end of the "sublist" */
+			}
 			.subItemBotonNav:last-of-type:after {
 				content: none;
 			}
