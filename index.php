@@ -590,7 +590,7 @@
 						<p></p>
 					</div>
 					<div id="productCode">
-						#AA-2153
+						<p></p>
 					</div>
 					<div id="productBrand">
 						<p></p>

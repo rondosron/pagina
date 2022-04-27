@@ -30,7 +30,7 @@
 				}
 
 			/** CODIGO **/
-				let productCode = document.querySelector('#productCode')
+				let productCode = document.querySelector('#productCode p')
 				if (imagen.getAttribute("data-codigo") == "" || imagen.getAttribute("data-codigo") == null) {
 					productCode.innerText = "Sin código"
 				} else {
@@ -58,11 +58,11 @@
 
 			/** CUOTAS **/
 				// NOTA: falta poner y traer info de la BBDD. Por ahora lo hice con valores dados desde HTML
-// 				let textoCuotas1 = document.querySelector('#textoCuotas1')
-// 				textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de "
-// 
-// 				let contenedorPrecioCuota = document.querySelector('#contenedorPrecioCuota')
-// 				contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
+				// 				let textoCuotas1 = document.querySelector('#textoCuotas1')
+				// 				textoCuotas1.innerText = "(" + imagen.getAttribute("data-cantidad-cuotas") + " cuotas de "
+				// 
+				// 				let contenedorPrecioCuota = document.querySelector('#contenedorPrecioCuota')
+				// 				contenedorPrecioCuota.innerText = "$" + imagen.getAttribute("data-precio-cuota")
 
 			/** TALLES **/
 				let contenedorTalles = document.querySelector('#contenedorTalles')
