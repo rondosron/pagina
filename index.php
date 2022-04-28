@@ -192,9 +192,9 @@
 			</div>
 			
 			<div id="paginationIndex">
-				<button id="buttonPrev" class="blockedButton">-</button>
+				<button id="buttonPrev" class="blockedButton changePageButton">-</button>
 				<div id="pagesListContainer"></div>
-				<button id="buttonNext">+</button>
+				<button id="buttonNext" class="changePageButton">+</button>
 			</div>
 		</div>
 		
@@ -645,7 +645,6 @@
 
 		<!-- Tilt.js -->
 		<script src="vanilla-tilt.js"></script>
-
 
 		<?php
 			$conexion->close();

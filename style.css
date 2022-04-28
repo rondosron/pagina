@@ -690,19 +690,31 @@ h2 {
 			align-items: center;
 		}
 
-		#buttonPrev {
-
+		.changePageButton {
+			background: #efefef;
+			border-radius: 5px;
+			border: 1px solid #264b9b;
+			color: #264b9b;
+			background: linear-gradient(45deg, #c3c3c3, #eee);
+			width: 28px;
 		}
 
+		#buttonPrev {
+			margin-right: 6px;
+		}
 
 		#buttonNext {
-
+			margin-left: 6px;
 		}
 
 		.blockedButton {
 			cursor: default;
-			background: black;
+			background: linear-gradient(45deg, #030d22, #0c1d4e);
+			background: #484848;
 			pointer-events: none;
+			color: #000;
+			border: none;
+			border: 1px solid #242424;
 		}
 
 		#pagesListContainer {

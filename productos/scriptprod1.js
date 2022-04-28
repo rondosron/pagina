@@ -46,7 +46,7 @@
 
 			/** DESCRIPCION **/
 				let productDescription = document.querySelector("#productDescription p")
-				productDescription.innerText = imagen.getAttribute("data-descripcion")
+				productDescription.innerHTML = imagen.getAttribute("data-descripcion")
 
 			/** PRECIO **/
 				let contenidoprecio = document.querySelector('#contenidoprecio')

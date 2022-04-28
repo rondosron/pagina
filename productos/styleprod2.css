@@ -94,7 +94,12 @@ body {
 
 		#contenedorproductooverlay {
 			position: relative;
+			/* Option 1 */
 			background: var(--color5);
+			/* Option 2 */
+			background: radial-gradient(circle at center, white, #cbcbcb);
+			/*background-position-x: center;*/
+			/*background-position-y: center;*/
 			/*height: 80%;*/
 			height: fit-content;
 			/*width: 40%;*/
@@ -210,6 +215,7 @@ body {
 			position: relative;
 			height: 100%;
 			width: 100%;
+			max-width: 370px;
 		}
 
 	/************************ EXIT ******************/
@@ -258,6 +264,7 @@ body {
 			text-transform: none;
 			color: rgb(1 69 155);
 			font-family: 'IBM Plex Serif';
+			text-align: justify;
 
 			/* Optional */
 			/*border-left: 3px solid #1a5ea4;
@@ -401,7 +408,7 @@ body {
 			display: inline-block;
 			width: 40px;
 		    height: 22px;
-		    border-radius: 10px;
+		    border-radius: 5px;
 		    border-style: none;
 		    text-align: center;
 		    font-size: 16px;
