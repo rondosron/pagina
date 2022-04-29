@@ -43,17 +43,18 @@
 
 			<div id="contenedorbotones">
 				<div id="scrollContainerMenu">
-					<div id="hombre" class="botonnav filtro" data-filtro="PARSECS">PARSECS</div>
-					<div id="mujer" class="botonnav filtro" data-filtro="DURACELL">DURACELL</div>
-					<div id="personalizadas" class="botonnav filtro" data-filtro="BROGAS">BROGAS</div>
-					<div id="lisas" class="botonnav filtro" data-filtro="PROBATTERY">PROBATTERY</div>
-					<div id="dudas" class="botonnav">SUPERITEM
-						<div id="contenedordudas">
-							<div class="filtro subItemBotonNav" data-filtro="vinilo">SUB ITEM 1</div>
-							<div class="filtro subItemBotonNav" data-filtro="taza">SUB ITEM 2</div>
+					<div class="botonnav filtro" data-filtro="">Todos los productos</div>
+					<div class="botonnav filtro" data-filtro="parsecs">Parsecs</div>
+					<div class="botonnav filtro" data-filtro="duracell">Duracell</div>
+					<div class="botonnav filtro" data-filtro="brogas">Brogas</div>
+					<div class="botonnav filtro" data-filtro="probattery">Probattery</div>
+					<div id="superItem" class="botonnav">SuperItem
+						<div id="contenedorSubItems">
+							<div class="filtro subItemBotonNav" data-filtro="vinilo">Sub Item 1</div>
+							<div class="filtro subItemBotonNav" data-filtro="taza">Sub Item 2</div>
 						</div>
 					</div>
-					<div id="contacto" class="botonnav">LACATUS</div>
+					<div class="botonnav filtro" data-filtro="lacatus">Lacatus</div>
 				</div>
 			</div>
 

@@ -69,47 +69,37 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 	// let busqueda = document.querySelector('#busqueda')
 	//let contenedorbotones = document.querySelector('#contenedorbotones')
-	let contenedordudas = document.querySelector('#contenedordudas')
-
-	busquedaactivado = false
-
-	// busqueda.addEventListener('click', function(e){
-	// 	busquedaactivado = !busquedaactivado
-	// 	dudasactivado = false
-	// 	if (busquedaactivado) {
-	// 		contenedorbotones.style.display = "flex"
-	// 	} else {
-	// 		contenedorbotones.style.display = "none"
-	// 		contenedordudas.style.display = "none"
-	// 	}
-	// })
+	let contenedorSubItems = document.querySelector('#contenedorSubItems')
 
 	var mediaqueryList = window.matchMedia("(max-width: 700px)")
 	console.log(mediaqueryList)
 
-	let dudas = document.querySelector('#dudas')
+	let superItem = document.querySelector('#superItem')
 	let subItemBotonNav = document.querySelectorAll(".subItemBotonNav")
 
-	dudasactivado = false
+	contenedorSubItemsActivado = false
 
-	dudas.addEventListener('click', function(e){
+	superItem.addEventListener('click', function(e){
+		console.log(this)
 		e.stopPropagation() // para que no se clickee el padre tambien
-		dudasactivado = !dudasactivado
+		contenedorSubItemsActivado = !contenedorSubItemsActivado
 		if (window.matchMedia("(max-width: 700px)").matches) {
-			if (dudasactivado) {
-				dudas.classList.add("dudasInToggleClicked")
+			if (contenedorSubItemsActivado) {
+				console.log(this)
+				this.classList.add("dudasInToggleClicked")
 
-				contenedordudas.classList.add("contenedorDudasInToggleClicked")
+				contenedorSubItems.classList.add("contenedorDudasInToggleClicked")
 			} else {
-				dudas.classList.remove("dudasInToggleClicked")
+				console.log(this)
+				this.classList.remove("dudasInToggleClicked")
 
-				contenedordudas.classList.remove("contenedorDudasInToggleClicked")
+				contenedorSubItems.classList.remove("contenedorDudasInToggleClicked")
 			}
 		} else {
-			if (dudasactivado) {
-				contenedordudas.style.display = "grid";
+			if (contenedorSubItemsActivado) {
+				contenedorSubItems.style.display = "flex";
 			} else {
-				contenedordudas.style.display = "none";
+				contenedorSubItems.style.display = "none";
 			}
 		}
 	})

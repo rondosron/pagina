@@ -151,35 +151,12 @@ h2 {
 			top: 3px;
 		}
 
-	#hombre {
-		grid-area: hombre;
-	}
-
-	#mujer {
-		grid-area: mujer;
-	}
-
-	#personalizadas {
-		grid-area: personalizadas;
-	}
-
-	#lisas {
-		grid-area: lisas;
-	}
-
-	#dudas {
-		grid-area: dudas;
-	}
-
-	#contacto {
-		grid-area: contacto;
-	}
-
 	/********* botones filtro **********/
 		#contenedorbotones {
 			grid-area: busqueda;
-			/* flex-direction: row; */
-			width: fit-content;
+			display: flex;
+			flex-direction: row; 
+			/*width: fit-content;*/
 			/*background: var(--color5);*/
 			/* position: absolute; */
 			/* top: 100%; */
@@ -196,6 +173,7 @@ h2 {
 			font-family: 'Port Lligat Slab';
 			/*box-shadow: 0px 12px 0 -11px var(--color1);*/
 			position: relative;
+			width: 100%;
 		}
 
 		/* Bottom divider */
@@ -220,7 +198,7 @@ h2 {
 			position: relative;
 		}
 
-		#contenedordudas {
+		#contenedorSubItems {
 			position: absolute;
 			left: 0;
 			top: 100%;
@@ -285,12 +263,12 @@ h2 {
 
 		@media screen and (min-width: 701px) {
 			#contenedorbotones {
-				display: grid !important; /* Si no, con el click del toggle se pone none y despues al agrandarlo queda asi */
+				display: flex !important; /* Si no, con el click del toggle se pone none y despues al agrandarlo queda asi */
 			}
 			#scrollContainerMenu {
 				display: contents; /* Ignore it on wide screens */
 			}
-			#contenedordudas {
+			#contenedorSubItems {
 				background: var(--color5);
 			}
 			.subItemBotonNav {
@@ -375,12 +353,12 @@ h2 {
 				z-index: 2;
 				transform: none;
 			}
-			#contenedordudas {
+			#contenedorSubItems {
 				/*left: 100%;*/
 				top: 0%;
 				position: relative;
 			}
-			#contenedordudas:after {
+			#contenedorSubItems:after {
 				content: "";
 				width: 100%;
 				height: 1px;
@@ -404,7 +382,7 @@ h2 {
 				left: 0;
 				height: 1px;
 			}
-			/* En caso de que haya subitems para distintos botones, creo que este selector no funcionaria. Agregar uno para cada item que tenga subitems. EJ: .contenedorDudas .subItemBotonNav:last-of-type:after */
+			/* En caso de que haya subitems para distintos botones, creo que este selector no funcionaria. Agregar uno para cada item que tenga subitems. EJ: .contenedorSubItems .subItemBotonNav:last-of-type:after */
 			.subItemBotonNav:last-of-type {
 				padding: 10px 0 0 10px; /* "Delete" padding bottom so you don't have double padding at the end of the "sublist" */
 			}
@@ -548,12 +526,29 @@ h2 {
 		}
 
 		#barAndIconContainer input {
-
+			border-radius: 5px 0 0 5px;
+			border: 1px solid #264b9b;
+			color: #264b9b;
+			background: var(--color5);
+			font-family: 'IBM Plex Serif';
+			font-size: 1rem;
+			padding-right: 21px; /* To prevent text from being behind icon */
+			max-width: 200px;
 		}
 
 		#barAndIconContainer i {
 			position: absolute;
-			right: 5px;
+			right: 8px;
+			color: var(--color2);
+		}
+
+		#searchBarContainer button {
+			border-radius: 0px 5px 5px 0px;
+			border: 1px solid #264b9b;
+			color: #264b9b;
+			background: linear-gradient(0deg, #c3c3c3, var(--color5));
+			font-family: 'IBM Plex Serif';
+			font-size: 1rem;
 		}
 
 		#orderByContainer {
@@ -566,6 +561,18 @@ h2 {
 		#orderByContainer label {
 			color: var(--color5);
 			margin-right: 5px;
+			font-family: 'Port Lligat Slab';
+			font-size: 1.1rem;
+		}
+
+		#orderByContainer select {
+			border-radius: 5px;
+			border: 1px solid #264b9b;
+			color: #264b9b;
+			background: linear-gradient(0deg, #c3c3c3, var(--color5));
+			font-family: 'IBM Plex Serif';
+			font-size: 1rem;
+			padding: 0px 0px 2px 0px;
 		}
 
 	/**** PRODUCTOS *****/
@@ -595,6 +602,7 @@ h2 {
 				height: 200px;
 				z-index: 1;
 				transition: width 0.2s, height 0.2s, z-index 0.1s, transform 0.2s, box-shadow 0.2s, padding-top 0.2s;
+				border-radius: 5px;
 			}
 
 			.productBackground:hover {
@@ -642,6 +650,7 @@ h2 {
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				border-radius: 5px;
 			}
 
 			.imageContainer .imgContainer {
@@ -695,7 +704,7 @@ h2 {
 			border-radius: 5px;
 			border: 1px solid #264b9b;
 			color: #264b9b;
-			background: linear-gradient(45deg, #c3c3c3, #eee);
+			background: linear-gradient(45deg, #c3c3c3, var(--color5));
 			width: 28px;
 		}
 
@@ -721,11 +730,18 @@ h2 {
 			display: flex;
 			flex-direction: row;
 			width: fit-content;
-			background: red;
 		}
 
-		.activePage {
-			color: white;
+		#pagesListContainer p {
+			color: var(--color5);
+			margin: 0;
+			line-height: normal;
+			font-family: 'IBM Plex Serif';
+			font-size: 19px;
+		}
+
+		#pagesListContainer .activePage {
+			color: #64c5ff;
 		}
 
 #presupuestoyformulario {

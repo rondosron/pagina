@@ -3,8 +3,8 @@
 
 	/* Menu visibile on hover ONLY on devices that support this event. Otherwise, it's displayed with the click event (JS) */
 	@media (hover: hover) {
-		#dudas:hover #contenedordudas {
-			display: grid;
+		#superItem:hover #contenedorSubItems {
+			display: flex;
 		}
 	}
 
