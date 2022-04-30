@@ -234,7 +234,7 @@
 						<label for="emailInput" id="emailLabel">E-mail</label>
 					</div>
 					
-					<input type="submit" name="submit">
+					<input type="submit" name="submit" id="sendViaEmail">
 				</form>
 				<button id="sendViaWhatsapp">Enviar por whatsapp</button>
 			</div>
@@ -532,7 +532,7 @@
 
 		<!-- BACKGROUND OVERLAY -->
 
-		<div id="background"></div>
+		<div id="backgroundOverlay"></div>
 
 		<!-- OVERLAY -->
 		<div id="modalContainer">

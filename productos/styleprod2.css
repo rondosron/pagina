@@ -74,7 +74,7 @@ body {
 
 	/*********************************** ESTRUCTURA PPAL **************************************/
 		#modalContainer {
-			/*background: red;*/
+			background: #00000060;
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -211,6 +211,7 @@ body {
 				"description"
 				"price"
 				"input";
+			grid-template-rows: min-content min-content 1fr min-content min-content;
 			padding: 10px 10px 10px 0;
 			position: relative;
 			height: 100%;
@@ -246,6 +247,8 @@ body {
 			text-align: left;
 			color: var(--color1);
 			font-family: 'IBM Plex Serif';
+			display: flex;
+			align-items: flex-end;
 		}
 
 	/**************************** MARCA ****************************/
@@ -263,7 +266,7 @@ body {
 			font-size: 16px;
 			text-transform: none;
 			color: rgb(1 69 155);
-			font-family: 'IBM Plex Serif';
+			font-family: 'Overlock', cursive;
 			text-align: justify;
 
 			/* Optional */
@@ -307,6 +310,8 @@ body {
 	/************************************* PRECIO ************************************/
 		#precio {
 			grid-area: price;
+			display: flex;
+			align-items: flex-end;
 		}
 
 		#precio #tituloprecio {
@@ -456,7 +461,7 @@ body {
 
 	/*************************************** BACKGROUND ******************************************/
 
-		#background {
+		#backgroundOverlay {
 			width: 100vw;
 			height: 100vh;
 			background: black;

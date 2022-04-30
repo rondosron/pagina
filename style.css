@@ -7,11 +7,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Overlock:wght@400;700&display=swap');
+
 /*
 font-family: 'Bree Serif', serif;
 font-family: 'DM Serif Display', serif;
 font-family: 'IBM Plex Serif', serif;
 font-family: 'Noto Serif Display', serif;
+font-family: 'Overlock', cursive;
 */
 
 @font-face {
@@ -547,8 +550,11 @@ h2 {
 			border: 1px solid #264b9b;
 			color: #264b9b;
 			background: linear-gradient(0deg, #c3c3c3, var(--color5));
-			font-family: 'IBM Plex Serif';
-			font-size: 1rem;
+			/*font-family: 'IBM Plex Serif';*/
+			font-size: 0.9rem;
+			text-transform: uppercase;
+			height: 100%;
+			font-weight: 500;
 		}
 
 		#orderByContainer {
@@ -561,7 +567,7 @@ h2 {
 		#orderByContainer label {
 			color: var(--color5);
 			margin-right: 5px;
-			font-family: 'Port Lligat Slab';
+			font-family: 'Overlock';
 			font-size: 1.1rem;
 		}
 
@@ -570,9 +576,10 @@ h2 {
 			border: 1px solid #264b9b;
 			color: #264b9b;
 			background: linear-gradient(0deg, #c3c3c3, var(--color5));
-			font-family: 'IBM Plex Serif';
-			font-size: 1rem;
-			padding: 0px 0px 2px 0px;
+			/*font-family: 'IBM Plex Serif';*/
+			font-size: 0.9rem;
+			padding: 0px 0px 2px 2px;
+			text-transform: uppercase;
 		}
 
 	/**** PRODUCTOS *****/
@@ -602,7 +609,7 @@ h2 {
 				height: 200px;
 				z-index: 1;
 				transition: width 0.2s, height 0.2s, z-index 0.1s, transform 0.2s, box-shadow 0.2s, padding-top 0.2s;
-				border-radius: 5px;
+				border-radius: 6px; /* Bigger than image border-radius cause otherwise it'd be seen behind it */
 			}
 
 			.productBackground:hover {
@@ -1041,6 +1048,32 @@ h2 {
 			background: var(--color5);
 			padding: 0 3px;
 			font-size: 0.8rem;
+		}
+
+	/*** Submit / Send via email button ***/
+		#sendViaEmail {
+			background: var(--color1);
+			border-radius: 31px;
+			width: 127px;
+			box-shadow: 2px 2px 0 0 #00000047, inset 2px 2px 5px 0 #92b4ff85, inset -2px -2px 5px 0 #09142ae0;
+			height: 28px;
+			margin: 10px;
+			border: none;
+			color: var(--color5);
+			text-transform: uppercase;
+			font-family: 'Port Lligat Slab';
+		}
+
+	/*** Send via WhatsApp button ***/
+		#sendViaWhatsapp {
+			background: var(--color1);
+			background: linear-gradient(180deg, #49649f, var(--color1));
+			border-radius: 5px;
+			border: 1px solid var(--color1);
+			color: var(--color5);
+			text-transform: uppercase;
+			font-family: 'Port Lligat Slab';
+			padding: 7px;
 		}
 
 /*************************************** PREGUNTAS FRECUENTES **********************************************/

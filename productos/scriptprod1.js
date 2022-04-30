@@ -282,7 +282,6 @@ let initialBottom = 0
 		
 
 /******** CLOSE MODAL or CLICK BACKGROUND ************/
-
 	/* Main function */
 	function closeModal () {
 		modalContainer.style.visibility = "hidden" // creo que solo detecta background (de las variables declaradas dentro de la otra funcion) porque es la que esta en el evento, las otras las tengo que volver a llamar
