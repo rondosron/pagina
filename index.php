@@ -233,10 +233,12 @@
 						<input type="text" name="email" id="emailInput"></input>
 						<label for="emailInput" id="emailLabel">E-mail</label>
 					</div>
+
+					<button type="submit" name="submit" id="sendViaEmail">Enviar por email <i class="fas fa-envelope"></i></button>
 					
-					<input type="submit" name="submit" id="sendViaEmail">
+					<!-- <input type="submit" name="submit" id="sendViaEmail"> -->
 				</form>
-				<button id="sendViaWhatsapp">Enviar por whatsapp</button>
+				<button id="sendViaWhatsapp">Enviar por whatsapp <i class="fab fa-whatsapp"></i></button>
 			</div>
 		</div>
 

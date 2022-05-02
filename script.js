@@ -515,7 +515,35 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	printPagesList()
 	updateActivePage()
 
-/////////////////////// FORM VALIDATION ///////////////////////
+/////////////////////// FORM VALIDATION / STYLING ///////////////////////
+	let nameSurnameInput = document.querySelector("#nameSurnameInput")
+	let nameSurnameLabel = document.querySelector("#nameSurnameLabel")
+
+	nameSurnameInput.addEventListener("focusin", function(e){
+		if (nameSurnameInput.value == "") {
+			nameSurnameLabel.style.left = "-50px"
+
+			nameSurnameInput.style.background = "var(--color5)"
+			nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
+		} 
+		
+	})
+
+	nameSurnameInput.addEventListener("focusout", function(e){
+		if (nameSurnameInput.value != "") {
+			nameSurnameLabel.style.left = "-50px"
+
+			nameSurnameInput.style.background = "var(--color5)"
+			nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
+		} else {
+			nameSurnameLabel.style.left = "15px"
+
+			nameSurnameInput.style.background = "linear-gradient(178deg, #ffffff, #d7d7d7)"
+			nameSurnameInput.style.boxShadow = "2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, inset -2px -2px 6px #cbcbcb, inset 2px 2px 6px #ffffff"
+		}
+	})
+
+
 	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
 
 	let addressInput = document.querySelector("#addressInput")
