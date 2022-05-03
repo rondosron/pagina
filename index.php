@@ -82,7 +82,7 @@
 				<div class="carousel-item active">
 					<div class="d-block w-100 carousel-item-background" alt="...">
 						<div class="textCarouselContainer">
-							<p class="titleCarousel" id="titleCarouselItem1">Lorem Ipsum</p>
+							<p class="titleCarousel" id="titleCarouselItem1">NOVEDADES</p>
 							<p class="descriptionCarousel" id="descriptionCarouselItem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci veniam, minima ab. Quod suscipit quaerat, provident enim eos at, hic tempora ut aliquam voluptatum quam nam incidunt veritatis optio.</p>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 				<div class="carousel-item">
 					<div class="d-block w-100 carousel-item-background" alt="...">
 						<div class="textCarouselContainer">
-							<p class="titleCarousel" id="titleCarouselItem1">Lorem Ipsum</p>
+							<p class="titleCarousel" id="titleCarouselItem1">OFERTAS</p>
 							<p class="descriptionCarousel" id="descriptionCarouselItem2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit obcaecati vero magnam ut reiciendis pariatur nobis ab nisi sequi, ad, optio hic impedit totam, vel illum laboriosam id sit.</p>
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 				<div class="carousel-item">
 					<div class="d-block w-100 carousel-item-background" alt="...">
 						<div class="textCarouselContainer">
-							<p class="titleCarousel" id="titleCarouselItem1">Lorem Ipsum</p>
+							<p class="titleCarousel" id="titleCarouselItem1">NOVEDADES</p>
 							<p class="descriptionCarousel" id="descriptionCarouselItem3">Lorem ipsum dolor sit amet consectetur adipisicing, elit. Sed expedita libero nemo sint quia ducimus iste illo praesentium atque vero. Exercitationem distinctio ex ratione molestias quod repellendus ad nihil animi!</p>
 						</div>
 					</div>
@@ -112,6 +112,23 @@
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
 			</button>
+		</div>
+
+		<div id="carouselNovedadesContainer">
+			<div id="carouselNovedades">
+				<div class="carouselItem" id="carouselItem1">
+					<div class="carouselContent"></div>
+				</div>
+				<div class="carouselItem" id="carouselItem2">
+					<div class="carouselContent"></div>
+				</div>
+				<div class="carouselItem" id="carouselItem3">
+					<div class="carouselContent"></div>
+				</div>
+			</div>
+			<div class="carouselButton" id="carouselButtonPrevious"><</div>
+			<div class="carouselButton" id="carouselButtonNext">></div>
+			<div id="carouselItemIndicatorsContainer"></div>
 		</div>
 
 		<!-- PRODUCTOS -->
@@ -611,11 +628,36 @@
 				<div id="navegacionfooter">
 					<div id="contenedornavegacion">
 						<h5>Navegación</h5>
-						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Hombre</p></div>
-						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Mujer</p></div>
-						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Personalizadas</p></div>
-						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Lisas</p></div>
-						<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Contacto</p></div>
+						<div class="itemFooterContainer">
+							<a href="#carouselNovedades">
+								<i class="fas fa-angle-right"></i>
+								<p>Novedades</p>
+							</a>
+						</div>
+						<div class="itemFooterContainer">
+							<a href="#productos">
+								<i class="fas fa-angle-right"></i>
+								<p>Catálogo</p>
+							</a>
+						</div>
+						<div class="itemFooterContainer">
+							<a href="#presupuestoyformulario">
+								<i class="fas fa-angle-right"></i>
+								<p>Simulación Presupuesto</p>
+							</a>	
+						</div>
+						<div class="itemFooterContainer">
+							<a href="#preguntasfrecuentes">
+								<i class="fas fa-angle-right"></i>
+								<p>Preguntas Frecuentes</p>
+							</a>
+						</div>
+						<div class="itemFooterContainer">
+							<a href="#sobreNosotros">
+								<i class="fas fa-angle-right"></i>
+								<p>Sobre nosotros</p>
+							</a>
+						</div>
 					</div>
 				</div>
 				<div id="mediosdepagofooter">
