@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		
 		<!-- CSS OVERLAY -->
-		<link rel="stylesheet" type="text/css" href="productos/styleprod1.css" id="currentCSS">
+		<link rel="stylesheet" type="text/css" href="productos/styleprod2.css" id="currentCSS">
 
 		<!-- CSS MEDIA QUERIES -->
 		<link rel="stylesheet" type="text/css" href="productos/mediaQueries.css">
@@ -43,18 +43,18 @@
 
 			<div id="contenedorbotones">
 				<div id="scrollContainerMenu">
-					<div class="botonnav filtro" data-filtro="">Todos los productos</div>
-					<div class="botonnav filtro" data-filtro="parsecs">Parsecs</div>
-					<div class="botonnav filtro" data-filtro="duracell">Duracell</div>
-					<div class="botonnav filtro" data-filtro="brogas">Brogas</div>
-					<div class="botonnav filtro" data-filtro="probattery">Probattery</div>
-					<div id="superItem" class="botonnav">SuperItem
+					<div class="botonnav filtro isClickable" data-filtro="">Todos los productos</div>
+					<div class="botonnav filtro isClickable" data-filtro="parsecs">Parsecs</div>
+					<div class="botonnav filtro isClickable" data-filtro="duracell">Duracell</div>
+					<div class="botonnav filtro isClickable" data-filtro="brogas">Brogas</div>
+					<div class="botonnav filtro isClickable" data-filtro="probattery">Probattery</div>
+					<div id="superItem" class="botonnav isClickable">SuperItem
 						<div id="contenedorSubItems">
-							<div class="filtro subItemBotonNav" data-filtro="vinilo">Sub Item 1</div>
-							<div class="filtro subItemBotonNav" data-filtro="taza">Sub Item 2</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="vinilo">Sub Item 1</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="taza">Sub Item 2</div>
 						</div>
 					</div>
-					<div class="botonnav filtro" data-filtro="lacatus">Lacatus</div>
+					<div class="botonnav filtro isClickable" data-filtro="lacatus">Lacatus</div>
 				</div>
 			</div>
 
@@ -157,7 +157,10 @@
 						<option value="4">Nombre - Descendente</option>
 					</select>
 				</div>
-				
+			</div>
+
+			<div id="activeFilters">
+				<p>Mostrando todos los productos <span id="resultFilterProduct"></span><span id="resultSearch"></span></p>
 			</div>
 			
 			<div id="productsContainer">
@@ -180,7 +183,7 @@
 										<div class='productBackground'>
 											<div class='imageContainer'>
 												<div class='imgContainer'>
-													<img id='producto$item->id' class='producto' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+													<img id='producto$item->id' class='producto isClickable' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
 												</div>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
 												<p class='nombreMobile'>" . utf8_encode($item->nombre) . "</p>

@@ -20,8 +20,12 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 /////////////////////////////// FILTROS DE BUSQUEDA /////////////////////////////////
 
+	let resultFilterProduct = document.querySelector("#resultFilterProduct")
+	let lastFilter = ""
+
 	function filtrar(filtro) {
 		let filtrofinal = filtro.toLowerCase()
+		lastFilter = filtrofinal
 		originalListOfProducts.forEach(function(producto) {
 			let data = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-marca").toLowerCase()
 			if (!data.includes(filtrofinal)) {
@@ -38,7 +42,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				producto.classList.add("filtroVisible")
 			}
 		})
-
+		resultFilterProduct.innerText = `${filtrofinal.toUpperCase()}`
 	}
 
 	let botonesfiltro = document.querySelectorAll('.filtro')
@@ -203,7 +207,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				console.log("ActiveItem " + carouselActiveItem)
 				if (Array.from(indicator.parentNode.children).indexOf(indicator) < carouselActiveItem) {
 					let movesToDo = carouselActiveItem - Array.from(indicator.parentNode.children).indexOf(indicator)
-					for (i = 0; i <= movesToDo; i++) {
+					for (i = 0; i < movesToDo; i++) {
 						CarouselPreviousItem()
 						console.log("se movio 1 vez")
 
@@ -215,7 +219,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 					}
 				} else if (Array.from(indicator.parentNode.children).indexOf(indicator) > carouselActiveItem) {
 					let movesToDo = Array.from(indicator.parentNode.children).indexOf(indicator) - carouselActiveItem
-					for (i = 0; i <= movesToDo; i++) {
+					for (i = 0; i < movesToDo; i++) {
 						CarouselNextItem()
 						console.log("se movio 1 vez")
 
@@ -239,6 +243,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	let buscador = document.querySelector("#buscador")
 	let buscarBoton = document.querySelector("#buscarBoton")
 	let xButton = document.querySelector("#barAndIconContainer i")
+	let resultSearch = document.querySelector("#resultSearch")
 	// let productos = document.querySelectorAll(".producto")
 
 	function buscar () {
@@ -259,6 +264,13 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				producto.classList.remove("filtroVisible")
 			}
 		})
+
+		if (buscador.value == "") {
+			resultSearch.innerText = ""
+		} else {
+			resultSearch.innerText = ` que contengan el término "${buscador.value.toLowerCase()}"`
+		}
+
 		/* Clean content of pagesListContainer */
 		pagesListContainer.innerText = ""
 
@@ -301,7 +313,12 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	xButton.addEventListener("click", function(e){
 		if (buscador.value != "") {
 			buscador.value = ""
-			buscar()
+			buscar() /* Limpia los resultados de la busqueda */
+			filtrar(lastFilter) /* Realiza el ultimo filtro para que no se muestren todos los productos de nuevo */
+			updatePagination()
+			printPagesList()
+			checkButtonPrevNextStyles()
+			updateActivePage()
 		} else {
 			return
 		}

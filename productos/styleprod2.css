@@ -144,8 +144,7 @@ body {
 			align-items: center;
 			max-width: 400px;
 			max-height: 400px;
-			padding: 10px;
-			/*box-sizing: border-box;*/
+			/*padding: 10px;*/
 			overflow: hidden;
 		}
 
@@ -212,7 +211,7 @@ body {
 				"price"
 				"input";
 			grid-template-rows: min-content min-content 1fr min-content min-content;
-			padding: 10px 10px 10px 0;
+			padding: 10px;
 			position: relative;
 			height: 100%;
 			width: 100%;
