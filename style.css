@@ -685,6 +685,14 @@ h2 {
 				color: var(--color5);
 			}
 
+			#resultFilterProductValue {
+				font-weight: bold;
+			}
+
+			#resultSearchValue {
+				font-weight: bold;
+			}
+
 	/**** PRODUCTOS *****/
 		#productsContainer {
 			width: 100%;
@@ -741,7 +749,8 @@ h2 {
 				font-family: vag rounded bt;
 				margin: 0;
 				white-space: break-spaces;
-				line-height: normal;		
+				line-height: normal;
+				padding: 0 4px 2px 4px;		
 			}
 
 			.productBackground:hover .nombreyprecio {
@@ -769,6 +778,7 @@ h2 {
 				overflow: hidden;
 				display: flex;
 				justify-content: center;
+				align-items: center;
 			}
 
 			.imageContainer .botones {

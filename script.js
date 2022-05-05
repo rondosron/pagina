@@ -42,7 +42,12 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				producto.classList.add("filtroVisible")
 			}
 		})
-		resultFilterProduct.innerText = `${filtrofinal.toUpperCase()}`
+
+		if (filtrofinal == "") {
+			resultFilterProduct.innerHTML = ` <span id='resultFilterProductValue'> todos los productos</span>`
+		} else {
+			resultFilterProduct.innerHTML = ` todos los productos <span id='resultFilterProductValue'>${filtrofinal.toUpperCase()}</span>`
+		}		
 	}
 
 	let botonesfiltro = document.querySelectorAll('.filtro')
@@ -61,6 +66,10 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 			checkButtonPrevNextStyles()
 			updateActivePage()
+
+			/* Restart search value and result message */
+			buscador.value = ""
+			resultSearch.innerText = ""
 
 			/* If Menu disappears */
 			// contenedorbotones.style.display = "none"
@@ -145,7 +154,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		if (carouselActiveItem > carouselItems.length - 1) { /* If it's the last item, restart the counter */
 			carouselActiveItem = 0
 		}
-		console.log(carouselActiveItem)
+		// console.log(carouselActiveItem)
 	}
 
 	function CarouselPreviousItem() {
@@ -247,7 +256,11 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	// let productos = document.querySelectorAll(".producto")
 
 	function buscar () {
-		originalListOfProducts.forEach(function(producto){
+		/* Antes de la función buscar aplico el ultimo filtro, para que la busqueda se aplique dentro del mismo y no en TODOS los productos. Si no, se reinicia el catalogo en cada busqueda. */
+		filtrar(lastFilter)
+
+		let filtroVisibleList = document.querySelectorAll(".filtroVisible")
+		filtroVisibleList.forEach(function(producto){
 			if (producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-descripcion").toLowerCase().includes(buscador.value.toLowerCase()) || producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre").toLowerCase().includes(buscador.value.toLowerCase())) {
 				// producto.parentNode.parentNode.parentNode.style.display = "inline-flex"
 				// agregar clase que indique filtro visible (para la paginacion)
@@ -268,7 +281,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		if (buscador.value == "") {
 			resultSearch.innerText = ""
 		} else {
-			resultSearch.innerText = ` que contengan el término "${buscador.value.toLowerCase()}"`
+			resultSearch.innerHTML = ` que contengan el término "<span id="resultSearchValue">${buscador.value.toLowerCase()}</span>"`
 		}
 
 		/* Clean content of pagesListContainer */
@@ -311,17 +324,8 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	})
 
 	xButton.addEventListener("click", function(e){
-		if (buscador.value != "") {
-			buscador.value = ""
-			buscar() /* Limpia los resultados de la busqueda */
-			filtrar(lastFilter) /* Realiza el ultimo filtro para que no se muestren todos los productos de nuevo */
-			updatePagination()
-			printPagesList()
-			checkButtonPrevNextStyles()
-			updateActivePage()
-		} else {
-			return
-		}
+		buscador.value = ""
+		buscar() /* Limpia los resultados de la busqueda */
 	})
 
 ///////////////////// ORDERNAR ///////////////////////////////

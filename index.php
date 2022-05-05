@@ -151,7 +151,7 @@
 				<div id="orderByContainer">
 					<label for="orderBy">Ordenar por:</label>
 					<select name="orderBy" id="orderBy">
-						<option value="1">Precio - Ascendente</option>
+						<option value="1" selected="selected">Precio - Ascendente</option>
 						<option value="2">Precio - Descendente</option>
 						<option value="3">Nombre - Ascendente</option>
 						<option value="4">Nombre - Descendente</option>
@@ -160,12 +160,12 @@
 			</div>
 
 			<div id="activeFilters">
-				<p>Mostrando todos los productos <span id="resultFilterProduct"></span><span id="resultSearch"></span></p>
+				<p>Mostrando<span id="resultFilterProduct"><span id='resultFilterProductValue'> todos los productos</span></span><span id="resultSearch"></span></p>
 			</div>
 			
 			<div id="productsContainer">
 				<?php
-					if ($resultado = $conexion->query("SELECT * FROM productos LIMIT 10")) {
+					if ($resultado = $conexion->query("SELECT * FROM productos")) {
 						// printf("La selección devolvió %d filas. <br>", $resultado->num_rows);
 
 						//$obj = $resultado->fetch_object();
@@ -183,7 +183,7 @@
 										<div class='productBackground'>
 											<div class='imageContainer'>
 												<div class='imgContainer'>
-													<img id='producto$item->id' class='producto isClickable' src='productos/imagenes/$item->imagen.jpg' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='$item->descripcion' data-marca='$item->marca'>
+													<img id='producto$item->id' class='producto isClickable' src='productos/imagenes/$item->imagen' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='" . utf8_encode($item->descripcion) . "' data-marca='$item->marca'>
 												</div>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
 												<p class='nombreMobile'>" . utf8_encode($item->nombre) . "</p>

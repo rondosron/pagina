@@ -25,6 +25,7 @@ body {
 #contenedorproductooverlay h1 {
 	font-size: 2em;
 	line-height: 1.22em;
+	line-height: 0.9em;
 	/*font-weight: bold;*/
 	background: -webkit-linear-gradient(90deg, #1d4191, #1a6db1);
 	-webkit-background-clip: text;
@@ -107,7 +108,7 @@ body {
 			display: grid;
 			grid-template-areas: "foto datos";
 			/*grid-template-columns: min-content auto;*/
-			max-height: 400px;
+			/*max-height: 400px;*/
 			min-height: 330px;
 			min-width: 636px;
 			/*position: fixed;  fixed para >660, el resto absolute*/
@@ -215,14 +216,15 @@ body {
 			position: relative;
 			height: 100%;
 			width: 100%;
-			max-width: 370px;
+			max-width: 460px;
+			box-shadow: -4px 0 22px 0px #0000002b;
 		}
 
 	/************************ EXIT ******************/
 		#quitModalIconContainer {
 			position: absolute;
-			right: 12px;
-			top: 12px;
+			right: 5px;
+			top: 5px;
 			z-index: 2;
 			height: 20px;
 			width: 20px;
@@ -267,6 +269,7 @@ body {
 			color: rgb(1 69 155);
 			font-family: 'Overlock', cursive;
 			text-align: justify;
+			line-height: 1.1em;
 
 			/* Optional */
 			/*border-left: 3px solid #1a5ea4;

@@ -97,7 +97,7 @@ body {
 		    display: grid;
 		    grid-template-areas: "foto datos";
 		    /*grid-template-columns: 58% 42%;*/
-		    max-height: 400px;
+		    /*max-height: 400px;*/
 		    min-height: 330px;
 		    min-width: 636px;
 		    /*position: absolute;  fixed para >660, el resto absolute*/
