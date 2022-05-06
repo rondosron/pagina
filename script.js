@@ -1,6 +1,112 @@
 // IMPORTANT: save a copy of the list of ALL products so you don't lose them when you dont add them to the container (after applying some filters). Rearranging this list is ok.
 let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
+/******************* ON WINDOW RESIZE ********************/
+	let productsPerPage = 0
+
+	let lastMediaQuery = 0
+
+	function defineProductsPerPage() {
+		if (window.matchMedia("(min-width: 1130px)").matches) { // Window width bigger than 1130px
+			productsPerPage = 15
+			lastMediaQuery = 1
+		} else if (window.matchMedia("(min-width: 920px)").matches) { // Window width bigger than 920px
+			productsPerPage = 12
+			lastMediaQuery = 2
+		} else if (window.matchMedia("(min-width: 720px)").matches) { // Window width smaller than 700px
+			productsPerPage = 9
+			lastMediaQuery = 3
+		} else if (window.matchMedia("(min-width: 500px)").matches) { // Window width bigger than 1130px
+			productsPerPage = 8
+			lastMediaQuery = 4
+		} else if (window.matchMedia("(max-width: 499px)").matches) {
+			productsPerPage = 6
+			lastMediaQuery = 5
+		}
+
+		// productsPerPage
+		// + 1130 > 15
+		// 920 - 1130 > 12
+		// 720 - 920 > 9
+		// 500-720 > 8 
+		// 0-499 > 6
+	}
+
+	defineProductsPerPage()
+
+	window.addEventListener('resize', function(){
+		// defineProductsPerPage()
+
+		if (window.matchMedia("(min-width: 1130px)").matches) { // Window width bigger than 1130px
+			productsPerPage = 15
+			currentLastItemSpaceAvailable = productsPerPage
+			// CAMBIAR ACA TAMBIEN LAS VARIABLES (totalPages y currentPage? lineas 728 y 731) segun la nueva paginacion
+			// CREO QUE TOTAL PAGES SE ACTUALIZA SOLA DENTRO DE UPDATE PAGINATION
+
+			if (lastMediaQuery != 1) {
+				// viene de otra media query
+				console.log("CAMBIO DE QUERY - ENTRO EN LA 1")
+				updatePagination()
+				checkButtonPrevNextStyles()
+				printPagesList()
+				updateActivePage()
+
+				lastMediaQuery = 1
+			} else { // viene de la misma media query
+				return
+			}
+		} else if (window.matchMedia("(min-width: 920px)").matches) { // Window width bigger than 920px
+			productsPerPage = 12
+			currentLastItemSpaceAvailable = productsPerPage
+
+			if (lastMediaQuery != 2) {
+				// viene de otra media query
+				console.log("CAMBIO DE QUERY - ENTRO EN LA 2")
+				updatePagination()
+				checkButtonPrevNextStyles()
+				printPagesList()
+				updateActivePage()
+
+				lastMediaQuery = 2
+			} else { // viene de la misma media query
+				return
+			}
+		} else if (window.matchMedia("(min-width: 720px)").matches) { // Window width smaller than 700px
+			productsPerPage = 9
+			if (lastMediaQuery != 3) {
+				// viene de otra media query
+				console.log("CAMBIO DE QUERY - ENTRO EN LA 3")
+
+
+				lastMediaQuery = 3
+			} else { // viene de la misma media query
+				return
+			}
+		} else if (window.matchMedia("(min-width: 500px)").matches) { // Window width bigger than 1130px
+			productsPerPage = 8
+			if (lastMediaQuery != 4) {
+				// viene de otra media query
+				console.log("CAMBIO DE QUERY - ENTRO EN LA 4")
+
+
+				lastMediaQuery = 4
+			} else { // viene de la misma media query
+				return
+			}
+		} else if (window.matchMedia("(max-width: 499px)").matches) {
+			productsPerPage = 6
+			if (lastMediaQuery != 5) {
+				// viene de otra media query
+				console.log("CAMBIO DE QUERY - ENTRO EN LA 5")
+
+
+				lastMediaQuery = 5
+			} else { // viene de la misma media query
+				return
+			}
+		}
+	});
+
 /////////////////////////////// MENU BAR/TOGGLE /////////////////////////////////////
 
 	let menutoggle = document.querySelector('#menutoggle');
@@ -83,9 +189,6 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	// let busqueda = document.querySelector('#busqueda')
 	//let contenedorbotones = document.querySelector('#contenedorbotones')
 	let contenedorSubItems = document.querySelector('#contenedorSubItems')
-
-	var mediaqueryList = window.matchMedia("(max-width: 700px)")
-	console.log(mediaqueryList)
 
 	let superItem = document.querySelector('#superItem')
 	let subItemBotonNav = document.querySelectorAll(".subItemBotonNav")
@@ -453,10 +556,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
 	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
 	////////// IMPORTANTE: cambiar el valor de productsPerPage segun el mediaQuery que se esté ejecutanto
-	let productsPerPage = 2
-	let firstItemOfPage = 0
-	let lastItemOfPage = firstItemOfPage + productsPerPage
-
+	
 	let currentLastItemSpaceAvailable = productsPerPage
 
 	let productsContainer = document.querySelector("#productsContainer")
