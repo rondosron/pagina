@@ -38,8 +38,19 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		// defineProductsPerPage()
 
 		if (window.matchMedia("(min-width: 1130px)").matches) { // Window width bigger than 1130px
-			productsPerPage = 15
-			currentLastItemSpaceAvailable = productsPerPage
+			// let previousProductsPerPage = productsPerPage
+			let lastFirstItemOfCurrentPage = (productsPerPage * (currentPage - 1)) + 1 // El primer item de la pagina actual. EJ: con paginas de 12 en 12, si estoy en la pagina 3, su primer item es 12 + 12 + 1 = (12 * 2) + 1 = (12 * (3-1)) + 1
+			productsPerPage = 15 // Actualizo el valor de items por pagina
+			
+			// Con la nueva cantidad de items por pagina, donde queda el primer item de la pagina actual anterior? (lastFirstItemOfCurrentPage)
+			let totalProductsOfPreviousPages = 15 // Accumulated items of previous pages
+			let newCurrentPage = 1
+			while (lastFirstItemOfCurrentPage >= totalProductsOfPreviousPages) {
+				totalProductsOfPreviousPages += productsPerPage
+				newCurrentPage += 1
+			}
+			currentPage = newCurrentPage
+			currentLastItemSpaceAvailable = productsPerPage * currentPage
 			// CAMBIAR ACA TAMBIEN LAS VARIABLES (totalPages y currentPage? lineas 728 y 731) segun la nueva paginacion
 			// CREO QUE TOTAL PAGES SE ACTUALIZA SOLA DENTRO DE UPDATE PAGINATION
 
@@ -47,59 +58,118 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 				// viene de otra media query
 				console.log("CAMBIO DE QUERY - ENTRO EN LA 1")
 				updatePagination()
-				checkButtonPrevNextStyles()
+				
 				printPagesList()
 				updateActivePage()
-
+				checkButtonPrevNextStyles()
 				lastMediaQuery = 1
 			} else { // viene de la misma media query
 				return
 			}
 		} else if (window.matchMedia("(min-width: 920px)").matches) { // Window width bigger than 920px
-			productsPerPage = 12
-			currentLastItemSpaceAvailable = productsPerPage
+			// let previousProductsPerPage = productsPerPage
+			let lastFirstItemOfCurrentPage = (productsPerPage * (currentPage - 1)) + 1 // El primer item de la pagina actual. EJ: con paginas de 12 en 12, si estoy en la pagina 3, su primer item es 12 + 12 + 1 = (12 * 2) + 1 = (12 * (3-1)) + 1
+			productsPerPage = 12 // Actualizo el valor de items por pagina
+			
+			// Con la nueva cantidad de items por pagina, donde queda el primer item de la pagina actual anterior? (lastFirstItemOfCurrentPage)
+			let totalProductsOfPreviousPages = 12 // Accumulated items of previous pages
+			let newCurrentPage = 1
+			while (lastFirstItemOfCurrentPage >= totalProductsOfPreviousPages) {
+				totalProductsOfPreviousPages += productsPerPage
+				newCurrentPage += 1
+			}
+			currentPage = newCurrentPage
+			currentLastItemSpaceAvailable = productsPerPage * currentPage
 
 			if (lastMediaQuery != 2) {
 				// viene de otra media query
 				console.log("CAMBIO DE QUERY - ENTRO EN LA 2")
 				updatePagination()
-				checkButtonPrevNextStyles()
+				
 				printPagesList()
 				updateActivePage()
-
+				checkButtonPrevNextStyles()
 				lastMediaQuery = 2
 			} else { // viene de la misma media query
 				return
 			}
 		} else if (window.matchMedia("(min-width: 720px)").matches) { // Window width smaller than 700px
-			productsPerPage = 9
+			// let previousProductsPerPage = productsPerPage
+			let lastFirstItemOfCurrentPage = (productsPerPage * (currentPage - 1)) + 1 // El primer item de la pagina actual. EJ: con paginas de 12 en 12, si estoy en la pagina 3, su primer item es 12 + 12 + 1 = (12 * 2) + 1 = (12 * (3-1)) + 1
+			productsPerPage = 9 // Actualizo el valor de items por pagina
+			
+			// Con la nueva cantidad de items por pagina, donde queda el primer item de la pagina actual anterior? (lastFirstItemOfCurrentPage)
+			let totalProductsOfPreviousPages = 9 // Accumulated items of previous pages
+			let newCurrentPage = 1
+			while (lastFirstItemOfCurrentPage >= totalProductsOfPreviousPages) {
+				totalProductsOfPreviousPages += productsPerPage
+				newCurrentPage += 1
+			}
+			currentPage = newCurrentPage
+			currentLastItemSpaceAvailable = productsPerPage * currentPage
+
 			if (lastMediaQuery != 3) {
 				// viene de otra media query
 				console.log("CAMBIO DE QUERY - ENTRO EN LA 3")
-
-
+				updatePagination()
+				
+				printPagesList()
+				updateActivePage()
+				checkButtonPrevNextStyles()
 				lastMediaQuery = 3
 			} else { // viene de la misma media query
 				return
 			}
 		} else if (window.matchMedia("(min-width: 500px)").matches) { // Window width bigger than 1130px
-			productsPerPage = 8
+			// let previousProductsPerPage = productsPerPage
+			let lastFirstItemOfCurrentPage = (productsPerPage * (currentPage - 1)) + 1 // El primer item de la pagina actual. EJ: con paginas de 12 en 12, si estoy en la pagina 3, su primer item es 12 + 12 + 1 = (12 * 2) + 1 = (12 * (3-1)) + 1
+			productsPerPage = 8 // Actualizo el valor de items por pagina
+			
+			// Con la nueva cantidad de items por pagina, donde queda el primer item de la pagina actual anterior? (lastFirstItemOfCurrentPage)
+			let totalProductsOfPreviousPages = 8 // Accumulated items of previous pages
+			let newCurrentPage = 1
+			while (lastFirstItemOfCurrentPage >= totalProductsOfPreviousPages) {
+				totalProductsOfPreviousPages += productsPerPage
+				newCurrentPage += 1
+			}
+			currentPage = newCurrentPage
+			currentLastItemSpaceAvailable = productsPerPage * currentPage
+
 			if (lastMediaQuery != 4) {
 				// viene de otra media query
 				console.log("CAMBIO DE QUERY - ENTRO EN LA 4")
-
-
+				updatePagination()
+				
+				printPagesList()
+				updateActivePage()
+				checkButtonPrevNextStyles()
 				lastMediaQuery = 4
 			} else { // viene de la misma media query
 				return
 			}
 		} else if (window.matchMedia("(max-width: 499px)").matches) {
-			productsPerPage = 6
+			// let previousProductsPerPage = productsPerPage
+			let lastFirstItemOfCurrentPage = (productsPerPage * (currentPage - 1)) + 1 // El primer item de la pagina actual. EJ: con paginas de 12 en 12, si estoy en la pagina 3, su primer item es 12 + 12 + 1 = (12 * 2) + 1 = (12 * (3-1)) + 1
+			productsPerPage = 6 // Actualizo el valor de items por pagina
+			
+			// Con la nueva cantidad de items por pagina, donde queda el primer item de la pagina actual anterior? (lastFirstItemOfCurrentPage)
+			let totalProductsOfPreviousPages = 6 // Accumulated items of previous pages
+			let newCurrentPage = 1
+			while (lastFirstItemOfCurrentPage >= totalProductsOfPreviousPages) {
+				totalProductsOfPreviousPages += productsPerPage
+				newCurrentPage += 1
+			}
+			currentPage = newCurrentPage
+			currentLastItemSpaceAvailable = productsPerPage * currentPage
+
 			if (lastMediaQuery != 5) {
 				// viene de otra media query
 				console.log("CAMBIO DE QUERY - ENTRO EN LA 5")
-
-
+				updatePagination()
+				
+				printPagesList()
+				updateActivePage()
+				checkButtonPrevNextStyles()
 				lastMediaQuery = 5
 			} else { // viene de la misma media query
 				return
@@ -604,6 +674,16 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			}
 		})
 
+		// for (i = 0; i < 15; i++) {
+		// 	if (i < currentLastItemSpaceAvailable - productsPerPage) {
+		// 		contenedorProductoListaOrdenada[i].style.display = "none"
+		// 	} else if (i < currentLastItemSpaceAvailable) {
+		// 		contenedorProductoListaOrdenada[i].style.display = "inline-flex"
+		// 	} else {
+		// 		contenedorProductoListaOrdenada[i].style.display = "none"
+		// 	}
+		// }
+
 		// Create a copy of NodeList as array to apply filter
 		// let originalListOfProductsArray = Array.prototype.slice.call(originalListOfProducts, 0) // Array
 		contenedorProductoLista = originalListOfProductsArray.filter(item => item.classList.contains("filtroVisible"))
@@ -746,8 +826,6 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			})
 			pagesListContainer.appendChild(page)
 		}
-
-
 	}
 
 	/* Executed at beginning */
