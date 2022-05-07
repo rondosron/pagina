@@ -26,6 +26,10 @@
 	<body>
 
 		<?php
+			session_start();
+		?>
+
+		<?php
 			$conexion = new mysqli('localhost', 'root', '', 'noryol');
 
 			if ($conexion->connect_error) {
@@ -228,31 +232,46 @@
 				<div id="total"></div>
 				<h5>Añadir comentario</h5>
 				<form action="envioform.php" method="POST" name="consulta">
-					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje."></textarea>
+					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje." value="<?php echo isset($_SESSION['pedidoinput']) ? $_SESSION['pedidoinput'] : '' ?>"></textarea>
 			</div>
 
 			<div id="formulario">
 					<div id="nameSurnameContainer">
-						<input type="text" name="nameSurname" id="nameSurnameInput">
-						<label for="nameSurnameInput" id="nameSurnameLabel">Name</label>
+						<input type="text" name="nameSurname" id="nameSurnameInput" value="<?php echo isset($_SESSION['nameForm']) ? $_SESSION['nameForm'] : '' ?>">
+						<label for="nameSurnameInput" id="nameSurnameLabel">Nombre/Empresa</label>
 					</div>
+					<?php if(isset($_SESSION['errorsForm']['nameSurname'])) {
+						echo "<p class='errorMessageForm'>" . $_SESSION['errorsForm']['nameSurname'] . "</p>";
+					} ?>
 					<div id="phoneContainer">
-						<input type="number" name="phone" id="phoneInput">
+						<input type="number" name="phone" id="phoneInput" value="<?php echo isset($_SESSION['phoneForm']) ? $_SESSION['phoneForm'] : '' ?>">
 						<label for="phoneInput" id="phoneLabel">
 							<p>Phone</p>
 							<i class="fas fa-phone-alt"></i>
 						</label>
 					</div>
+					<?php if(isset($_SESSION['errorsForm']['phoneOrEmail'])) {
+						echo "<p class='errorMessageForm'>" . $_SESSION['errorsForm']['phoneOrEmail'] . "</p>";
+					} ?>
+					<?php if(isset($_SESSION['errorsForm']['phone'])) {
+						echo "<p class='errorMessageForm'>" . $_SESSION['errorsForm']['phone'] . "</p>";
+					} ?>
 					<div id="addressContainer">
-						<input type="text" name="address" id="addressInput">
+						<input type="text" name="address" id="addressInput" value="<?php echo isset($_SESSION['addressForm']) ? $_SESSION['addressForm'] : '' ?>">
 						<label for="addressInput" id="addressLabel">Dirección</label>
 						<div id="addressBarFocus"></div>
 						<div id="addressBarValid"></div>
 					</div>					
 					<div id="emailContainer">
-						<input type="text" name="email" id="emailInput"></input>
+						<input type="text" name="email" id="emailInput" value="<?php echo isset($_SESSION['emailForm']) ? $_SESSION['emailForm'] : '' ?>">
 						<label for="emailInput" id="emailLabel">E-mail</label>
 					</div>
+					<?php if(isset($_SESSION['errorsForm']['phoneOrEmail'])) {
+						echo "<p class='errorMessageForm'>".  $_SESSION['errorsForm']['phoneOrEmail'] . "</p>";
+					} ?>
+					<?php if(isset($_SESSION['errorsForm']['email'])) {
+						echo "<p class='errorMessageForm'>" . $_SESSION['errorsForm']['email'] . "</p>";
+					} ?>
 
 					<button type="submit" name="submit" id="sendViaEmail">Enviar por email <i class="fas fa-envelope"></i></button>
 					

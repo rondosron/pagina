@@ -834,53 +834,91 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	updateActivePage()
 
 /////////////////////// FORM VALIDATION / STYLING ///////////////////////
-	let nameSurnameInput = document.querySelector("#nameSurnameInput")
-	let nameSurnameLabel = document.querySelector("#nameSurnameLabel")
+	////////// NAME ///////////
+		let nameSurnameInput = document.querySelector("#nameSurnameInput")
+		let nameSurnameLabel = document.querySelector("#nameSurnameLabel")
 
-	nameSurnameInput.addEventListener("focusin", function(e){
-		if (nameSurnameInput.value == "") {
-			nameSurnameLabel.style.left = "-50px"
+		nameSurnameInput.addEventListener("focusin", function(e){
+			if (nameSurnameInput.value == "") {
+				nameSurnameLabel.style.left = "105%"
+				// nameSurnameLabel.style.left = "unset"
 
-			nameSurnameInput.style.background = "var(--color5)"
-			nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
-		} 
-		
-	})
+				nameSurnameInput.style.background = "var(--color5)"
+				nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
+			} 
+			
+		})
 
-	nameSurnameInput.addEventListener("focusout", function(e){
+		// To test if there's already a value after submitting form with errors (value is maintained). NOTE: not worthy to define a function because focusin and focusout events are different and can't be put together
 		if (nameSurnameInput.value != "") {
-			nameSurnameLabel.style.left = "-50px"
+			nameSurnameLabel.style.left = "105%"
+			// nameSurnameLabel.style.left = "unset"
 
 			nameSurnameInput.style.background = "var(--color5)"
 			nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
-		} else {
-			nameSurnameLabel.style.left = "15px"
-
-			nameSurnameInput.style.background = "linear-gradient(178deg, #ffffff, #d7d7d7)"
-			nameSurnameInput.style.boxShadow = "2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, inset -2px -2px 6px #cbcbcb, inset 2px 2px 6px #ffffff"
 		}
-	})
 
+		nameSurnameInput.addEventListener("focusout", function(e){
+			if (nameSurnameInput.value != "") {
+				nameSurnameLabel.style.left = "105%"
+				// nameSurnameLabel.style.left = "unset"
 
-	let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
+				nameSurnameInput.style.background = "var(--color5)"
+				nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
+			} else {
+				nameSurnameLabel.style.left = "15px"
+				// nameSurnameLabel.style.right = "unset"
 
-	let addressInput = document.querySelector("#addressInput")
-	let addressBarValid = document.querySelector("#addressBarValid")
+				nameSurnameInput.style.background = "linear-gradient(178deg, #ffffff, #d7d7d7)"
+				nameSurnameInput.style.boxShadow = "2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, inset -2px -2px 6px #cbcbcb, inset 2px 2px 6px #ffffff"
+			}
+		})
 
-	addressInput.addEventListener("input", function(e){
-		// console.log(addressInput.value)
-		console.log(patternAddress.test(addressInput.value))
-		if (patternAddress.test(addressInput.value)) {
-			addressBarValid.style.width = "100%"
-		} 
-	})
+	////////// ADDRESS ///////////
+		let patternAddress = new RegExp(/^([a-zA-Z]+[a-zA-Z\s]\s[0-9]+)$/) // Words + number === word + word(s)/whitespace(s) + number 
 
-	let phoneInput = document.querySelector("#phoneInput")
-	let phoneLabel = document.querySelector("#phoneLabel")
-	let phoneLabelPar = document.querySelector("#phoneLabel p")
-	let phoneLabelIcon = document.querySelector("#phoneLabel i")
+		let addressInput = document.querySelector("#addressInput")
+		let addressBarValid = document.querySelector("#addressBarValid")
 
-	phoneInput.addEventListener("input", function(e){
+		addressInput.addEventListener("input", function(e){
+			// console.log(addressInput.value)
+			console.log(patternAddress.test(addressInput.value))
+			if (patternAddress.test(addressInput.value)) {
+				addressBarValid.style.width = "100%"
+			} 
+		})
+
+	///////// PHONE ////////////
+		let phoneInput = document.querySelector("#phoneInput")
+		let phoneLabel = document.querySelector("#phoneLabel")
+		let phoneLabelPar = document.querySelector("#phoneLabel p")
+		let phoneLabelIcon = document.querySelector("#phoneLabel i")
+
+		phoneInput.addEventListener("input", function(e){
+			if (phoneInput.value != "") {
+				phoneInput.style.width = "100%"
+				phoneInput.style.paddingLeft = "6px"
+
+				phoneLabel.style.width = "20%"
+				phoneLabel.style.borderRadius = "5px 0px 0px 5px"
+
+				phoneLabelPar.style.opacity = "0"
+
+				phoneLabelIcon.style.opacity = "1"
+			} else {
+				phoneInput.style.width = "0%"
+				phoneInput.style.paddingLeft = "0"
+
+				phoneLabel.style.width = "100%"
+				phoneLabel.style.borderRadius = "5px"
+
+				phoneLabelPar.style.opacity = "1"
+
+				phoneLabelIcon.style.opacity = "0"
+			}
+		})
+
+		// To test if there's already a value after submitting form with errors (value is maintained). NOTE: not worthy to define a function because focusin and focusout events are different and can't be put together
 		if (phoneInput.value != "") {
 			phoneInput.style.width = "100%"
 			phoneInput.style.paddingLeft = "6px"
@@ -891,17 +929,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			phoneLabelPar.style.opacity = "0"
 
 			phoneLabelIcon.style.opacity = "1"
-		} else {
-			phoneInput.style.width = "0%"
-
-			phoneLabel.style.width = "100%"
-			phoneLabel.style.borderRadius = "5px"
-
-			phoneLabelPar.style.opacity = "1"
-
-			phoneLabelIcon.style.opacity = "0"
 		}
-	})
 
 /////////////////////// SEND VIA WHATSAPP ////////////////////
 	let sendViaWhatsapp = document.querySelector("#sendViaWhatsapp")
