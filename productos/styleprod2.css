@@ -264,12 +264,13 @@ body {
 		}
 
 		#productDescription p {
-			font-size: 16px;
+			font-size: 15px;
 			text-transform: none;
 			color: rgb(1 69 155);
 			font-family: 'Overlock', cursive;
 			text-align: justify;
 			line-height: 1.1em;
+			letter-spacing: -0.5px;
 
 			/* Optional */
 			/*border-left: 3px solid #1a5ea4;

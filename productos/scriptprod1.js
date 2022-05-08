@@ -112,6 +112,7 @@
 				imagenoverlay.setAttribute("data-talles", imagen.getAttribute('data-talles'))
 				imagenoverlay.setAttribute("data-colores", imagen.getAttribute('data-colores'))
 				imagenoverlay.setAttribute("data-marca", imagen.getAttribute('data-marca'))
+				imagenoverlay.setAttribute("data-id", imagen.getAttribute('data-id'))
 
 			/////////////////////////////////// CONTENEDOR /////////////////////////////////////
 			let contenedor = document.querySelector('#contenedorproductooverlay')
@@ -156,59 +157,72 @@ let initialBottom = 0
 		let cantidadInput = document.querySelector("#cantidad")
 		let imagenoverlay = document.querySelector("#imagenoverlay")
 		let alpresupuesto = document.querySelector('#alpresupuesto')
+		let errorMessageQuantityModal = document.querySelector("#errorMessageQuantityModal")
 
 		alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
 			/* NOTE: cant define a function for both kinds of devices because they're different and both need to be active at the same time in some cases */
 
 			/* PRESUPUESTO */
-			cantidadPedida = cantidadInput.value
-			if (cantidadPedida != 0){
+
+				/* Not allowed quantity */
+				if (cantidadInput.value <= 0) {
+					errorMessageQuantityModal.style.opacity = "1"
+					errorMessageQuantityModal.style.display = "flex"
+					setTimeout(function(){
+						errorMessageQuantityModal.style.opacity = "0"
+					}, 3000)
+					setTimeout(function(){
+						errorMessageQuantityModal.style.display = "none"
+					}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
+					return
+				} else { // Allowed quantity
+					cantidadPedida = cantidadInput.value
 				
-				nombre = imagenoverlay.getAttribute("data-nombre")
-				console.log(imagenoverlay)
-				console.log("Marca: " + imagenoverlay.getAttribute("data-marca"))
-				if (imagenoverlay.getAttribute("data-marca") != null) { /* If product has a brand, use it to distinguish those with the same name */
-					nombre = nombre + " (" + imagenoverlay.getAttribute("data-marca") + ")"
-				}
+					nombre = imagenoverlay.getAttribute("data-nombre")
+					console.log(imagenoverlay)
+					console.log("Marca: " + imagenoverlay.getAttribute("data-marca"))
+					if (imagenoverlay.getAttribute("data-marca") != null) { /* If product has a brand, use it to distinguish those with the same name */
+						nombre = nombre + " (Cód: " + imagenoverlay.getAttribute("data-id") + ")"
+					}
 
-				checkIfItemInListAndUpdate()
+					checkIfItemInListAndUpdate()
 
-				precio = parseFloat(imagenoverlay.getAttribute("data-precio")).toFixed(2)
-				
-				if (cantidadPedida >= 2) {
-					pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
-				} else {
-					pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
-				}
-				totalValor += (precio * cantidadPedida)
-				
-				const contenedoritem = document.createElement('div')
+					precio = parseFloat(imagenoverlay.getAttribute("data-precio")).toFixed(2)
+					
+					if (cantidadPedida >= 2) {
+						pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
+					} else {
+						pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
+					}
+					totalValor += (precio * cantidadPedida)
+					
+					const contenedoritem = document.createElement('div')
 
-				const contenedorlinea = document.createElement('div')
-				contenedorlinea.innerHTML = pedido
-				
-				const deleteitem = document.createElement('i')
-				deleteitem.classList.add('fas') // clase de FontAwesome
-				deleteitem.classList.add('fa-times') // clase de FontAwesome
-				contenedorlinea.appendChild(deleteitem)
-				contenedoritem.appendChild(contenedorlinea)
+					const contenedorlinea = document.createElement('div')
+					contenedorlinea.innerHTML = pedido
+					
+					const deleteitem = document.createElement('i')
+					deleteitem.classList.add('fas') // clase de FontAwesome
+					deleteitem.classList.add('fa-times') // clase de FontAwesome
+					contenedorlinea.appendChild(deleteitem)
+					contenedoritem.appendChild(contenedorlinea)
 
-				contenedoritemspresupuesto.appendChild(contenedoritem)
+					contenedoritemspresupuesto.appendChild(contenedoritem)
 
-				deleteitem.addEventListener('click', function(){ 
-					contenedoritemspresupuesto.removeChild(contenedoritem)
+					deleteitem.addEventListener('click', function(){ 
+						contenedoritemspresupuesto.removeChild(contenedoritem)
 
-					let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
-					totalValor -= subtotalToDelete
+						let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
+						totalValor -= subtotalToDelete
 
+						totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+					})
+					/* TOTAL */
 					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
-				})
-				/* TOTAL */
-				totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
 
-				/* PEDIDO */
-				// pedidoinput.value = contenedoritemspresupuesto.innerText
-			}
+					/* PEDIDO */
+					// pedidoinput.value = contenedoritemspresupuesto.innerText
+				}
 
 			alpresupuesto.style.top = "3px"
 			alpresupuesto.style.boxShadow = "none"
@@ -230,50 +244,60 @@ let initialBottom = 0
 				/* PRESUPUESTO */
 				cantidadPedida = button.parentNode.parentNode.parentNode.querySelector(".botones .contenedorCarrito input").value
 
-				if (cantidadPedida != 0){
+					/* Not allowed quantity */
+					if (cantidadPedida <= 0) {
+						errorMessageQuantityModal.style.opacity = "1"
+						errorMessageQuantityModal.style.display = "flex"
+						setTimeout(function(){
+							errorMessageQuantityModal.style.opacity = "0"
+						}, 3000)
+						setTimeout(function(){
+							errorMessageQuantityModal.style.display = "none"
+						}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
+						return
+					} else { // Allowed quantity
+						nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre") + " (Cód: " + button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-id") + ")"
+						// if (button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-marca") != null) { /* If product has a brand, use it to distinguish those with the same name */
+						// 	nombre = nombre + " (" + button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-marca") + ")"
+						// }
 
-					nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre")
-					if (button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-marca") != null) { /* If product has a brand, use it to distinguish those with the same name */
-						nombre = nombre + " (" + button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-marca") + ")"
-					}
+						precio = parseFloat(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")).toFixed(2)
 
-					precio = parseFloat(button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-precio")).toFixed(2)
+						checkIfItemInListAndUpdate()
 
-					checkIfItemInListAndUpdate()
-
-					if (cantidadPedida >= 2) {
-						pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
-					} else {
-						pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
-					}
-					totalValor += (precio * cantidadPedida)
-					// console.log(typeof totalValor)
-				
-					const contenedoritem = document.createElement('div')
-
-					const contenedorlinea = document.createElement('div')
-					contenedorlinea.innerHTML = pedido
+						if (cantidadPedida >= 2) {
+							pedido = nombre + " - " + cantidadPedida + " unidades - $" + parseFloat(precio * cantidadPedida).toFixed(2)
+						} else {
+							pedido = nombre + " - " + cantidadPedida + " unidad - $" + parseFloat(precio * cantidadPedida).toFixed(2)
+						}
+						totalValor += (precio * cantidadPedida)
+						// console.log(typeof totalValor)
 					
-					const deleteitem = document.createElement('i')
-					deleteitem.classList.add('fas') // clase de FontAwesome
-					deleteitem.classList.add('fa-times') // clase de FontAwesome
-					contenedorlinea.appendChild(deleteitem)
-					contenedoritem.appendChild(contenedorlinea)
+						const contenedoritem = document.createElement('div')
 
-					contenedoritemspresupuesto.appendChild(contenedoritem)
-
-					deleteitem.addEventListener('click', function(){ 
-						contenedoritemspresupuesto.removeChild(contenedoritem)
+						const contenedorlinea = document.createElement('div')
+						contenedorlinea.innerHTML = pedido
 						
-						let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
-						totalValor -= subtotalToDelete
+						const deleteitem = document.createElement('i')
+						deleteitem.classList.add('fas') // clase de FontAwesome
+						deleteitem.classList.add('fa-times') // clase de FontAwesome
+						contenedorlinea.appendChild(deleteitem)
+						contenedoritem.appendChild(contenedorlinea)
 
+						contenedoritemspresupuesto.appendChild(contenedoritem)
+
+						deleteitem.addEventListener('click', function(){ 
+							contenedoritemspresupuesto.removeChild(contenedoritem)
+							
+							let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
+							totalValor -= subtotalToDelete
+
+							totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+						})
+						/* TOTAL */
+						console.log(typeof totalValor)
 						totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
-					})
-					/* TOTAL */
-					console.log(typeof totalValor)
-					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
-				}
+					}
 
 				/* PEDIDO */
 				// pedidoinput.value = contenedoritemspresupuesto.innerText

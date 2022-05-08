@@ -5,6 +5,8 @@
 
 	// IMPORTANTE: SAQUE EL 'required' DE LOS INPUT PARA CHEQUEAR ESTE CODIGO. DESPUES PONERLO DE NUEVO PARA DOBLE CHEQUEO
 
+	// NOTA: no agrego las clases validInput o invalidInput porque es demasiado con el mensaje de error y queda mal cambiar el estilo del input.
+
 	$name = stripslashes($_POST['nameSurname']);
 	$address = stripslashes($_POST['address']);
 	$phone = stripslashes($_POST['phone']);

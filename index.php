@@ -187,7 +187,7 @@
 										<div class='productBackground'>
 											<div class='imageContainer'>
 												<div class='imgContainer'>
-													<img id='producto$item->id' class='producto isClickable' src='productos/imagenes/$item->imagen' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='" . utf8_encode($item->descripcion) . "' data-marca='$item->marca'>
+													<img id='producto$item->id' class='producto isClickable' src='productos/imagenes/$item->imagen' data-id='$item->id' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='" . utf8_encode($item->descripcion) . "' data-marca='$item->marca'>
 												</div>
 												<p class='subtitle nombreyprecio'>" . utf8_encode($item->nombre) . " - $$item->precio</p>
 												<p class='nombreMobile'>" . utf8_encode($item->nombre) . "</p>
@@ -236,6 +236,11 @@
 			</div>
 
 			<div id="formulario">
+					<h2>Formulario de contacto</h2>
+					<div id="informativeMessageForm">
+						<i class="fas fa-info-circle"></i>
+						<p>Para enviar el presupuesto <b>vía mail</b> ingrese su nombre o el nombre de su empresa y al menos uno de los campos de contacto (e-mail o teléfono). Para enviarlo <b>vía WhatsApp</b> solo complete el campo 'Nombre/empresa'.</p>
+					</div>
 					<div id="nameSurnameContainer">
 						<input type="text" name="nameSurname" id="nameSurnameInput" value="<?php echo isset($_SESSION['nameForm']) ? $_SESSION['nameForm'] : '' ?>">
 						<label for="nameSurnameInput" id="nameSurnameLabel">Nombre/Empresa</label>
@@ -243,6 +248,7 @@
 					<?php if(isset($_SESSION['errorsForm']['nameSurname'])) {
 						echo "<p class='errorMessageForm'>" . $_SESSION['errorsForm']['nameSurname'] . "</p>";
 					} ?>
+					<div id="errorMessageNameWhatsapp">Indique su nombre o el de la empresa</div>
 					<div id="phoneContainer">
 						<input type="number" name="phone" id="phoneInput" value="<?php echo isset($_SESSION['phoneForm']) ? $_SESSION['phoneForm'] : '' ?>">
 						<label for="phoneInput" id="phoneLabel">
@@ -277,6 +283,7 @@
 					
 					<!-- <input type="submit" name="submit" id="sendViaEmail"> -->
 				</form>
+				<div id="divisorEmailWhatsapp"><div class="divisorBarEmailWhatsapp"></div><p>o</p><div class="divisorBarEmailWhatsapp"></div></div>
 				<button id="sendViaWhatsapp">Enviar por whatsapp <i class="fab fa-whatsapp"></i></button>
 			</div>
 		</div>
@@ -642,6 +649,11 @@
 					<i class="fas fa-times" id="quitModalIcon"></i>
 				</div>
 			</div>
+		</div>
+		
+		<!-- Messages on screen -->
+		<div class="errorMessageOnScreenContainer">
+			<div id="errorMessageQuantityModal"><i class="fas fa-exclamation-triangle"></i>La cantidad a agregar de un producto debe ser mayor a 0.</div>
 		</div>
 		
 

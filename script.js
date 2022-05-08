@@ -933,8 +933,17 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 /////////////////////// SEND VIA WHATSAPP ////////////////////
 	let sendViaWhatsapp = document.querySelector("#sendViaWhatsapp")
+	let errorMessageNameWhatsapp = document.querySelector("#errorMessageNameWhatsapp")
+	let errorMessageForm = document.querySelectorAll(".errorMessageForm")
 
 	sendViaWhatsapp.addEventListener("click", function(){
+		if (nameSurnameInput.value == "") {
+			errorMessageNameWhatsapp.style.display = "flex"
+			errorMessageForm.forEach(function(errrorMessage){
+				errrorMessage.style.display = "none"
+			})
+			return
+		}
 		// https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale
 		
 		let texto = encodeURIComponent(contenedoritemspresupuesto.innerText)
