@@ -113,10 +113,7 @@ h2 {
 		z-index: 440;
 	}
 
-	#errorMessageQuantityModal {
-		/*left: 50%;*/
-		/*transform: translate(-50%);*/
-		background: linear-gradient(0deg, #890000, red);
+	.errorMessageOnScreenContainer div {
 		z-index: 440;
 		height: fit-content;
 		width: fit-content;
@@ -125,13 +122,25 @@ h2 {
 		align-items: center;
 		padding: 10px;
 		border-radius: 5px;
-		color: #ffe1e1;
-		transition: 0.8s;
 		line-height: 16px;
 		margin: 0 10px;
+		transition: 0.8s;
 	}
 
-	#errorMessageQuantityModal i {
+	#errorMessageQuantityModal {
+		/*left: 50%;*/
+		/*transform: translate(-50%);*/
+		background: linear-gradient(0deg, #890000, red);
+		color: #ffe1e1;		
+	}
+
+	#successMessageAddedItem {
+		background: linear-gradient(0deg, #00a714, #00f31e);
+		color: #005400;
+		z-index: 441; /* Greater than errorMessage so it's over it in case it was wrong and then fixed before it disappears */
+	}
+
+	.errorMessageOnScreenContainer div i {
 		margin-right: 8px;
 	}
 

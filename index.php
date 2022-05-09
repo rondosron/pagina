@@ -195,7 +195,7 @@
 												<div class='botones'>
 													<div class='contenedorCarrito'>
 														<i class='fas fa-shopping-cart'></i>
-														<input class='cantidadMobile' type='number' name='cantidad' value='0'>
+														<input class='cantidadMobile' type='number' name='cantidad' value='0' min='0'>
 													</div>
 													<div class='contenedorBoton'>
 														<div class='alpresupuestoMobile'>
@@ -228,7 +228,10 @@
 			<div id="presupuesto">
 				<h2>SIMULACIÓN PRESUPUESTO</h2>
 				<h3>Presupuesto actual:</h3>
-				<div id="contenedoritemspresupuesto"></div>
+				<div id="contenedoritemspresupuesto">
+					<!-- <?php echo isset($_SESSION['presupuestoValue']) ? $_SESSION['presupuestoValue'] : '' ?> -->
+					
+				</div>
 				<div id="total"></div>
 				<h5>Añadir comentario</h5>
 				<form action="envioform.php" method="POST" name="consulta">
@@ -622,7 +625,7 @@
 					<div id="botones">
 						<div id="contenedorCarrito">
 							<i class="fas fa-shopping-cart"></i>
-							<input id="cantidad" type="number" name="cantidad" value="0">
+							<input id="cantidad" type="number" name="cantidad" value="0" min="0">
 						</div>
 						<div id="contenedorBoton">
 							<div id="alpresupuesto">
@@ -654,6 +657,9 @@
 		<!-- Messages on screen -->
 		<div class="errorMessageOnScreenContainer">
 			<div id="errorMessageQuantityModal"><i class="fas fa-exclamation-triangle"></i>La cantidad a agregar de un producto debe ser mayor a 0.</div>
+		</div>
+		<div class="errorMessageOnScreenContainer">
+			<div id="successMessageAddedItem"><i class="far fa-check-circle"></i></i>Producto agregado con éxito.</div>
 		</div>
 		
 

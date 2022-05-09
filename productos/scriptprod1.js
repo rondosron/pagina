@@ -158,6 +158,7 @@ let initialBottom = 0
 		let imagenoverlay = document.querySelector("#imagenoverlay")
 		let alpresupuesto = document.querySelector('#alpresupuesto')
 		let errorMessageQuantityModal = document.querySelector("#errorMessageQuantityModal")
+		let successMessageAddedItem = document.querySelector("#successMessageAddedItem")
 
 		alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
 			/* NOTE: cant define a function for both kinds of devices because they're different and both need to be active at the same time in some cases */
@@ -222,6 +223,17 @@ let initialBottom = 0
 
 					/* PEDIDO */
 					// pedidoinput.value = contenedoritemspresupuesto.innerText
+
+					/* Sucess message */
+					errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists
+					successMessageAddedItem.style.opacity = "1"
+					successMessageAddedItem.style.display = "flex"
+					setTimeout(function(){
+						successMessageAddedItem.style.opacity = "0"
+					}, 3000)
+					setTimeout(function(){
+						successMessageAddedItem.style.display = "none"
+					}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
 				}
 
 			alpresupuesto.style.top = "3px"
@@ -297,6 +309,17 @@ let initialBottom = 0
 						/* TOTAL */
 						console.log(typeof totalValor)
 						totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+					
+						/* Sucess message */
+						errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists
+						successMessageAddedItem.style.opacity = "1"
+						successMessageAddedItem.style.display = "flex"
+						setTimeout(function(){
+							successMessageAddedItem.style.opacity = "0"
+						}, 3000)
+						setTimeout(function(){
+							successMessageAddedItem.style.display = "none"
+						}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
 					}
 
 				/* PEDIDO */

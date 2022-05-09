@@ -14,6 +14,14 @@
 	$pedidoinput = stripslashes($_POST['pedidoinput']);
 	$errors = [];
 
+	// $docHTML = new DOMDocument();
+	// @$docHTML->loadHTMLFile("index.php");
+	// $contenedoritemspresupuesto = $docHTML->getElementById("contenedoritemspresupuesto");
+	// $contenedoritemspresupuesto->ownerDocument->saveHTML($contenedoritemspresupuesto);
+	
+	// $contenedoritemspresupuesto->saveHTML($presupuestoValue);
+	// $_SESSION["presupuestoValue"] = $contenedoritemspresupuesto->nodeValue;
+
 	if(isset($_POST["submit"])){
 		// if(($name !== "") && ($phone !== "" && $email !== "")) { // Everything ok
 			
