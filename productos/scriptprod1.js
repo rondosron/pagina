@@ -130,6 +130,7 @@ let initialBottom = 0
 	const contenedoritemspresupuesto = document.querySelector('#contenedoritemspresupuesto')
 	// let pedidoinput = document.querySelector("#pedidoinput")
 	let totalDiv = document.querySelector('#total')
+	
 
 	/* NOTE: declare/initialize variable outside functions or code so it's accessible from any of them ("global") */
 	let totalValor = 0
@@ -152,6 +153,23 @@ let initialBottom = 0
 			}
 		})
 	}
+
+	// Display message if budget is empty
+		let emptyBudgetMessage = document.querySelector("#emptyBudgetMessage")
+		let totalResultForm = document.querySelector("#totalResultForm")
+		
+		function isBudgetEmptyMessage() {
+			if (totalResultForm.value == 0) {
+				console.log("uno")
+				emptyBudgetMessage.style.display = "flex"
+			} else {
+				console.log("dos")
+				emptyBudgetMessage.style.display = "none"
+			}
+		}
+
+		isBudgetEmptyMessage() // Execute it at the beginning in case there's a budget already (after form submission error)
+			
 	
 	/* FOR SCREENS WITH HOVER */
 		let cantidadInput = document.querySelector("#cantidad")
@@ -216,14 +234,19 @@ let initialBottom = 0
 						let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
 						totalValor -= subtotalToDelete
 
-						totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+						// totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+						// totalResultForm.value = parseFloat(totalValor).toFixed(2) // Changes displayed value
+						totalResultForm.setAttribute("value", parseFloat(totalValor).toFixed(2)) // Also need to change attribute of input
+						isBudgetEmptyMessage()
 					})
 					/* TOTAL */
-					totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+					// totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+					// totalResultForm.value = parseFloat(totalValor).toFixed(2) // Changes displayed value
+					totalResultForm.setAttribute("value", parseFloat(totalValor).toFixed(2)) // Also need to change attribute of input
+					isBudgetEmptyMessage()
 
 					/* PEDIDO */
 					// pedidoinput.value = contenedoritemspresupuesto.innerText
-					// presupuestoResult.value = contenedoritemspresupuesto.innerHTML
 
 					/* Sucess message */
 					errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists
@@ -305,11 +328,17 @@ let initialBottom = 0
 							let subtotalToDelete = contenedoritem.innerText.substring(contenedoritem.innerText.indexOf("$") + 1)
 							totalValor -= subtotalToDelete
 
-							totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+							// totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+							// totalResultForm.value = parseFloat(totalValor).toFixed(2) // Changes displayed value
+							totalResultForm.setAttribute("value", parseFloat(totalValor).toFixed(2)) // Also need to change attribute of input
+							isBudgetEmptyMessage()
 						})
 						/* TOTAL */
-						console.log(typeof totalValor)
-						totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+						// totalDiv.innerHTML = "----------------------------- <br/> Total: $" + parseFloat(totalValor).toFixed(2)
+						// totalResultForm.value = parseFloat(totalValor).toFixed(2) // Changes displayed value
+						totalResultForm.setAttribute("value", parseFloat(totalValor).toFixed(2)) // Also need to change attribute of input
+						isBudgetEmptyMessage()
+
 					
 						/* Sucess message */
 						errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists

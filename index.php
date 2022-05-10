@@ -230,12 +230,15 @@
 					<h2>SIMULACIÓN PRESUPUESTO</h2>
 					<h3>Presupuesto actual:</h3>
 					<div id="contenedoritemspresupuesto">
-						<?php if(isset($_SESSION['presupuesto'])) {
-						echo $_SESSION['presupuesto'];
-					} ?>
+						<?php if(isset($_SESSION['presupuestoListForm'])) {
+							echo $_SESSION['presupuestoListForm'];
+						} ?>
 					</div>
-					<input type="hidden" name="presupuestoResult" id="presupuestoResult">
-					<div id="total"></div>
+					<input type="hidden" name="presupuestoListForm" id="presupuestoListForm">
+					<div id="emptyBudgetMessage">No se ha seleccionado ningún producto aún.</div>
+					<div id="total"><p>Total: $</p><input type="text" name="totalResultForm" id="totalResultForm" value="<?php if(isset($_SESSION['totalResultForm'])) {
+							echo $_SESSION['totalResultForm'];
+						} else { echo 0; } ?>"></div>
 					<h5>Añadir comentario</h5>
 					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje." value="<?php echo isset($_SESSION['pedidoinput']) ? $_SESSION['pedidoinput'] : '' ?>"></textarea>
 			</div>

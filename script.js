@@ -835,24 +835,30 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 /////////////////////// FORM VALIDATION / STYLING ///////////////////////
 	let presupuestoForm = document.querySelector("#presupuestoForm")
-	let presupuestoResult = document.querySelector("#presupuestoResult")
+	let presupuestoListForm = document.querySelector("#presupuestoListForm")
 	// let contenedoritemspresupuesto = document.querySelector("#contenedoritemspresupuesto")
 
 	presupuestoForm.addEventListener("submit", function(e){
 		// e.preventDefault()
-		presupuestoResult.value = contenedoritemspresupuesto.innerHTML // Se actualiza el resultado del presupuesto (lista) al enviar el formulario, no a medida que se clickea un producto o una X
+		presupuestoListForm.value = contenedoritemspresupuesto.innerHTML // Se actualiza el resultado del presupuesto (lista) al enviar el formulario, no a medida que se clickea un producto o una X
 	})
 
-	let deleteButtons = document.querySelectorAll("#contenedoritemspresupuesto .fa-times")
+	// Add the removeItem event again after submit with error
+		let deleteButtons = document.querySelectorAll("#contenedoritemspresupuesto .fa-times")
 
-	if (contenedoritemspresupuesto !== "") { // If there's a list at the beggining (cause it was created previously but the form submission returned to index), with its contect stored in a session variable... Restart the onClick events cause they get lost in PHP
-		deleteButtons.forEach(function(button){
-			button.addEventListener("click", function(){
-				button.parentNode.parentNode.remove()
-				console.log("clickeadoooooooooooodsadsads")
+		if (contenedoritemspresupuesto !== "") { // If there's a list at the beggining (cause it was created previously but the form submission returned to index), with its contect stored in a session variable... Restart the onClick events cause they get lost in PHP
+			deleteButtons.forEach(function(button){
+				button.addEventListener("click", function(){
+					this.parentNode.parentNode.remove()
+					
+					let subtotalToDelete = this.parentNode.innerText.substring(this.parentNode.innerText.indexOf("$") + 1)
+					console.log(subtotalToDelete)
+					// totalResultForm.value = parseFloat(totalResultForm.value - subtotalToDelete).toFixed(2) // Changes displayed value
+					totalResultForm.setAttribute("value", parseFloat(totalValor).toFixed(2)) // Also need to change attribute of input
+					isBudgetEmptyMessage()
+				})
 			})
-		})
-	}
+		}
 
 	////////// NAME ///////////
 		let nameSurnameInput = document.querySelector("#nameSurnameInput")

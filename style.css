@@ -927,7 +927,6 @@ h2 {
 		background: var(--color5);
 		z-index: 4;
 		grid-area: presupuesto;
-		color: #d3bcfd;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -967,52 +966,68 @@ h2 {
 		margin-left: 5px;
 	}
 
-	#presupuesto #total {
-		color: #324f8f;
-		font-family: system-ui;
-		font-weight: bold;
+	#emptyBudgetMessage {
+
 	}
+
+	/* TOTAL */
+		#presupuesto #total {
+			color: #324f8f;
+			font-family: system-ui;
+			font-weight: bold;
+		}
+
+		#presupuesto #total p {
+			display: inline-block;
+		}
+
+		#presupuesto #total input {
+			background: none;
+			border: none;
+			pointer-events: none;
+		}
 
 	#presupuesto form {
 		width: 75%;
 	}
 
-	#pedidoinput {
-		width: 100%;
-		background: #1d2d50;
-		outline: none;
-		border-radius: 5px;
-		color: white;
-		transition: 0.1s;
-		box-shadow: 4px 4px 0 0 #879ed3;
-		resize: none;
-		border: 2px solid #b7d1ff;
-		padding: 0px 4px;
-		line-height: normal;
-		font-size: 14px;
-	}
+	/* Comentario extra */
+		#pedidoinput {
+			width: 100%;
+			background: #1d2d50;
+			outline: none;
+			border-radius: 5px;
+			color: white;
+			transition: 0.1s;
+			box-shadow: 4px 4px 0 0 #879ed3;
+			resize: none;
+			border: 2px solid #b7d1ff;
+			padding: 0px 4px;
+			line-height: normal;
+			font-size: 14px;
+		}
 
-	#pedidoinput:focus {
-		
-	}
+		#pedidoinput:focus {
+			
+		}
 
-	#pedidoinput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-		color: #b7d1ff;
-		opacity: 1; /* Firefox */
-	}
+		#pedidoinput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: #b7d1ff;
+			opacity: 1; /* Firefox */
+		}
 
-	#pedidoinput:-ms-input-placeholder { /* Internet Explorer 10-11 */
-		color: #b7d1ff;
-	}
+		#pedidoinput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: #b7d1ff;
+		}
 
-	#pedidoinput::-ms-input-placeholder { /* Microsoft Edge */
-		color: #b7d1ff;
-	}
+		#pedidoinput::-ms-input-placeholder { /* Microsoft Edge */
+			color: #b7d1ff;
+		}
 
-	/*#pedidoinput:focus-visible {
-		outline: none;
-		outline: 4px solid #d3bcfd;
-	}*/
+		/*#pedidoinput:focus-visible {
+			outline: none;
+			outline: 4px solid #d3bcfd;
+		}*/
 
 /************************************** FORMULARIO **************************************/
 
