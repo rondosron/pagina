@@ -29,6 +29,43 @@
 		#productsContainer {
 			grid-template-columns: 1fr 1fr 1fr;
 		}
+		
+		/* Vertical modal */
+			#modalContainer {
+				align-items: unset; /* Remove align-items = center for smaller screens because it won't let you add margin bottom */
+			}
+			#contenedorproductooverlay {
+				grid-template-areas: 	"foto"
+										"datos";
+				/*background-size: 190% 138%;*/
+				min-width: 263px;
+				grid-template-columns: none;
+				width: auto;
+				max-height: none;
+				/*height: auto;  VER SI QUEDA MAL EL ALTO */
+				/*position: absolute;*/
+				/*top: 10px;*/
+				margin: 10px;
+				max-width: 400px;
+			}
+			/*#datos {
+				max-width: none;
+			}*/
+			#contenedorimagen {
+				height: auto;
+		    	width: 100%;
+		    	max-width: none;
+		    	max-width: 400px;
+			}
+			#imagenoverlay {
+			    height: auto;
+		    	width: 100%;
+			}
+			#precio, #talles, #colores {
+				margin-bottom: 5px;
+		    	padding-bottom: 7px;
+			}
+
 		#contenedorinfo {
 			grid-template-areas: 	"a b"
 									"c d";
@@ -62,41 +99,7 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: 0.2fr repeat(4, 1fr); /* title + 4 cards */
 		}
-		#modalContainer {
-			align-items: unset; /* Remove align-items = center for smaller screens because it won't let you add margin bottom */
-		}
-		#contenedorproductooverlay {
-			grid-template-areas: 	"foto"
-									"datos";
-			/*background-size: 190% 138%;*/
-			min-width: 263px;
-			grid-template-columns: none;
-			width: auto;
-			max-height: none;
-			/*height: auto;  VER SI QUEDA MAL EL ALTO */
-			/*position: absolute;*/
-			/*top: 10px;*/
-			margin: 10px;
-		}
-		#datos {
-			max-width: none;
-		}
-		#contenedorimagen {
-			height: auto;
-	    	width: 100%;
-	    	max-width: none;
-		}
-		#imagenoverlay {
-		    height: auto;
-	    	width: 100%;
-		}
-		#precio, #talles, #colores {
-			margin-bottom: 5px;
-	    	padding-bottom: 7px;
-		}
-		#expandButton {
-			visibility: visible; 
-		}
+		
 	}
 
 	@media screen and (max-width: 575px) {

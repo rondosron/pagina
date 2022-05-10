@@ -223,6 +223,7 @@ let initialBottom = 0
 
 					/* PEDIDO */
 					// pedidoinput.value = contenedoritemspresupuesto.innerText
+					// presupuestoResult.value = contenedoritemspresupuesto.innerHTML
 
 					/* Sucess message */
 					errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists

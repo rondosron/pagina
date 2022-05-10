@@ -226,15 +226,17 @@
 		<!-- PRESUPUESTO + FORMULARIO -->
 		<div id="presupuestoyformulario">
 			<div id="presupuesto">
-				<h2>SIMULACIÓN PRESUPUESTO</h2>
-				<h3>Presupuesto actual:</h3>
-				<div id="contenedoritemspresupuesto">
-					<!-- <?php echo isset($_SESSION['presupuestoValue']) ? $_SESSION['presupuestoValue'] : '' ?> -->
-					
-				</div>
-				<div id="total"></div>
-				<h5>Añadir comentario</h5>
-				<form action="envioform.php" method="POST" name="consulta">
+				<form id="presupuestoForm" action="envioform.php" method="POST" name="consulta">
+					<h2>SIMULACIÓN PRESUPUESTO</h2>
+					<h3>Presupuesto actual:</h3>
+					<div id="contenedoritemspresupuesto">
+						<?php if(isset($_SESSION['presupuesto'])) {
+						echo $_SESSION['presupuesto'];
+					} ?>
+					</div>
+					<input type="hidden" name="presupuestoResult" id="presupuestoResult">
+					<div id="total"></div>
+					<h5>Añadir comentario</h5>
 					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje." value="<?php echo isset($_SESSION['pedidoinput']) ? $_SESSION['pedidoinput'] : '' ?>"></textarea>
 			</div>
 

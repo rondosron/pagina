@@ -834,6 +834,26 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	updateActivePage()
 
 /////////////////////// FORM VALIDATION / STYLING ///////////////////////
+	let presupuestoForm = document.querySelector("#presupuestoForm")
+	let presupuestoResult = document.querySelector("#presupuestoResult")
+	// let contenedoritemspresupuesto = document.querySelector("#contenedoritemspresupuesto")
+
+	presupuestoForm.addEventListener("submit", function(e){
+		// e.preventDefault()
+		presupuestoResult.value = contenedoritemspresupuesto.innerHTML // Se actualiza el resultado del presupuesto (lista) al enviar el formulario, no a medida que se clickea un producto o una X
+	})
+
+	let deleteButtons = document.querySelectorAll("#contenedoritemspresupuesto .fa-times")
+
+	if (contenedoritemspresupuesto !== "") { // If there's a list at the beggining (cause it was created previously but the form submission returned to index), with its contect stored in a session variable... Restart the onClick events cause they get lost in PHP
+		deleteButtons.forEach(function(button){
+			button.addEventListener("click", function(){
+				button.parentNode.parentNode.remove()
+				console.log("clickeadoooooooooooodsadsads")
+			})
+		})
+	}
+
 	////////// NAME ///////////
 		let nameSurnameInput = document.querySelector("#nameSurnameInput")
 		let nameSurnameLabel = document.querySelector("#nameSurnameLabel")
