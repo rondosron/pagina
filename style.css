@@ -69,6 +69,43 @@ font-family: 'Overlock', cursive;
 	src: local("Royal King Free");
 }
 
+@font-face {
+	font-family: Coluna Rounded;
+	src: local("Coluna Rounded");
+}
+
+@font-face {
+	font-family: Geometos Rounded;
+	src: local("Geometos Rounded");
+}
+
+@font-face {
+	font-family: Sequel Normal;
+	src: local("Sequel_Demo");
+}
+
+@font-face {
+	font-family: "H.H. Samuel Ultracomprimida Negra";
+	src: local("H.H. Samuel Ultracomprimida Negra");
+}
+
+@font-face {
+	font-family: Ostrich Sans Negra;
+	src: local("Ostrich Sans Negra");
+}
+
+@font-face {
+	font-family: Subtle Curves Normal;
+	src: local("Subtle Curves Normal");
+}
+
+@font-face {
+	font-family: Prequel Demo Shadow Cursiva;
+	src: local("Prequel Demo Shadow Cursiva");
+}
+
+
+
 html {
 	scroll-padding-top: 50px; /* Height of fixed navbar. Allows scrolling to the top of the linked element with a margin/padding that prevents navbar to overlap content */
 }
@@ -975,16 +1012,26 @@ h2 {
 			color: #324f8f;
 			font-family: system-ui;
 			font-weight: bold;
+			position: relative;
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			margin: 0 0 10px 0;
 		}
 
 		#presupuesto #total p {
 			display: inline-block;
+			margin: 0;
+			white-space: nowrap;
 		}
 
 		#presupuesto #total input {
-			background: none;
+			background: red;
 			border: none;
 			pointer-events: none;
+			width: 60%;
+			height: min-content;
+			line-height: normal;
 		}
 
 	#presupuesto form {
@@ -1081,7 +1128,7 @@ h2 {
 		#nameSurnameContainer {
 			display: flex;
 			position: relative;
-			margin-top: 18px;
+			margin-top: 28px;
 			margin-bottom: 5px;
 			align-items: center;
 		}
@@ -1110,13 +1157,13 @@ h2 {
 			position: absolute;
 			color: var(--color1);
 			left: 15px;
-			top: 0px;
+			bottom: 1px;
 			transition: 0.5s;
 		}
 
 		#nameSurnameInput:focus ~ #nameSurnameLabel {
 			/*right: 105%;*/
-			left: 105%;
+			bottom: 100%;
 		}
 
 	/*** Phone ***/
@@ -1251,6 +1298,7 @@ h2 {
 			border-radius: 10px;
 			line-height: normal;
 			color: var(--color1);
+			font-size: 16px;
 		}
 
 		#emailContainer input {

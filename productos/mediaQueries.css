@@ -262,21 +262,25 @@
 		.contenedorBoton .alpresupuestoMobile {
 			position: relative;
 			width: 88%;
-			background: lightgrey;
-			border-radius: 13px;
-			height: fit-content;
-			box-shadow: 0px 3px 0px #081e50;
-			background: var(--color2);
-			box-shadow: 0 0 11px #000000cc;
-			background: linear-gradient(0deg, #22396c, #2652af );
+			border-radius: 15px;
+			height: 26px;
+			/*box-shadow: 0px 3px 0px #081e50;*/
+			/*background: var(--color2);*/
+			/*box-shadow: 0 0 11px #000000cc;*/
+			background: linear-gradient(0deg, #22396c, #2652af);
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 		.contenedorBoton .alpresupuestoMobile h3 {
 			text-align: center;
 			font-size: 1em;
 			/* font-weight: bold; */
-			line-height: 1.22em;
+			/*line-height: 1.22em;*/
 			color: var(--color5);
 			text-shadow: -1px -1px 0px #041b4e;
+			margin: 0;
+			text-transform: uppercase;
 		}
 	}
 

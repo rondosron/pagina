@@ -260,7 +260,7 @@
 					<div id="phoneContainer">
 						<input type="number" name="phone" id="phoneInput" value="<?php echo isset($_SESSION['phoneForm']) ? $_SESSION['phoneForm'] : '' ?>">
 						<label for="phoneInput" id="phoneLabel">
-							<p>Phone</p>
+							<p>Teléfono</p>
 							<i class="fas fa-phone-alt"></i>
 						</label>
 					</div>
@@ -633,7 +633,7 @@
 							<input id="cantidad" type="number" name="cantidad" value="0" min="0">
 						</div>
 						<div id="contenedorBoton">
-							<div id="alpresupuesto">
+							<div id="alpresupuesto" class="isClickable">
 								<h3>Agregar al presupuesto</h3>
 							</div>
 						</div>

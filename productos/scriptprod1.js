@@ -178,6 +178,11 @@ let initialBottom = 0
 		let errorMessageQuantityModal = document.querySelector("#errorMessageQuantityModal")
 		let successMessageAddedItem = document.querySelector("#successMessageAddedItem")
 
+		let successMessageOpacity = 0
+		let successMessageDisplay = 0
+		let errorMessageQuantityModalOpacity = 0
+		let errorMessageQuantityModalDisplay = 0
+
 		alpresupuesto.addEventListener('mousedown', function(){ // clickear en el boton
 			/* NOTE: cant define a function for both kinds of devices because they're different and both need to be active at the same time in some cases */
 
@@ -185,14 +190,22 @@ let initialBottom = 0
 
 				/* Not allowed quantity */
 				if (cantidadInput.value <= 0) {
+					successMessageAddedItem.style.display = "none" // Delete previous success message in case it exists
+
 					errorMessageQuantityModal.style.opacity = "1"
 					errorMessageQuantityModal.style.display = "flex"
-					setTimeout(function(){
+
+					// Reset all Timeouts
+					clearTimeout(errorMessageQuantityModalOpacity)
+					clearTimeout(errorMessageQuantityModalDisplay)
+
+					errorMessageQuantityModalOpacity = setTimeout(function(){
 						errorMessageQuantityModal.style.opacity = "0"
 					}, 3000)
-					setTimeout(function(){
+					errorMessageQuantityModalDisplay = setTimeout(function(){
 						errorMessageQuantityModal.style.display = "none"
 					}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
+
 					return
 				} else { // Allowed quantity
 					cantidadPedida = cantidadInput.value
@@ -252,10 +265,15 @@ let initialBottom = 0
 					errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists
 					successMessageAddedItem.style.opacity = "1"
 					successMessageAddedItem.style.display = "flex"
-					setTimeout(function(){
+
+					// Reset all Timeouts
+					clearTimeout(successMessageOpacity)
+					clearTimeout(successMessageDisplay)
+
+					successMessageOpacity = setTimeout(function(){
 						successMessageAddedItem.style.opacity = "0"
 					}, 3000)
-					setTimeout(function(){
+					successMessageDisplay = setTimeout(function(){
 						successMessageAddedItem.style.display = "none"
 					}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
 				}
@@ -282,14 +300,22 @@ let initialBottom = 0
 
 					/* Not allowed quantity */
 					if (cantidadPedida <= 0) {
+						successMessageAddedItem.style.display = "none" // Delete previous success message in case it exists
+						
 						errorMessageQuantityModal.style.opacity = "1"
 						errorMessageQuantityModal.style.display = "flex"
-						setTimeout(function(){
+
+						// Reset Timeouts
+						clearTimeout(errorMessageQuantityModalOpacity)
+						clearTimeout(errorMessageQuantityModalDisplay)
+
+						errorMessageQuantityModalOpacity = setTimeout(function(){
 							errorMessageQuantityModal.style.opacity = "0"
 						}, 3000)
-						setTimeout(function(){
+						errorMessageQuantityModalDisplay = setTimeout(function(){
 							errorMessageQuantityModal.style.display = "none"
 						}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
+
 						return
 					} else { // Allowed quantity
 						nombre = button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-nombre") + " (Cód: " + button.parentNode.parentNode.parentNode.getElementsByTagName("img")[0].getAttribute("data-id") + ")"
@@ -342,12 +368,18 @@ let initialBottom = 0
 					
 						/* Sucess message */
 						errorMessageQuantityModal.style.display = "none" // Delete previous error message in case it exists
+
+						// Reset all Timeouts
+						clearTimeout(successMessageOpacity)
+						clearTimeout(successMessageDisplay)
+						
 						successMessageAddedItem.style.opacity = "1"
 						successMessageAddedItem.style.display = "flex"
-						setTimeout(function(){
+
+						successMessageOpacity = setTimeout(function(){
 							successMessageAddedItem.style.opacity = "0"
 						}, 3000)
-						setTimeout(function(){
+						successMessageDisplay = setTimeout(function(){
 							successMessageAddedItem.style.display = "none"
 						}, 3800) // 3800 = 3000 from the other Timeout + 0.8s from transition to opacity 0
 					}

@@ -57,6 +57,7 @@ body {
 	/*text-shadow: -1px -1px 0px #041b4e;*/
 	/*font-family: vag rounded bt;*/
 	letter-spacing: 1px;
+	pointer-events: none;
 
 	/* Option 2 */
 	/*text-align: center;

@@ -852,6 +852,9 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 					this.parentNode.parentNode.remove()
 					
 					let subtotalToDelete = this.parentNode.innerText.substring(this.parentNode.innerText.indexOf("$") + 1)
+					totalValor = totalResultForm.value
+					console.log(totalValor)
+					totalValor -= subtotalToDelete
 					console.log(subtotalToDelete)
 					// totalResultForm.value = parseFloat(totalResultForm.value - subtotalToDelete).toFixed(2) // Changes displayed value
 					totalResultForm.setAttribute("value", parseFloat(totalValor).toFixed(2)) // Also need to change attribute of input
@@ -866,8 +869,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 		nameSurnameInput.addEventListener("focusin", function(e){
 			if (nameSurnameInput.value == "") {
-				nameSurnameLabel.style.left = "105%"
-				// nameSurnameLabel.style.left = "unset"
+				nameSurnameLabel.style.bottom = "100%"
 
 				nameSurnameInput.style.background = "var(--color5)"
 				nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
@@ -877,8 +879,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 		// To test if there's already a value after submitting form with errors (value is maintained). NOTE: not worthy to define a function because focusin and focusout events are different and can't be put together
 		if (nameSurnameInput.value != "") {
-			nameSurnameLabel.style.left = "105%"
-			// nameSurnameLabel.style.left = "unset"
+			nameSurnameLabel.style.bottom = "100%"
 
 			nameSurnameInput.style.background = "var(--color5)"
 			nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
@@ -886,14 +887,12 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 		nameSurnameInput.addEventListener("focusout", function(e){
 			if (nameSurnameInput.value != "") {
-				nameSurnameLabel.style.left = "105%"
-				// nameSurnameLabel.style.left = "unset"
+				nameSurnameLabel.style.bottom = "100%"
 
 				nameSurnameInput.style.background = "var(--color5)"
 				nameSurnameInput.style.boxShadow = "inset 2px 2px 6px #cbcbcb, inset -3px -3px 5px #ffffff, inset 2px 2px 6px #9d9d9dc9, inset -3px -3px 5px #ffffff"
 			} else {
-				nameSurnameLabel.style.left = "15px"
-				// nameSurnameLabel.style.right = "unset"
+				nameSurnameLabel.style.bottom = "1px"
 
 				nameSurnameInput.style.background = "linear-gradient(178deg, #ffffff, #d7d7d7)"
 				nameSurnameInput.style.boxShadow = "2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, 2px 2px 6px #cbcbcb, -2px -2px 6px #ffffff, inset -2px -2px 6px #cbcbcb, inset 2px 2px 6px #ffffff"
@@ -957,6 +956,58 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			phoneLabelIcon.style.opacity = "1"
 		}
 
+	///////// EMAIL ////////////
+		let emailInput = document.querySelector("#emailInput")
+		let emailLabel = document.querySelector("#emailLabel")
+
+		emailInput.addEventListener("focusin", function(e){
+			if (emailInput.value == "") {
+				emailLabel.style.color = "#375aa5"
+				emailLabel.style.top = "-8px"
+				emailLabel.style.background = "var(--color5)"
+				emailLabel.style.padding = "0 3px"
+				emailLabel.style.fontSize = "0.8rem"
+
+				emailInput.style.background = "transparent"
+				emailInput.style.border = "1px #375aa5 solid"
+			} 
+			
+		})
+
+		// To test if there's already a value after submitting form with errors (value is maintained). NOTE: not worthy to define a function because focusin and focusout events are different and can't be put together
+		if (emailInput.value != "") {
+			emailLabel.style.color = "#375aa5"
+			emailLabel.style.top = "-8px"
+			emailLabel.style.background = "var(--color5)"
+			emailLabel.style.padding = "0 3px"
+			emailLabel.style.fontSize = "0.8rem"
+
+			emailInput.style.background = "transparent"
+			emailInput.style.border = "1px #375aa5 solid"
+		}
+
+		emailInput.addEventListener("focusout", function(e){
+			if (emailInput.value != "") {
+				emailLabel.style.color = "#375aa5"
+				emailLabel.style.top = "-8px"
+				emailLabel.style.background = "var(--color5)"
+				emailLabel.style.padding = "0 3px"
+				emailLabel.style.fontSize = "0.8rem"
+
+				emailInput.style.background = "transparent"
+				emailInput.style.border = "1px #375aa5 solid"
+			} else {
+				// Initial values
+				emailLabel.style.top = "3px"
+				emailLabel.style.color = "var(--color1)"
+				emailLabel.style.fontSize = "16px"
+				emailLabel.style.padding = "0"
+
+				emailInput.style.border = "var(--color1) 1px solid"
+				emailInput.style.background = "transparent"
+			}
+		})
+
 /////////////////////// SEND VIA WHATSAPP ////////////////////
 	let sendViaWhatsapp = document.querySelector("#sendViaWhatsapp")
 	let errorMessageNameWhatsapp = document.querySelector("#errorMessageNameWhatsapp")
@@ -972,7 +1023,27 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		}
 		// https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale
 		
-		let texto = encodeURIComponent(contenedoritemspresupuesto.innerText)
+		let presupuestoWpp = encodeURIComponent(contenedoritemspresupuesto.innerText)
+		let totalPresupuestoWpp = totalResultForm.value
+		let comentarioWpp = pedidoinput.value
+		let nombreWpp = nameSurnameInput.value
+		let telefonoWpp = phoneInput.value
+		let direccionWpp = addressInput.value
+		let emailWpp = emailInput.value
+
+		// %0a es un salto de linea
+		let texto = `
+			${comentarioWpp}%0a %0a
+			*Presupuesto solicitado:*%0a
+			${presupuestoWpp}%0a
+			*Total:* ${totalPresupuestoWpp}%0a
+			%0a
+			*- Nombre:* ${nombreWpp}%0a
+			*- Teléfono:* ${telefonoWpp}%0a
+			*- Email:* ${emailWpp}%0a
+			*- Dirección:* ${direccionWpp}
+		` 
+
 		window.location.href = `https://wa.me/2995477807?text=${texto}`
 	})
 
