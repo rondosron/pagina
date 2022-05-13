@@ -9,6 +9,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Overlock:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+/* font-family: 'Itim', cursive; */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+/* font-family: 'Vibur', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+/* font-family: 'Comfortaa', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/* font-family: 'Fredoka One', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+/* font-family: 'Baloo Bhai 2', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Karantina&display=swap');
+/* font-family: 'Karantina', cursive; */
+
+@import url('https://fonts.googleapis.com/css2?family=Vibur&display=swap');
+/* font-family: 'Vibur', cursive; */
+
 /*
 font-family: 'Bree Serif', serif;
 font-family: 'DM Serif Display', serif;
@@ -69,42 +90,10 @@ font-family: 'Overlock', cursive;
 	src: local("Royal King Free");
 }
 
-@font-face {
-	font-family: Coluna Rounded;
-	src: local("Coluna Rounded");
+
+img {
+	object-fit: contain;
 }
-
-@font-face {
-	font-family: Geometos Rounded;
-	src: local("Geometos Rounded");
-}
-
-@font-face {
-	font-family: Sequel Normal;
-	src: local("Sequel_Demo");
-}
-
-@font-face {
-	font-family: "H.H. Samuel Ultracomprimida Negra";
-	src: local("H.H. Samuel Ultracomprimida Negra");
-}
-
-@font-face {
-	font-family: Ostrich Sans Negra;
-	src: local("Ostrich Sans Negra");
-}
-
-@font-face {
-	font-family: Subtle Curves Normal;
-	src: local("Subtle Curves Normal");
-}
-
-@font-face {
-	font-family: Prequel Demo Shadow Cursiva;
-	src: local("Prequel Demo Shadow Cursiva");
-}
-
-
 
 html {
 	scroll-padding-top: 50px; /* Height of fixed navbar. Allows scrolling to the top of the linked element with a margin/padding that prevents navbar to overlap content */
@@ -294,11 +283,11 @@ h2 {
 			content: none;
 		}
 
-		#dudas {
-			position: relative;
+		.botonnav p {
+			margin: 0;
 		}
 
-		#contenedorSubItems {
+		.contenedorSubItems {
 			position: absolute;
 			left: 0;
 			top: 100%;
@@ -306,23 +295,6 @@ h2 {
 			flex-direction: column;
 			width: 100%;
 		}
-
-		/* NoToggle (>700px) */
-			.contenedorDudasNoToggleClicked {
-				display: grid !important;
-
-			}
-
-		/* InToggle (<700px) */
-			.dudasInToggleClicked {
-				/*width: 50% !important;*/
-			}
-
-			.contenedorDudasInToggleClicked {
-				display: flex !important;
-				/*height: 100% !important;
-				width: 100% !important;*/
-			}
 
 	#versionContainer {
 		max-height: 50px;
@@ -354,7 +326,7 @@ h2 {
 			#scrollContainerMenu {
 				display: contents; /* Ignore it on wide screens */
 			}
-			#contenedorSubItems {
+			.contenedorSubItems {
 				background: var(--color5);
 			}
 			.subItemBotonNav {
@@ -425,6 +397,9 @@ h2 {
 				width: 100%;
 				overflow-y: scroll;
 			}
+			#scrollContainerMenu::-webkit-scrollbar {
+				display: none;
+			}
 			.botonnav {
 				/*background: grey;*/
 				display: flex;
@@ -450,12 +425,12 @@ h2 {
 				z-index: 2;
 				transform: none;
 			}
-			#contenedorSubItems {
+			.contenedorSubItems {
 				/*left: 100%;*/
 				top: 0%;
 				position: relative;
 			}
-			#contenedorSubItems:after {
+			.contenedorSubItems:after {
 				content: "";
 				width: 100%;
 				height: 1px;
@@ -599,23 +574,50 @@ h2 {
 		display: block;
 		width: 100%;
 		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carouselContent p {
+		font-size: 42px;
 	}
 
 	.carouselButton {
 		position: absolute;
 		width: 50px;
 		height: 50px;
-		background: red;
+		background: #ffffff9c;
 		top: 50%;
 		transform: translateY(-50%);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carouselButton i {
+		color: #000000b3;
+		position: relative;
+		transform: scale(1.2);
 	}
 
 	#carouselButtonPrevious {
 		left: 0;
+		margin-left: 1.5%;
+	}
+
+	#carouselButtonPrevious i {
+		left: -1px;
 	}
 
 	#carouselButtonNext {
 		right: 0;
+		margin-right: 1.5%;
+	}
+
+	#carouselButtonNext i {
+		right: -1px;
 	}
 
 	#carouselItemIndicatorsContainer {
@@ -765,7 +767,7 @@ h2 {
 				color: var(--color5);
 			}
 
-			#resultFilterProductValue {
+			.resultFilterProductValue {
 				font-weight: bold;
 			}
 
@@ -1026,12 +1028,13 @@ h2 {
 		}
 
 		#presupuesto #total input {
-			background: red;
+			background: none;
 			border: none;
 			pointer-events: none;
 			width: 60%;
 			height: min-content;
 			line-height: normal;
+			color: var(--color1);
 		}
 
 	#presupuesto form {
@@ -1337,9 +1340,10 @@ h2 {
 	/*** Submit / Send via email button ***/
 		#sendViaEmail {
 			background: var(--color1);
-			border-radius: 31px;
+			border-radius: 6px;
 			/*width: 127px;*/
-			box-shadow: 2px 2px 0 0 #00000047, inset 2px 2px 5px 0 #92b4ff85, inset -2px -2px 5px 0 #09142ae0;
+			box-shadow: 2px 2px 0 0 #00000047, inset 2px 2px 5px 0 #92b4ff85, inset -2px -2px 5px 0 #09142ae0; /* Option 1 */
+			box-shadow: 2px 2px 0 0 #00000047, inset 0px 0px 0px 0 #92b4ff85, inset -2px -2px 5px 0px #09142ae0; /* Option 2 */
 			height: 28px;
 			margin: 10px 0 5px 0;
 			border: none;
@@ -3237,7 +3241,7 @@ h2 {
 	#contenedorinfo {
 		grid-area: info;
 		display: grid;
-		grid-template-areas: "a b c d";
+		grid-template-areas: "a b c";
 		gap: 30px;
 		background: var(--color0);
 		color: var(--color5);
@@ -3245,10 +3249,12 @@ h2 {
 		line-height: normal;
 		padding: 10px 0;
 		justify-content: center;
+		justify-content: space-evenly;
 	}
 
 	/* Titles */
 		#contenedorinfo h5 {
+			font-size: 14px;
 			text-transform: uppercase;
 			width: fit-content;
 		}
@@ -3263,19 +3269,23 @@ h2 {
 		text-decoration: none;
 	}
 
+	.itemFooterContainer a:hover {
+		color: #8fd6ff;
+	}
+
 	.itemFooterContainer i {
 		position: relative;
-		top: 3.2px;
+		top: -1px;
 	}
 
 	/* Subtitles */
 		#contenedorinfo p {
 			display: inline-block;
 			margin-left: 5px;
-			font-size: 20px;
+			font-size: 14px;
 			margin-bottom: 0px;
 			position: relative;
-			top: 1.646px;
+			/*top: 1.646px;*/
 			width: min-content;
 		}
 
@@ -3319,35 +3329,16 @@ h2 {
 	}
 
 	#mediosdepagofooter img {
-		height: 2.7rem;
+		height: 2.4rem;
 		width: auto;
 		margin: 2px;
 	}
-
-	#faqs {
-		/*background: white;*/
-		display: inline-block;
-		/*margin-left: 40px;*/
-		grid-area: c;
-	}
-
-	#faqs h1 {
-		text-transform: uppercase;
-		font-size: 20px;
-		margin-bottom: 0;
-	}
-
-	/*#faqs div p {
-		display: inline-block;
-		font-size: 20px;
-		margin-bottom: 0;
-	}*/
 
 	#contactofooter {
 		/*background: white;*/
 		display: inline-block;
 		/*margin-left: 40px;*/
-		grid-area: d;
+		grid-area: c;
 	}
 
 	#contactofooter div {
@@ -3365,7 +3356,7 @@ h2 {
 
 	#contactofooter div i {
 		color: #efefef;
-		transform: scale(1.8);
+		transform: scale(1.2);
 	}
 
 	#contactofooter div p {

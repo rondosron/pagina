@@ -67,8 +67,8 @@
 			}
 
 		#contenedorinfo {
-			grid-template-areas: 	"a b"
-									"c d";
+			/*grid-template-areas: 	"a b"
+									"c d";*/
 		}
 	}
 
@@ -171,7 +171,7 @@
 		.productBackground {
 			width: 100%;
 			height: 100%;
-			padding-top: 5px;
+			/*padding-top: 5px;*/
 			/*border-radius: 11px;*/
 		}
 		.productBackground:hover { /* reset values */
@@ -179,19 +179,21 @@
 			z-index: 1;
 			width: 100%;
 			height: 100%;
-			/*padding-top: 5px;*/
+			padding-top: 0px;
 			box-shadow: none;
 		}
 		.imageContainer {
 			flex-direction: column;
 			height: 100%;
-			width: 95%;
+			width: 100%;
 			/*overflow: visible;*/
 			justify-content: flex-start;
+			padding: 5px 5px 0 5px;
 		}
 		.imageContainer .imgContainer {
 			border-radius: 10px;
-			box-shadow: 0px 2px 15px #1d2d5040;
+			/*box-shadow: 0px 2px 15px #1d2d5040;*/
+			filter: drop-shadow(0px 1px 5px #0000005f);
 		}
 		.nombreyprecio { /* not for mobiles */
 			display: none;
@@ -251,6 +253,8 @@
 			text-align: center;
 			font-size: 16px;
 			color: var(--color1);
+			box-shadow: inset 1.5px 1.5px 0px 0px #c5c5c5;
+			background: white;
 		}
 		.botones .contenedorBoton {
 			display: flex;
@@ -262,7 +266,7 @@
 		.contenedorBoton .alpresupuestoMobile {
 			position: relative;
 			width: 88%;
-			border-radius: 15px;
+			border-radius: 5px;
 			height: 26px;
 			/*box-shadow: 0px 3px 0px #081e50;*/
 			/*background: var(--color2);*/
@@ -274,13 +278,16 @@
 		}
 		.contenedorBoton .alpresupuestoMobile h3 {
 			text-align: center;
-			font-size: 1em;
+			font-size: 1.08em;
 			/* font-weight: bold; */
 			/*line-height: 1.22em;*/
 			color: var(--color5);
-			text-shadow: -1px -1px 0px #041b4e;
+			/*text-shadow: -1px -1px 0px #041b4e;*/
 			margin: 0;
 			text-transform: uppercase;
+			font-family: 'Comfortaa', cursive;
+			font-family: 'Baloo Bhai 2', cursive;
+			top: 1px;
 		}
 	}
 

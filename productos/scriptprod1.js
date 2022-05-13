@@ -236,6 +236,7 @@ let initialBottom = 0
 					const deleteitem = document.createElement('i')
 					deleteitem.classList.add('fas') // clase de FontAwesome
 					deleteitem.classList.add('fa-times') // clase de FontAwesome
+					deleteitem.classList.add("isClickable")
 					contenedorlinea.appendChild(deleteitem)
 					contenedoritem.appendChild(contenedorlinea)
 

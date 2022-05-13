@@ -198,44 +198,62 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 	let resultFilterProduct = document.querySelector("#resultFilterProduct")
 	let lastFilter = ""
+	let lastMarca = ""
 
-	function filtrar(filtro) {
+	function filtrar(filtro, marca) {
 		let filtrofinal = filtro.toLowerCase()
 		lastFilter = filtrofinal
+		lastMarca = marca
+		// console.log("Buscando: " + "filtro " + filtrofinal + " y marca " + lastMarca)
 		originalListOfProducts.forEach(function(producto) {
-			let data = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-marca").toLowerCase()
-			if (!data.includes(filtrofinal)) {
+			let marcaFiltro = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-marca").toLowerCase()
+			let dataFiltro = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-filtro").toLowerCase()
+			let nombreFiltro = producto.childNodes[1].childNodes[1].childNodes[1].childNodes[1].getAttribute("data-nombre").toLowerCase()
+			// console.log(marcaFiltro)
+			// console.log(dataFiltro)
+			if (marcaFiltro.includes(lastMarca) && (dataFiltro.includes(filtrofinal) || nombreFiltro.includes(filtrofinal) )) {
 				// Remove items out of filter
 				// producto.parentElement.parentElement.parentElement.style.display = "none"
 				// producto.parentNode.parentNode.parentNode.classList.remove("filtroVisible")
 				/* If menu disappears */
-				producto.style.display = "none"
-				producto.classList.remove("filtroVisible")
+				producto.style.display = "inline-flex"
+				producto.classList.add("filtroVisible")
 			} else {
 				// producto.parentElement.parentElement.parentElement.style.display = "inline-flex"
 				// producto.parentNode.parentNode.parentNode.classList.add("filtroVisible")
-				producto.style.display = "inline-flex"
-				producto.classList.add("filtroVisible")
+				
+
+				producto.style.display = "none"
+				producto.classList.remove("filtroVisible")
 			}
 		})
 
-		if (filtrofinal == "") {
-			resultFilterProduct.innerHTML = ` <span id='resultFilterProductValue'> todos los productos</span>`
-		} else {
-			resultFilterProduct.innerHTML = ` todos los productos <span id='resultFilterProductValue'>${filtrofinal.toUpperCase()}</span>`
-		}		
+		// si son los dos vacios
+		// si son los dos no vacios
+		// else el resto (uno de los dos)
+
+		if (filtrofinal == "" && lastMarca == "") { // Todos los productos
+			resultFilterProduct.innerHTML = `<span class='resultFilterProductValue'> todos los productos</span>`
+		} else if (filtrofinal != "" && lastMarca != "") { // El filtro de una marca
+			resultFilterProduct.innerHTML = ` todos los productos <span class='resultFilterProductValue'>${filtrofinal.toUpperCase()}</span> de la marca <span class='resultFilterProductValue'>${marca.toUpperCase()}</span>`
+		} else if (filtrofinal == "" && lastMarca != "") { // Todos los productos de una marca
+			resultFilterProduct.innerHTML = `<span class='resultFilterProductValue'> todos los productos</span> de la marca <span class='resultFilterProductValue'>${marca.toUpperCase()}</span>`
+		}
 	}
 
 	let botonesfiltro = document.querySelectorAll('.filtro')
 
 	botonesfiltro.forEach(function(boton){
 		boton.addEventListener('click', function(){
+			let marca = boton.getAttribute("data-marca").toLowerCase()
 			let filtro = boton.getAttribute("data-filtro").toLowerCase()
-			filtrar(filtro)
+			filtrar(filtro, marca)
 			
 			/* Restart to page 1 and reset buttons stlyling */
 			currentPage = 1
 			currentLastItemSpaceAvailable = productsPerPage
+
+
 
 			updatePagination()
 			printPagesList()
@@ -255,40 +273,30 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	})
 
 //////////////////////////// SUB ITEMS NAV //////////////////////////////////////
+	let superItemsList = document.querySelectorAll('.superItem')
+	let contenedorSubItemsList = document.querySelectorAll('.contenedorSubItems')
 
-	// let busqueda = document.querySelector('#busqueda')
-	//let contenedorbotones = document.querySelector('#contenedorbotones')
-	let contenedorSubItems = document.querySelector('#contenedorSubItems')
+	superItemsList.forEach(function(superItem){
+		superItem.addEventListener('click', function(e){
+			// First of all, close all menus (but skip this button, otherwise the open/close menu click doesnt work)
+			let thisButton = this
+			contenedorSubItemsList.forEach(function(item){
+				if (item == thisButton.children[1]) {
+					return
+				} else {
+					item.style.display = "none"
+				}
+			})
 
-	let superItem = document.querySelector('#superItem')
-	let subItemBotonNav = document.querySelectorAll(".subItemBotonNav")
-
-	contenedorSubItemsActivado = false
-
-	superItem.addEventListener('click', function(e){
-		console.log(this)
-		e.stopPropagation() // para que no se clickee el padre tambien
-		contenedorSubItemsActivado = !contenedorSubItemsActivado
-		if (window.matchMedia("(max-width: 700px)").matches) {
-			if (contenedorSubItemsActivado) {
-				console.log(this)
-				this.classList.add("dudasInToggleClicked")
-
-				contenedorSubItems.classList.add("contenedorDudasInToggleClicked")
+			e.stopPropagation() // para que no se clickee el padre tambien
+			if (this.children[1].style.display == "flex") {
+				this.children[1].style.display = "none"
 			} else {
-				console.log(this)
-				this.classList.remove("dudasInToggleClicked")
-
-				contenedorSubItems.classList.remove("contenedorDudasInToggleClicked")
+				this.children[1].style.display = "flex"
 			}
-		} else {
-			if (contenedorSubItemsActivado) {
-				contenedorSubItems.style.display = "flex";
-			} else {
-				contenedorSubItems.style.display = "none";
-			}
-		}
+		})
 	})
+	
 
 ///////////////////// VERSION BUTTONS /////////////////
 	let currentCSS = document.querySelector("#currentCSS")
@@ -430,7 +438,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 	function buscar () {
 		/* Antes de la función buscar aplico el ultimo filtro, para que la busqueda se aplique dentro del mismo y no en TODOS los productos. Si no, se reinicia el catalogo en cada busqueda. */
-		filtrar(lastFilter)
+		filtrar(lastFilter, lastMarca)
 
 		let filtroVisibleList = document.querySelectorAll(".filtroVisible")
 		filtroVisibleList.forEach(function(producto){
@@ -816,6 +824,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 		for (let i = 1; i <= totalPages; i++) {
 			let page = document.createElement("p")
+			page.classList.add("isClickable")
 			page.innerText = i
 			page.addEventListener("click", function(){
 				currentPage = i 

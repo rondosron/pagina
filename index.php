@@ -47,18 +47,57 @@
 
 			<div id="contenedorbotones">
 				<div id="scrollContainerMenu">
-					<div class="botonnav filtro isClickable" data-filtro="">Todos los productos</div>
-					<div class="botonnav filtro isClickable" data-filtro="parsecs">Parsecs</div>
-					<div class="botonnav filtro isClickable" data-filtro="duracell">Duracell</div>
-					<div class="botonnav filtro isClickable" data-filtro="brogas">Brogas</div>
-					<div class="botonnav filtro isClickable" data-filtro="probattery">Probattery</div>
-					<div id="superItem" class="botonnav isClickable">SuperItem
-						<div id="contenedorSubItems">
-							<div class="filtro subItemBotonNav isClickable" data-filtro="vinilo">Sub Item 1</div>
-							<div class="filtro subItemBotonNav isClickable" data-filtro="taza">Sub Item 2</div>
+					<div class="botonnav filtro isClickable" data-filtro="" data-marca="">Todos los productos</div>
+
+					<div class="botonnav superItem isClickable">
+						<p>Parsecs</p>
+						<div class="contenedorSubItems">
+							<div class="filtro subItemBotonNav isClickable" data-filtro="" data-marca="parsecs">Ver todo</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="sella rosca" data-marca="parsecs">Sella rosca</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="sella gas" data-marca="parsecs">Sella gas</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="crema adhesiva" data-marca="parsecs">Crema adhesiva</div>
 						</div>
 					</div>
-					<div class="botonnav filtro isClickable" data-filtro="lacatus">Lacatus</div>
+
+					<div class="botonnav superItem isClickable">
+						<p>Duracell</p>
+						<div class="contenedorSubItems">
+							<div class="filtro subItemBotonNav isClickable" data-filtro="" data-marca="duracell">Ver todo</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="pila" data-marca="duracell">Pilas</div>
+						</div>
+					</div>
+
+					<div class="botonnav superItem isClickable">
+						<p>Brogas</p>
+						<div class="contenedorSubItems">
+							<div class="filtro subItemBotonNav isClickable" data-filtro="" data-marca="brogas">Ver todo</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="gas" data-marca="brogas">Gas</div>
+						</div>
+					</div>
+
+					<div class="botonnav superItem isClickable">
+						<p>Probattery</p>
+						<div class="contenedorSubItems">
+							<div class="filtro subItemBotonNav isClickable" data-filtro="" data-marca="probattery">Ver todo</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="linterna" data-marca="probattery">Linternas</div>
+						</div>
+					</div>
+
+					<div class=" botonnav superItem isClickable">
+						<p>SuperItem</p>
+						<div class="contenedorSubItems">
+							<div class="filtro subItemBotonNav isClickable" data-filtro="" data-marca="dsadsadsa">Ver todo</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="dsaddsadsasada" data-marca="dsadsaas">Sub Item 2</div>
+						</div>
+					</div>
+
+					<div class="botonnav superItem isClickable">
+						<p>Lacatus</p>
+						<div class="contenedorSubItems">
+							<div class="filtro subItemBotonNav isClickable" data-filtro="" data-marca="lacatus">Ver todo</div>
+							<div class="filtro subItemBotonNav isClickable" data-filtro="guante" data-marca="lacatus">Guantes</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -71,7 +110,7 @@
 				<input type="radio" name="version" class="versionInput" id="v3" value="3"></input>
 			</div>
 			<div id="contenedortoggle">
-				<i id="menutoggle" class="fas fa-bars"></i>
+				<i id="menutoggle" class="fas fa-bars isClickable"></i>
 			</div>
 		</nav>
 
@@ -121,17 +160,17 @@
 		<div id="carouselNovedadesContainer">
 			<div id="carouselNovedades">
 				<div class="carouselItem" id="carouselItem1">
-					<div class="carouselContent"></div>
+					<div class="carouselContent"><p>NOVEDAD 1</p></div>
 				</div>
 				<div class="carouselItem" id="carouselItem2">
-					<div class="carouselContent"></div>
+					<div class="carouselContent"><p>NOVEDAD 2</p></div>
 				</div>
 				<div class="carouselItem" id="carouselItem3">
-					<div class="carouselContent"></div>
+					<div class="carouselContent"><p>NOVEDAD 3</p></div>
 				</div>
 			</div>
-			<div class="carouselButton" id="carouselButtonPrevious"><</div>
-			<div class="carouselButton" id="carouselButtonNext">></div>
+			<div class="carouselButton isClickable" id="carouselButtonPrevious"><i class="fas fa-angle-left"></i></div>
+			<div class="carouselButton isClickable" id="carouselButtonNext"><i class="fas fa-angle-right"></i></div>
 			<div id="carouselItemIndicatorsContainer"></div>
 		</div>
 
@@ -139,7 +178,7 @@
 	
 		<div id="productos">
 			<div id="tituloproductos">
-				<h2>PRODUCTOS</h2>
+				<h2>Catálogo</h2>
 				
 			</div>
 
@@ -147,14 +186,14 @@
 				<div id="searchBarContainer">
 					<div id="barAndIconContainer">
 						<input type="text" name="buscador" id="buscador">
-						<i class="fas fa-times"></i>
+						<i class="fas fa-times isClickable"></i>
 					</div>
 					<button id="buscarBoton">Buscar</button>
 				</div>
 				
 				<div id="orderByContainer">
 					<label for="orderBy">Ordenar por:</label>
-					<select name="orderBy" id="orderBy">
+					<select name="orderBy" id="orderBy" class="isClickable">
 						<option value="1" selected="selected">Precio - Ascendente</option>
 						<option value="2">Precio - Descendente</option>
 						<option value="3">Nombre - Ascendente</option>
@@ -164,7 +203,7 @@
 			</div>
 
 			<div id="activeFilters">
-				<p>Mostrando<span id="resultFilterProduct"><span id='resultFilterProductValue'> todos los productos</span></span><span id="resultSearch"></span></p>
+				<p>Mostrando<span id="resultFilterProduct"><span class='resultFilterProductValue'> todos los productos</span></span><span id="resultSearch"></span></p>
 			</div>
 			
 			<div id="productsContainer">
@@ -708,10 +747,6 @@
 				<div id="mediosdepagofooter">
 					<h5>Medios de pago</h5>
 					<img src="mastercard.png"><img src="visa.png"><img src="mercadopago.png">
-				</div>
-				<div id="faqs">
-					<h5>FAQ's</h5>
-					<div class="itemFooterContainer"><i class="fas fa-angle-right"></i><p>Preguntas Frecuentes</p></div>
 				</div>
 				<div id="contactofooter">
 					<h5>Contacto</h5>
