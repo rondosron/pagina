@@ -126,17 +126,17 @@
 	top: 60px;*/
 		}
 		#contenedorinfo {
-			gap: 15px;
+			/*gap: 15px;*/
 		}
 		
 	}
 
 	@media screen and (max-width: 438px) {
 		#contenedorinfo h5 {
-			font-size: 1rem;
+			font-size: 12px;
 		}
 		#contenedorinfo p {
-			font-size: 15px;
+			font-size: 12px;
 		}
 	}
 
@@ -149,6 +149,15 @@
 			height: 1.9rem;
 		}
 	}
+
+	/*@media screen and (max-width: 360px) {
+		#contenedorinfo h5 {
+			font-size: 12px;
+		}
+		#contenedorinfo p {
+			font-size: 12px;
+		}
+	}*/
 
 	@media screen and (max-width: 300px) {
 		#contenedorinfo {

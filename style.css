@@ -759,12 +759,18 @@ h2 {
 			text-transform: uppercase;
 		}
 
-		/**** RESULTADOS DE BUSQUEDA / FILTROS *****/
+		/**** RESULTADOS DE BUSQUEDA / FILTROS + CLICK x DETALLES *****/
 			#activeFilters {
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				color: var(--color5);
+				text-align: center;
+				flex-direction: column;
+			}
+
+			#activeFilters p {
+				margin: 0;
 			}
 
 			.resultFilterProductValue {
@@ -773,6 +779,12 @@ h2 {
 
 			#resultSearchValue {
 				font-weight: bold;
+			}
+
+			#activeFilters #clickDetalles {
+				font-size: 13px;
+				font-style: italic;
+				margin-bottom: 10px;
 			}
 
 	/**** PRODUCTOS *****/
@@ -830,11 +842,12 @@ h2 {
 				opacity: 0;
 				font-size: 0.9em;
 				color: var(--color1);
-				font-family: vag rounded bt;
+				font-family: 'Port Lligat Slab';
 				margin: 0;
 				white-space: break-spaces;
 				line-height: normal;
-				padding: 0 4px 2px 4px;		
+				padding: 0 4px 2px 4px;
+				font-weight: bold;
 			}
 
 			.productBackground:hover .nombreyprecio {
@@ -1519,6 +1532,7 @@ h2 {
 
 	.accordion-body {
 		font-family: calibri;
+		color: var(--color5);
 	}
 
 /**************************************** QUIENES SOMOS *****************************************/
@@ -3242,12 +3256,12 @@ h2 {
 		grid-area: info;
 		display: grid;
 		grid-template-areas: "a b c";
-		gap: 30px;
+		/*gap: 30px;*/
 		background: var(--color0);
 		color: var(--color5);
 		font-family: 'Spartan', sans-serif;
 		line-height: normal;
-		padding: 10px 0;
+		padding: 10px 5px;
 		justify-content: center;
 		justify-content: space-evenly;
 	}
@@ -3319,6 +3333,7 @@ h2 {
 		/*background: blue;*/
 		display: inline-block;
 		grid-area: b;
+		text-align: -webkit-center;
 	}
 
 	#mediosdepagofooter h1 {
@@ -3360,7 +3375,7 @@ h2 {
 	}
 
 	#contactofooter div p {
-		margin-left: 10px;
+		margin-left: 5px;
 	}
 
 	#copyright {
