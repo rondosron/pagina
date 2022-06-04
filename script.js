@@ -505,6 +505,10 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	})
 
 	xButton.addEventListener("click", function(e){
+		if (buscador.value == "") {
+			console.log("está vacio")
+			return
+		}
 		buscador.value = ""
 		buscar() /* Limpia los resultados de la busqueda */
 	})
