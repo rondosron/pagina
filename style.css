@@ -414,9 +414,11 @@ h2 {
 				width: 100%;
 				height: fit-content;
 				color: var(--color1);
-				padding: 10px;
+				/*padding: 10px;*/
 				text-align: left;
 				flex-direction: column;
+				line-height: 2.1em;
+				padding: 0 0 0 10px;
 			}
 			.botonnav:hover {
 				background: unset;
@@ -449,7 +451,8 @@ h2 {
 				display: flex;
 				justify-content: left;
 				align-items: center;
-				padding: 10px;
+				/*padding: 10px;*/
+				padding: 0 0 0 10px;
 			}
 			.subItemBotonNav:after {
 				content: "";
@@ -462,7 +465,7 @@ h2 {
 			}
 			/* En caso de que haya subitems para distintos botones, creo que este selector no funcionaria. Agregar uno para cada item que tenga subitems. EJ: .contenedorSubItems .subItemBotonNav:last-of-type:after */
 			.subItemBotonNav:last-of-type {
-				padding: 10px 0 0 10px; /* "Delete" padding bottom so you don't have double padding at the end of the "sublist" */
+				/*padding: 10px 0 0 10px;  "Delete" padding bottom so you don't have double padding at the end of the "sublist" */
 			}
 			.subItemBotonNav:last-of-type:after {
 				content: none;
@@ -1494,6 +1497,7 @@ h2 {
 		border-radius: 15px;
 		transition: 1s;
 		color: var(--color5);
+		color: #93b5ff;
 		font-family: 'Port Lligat Slab';
 		font-size: 18px;
 		line-height: normal;
@@ -1509,6 +1513,7 @@ h2 {
 
 	.accordion-button:not(.collapsed) {
 		color: var(--color5);
+		color: #93b5ff;
 		background: linear-gradient(45deg, #394f81, #1d2d50);
 		box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 	}
@@ -1539,6 +1544,7 @@ h2 {
 	.accordion-body {
 		font-family: calibri;
 		color: var(--color5);
+		color: #c1dbff;
 	}
 
 /**************************************** QUIENES SOMOS *****************************************/
