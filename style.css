@@ -482,7 +482,7 @@ h2 {
 	.carousel {
 		height: 57vh;
 		overflow: hidden;
-		display: none;
+		/*display: none;*/
 		/*margin-top: 50px; Navbar height */
 	}
 
@@ -550,6 +550,7 @@ h2 {
 		height: 57vh;
 		overflow: hidden;
 		position: relative;
+		display: none;
 	}
 
 	#carouselNovedades {
@@ -712,17 +713,21 @@ h2 {
 			position: relative;
 			display: flex;
 			align-items: center;
+			height: 100%;
 		}
 
 		#barAndIconContainer input {
 			border-radius: 5px 0 0 5px;
 			border: 1px solid #264b9b;
+			border: none;
 			color: #264b9b;
 			background: var(--color5);
+			background: linear-gradient(0deg, #dbdbdb, #ffffff);
 			font-family: 'IBM Plex Serif';
 			font-size: 1rem;
 			padding-right: 21px; /* To prevent text from being behind icon */
 			max-width: 200px;
+			height: 100%;
 		}
 
 		#barAndIconContainer i {
@@ -734,13 +739,17 @@ h2 {
 		#searchBarContainer button {
 			border-radius: 0px 5px 5px 0px;
 			border: 1px solid #264b9b;
+			border: none;
 			color: #264b9b;
 			background: linear-gradient(0deg, #c3c3c3, var(--color5));
+			background: linear-gradient(0deg, #dbdbdb, #ffffff);
 			/*font-family: 'IBM Plex Serif';*/
 			font-size: 0.9rem;
 			text-transform: uppercase;
 			height: 100%;
 			font-weight: 500;
+			box-shadow: -4px 0px 4px -4px #264b9b5c;
+			z-index: 2;
 		}
 
 		#orderByContainer {
@@ -762,11 +771,17 @@ h2 {
 			border: 1px solid #264b9b;
 			color: #264b9b;
 			background: linear-gradient(0deg, #c3c3c3, var(--color5));
+			background: linear-gradient(0deg, #dbdbdb, #ffffff);
 			/*font-family: 'IBM Plex Serif';*/
 			font-size: 0.9rem;
 			padding: 0px 0px 2px 2px;
-			text-transform: uppercase;
+			/*text-transform: uppercase;*/
+			border: none;
 		}
+
+		input:focus-visible, select:focus-visible {
+			outline: 0;
+		} 
 
 		/**** RESULTADOS DE BUSQUEDA / FILTROS + CLICK x DETALLES *****/
 			#activeFilters {
@@ -1028,7 +1043,7 @@ h2 {
 	}
 
 	#emptyBudgetMessage {
-
+		color: var(--color1);
 	}
 
 	/* TOTAL */
@@ -1047,6 +1062,7 @@ h2 {
 			display: inline-block;
 			margin: 0;
 			white-space: nowrap;
+			font-size: 23.5px;
 		}
 
 		#presupuesto #total input {
@@ -1057,6 +1073,9 @@ h2 {
 			height: min-content;
 			line-height: normal;
 			color: var(--color1);
+			font-weight: bold;
+			position: relative;
+			font-size: 24px;
 		}
 
 	#presupuesto form {
@@ -1362,18 +1381,30 @@ h2 {
 	/*** Submit / Send via email button ***/
 		#sendViaEmail {
 			background: var(--color1);
+			background: linear-gradient(0deg, #0f182c, var(--color1));
 			border-radius: 6px;
 			/*width: 127px;*/
-			box-shadow: 2px 2px 0 0 #00000047, inset 2px 2px 5px 0 #92b4ff85, inset -2px -2px 5px 0 #09142ae0; /* Option 1 */
-			box-shadow: 2px 2px 0 0 #00000047, inset 0px 0px 0px 0 #92b4ff85, inset -2px -2px 5px 0px #09142ae0; /* Option 2 */
-			height: 28px;
+			/* Option 1 */
+			box-shadow: 2px 2px 0 0 #00000047, inset 2px 2px 5px 0 #92b4ff85, inset -2px -2px 5px 0 #09142ae0;
+			/* Option 2 */
+			box-shadow: 2px 2px 0 0 #00000047, inset 0px 0px 0px 0 #92b4ff85, inset -2px -2px 5px 0px #09142ae0;
+			/* Option 3 */
+			box-shadow: 1px 1px 0 0 #004c098c;
+			height: 38px;
+			width: 190px;
 			margin: 10px 0 5px 0;
 			border: none;
 			color: var(--color5);
 			text-transform: uppercase;
 			font-family: 'Port Lligat Slab';
-			padding: 0px 10px;
+			padding: 0px;
 			box-sizing: content-box;
+		}
+
+		#sendViaEmail i {
+			margin-left: 5px;
+			position: relative;
+			top: 1px;
 		}
 
 	/*** Divisor Email/Whatsapp ****/
@@ -1415,6 +1446,10 @@ h2 {
 			/* Style 2 */
 			background: linear-gradient(0deg, #129d46, #25D366);
 			border: 1px solid #097e35; /* Optional */
+
+			/* Style 3*/
+			border: none;
+			box-shadow: 1px 1px 0 0 #004c098c;
 		}
 
 /*************************************** PREGUNTAS FRECUENTES **********************************************/
@@ -1455,10 +1490,20 @@ h2 {
 	.accordion-item {
 		margin-top: 5px;
 		background-color: #c6e1ff45;
+		background-color: #efefef;
 		border: none;
 		border-radius: 17px; /* Bigger than 15px */
-		box-shadow: 1px 1px 13px -6px black; /* Option 1 */
-		box-shadow: 1px 1px 0px 0px #081532, -1px -1px 0 0 #3e5281, 0 0 11px #0000004d; /* Option 2 */
+		/* Option 1 */
+		box-shadow: 1px 1px 13px -6px black;
+		/* Option 2 */
+		box-shadow: 1px 1px 0px 0px #081532, -1px -1px 0 0 #3e5281, 0 0 11px #0000004d;
+		/* Option 3 */
+		box-shadow: 1px 1px 10px -4px #0000008c;
+		/* Needed to override Bootstrap */
+		border-top-left-radius: 18px;
+		border-top-right-radius: 18px;
+		border-bottom-left-radius: 18px;
+		border-bottom-right-radius: 18px;
 	}
 
 	/* Style from bootstrap */
@@ -1480,10 +1525,10 @@ h2 {
 		top: 0;
 		margin: 0;
 		/*border-top: 1px solid rgb(255 255 255 / 20%);*/
-		background: linear-gradient(45deg, #394f81, #1d2d50);
+		/*background: linear-gradient(45deg, #394f81, #1d2d50);*/
 		/*border-top-left-radius: 15px;*/
 		/*border-top-right-radius: 15px;*/
-		border-radius: 15px;
+		/*border-radius: 15px;*/
 	}
 
 	.accordion-header {
@@ -1491,13 +1536,14 @@ h2 {
 	}
 
 	.accordion-button {
-		background: none;
+		/*background: none;*/
+		background: var(--color0);
 		/*border-top-left-radius: 15px;*/
 		/*border-top-right-radius: 15px;*/
 		border-radius: 15px;
 		transition: 1s;
 		color: var(--color5);
-		color: #93b5ff;
+		/*color: #93b5ff;*/
 		font-family: 'Port Lligat Slab';
 		font-size: 18px;
 		line-height: normal;
@@ -1513,9 +1559,10 @@ h2 {
 
 	.accordion-button:not(.collapsed) {
 		color: var(--color5);
-		color: #93b5ff;
-		background: linear-gradient(45deg, #394f81, #1d2d50);
-		box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+		/*color: #93b5ff;*/
+		/*background: linear-gradient(45deg, #394f81, #1d2d50);*/
+		background: var(--color0);
+		/*box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);*/
 	}
 
 	/* Override bootstrap */
@@ -1529,6 +1576,11 @@ h2 {
 			outline: none;
 			box-shadow: none;
 		}
+
+		.accordion-item:last-of-type .accordion-button.collapsed {
+		    border-bottom-right-radius: 15px; 
+		    border-bottom-left-radius: 15px; 
+    	}
 
 	.accordion-item:first-of-type .accordion-button {
 		 /*border-top-left-radius: 15px; */
@@ -1545,6 +1597,7 @@ h2 {
 		font-family: calibri;
 		color: var(--color5);
 		color: #c1dbff;
+		color: var(--color1);
 	}
 
 /**************************************** QUIENES SOMOS *****************************************/
@@ -3394,4 +3447,6 @@ h2 {
 		grid-area: copyright;
 		background: #101e3c;
 		color: var(--color5);
+		text-align: center;
+		font-size: 13px;
 	}

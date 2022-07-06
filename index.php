@@ -204,7 +204,7 @@
 
 			<div id="activeFilters">
 				<p>Mostrando<span id="resultFilterProduct"><span class='resultFilterProductValue'> todos los productos</span></span><span id="resultSearch"></span></p>
-				<p id="clickDetalles">(Haz click sobre un producto para más información)</p>
+				<p id="clickDetalles">Haz click sobre un producto para más información</p>
 			</div>
 			
 			<div id="productsContainer">
@@ -757,7 +757,7 @@
 				</div>
 			</div>
 			<div id="copyright">
-				FRASE
+				© 2022 Nor-Yol. All rights reserved.
 			</div>
 		</footer>
 
