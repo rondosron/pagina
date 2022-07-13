@@ -22,6 +22,9 @@
 		<!-- CSS MEDIA QUERIES -->
 		<link rel="stylesheet" type="text/css" href="productos/mediaQueries.css">
 
+		<!-- CSS AnimationOnScroll (AOS) -->
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 	</head>
 	<body>
 
@@ -47,7 +50,9 @@
 
 			<div id="contenedorbotones">
 				<div id="scrollContainerMenu">
-					<div class="botonnav filtro isClickable" data-filtro="" data-marca="">Todos los productos</div>
+					<div class="botonnav filtro isClickable" data-filtro="" data-marca="">
+						<p>Todos los productos</p>
+					</div>
 
 					<div class="botonnav superItem isClickable">
 						<p>Parsecs</p>
@@ -223,8 +228,8 @@
 						// }
 						while ($item = $resultado->fetch_object()) {
 							// condicion if ($item->codigo <> "") { codigo } else { codigo }
-							echo 	"<div class='contenedorProducto filtroVisible'>
-										<div class='productBackground'>
+							echo 	"<div class='contenedorProducto filtroVisible' data-aos='zoom-in'>
+										<div class='productBackground' >
 											<div class='imageContainer'>
 												<div class='imgContainer'>
 													<img id='producto$item->id' class='producto isClickable' src='productos/imagenes/$item->imagen' data-id='$item->id' data-filtro='$item->palabras_filtro' data-nombre='" . utf8_encode($item->nombre) . "' data-precio='$item->precio' data-codigo='$item->codigo' data-cantidad-cuotas='2' data-precio-cuota='300' data-talles='XS/S/M/L/XL' data-colores='rojo/azul/blanco' data-descripcion='" . utf8_encode($item->descripcion) . "' data-marca='$item->marca'>
@@ -265,7 +270,7 @@
 		
 		<!-- PRESUPUESTO + FORMULARIO -->
 		<div id="presupuestoyformulario">
-			<div id="presupuesto">
+			<div id="presupuesto" data-aos="fade-left">
 				<form id="presupuestoForm" action="envioform.php" method="POST" name="consulta">
 					<h2>SIMULACIÓN PRESUPUESTO</h2>
 					<h3>Presupuesto actual:</h3>
@@ -283,7 +288,7 @@
 					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje." value="<?php echo isset($_SESSION['pedidoinput']) ? $_SESSION['pedidoinput'] : '' ?>"></textarea>
 			</div>
 
-			<div id="formulario">
+			<div id="formulario" data-aos="fade-right">
 					<h2>Formulario de contacto</h2>
 					<div id="informativeMessageForm">
 						<i class="fas fa-info-circle"></i>
@@ -340,11 +345,11 @@
 		
 		<div id="preguntasfrecuentes">
 			<div id="preguntasfrecuentestitleContainer">
-				<h2 id="preguntasfrecuentestitle">Preguntas Frecuentes</h2>
+				<h2 id="preguntasfrecuentestitle" data-aos="zoom-in">Preguntas Frecuentes</h2>
 			</div>
 			<div id="accordionFAQsContainer">
 				<div class="accordion" id="accordionPanelsStayOpenExample">
-					<div class="accordion-item">
+					<div class="accordion-item" data-aos="zoom-in">
 						<h2 class="accordion-header" id="panelsStayOpen-headingOne">
 							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
 							¿La solicitud de presupuesto implica una obligación de compra?
@@ -356,7 +361,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item">
+					<div class="accordion-item" data-aos="zoom-in">
 						<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
 							Realizar una solicitud de presupuesto, ¿congela los precios?
@@ -368,7 +373,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item">
+					<div class="accordion-item" data-aos="zoom-in">
 						<h2 class="accordion-header" id="panelsStayOpen-headingThree">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
 							Accordion Item #3
@@ -714,7 +719,7 @@
 					<div id="contenedornavegacion">
 						<h5>Navegación</h5>
 						<div class="itemFooterContainer">
-							<a href="#carouselNovedades">
+							<a href="#carouselExampleIndicators">
 								<i class="fas fa-angle-right"></i>
 								<p>Novedades</p>
 							</a>
@@ -771,6 +776,12 @@
 
 		<!-- Tilt.js -->
 		<script src="vanilla-tilt.js"></script>
+
+		<!-- SCRIPT AnimationOnScroll (AOS) -->
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
 
 		<?php
 			$conexion->close();

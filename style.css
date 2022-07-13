@@ -108,6 +108,7 @@ html {
 body {
 	margin: 0 !important;
 	padding: 50px 0 0 0; /* Navbar size */
+	overflow-x: hidden; /* To prevent AOS to make scroll bar appear */
 }
 
 :root {
@@ -253,6 +254,7 @@ h2 {
 
 		.botonnav {
 			height: 35px;
+			height: 100%;
 			/*width: 150px;*/ /* para que sobresalga del boton busqueda nada mas */
 			text-align: center;
 			color: var(--color5);
@@ -291,6 +293,8 @@ h2 {
 
 		.botonnav p {
 			margin: 0;
+			position: relative;
+			width: min-content;
 		}
 
 		.contenedorSubItems {
@@ -300,6 +304,23 @@ h2 {
 			display: none; 
 			flex-direction: column;
 			width: 100%;
+		}
+		.botonnav p:after {
+			content: "";
+			background: var(--color5);
+			height: 2px;
+			width: 0%;
+			position: absolute;
+			bottom: -4px;
+			left: 0px;
+			transition: width 0.5s, left 0s 0s, right 0s 0.5s;
+		}
+		@media screen and (min-width: 701px) { /* So the effect doesn't appear on mobile */
+			.botonnav:hover p:after {
+				width: 100%;
+				left: unset;
+				right: 0px;
+			}
 		}
 
 	#versionContainer {
@@ -520,7 +541,7 @@ h2 {
 	}
 
 	.carousel-inner .carousel-item:nth-child(3) .carousel-item-background {
-		background-image: url(https://www.technocrazed.com/wp-content/uploads/2015/12/Blue-Wallpaper-For-Background-10.jpg);
+		background-image: url(https://wallpaperaccess.com/full/846661.png);
 		background-size: cover;
 		height: 100%;
 		display: flex !important;
@@ -843,14 +864,23 @@ h2 {
 				border-radius: 6px; /* Bigger than image border-radius cause otherwise it'd be seen behind it */
 			}
 
-			.productBackground:hover {
-				transform: scale(1.2);
-				z-index: 5; /* Para que se ponga por encima de los demas */
-				width: 210px;
-				height: 240px;
-				padding-top: 5px;
-				box-shadow: 0 0 60px #000000ad;
+			/* To devices that support hover */
+			@media not all and (hover: none) { 
+				.contenedorProducto:hover {
+					z-index: 5; /* Para que se ponga por encima de los demas */
+				}
+
+				.productBackground:hover {
+					transform: scale(1.2) !important; /* '!important' needed so it overrides transform value from AOS library */
+					z-index: 5; /* Para que se ponga por encima de los demas */
+					width: 210px;
+					height: 240px;
+					padding-top: 5px;
+					box-shadow: 0 0 60px #000000ad;
+				}
 			}
+
+			
 
 			.nombreyprecio {
 				position: absolute;
