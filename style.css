@@ -254,7 +254,7 @@ h2 {
 
 		.botonnav {
 			height: 35px;
-			height: 100%;
+			height: 75%;
 			/*width: 150px;*/ /* para que sobresalga del boton busqueda nada mas */
 			text-align: center;
 			color: var(--color5);
@@ -304,6 +304,7 @@ h2 {
 			display: none; 
 			flex-direction: column;
 			width: 100%;
+			box-shadow: 0 2px 11px 4px #00000026;
 		}
 		.botonnav p:after {
 			content: "";
@@ -366,6 +367,7 @@ h2 {
 				height: fit-content;
 				font-family: 'Overlock';
 				padding: 2px;
+				transition: 0.2s;
 			}
 			.subItemBotonNav:after {
 				content: "";
@@ -379,6 +381,10 @@ h2 {
 			}
 			.subItemBotonNav:last-of-type:after {
 				content: none;
+			}
+			.subItemBotonNav:hover {
+				background: #ffffff;
+				color: #2f5ec5;
 			}
 		}
 
@@ -547,6 +553,7 @@ h2 {
 		display: flex !important;
 		justify-content: center;
 		align-items: center;
+		background: radial-gradient(circle at center, #4c6eb9, #091836);
 	}
 
 	.textCarouselContainer {
