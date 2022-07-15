@@ -296,7 +296,17 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			}
 		})
 	})
-	
+
+	// To set display none if click is outside .contenedorSubItems class 
+	document.addEventListener('click', function(e) {
+		contenedorSubItemsList.forEach(function(item){
+			const isClickInside = item.contains(e.target)
+
+			if (!isClickInside) {
+				item.style.display = "none"
+			}
+		})	
+	})
 
 ///////////////////// VERSION BUTTONS /////////////////
 	let currentCSS = document.querySelector("#currentCSS")

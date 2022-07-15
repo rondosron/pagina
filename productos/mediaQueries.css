@@ -62,8 +62,8 @@
 		    	width: 100%;
 			}
 			#precio, #talles, #colores {
-				margin-bottom: 5px;
-		    	padding-bottom: 7px;
+				/*margin-bottom: 5px;*/
+		    	/*padding-bottom: 7px;*/
 			}
 
 		#contenedorinfo {

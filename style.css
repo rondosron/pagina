@@ -108,7 +108,7 @@ html {
 body {
 	margin: 0 !important;
 	padding: 50px 0 0 0; /* Navbar size */
-	overflow-x: hidden; /* To prevent AOS to make scroll bar appear */
+	/*overflow-x: hidden;  To prevent AOS to make scroll bar appear */
 }
 
 :root {
@@ -304,7 +304,7 @@ h2 {
 			display: none; 
 			flex-direction: column;
 			width: 100%;
-			box-shadow: 0 2px 11px 4px #00000026;
+			/*box-shadow: 0 2px 11px 4px #00000026;*/
 		}
 		.botonnav p:after {
 			content: "";
@@ -356,6 +356,7 @@ h2 {
 			}
 			.contenedorSubItems {
 				background: var(--color5);
+				box-shadow: 0 2px 11px 4px #00000026;
 			}
 			.subItemBotonNav {
 				position: relative;
@@ -374,6 +375,7 @@ h2 {
 				width: 100%;
 				position: absolute;
 				background: var(--color1);
+				background: #00000021;
 				top: 100%;
 				left: 0;
 				height: 1px;
@@ -459,6 +461,9 @@ h2 {
 				height: 1px;
 				z-index: 2;
 				transform: none;
+			}
+			.botonnav p {
+				width: auto;
 			}
 			.contenedorSubItems {
 				/*left: 100%;*/
@@ -1030,6 +1035,7 @@ h2 {
 	grid-template-columns: 1fr 1fr;
 	padding: 10px 0;
     background: var(--color5);
+    overflow-x: hidden; /* To prevent AOS to make scroll bar appear */
 }
 
 /***************************************** PRESUPUESTO **************************************************/
