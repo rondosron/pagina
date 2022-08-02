@@ -203,7 +203,8 @@
 			border-radius: 10px;
 			/*box-shadow: 0px 2px 15px #1d2d5040;*/
 			/*filter: drop-shadow(0px 1px 5px #0000005f);*/
-			box-shadow: 0px 2px 0px 0px #00000030;
+			/*box-shadow: 0px 2px 0px 0px #00000030;*/
+			border: 2px solid #00000017;
 		}
 		.nombreyprecio { /* not for mobiles */
 			display: none;
@@ -230,6 +231,7 @@
 		.precioMobile {
 			font-size: 1.4rem;
 			font-family: 'DM Serif Display';
+			font-family: 'Bree Serif';
 			font-weight: bold;
 			width: 100%;
 			justify-content: center;
@@ -239,6 +241,9 @@
 			display: flex;
 			width: 100%;
 			height: 46px;
+			height: 30px;
+			margin-bottom: 5px;
+			margin-top: 10px;
 		}
 		.botones .contenedorCarrito {
 			width: 70%;
@@ -246,12 +251,16 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			background: #1d2d50;
+			border-radius: 6px;
+			background: linear-gradient(0deg, #1d4a98, #1b67ad);
 		}
 		.botones .contenedorCarrito i {
 			display: inline-block;
-			transform: scale(1.2);
+			transform: scale(1.1);
 			margin-right: 7px;
-			color: var(--color2);
+			color: var(--color0);
+			filter: drop-shadow(0px 0px 2px #1a6db1);
 		}
 
 		.botones .contenedorCarrito input {
@@ -259,12 +268,13 @@
 			width: 40px;
 			height: 22px;
 			border-radius: 10px;
+			border-radius: 5px;
 			border-style: none;
 			text-align: center;
 			font-size: 16px;
 			color: var(--color1);
 			box-shadow: inset 1.5px 1.5px 0px 0px #c5c5c5;
-			background: white;
+			background: var(--color5);
 		}
 		.botones .contenedorBoton {
 			display: flex;
@@ -272,6 +282,10 @@
 			justify-content: center;
 			height: 100%;
 			width: 100%;
+			background: #1d2d50;
+			border-radius: 6px;
+			margin-left: 5px;
+			background: linear-gradient(0deg, #1d4a98, #1b67ad);
 		}
 		.contenedorBoton .alpresupuestoMobile {
 			position: relative;
@@ -281,14 +295,16 @@
 			/*box-shadow: 0px 3px 0px #081e50;*/
 			/*background: var(--color2);*/
 			/*box-shadow: 0 0 11px #000000cc;*/
-			background: linear-gradient(0deg, #22396c, #2652af);
+			/*background: linear-gradient(0deg, #22396c, #2652af);*/
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
 		.contenedorBoton .alpresupuestoMobile h3 {
+			position: relative;
 			text-align: center;
 			font-size: 1.08em;
+			font-size: 1.2em;
 			/* font-weight: bold; */
 			/*line-height: 1.22em;*/
 			color: var(--color5);

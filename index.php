@@ -119,6 +119,11 @@
 			</div>
 		</nav>
 
+		<div id="banner">
+			<div>
+			</div>
+		</div>
+
 		<!-- CAROUSEL -->
 		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
@@ -130,8 +135,8 @@
 				<div class="carousel-item active">
 					<div class="d-block w-100 carousel-item-background" alt="...">
 						<div class="textCarouselContainer">
-							<p class="titleCarousel" id="titleCarouselItem1">NOVEDADES</p>
-							<p class="descriptionCarousel" id="descriptionCarouselItem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci veniam, minima ab. Quod suscipit quaerat, provident enim eos at, hic tempora ut aliquam voluptatum quam nam incidunt veritatis optio.</p>
+							<!-- <p class="titleCarousel" id="titleCarouselItem1">NOVEDADES</p>
+							<p class="descriptionCarousel" id="descriptionCarouselItem1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci veniam, minima ab. Quod suscipit quaerat, provident enim eos at, hic tempora ut aliquam voluptatum quam nam incidunt veritatis optio.</p> -->
 						</div>
 					</div>
 				</div>
@@ -178,6 +183,78 @@
 			<div class="carouselButton isClickable" id="carouselButtonNext"><i class="fas fa-angle-right"></i></div>
 			<div id="carouselItemIndicatorsContainer"></div>
 		</div>
+
+		<!-- OFERTAS O NOVEDADES -->
+		<div class="containerOfertasONovedades">
+			<div>
+				<h2>NOVEDADES</h2>
+			</div>
+			<input type="radio" name="slider" id="item-1" checked>
+			<input type="radio" name="slider" id="item-2">
+			<input type="radio" name="slider" id="item-3">
+			<div class="cards">
+				<div class="OfONovControllers">
+					<div class="OfONovPrevButton"><</div>
+					<div class="OfONovNextButton">></div>
+				</div>
+				<label class="card" for="item-1" id="song-1">
+					<div class="OfONovTitulos">
+						<p>Oferta</p>
+					</div>
+					<img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg" alt="song">
+					<div class="cardContentContainer">
+						<div class="cardContent">
+							<div class="OfONovCardsExpandBar">
+								<div>
+									<i>▲</i>
+								</div>
+							</div>
+							<!-- <img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg"> -->
+							<!-- <h3>Oferta 1</h3> -->
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vel corporis quisquam aspernatur! Repellat, odit quisquam vitae.</p>
+						</div>
+					</div>
+				</label>
+				<label class="card" for="item-2" id="song-2">
+					<div class="OfONovTitulos">
+						<p>Oferta</p>
+					</div>
+					<img src="productos/imagenes/puntas-juego-x15.png" alt="song">
+					<div class="cardContentContainer">
+						<div class="cardContent">
+							<div class="OfONovCardsExpandBar">
+								<div>
+									<i>▲</i>
+								</div>
+							</div>
+							<!-- <img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg"> -->
+							<!-- <h3>Oferta 2</h3> -->
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vel corporis quisquam aspernatur! Repellat, odit quisquam vitae.</p>
+						</div>
+					</div>
+				</label>
+				<label class="card" for="item-3" id="song-3">
+					<div class="OfONovTitulos">
+						<p>Oferta</p>
+					</div>
+					<img src="productos/imagenes/parche-mas-mas.jpg" alt="song">
+					<div class="cardContentContainer">
+						<div class="cardContent">
+							<div class="OfONovCardsExpandBar">
+								<div>
+									<i>▲</i>
+								</div>
+							</div>
+							<!-- <img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg"> -->
+							<!-- <h3>Oferta 3</h3> -->
+							<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. At vel corporis quisquam aspernatur! Repellat, odit quisquam vitae.</p>
+						</div>
+					</div>
+				</label>
+			</div>
+		</div>
+
+		
 
 		<!-- PRODUCTOS -->
 	
@@ -228,7 +305,7 @@
 						// }
 						while ($item = $resultado->fetch_object()) {
 							// condicion if ($item->codigo <> "") { codigo } else { codigo }
-							echo 	"<div class='contenedorProducto filtroVisible' data-aos='zoom-in'>
+							echo 	"<div class='contenedorProducto filtroVisible' data-aos='zoom-in' data-aos-once='true'>
 										<div class='productBackground' >
 											<div class='imageContainer'>
 												<div class='imgContainer'>
@@ -270,7 +347,7 @@
 		
 		<!-- PRESUPUESTO + FORMULARIO -->
 		<div id="presupuestoyformulario">
-			<div id="presupuesto" data-aos="fade-left">
+			<div id="presupuesto" data-aos="fade-left" data-aos-once="true">
 				<form id="presupuestoForm" action="envioform.php" method="POST" name="consulta">
 					<h2>SIMULACIÓN PRESUPUESTO</h2>
 					<h3>Presupuesto actual:</h3>
@@ -288,7 +365,7 @@
 					<textarea id="pedidoinput" name="pedidoinput" rows="6" placeholder="Añade cualquier comentario o consulta que quieras incluir en el mensaje." value="<?php echo isset($_SESSION['pedidoinput']) ? $_SESSION['pedidoinput'] : '' ?>"></textarea>
 			</div>
 
-			<div id="formulario" data-aos="fade-right">
+			<div id="formulario" data-aos="fade-right" data-aos-once="true">
 					<h2>Formulario de contacto</h2>
 					<div id="informativeMessageForm">
 						<i class="fas fa-info-circle"></i>
@@ -345,11 +422,11 @@
 		
 		<div id="preguntasfrecuentes">
 			<div id="preguntasfrecuentestitleContainer">
-				<h2 id="preguntasfrecuentestitle" data-aos="zoom-in">Preguntas Frecuentes</h2>
+				<h2 id="preguntasfrecuentestitle" data-aos="zoom-in" data-aos-once='true'>Preguntas Frecuentes</h2>
 			</div>
 			<div id="accordionFAQsContainer">
 				<div class="accordion" id="accordionPanelsStayOpenExample">
-					<div class="accordion-item" data-aos="zoom-in">
+					<div class="accordion-item" data-aos="zoom-in" data-aos-once='true'>
 						<h2 class="accordion-header" id="panelsStayOpen-headingOne">
 							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
 							¿La solicitud de presupuesto implica una obligación de compra?
@@ -361,7 +438,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item" data-aos="zoom-in">
+					<div class="accordion-item" data-aos="zoom-in" data-aos-once='true'>
 						<h2 class="accordion-header" id="panelsStayOpen-headingTwo">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
 							Realizar una solicitud de presupuesto, ¿congela los precios?
@@ -373,7 +450,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="accordion-item" data-aos="zoom-in">
+					<div class="accordion-item" data-aos="zoom-in" data-aos-once='true'>
 						<h2 class="accordion-header" id="panelsStayOpen-headingThree">
 							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
 							Accordion Item #3
@@ -454,17 +531,17 @@
 							<div id="shape2Card2"></div>
 							<div id="shape3Card2">
 								<svg id="visual" viewBox="0 0 600 900" width="600" height="900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="
-									    height: fit-content;
-									    width: 100%;
+										height: fit-content;
+										width: 100%;
 									"><rect x="0" y="0" width="600" height="900" fill="transparent" style="
-									    /* overflow: hidden; */
+										/* overflow: hidden; */
 									"></rect><defs><linearGradient id="grad1_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#001220" stop-opacity="1"></stop><stop offset="70%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="30%" stop-color="#001220" stop-opacity="1"></stop><stop offset="70%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(600, 0)" style="
-									    /* overflow: hidden; */
+										/* overflow: hidden; */
 									"><path d="M0 486.7C-50.6 450.7 -101.1 414.6 -164.6 397.3C-228 379.9 -304.2 381.2 -344.2 344.2C-384.2 307.1 -387.9 231.8 -405.6 168C-423.3 104.2 -455 52.1 -486.7 0L0 0Z" fill="#FBAE3C" style="
-									    fill: transparent;
-									    /* outline: 3px solid white; */
-									    stroke: white;
-									    stroke-width: 3px;
+										fill: transparent;
+										/* outline: 3px solid white; */
+										stroke: white;
+										stroke-width: 3px;
 									"></path></g><g transform="translate(0, 900)"><path d="M0 -486.7C44.5 -436.3 88.9 -385.8 153.5 -370.5C218 -355.2 302.6 -375 344.2 -344.2C385.8 -313.4 384.4 -231.9 401 -166.1C417.6 -100.3 452.2 -50.1 486.7 0L0 0Z" fill="#FBAE3C"></path></g>
 								</svg>
 							</div>

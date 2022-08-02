@@ -346,16 +346,28 @@ body {
 		}
 
 		#precio #contenidoprecio {
-			font-weight: 600;
+			font-weight: 500;
 			/*text-shadow: 0px 1px #eee;  To prevent blur from font-weight */
 			font-size: 48px;
 			width: 100%;
 			display: flex;
 			justify-content: flex-end;
+			font-family: 'Bree Serif', serif;
+
+			/* Version 1 */
 			background: -webkit-linear-gradient(277deg, #fff700, #ffbf00);
+
+			/* Version 2 */
+			background: -webkit-linear-gradient(270deg, #1c305c, #206095);
+
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
+
+			/* Version 1 */
 			filter: drop-shadow(1px 1px 0px #997200);
+
+			/* Version 2 */
+			filter: drop-shadow(1px 1px 0px var(--color1));
 		}
 
 		/*#contenidoprecio, #textoCuotas1, #contenedorPrecioCuota, #textoCuotas2, #contenedorcuotas {

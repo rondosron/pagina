@@ -321,123 +321,177 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	})
 
 //////////////////// CAROUSEL NOVEDADES ////////////////////
-	let carouselNovedades = document.querySelector("#carouselNovedades")
-	let carouselItems = document.querySelectorAll(".carouselItem")
-	let carouselCurrentLastItem = carouselItems[carouselItems.length - 1]
-	let carouselButtonPrevious = document.querySelector("#carouselButtonPrevious")
-	let carouselButtonNext = document.querySelector("#carouselButtonNext")
+	/////////// VERSION 1 ////////////
+		let carouselNovedades = document.querySelector("#carouselNovedades")
+		let carouselItems = document.querySelectorAll(".carouselItem")
+		let carouselCurrentLastItem = carouselItems[carouselItems.length - 1]
+		let carouselButtonPrevious = document.querySelector("#carouselButtonPrevious")
+		let carouselButtonNext = document.querySelector("#carouselButtonNext")
 
-	carouselNovedades.insertAdjacentElement("afterbegin", carouselCurrentLastItem) // 'afterbegin' positions the selected element (carouselCurrentLastItem) right at the beginning of the container/element
+		carouselNovedades.insertAdjacentElement("afterbegin", carouselCurrentLastItem) // 'afterbegin' positions the selected element (carouselCurrentLastItem) right at the beginning of the container/element
 
-	let carouselActiveItem = 1 /* The SECOND (starting from 0) carousel item is the first element on screen */
+		let carouselActiveItem = 1 /* The SECOND (starting from 0) carousel item is the first element on screen */
 
-	function CarouselNextItem() {
-		let carouselCurrentFirstItem = document.querySelectorAll(".carouselItem")[0]
-		carouselNovedades.style.marginLeft = "-200%"
-		carouselNovedades.style.transition = "0.5s"
-		setTimeout(function(){
-			carouselNovedades.style.transition = "none"
-			carouselNovedades.insertAdjacentElement("beforeend", carouselCurrentFirstItem)
-			carouselNovedades.style.marginLeft = "-100%"
-		}, 500) // Same value as transition duration (0.5s = 500)
+		function CarouselNextItem() {
+			let carouselCurrentFirstItem = document.querySelectorAll(".carouselItem")[0]
+			carouselNovedades.style.marginLeft = "-200%"
+			carouselNovedades.style.transition = "0.5s"
+			setTimeout(function(){
+				carouselNovedades.style.transition = "none"
+				carouselNovedades.insertAdjacentElement("beforeend", carouselCurrentFirstItem)
+				carouselNovedades.style.marginLeft = "-100%"
+			}, 500) // Same value as transition duration (0.5s = 500)
 
-		carouselActiveItem += 1
-		if (carouselActiveItem > carouselItems.length - 1) { /* If it's the last item, restart the counter */
-			carouselActiveItem = 0
+			carouselActiveItem += 1
+			if (carouselActiveItem > carouselItems.length - 1) { /* If it's the last item, restart the counter */
+				carouselActiveItem = 0
+			}
+			// console.log(carouselActiveItem)
 		}
-		// console.log(carouselActiveItem)
-	}
 
-	function CarouselPreviousItem() {
-		let carouselCurrentLastItem = document.querySelectorAll(".carouselItem")[document.querySelectorAll(".carouselItem").length - 1]
-		carouselNovedades.style.marginLeft = "0%"
-		carouselNovedades.style.transition = "0.5s"
-		setTimeout(function(){
-			carouselNovedades.style.transition = "none"
-			carouselNovedades.insertAdjacentElement("afterbegin", carouselCurrentLastItem)
-			carouselNovedades.style.marginLeft = "-100%"
-		}, 500) // Same value as transition duration (0.5s = 500)
+		function CarouselPreviousItem() {
+			let carouselCurrentLastItem = document.querySelectorAll(".carouselItem")[document.querySelectorAll(".carouselItem").length - 1]
+			carouselNovedades.style.marginLeft = "0%"
+			carouselNovedades.style.transition = "0.5s"
+			setTimeout(function(){
+				carouselNovedades.style.transition = "none"
+				carouselNovedades.insertAdjacentElement("afterbegin", carouselCurrentLastItem)
+				carouselNovedades.style.marginLeft = "-100%"
+			}, 500) // Same value as transition duration (0.5s = 500)
 
-		carouselActiveItem -= 1
-		if (carouselActiveItem < 0) { /* If it's the first item, restart the counter */
-			carouselActiveItem = carouselItems.length - 1
+			carouselActiveItem -= 1
+			if (carouselActiveItem < 0) { /* If it's the first item, restart the counter */
+				carouselActiveItem = carouselItems.length - 1
+			}
+			console.log(carouselActiveItem)
 		}
-		console.log(carouselActiveItem)
-	}
 
-	carouselButtonNext.addEventListener("click", function(){
-		CarouselNextItem()
-
-		/* Reset timer */
-		clearInterval(carouselTimer)
-		carouselTimer = setInterval(function(){
+		carouselButtonNext.addEventListener("click", function(){
 			CarouselNextItem()
-		}, 5000)
-	})
 
-	carouselButtonPrevious.addEventListener("click", function(){
-		CarouselPreviousItem()
-
-		/* Reset timer */
-		clearInterval(carouselTimer)
-		carouselTimer = setInterval(function(){
-			CarouselNextItem()
-		}, 5000)
-	})
-
-	/* Automatic sliding */
-	let carouselTimer = setInterval(function(){
-		CarouselNextItem()
-	}, 5000)
-
-	/****** INDICATORS *******/
-		let carouselItemIndicatorsContainer = document.querySelector("#carouselItemIndicatorsContainer")
-
-		carouselItems.forEach(function(item){
-			let indicator = document.createElement("div")
-			indicator.classList.add("carouselIndicator")
-			carouselItemIndicatorsContainer.appendChild(indicator)
+			/* Reset timer */
+			clearInterval(carouselTimer)
+			carouselTimer = setInterval(function(){
+				CarouselNextItem()
+			}, 5000)
 		})
 
-		let carouselIndicators = document.querySelectorAll(".carouselIndicator")
+		carouselButtonPrevious.addEventListener("click", function(){
+			CarouselPreviousItem()
 
-		carouselIndicators.forEach(function(indicator){
-			indicator.addEventListener("click", function(){
-				console.log("Posicion del indicador: " + Array.from(indicator.parentNode.children).indexOf(indicator)) // Indicator position (starting from 0)
-				console.log("ActiveItem " + carouselActiveItem)
-				if (Array.from(indicator.parentNode.children).indexOf(indicator) < carouselActiveItem) {
-					let movesToDo = carouselActiveItem - Array.from(indicator.parentNode.children).indexOf(indicator)
-					for (i = 0; i < movesToDo; i++) {
-						CarouselPreviousItem()
-						console.log("se movio 1 vez")
+			/* Reset timer */
+			clearInterval(carouselTimer)
+			carouselTimer = setInterval(function(){
+				CarouselNextItem()
+			}, 5000)
+		})
 
+		/* Automatic sliding */
+		let carouselTimer = setInterval(function(){
+			CarouselNextItem()
+		}, 5000)
+
+		/****** INDICATORS *******/
+			let carouselItemIndicatorsContainer = document.querySelector("#carouselItemIndicatorsContainer")
+
+			carouselItems.forEach(function(item){
+				let indicator = document.createElement("div")
+				indicator.classList.add("carouselIndicator")
+				carouselItemIndicatorsContainer.appendChild(indicator)
+			})
+
+			let carouselIndicators = document.querySelectorAll(".carouselIndicator")
+
+			carouselIndicators.forEach(function(indicator){
+				indicator.addEventListener("click", function(){
+					console.log("Posicion del indicador: " + Array.from(indicator.parentNode.children).indexOf(indicator)) // Indicator position (starting from 0)
+					console.log("ActiveItem " + carouselActiveItem)
+					if (Array.from(indicator.parentNode.children).indexOf(indicator) < carouselActiveItem) {
+						let movesToDo = carouselActiveItem - Array.from(indicator.parentNode.children).indexOf(indicator)
+						for (i = 0; i < movesToDo; i++) {
+							CarouselPreviousItem()
+							console.log("se movio 1 vez")
+
+							/* Reset timer */
+							clearInterval(carouselTimer)
+							carouselTimer = setInterval(function(){
+								CarouselNextItem()
+							}, 5000)
+						}
+					} else if (Array.from(indicator.parentNode.children).indexOf(indicator) > carouselActiveItem) {
+						let movesToDo = Array.from(indicator.parentNode.children).indexOf(indicator) - carouselActiveItem
+						for (i = 0; i < movesToDo; i++) {
+							CarouselNextItem()
+							console.log("se movio 1 vez")
+
+							/* Reset timer */
+							clearInterval(carouselTimer)
+							carouselTimer = setInterval(function(){
+								CarouselNextItem()
+							}, 5000)
+						}
+					} else { // Same item
 						/* Reset timer */
 						clearInterval(carouselTimer)
 						carouselTimer = setInterval(function(){
 							CarouselNextItem()
 						}, 5000)
 					}
-				} else if (Array.from(indicator.parentNode.children).indexOf(indicator) > carouselActiveItem) {
-					let movesToDo = Array.from(indicator.parentNode.children).indexOf(indicator) - carouselActiveItem
-					for (i = 0; i < movesToDo; i++) {
-						CarouselNextItem()
-						console.log("se movio 1 vez")
+				})
+			})
 
-						/* Reset timer */
-						clearInterval(carouselTimer)
-						carouselTimer = setInterval(function(){
-							CarouselNextItem()
-						}, 5000)
-					}
-				} else { // Same item
-					/* Reset timer */
-					clearInterval(carouselTimer)
-					carouselTimer = setInterval(function(){
-						CarouselNextItem()
-					}, 5000)
+	/////////// VERSION 2 ////////////
+		let OfONovRadioButtons = document.querySelectorAll(".containerOfertasONovedades input[type=radio]")
+		let OfONovPrevButton = document.querySelector(".OfONovPrevButton")
+		let OfONovNextButton = document.querySelector(".OfONovNextButton")
+
+		let currentOfONovItem = 0
+
+		OfONovNextButton.addEventListener("click", function(){
+			console.log("/////////////////")
+			console.log("currentOfONovItem: " + currentOfONovItem)
+			console.log("dsadasd")
+			console.log("dsadasd")
+			if (currentOfONovItem == (OfONovRadioButtons.length - 1)) { // Last item
+				currentOfONovItem = 0
+			} else {
+				currentOfONovItem++
+			}
+			
+			OfONovRadioButtons.forEach(function(button, index){
+				if (index == currentOfONovItem) {
+					button.setAttribute('checked', '');
+					console.log("index checked: " + index)
+				} else {
+					button.removeAttribute('checked');
 				}
 			})
 		})
+
+		OfONovPrevButton.addEventListener("click", function(){
+			console.log("/////////////////")
+			console.log("currentOfONovItem: " + currentOfONovItem)
+			console.log("dsadasd")
+			console.log("dsadasd")
+			if (currentOfONovItem == 0) { // First item
+				currentOfONovItem = (OfONovRadioButtons.length - 1)
+			} else {
+				currentOfONovItem--
+			}
+
+			OfONovRadioButtons.forEach(function(button, index){
+				if (index == currentOfONovItem) {
+					button.setAttribute('checked', '');
+					console.log("index checked: " + index)
+				} else {
+					button.removeAttribute('checked');
+				}
+			})
+		})
+
+		// OfONovRadioButtons.forEach(function(){
+		// 	console.log(OfONovRadioButtons)
+		// })
 
 ////////////////////// BUSCADOR ////////////////////////////
 	let buscador = document.querySelector("#buscador")
