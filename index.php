@@ -186,7 +186,7 @@
 
 		<!-- OFERTAS O NOVEDADES -->
 		<div class="containerOfertasONovedades">
-			<div>
+			<div id="OfONovTitleContainer">
 				<h2>NOVEDADES</h2>
 			</div>
 			<input type="radio" name="slider" id="item-1" checked>
@@ -194,8 +194,12 @@
 			<input type="radio" name="slider" id="item-3">
 			<div class="cards">
 				<div class="OfONovControllers">
-					<div class="OfONovPrevButton"><</div>
-					<div class="OfONovNextButton">></div>
+					<div class="OfONovPrevButton">
+						<i class="fas fa-angle-left"></i>
+					</div>
+					<div class="OfONovNextButton">
+						<i class="fas fa-angle-right"></i>
+					</div>
 				</div>
 				<label class="card" for="item-1" id="song-1">
 					<div class="OfONovTitulos">
@@ -206,7 +210,7 @@
 						<div class="cardContent">
 							<div class="OfONovCardsExpandBar">
 								<div>
-									<i>▲</i>
+									<i class="fas fa-angle-up"></i>
 								</div>
 							</div>
 							<!-- <img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg"> -->
@@ -224,7 +228,7 @@
 						<div class="cardContent">
 							<div class="OfONovCardsExpandBar">
 								<div>
-									<i>▲</i>
+									<i class="fas fa-angle-up"></i>
 								</div>
 							</div>
 							<!-- <img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg"> -->
@@ -242,7 +246,7 @@
 						<div class="cardContent">
 							<div class="OfONovCardsExpandBar">
 								<div>
-									<i>▲</i>
+									<i class="fas fa-angle-up"></i>
 								</div>
 							</div>
 							<!-- <img src="productos/imagenes/Crema-adhesiva-acero-parsecs.jpg"> -->

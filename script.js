@@ -242,6 +242,7 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 	}
 
 	let botonesfiltro = document.querySelectorAll('.filtro')
+	let productosSection = document.querySelector('#productos')
 
 	botonesfiltro.forEach(function(boton){
 		boton.addEventListener('click', function(){
@@ -269,6 +270,9 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			// contenedorbotones.style.display = "none"
 			/* If Menu slides */
 			contenedorbotones.classList.remove("slide")
+
+			/* Scroll to section */
+			productosSection.scrollIntoView();
 		})
 	})
 
@@ -448,10 +452,8 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		let currentOfONovItem = 0
 
 		OfONovNextButton.addEventListener("click", function(){
-			console.log("/////////////////")
-			console.log("currentOfONovItem: " + currentOfONovItem)
-			console.log("dsadasd")
-			console.log("dsadasd")
+			// console.log("/////////////////")
+			// console.log("currentOfONovItem: " + currentOfONovItem)
 			if (currentOfONovItem == (OfONovRadioButtons.length - 1)) { // Last item
 				currentOfONovItem = 0
 			} else {
@@ -460,19 +462,19 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 			
 			OfONovRadioButtons.forEach(function(button, index){
 				if (index == currentOfONovItem) {
-					button.setAttribute('checked', '');
-					console.log("index checked: " + index)
+					button.checked = true
+					// button.setAttribute('checked', '');
+					// console.log("index checked: " + index)
 				} else {
-					button.removeAttribute('checked');
+					button.checked = false
+					// button.removeAttribute('checked');
 				}
 			})
 		})
 
 		OfONovPrevButton.addEventListener("click", function(){
-			console.log("/////////////////")
-			console.log("currentOfONovItem: " + currentOfONovItem)
-			console.log("dsadasd")
-			console.log("dsadasd")
+			// console.log("/////////////////")
+			// console.log("currentOfONovItem: " + currentOfONovItem)
 			if (currentOfONovItem == 0) { // First item
 				currentOfONovItem = (OfONovRadioButtons.length - 1)
 			} else {
@@ -481,10 +483,12 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 
 			OfONovRadioButtons.forEach(function(button, index){
 				if (index == currentOfONovItem) {
-					button.setAttribute('checked', '');
+					button.checked = true
+					// button.setAttribute('checked', '');
 					console.log("index checked: " + index)
 				} else {
-					button.removeAttribute('checked');
+					button.checked = false
+					// button.removeAttribute('checked');
 				}
 			})
 		})
