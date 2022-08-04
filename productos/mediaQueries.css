@@ -110,6 +110,13 @@
 	}
 
 	@media screen and (max-width: 575px) {
+		#carouselBrands {
+			height: 75px;
+		}
+		#carouselBrands .brandItem {
+			width: 130px;
+		}
+
 		#searchBarAndOrderByContainer {
 			flex-direction: column;
 		}

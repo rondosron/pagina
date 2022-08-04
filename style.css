@@ -538,7 +538,7 @@ h2 {
 		z-index: 2;
 	}
 
-	#banner div {
+	#bannerImgLogo {
 		background: url("logo noryol.png");
 		background-repeat: no-repeat;
 		height: 100%;
@@ -549,7 +549,133 @@ h2 {
 		position: relative;
 	}
 	
-	
+	#carouselBrands {
+		position: absolute;
+		bottom: 1.5%;
+		height: 100px;
+		width: 100%;
+		overflow: hidden;
+		/*display: none;*/
+	}
+
+	#brandsContainer {
+		display: flex;
+		align-items: center;
+		/*flex-direction: row;*/
+		/*justify-content: space-evenly;*/
+		height: 100%;
+		width: max-content;
+		position: relative;
+		left: 0px;
+		/*animation: autoSlideBrands 4s linear infinite;*/
+	}
+
+	@keyframes autoSlideBrands {
+		0% {
+			left: 0px;
+		}
+		100% {
+			left: -250px; /* Item width: 200px + 50px margin */
+		}
+	}
+
+	.brandItem {
+		margin-right: 50px;
+		width: 200px;
+		height: 70%;
+		/*display: flex;*/
+		justify-content: center;
+		border-radius: 10px;
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.brand1 {
+		background: url(https://www.parsecs.com.ar/wp-content/uploads/2020/01/parsecs-logo.png);
+		background-size: cover;
+		background-position: center;
+	}
+
+	.brand2 {
+		background: url(https://landstudio.tv/wp-content/uploads/2019/02/lacatus_despues-1.png);
+		background-position: 49% 52%;
+		background-size: 210%;
+	}
+
+	.brand3 {
+		background: url(https://http2.mlstatic.com/D_NQ_NP_981352-MLA28816349639_112018-O.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
+	.brand4 {
+		background: url(https://fotopoint.com.ar/wp-content/uploads/2021/04/Duracell-Logo-e1618238648533.png);
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 90%;
+	}
+
+	.brand4:before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: white;
+		z-index: -1;
+	}
+
+	.brand5 {
+		background: url(https://cordobaelectronica.com.ar/wp-content/uploads/2015/03/probattery.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
+	.brand6 {
+		background: url(https://www.comercialsantabarbara.cl/wp-content/uploads/2017/02/Energizer_logo.jpg);
+		background-size: cover;
+		background-position: 0% 59%;
+	}
+
+	.brand7 {
+		background: url(https://static01.eu/catalogosyofertas.com.ar/images/store/41.png);
+		background-size: cover;
+		background-position: center;
+	}
+
+	.brand7:before {
+		content: "";
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background: #ac172b;
+		z-index: -1;
+	}
+
+	.carouselBrandsLimit {
+		position: absolute;
+		height: 100%;
+		width: 8%;
+		background: #1b2a4d;
+		top: 0;
+	}
+
+	#carouselBrandsLimitLeft {
+		left: 0;
+		box-shadow: inset -4px 0 2px -3px #354566a3;
+		filter: drop-shadow(-28px 0px 45px black);
+	}
+
+	#carouselBrandsLimitRight {
+		right: 0;
+		box-shadow: inset 4px 0 2px -3px #354566a3;
+		filter: drop-shadow(28px 0px 45px black);
+	}
+
+	#banner #carouselBrands .brandItem img {
+
+	}
 
 /*************************************** CAROUSEL ********************************************/
 	.carousel {
@@ -746,10 +872,11 @@ h2 {
 		/*max-width: 800px;*/
 		/*max-height: 600px;*/
 		min-height: calc(100vh - 50px);
-		height: 65vh;
+		/*height: 65vh;*/
 		transform-style: preserve-3d;
 		display: grid;
 		grid-template-rows: min-content 1fr;
+		grid-template-columns: 1fr;
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
@@ -781,8 +908,8 @@ h2 {
 		flex-direction: row;
 		z-index: 4;
 		justify-content: space-between;
-		top: 50%;
-		transform: translateY(-50%);
+		/*top: 50%;*/
+		/*transform: translateY(-50%);*/
 	}
 
 	.OfONovPrevButton {
@@ -939,9 +1066,11 @@ h2 {
 	}*/
 
 	.cards {
-		/*position: relative;*/
+		position: relative;
 		width: 100%;
-		height: 100%;
+		/*height: 100%;*/
+		height: 80vw; /* Same as main card height. Needed to set a specific value because content has an absolute positioning and the height of this container would be small */
+		max-height: 500px; /* Main card has a max-size of 390px, so to prevent the "height = 80vw" from making the container too big I set a max-height a little bit higher than that */
 		margin-bottom: 20px;
 		margin-top: 50px;
 		max-height: 400px;

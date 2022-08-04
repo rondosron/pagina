@@ -324,6 +324,45 @@ let originalListOfProducts = document.querySelectorAll(".contenedorProducto")
 		})
 	})
 
+//////////////////// SLIDE BRANDS ////////////////////
+	let carouselBrands = document.querySelector("#carouselBrands")
+	let brandsContainer = document.querySelector("#brandsContainer")
+
+	setInterval(function(){
+		let firstBrand = document.querySelectorAll("#brandsContainer .brandItem")[0]
+		// brandsContainer.style.animation = "autoSlideBrands 4s linear infinite"
+
+		brandsContainer.insertAdjacentElement("beforeend", firstBrand)
+		
+		// Animation >> Done with JS so its synced with the previous code
+			if (window.matchMedia("(min-width: 575px)").matches) {
+				var keyframes = [{
+					left: "0px"
+				}, {
+					left: "-250px" /* Item width: 200px + 50px margin */
+				}];
+			} else {
+				var keyframes = [{
+					left: "0px"
+				}, {
+					left: "-180px" /* Item width: 130px + 50px margin */
+				}];
+			}
+
+			console.log(keyframes)
+
+			var timing = {
+				duration: 6000,
+				easing: "linear",
+				iterations: Infinity
+			}
+			brandsContainer.animate(
+				keyframes,
+				timing
+			);
+	}, 6000)
+
+
 //////////////////// CAROUSEL NOVEDADES ////////////////////
 	/////////// VERSION 1 ////////////
 		let carouselNovedades = document.querySelector("#carouselNovedades")

@@ -120,7 +120,33 @@
 		</nav>
 
 		<div id="banner">
-			<div>
+			<div id="bannerImgLogo">
+			</div>
+			<div id="carouselBrands">
+				<div id="brandsContainer">
+					<div class="brandItem brand1">
+						<!-- <img src="https://www.parsecs.com.ar/wp-content/uploads/2020/01/parsecs-logo.png" alt=""> -->
+					</div>
+					<div class="brandItem brand2">
+						<!-- <img src="https://landstudio.tv/wp-content/uploads/2019/02/lacatus_despues-1.png" alt=""> -->
+					</div>
+					<div class="brandItem brand3">
+						<!-- <img src="https://http2.mlstatic.com/D_NQ_NP_981352-MLA28816349639_112018-O.jpg" alt=""> -->
+					</div>
+					<div class="brandItem brand4">
+						<!-- <img src="https://fotopoint.com.ar/wp-content/uploads/2021/04/Duracell-Logo-e1618238648533.png" alt=""> -->
+					</div>
+					<div class="brandItem brand5">
+						<!-- <img src="https://cordobaelectronica.com.ar/wp-content/uploads/2015/03/probattery.jpg" alt=""> -->
+					</div>
+					<div class="brandItem brand6">
+						<!-- <img src="https://www.comercialsantabarbara.cl/wp-content/uploads/2017/02/Energizer_logo.jpg" alt=""> -->
+					</div>
+					<div class="brandItem brand7"></div>
+					<!-- <div class="brandItem brand8"></div> -->
+				</div>
+				<div class="carouselBrandsLimit" id="carouselBrandsLimitLeft"></div>
+				<div class="carouselBrandsLimit" id="carouselBrandsLimitRight"></div>
 			</div>
 		</div>
 
