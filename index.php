@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>PAGINA YAMIR</title>
+		<title>NORYOL</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
@@ -33,14 +33,22 @@
 		?>
 
 		<?php
-			$conexion = new mysqli('localhost', 'root', '', 'noryol');
+			// $conexion = new mysqli('localhost', 'root', '', 'noryol');
 
-			if ($conexion->connect_error) {
-				die('Error de Conexión (' . $conexion->connect_errno . ') '. $conexion->connect_error);
-			}
+			// // For infinityfree
+			// $conexion = new mysqli('sql100.epizy.com', 'epiz_32117300', 'HizMWHrQVHWA', 'epiz_32117300_noryol');
 
-			// echo 'Éxito... ' . $conexion->host_info . "\n";
+			// if ($conexion->connect_error) {
+			// 	die('Error de Conexión (' . $conexion->connect_errno . ') '. $conexion->connect_error);
+			// }
+
+			// // echo 'Éxito... ' . $conexion->host_info . "\n";
 		?>
+
+		<?php
+			require_once('./dbconnect.php');
+		?>
+
 
 		<nav id="navbar">
 			<div id="logonav">
